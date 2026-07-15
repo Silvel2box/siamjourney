@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siam Explore | เที่ยวไทย 77 จังหวัด</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Kanit', 'sans-serif'],
+                        heading: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#c28e46', // Elegant Gold
+                        dark: '#1a1a1a',
+                        light: '#f9f9f9'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Animations -->
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll Reveal Animation Base */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Delays for staggered grid animations */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Custom Image Zoom on Hover */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+        .img-zoom-container img {
+            transition: transform 0.7s ease;
+        }
+        .img-zoom-container:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Parallax Background */
+        .bg-parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Navbar Scrolled State */
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .nav-scrolled .nav-text {
+            color: #1a1a1a !important;
+        }
+    </style>
+</head>
+<body class="bg-light text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="font-heading font-bold text-2xl nav-text text-white tracking-wider">
+                SIAM<span class="text-primary">EXPLORE</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="nav-text text-white hover:text-primary transition font-medium">เกี่ยวกับเรา</a>
+                <a href="#destinations" class="nav-text text-white hover:text-primary transition font-medium">จุดหมายยอดฮิต</a>
+                <a href="#all-provinces" class="nav-text text-white hover:text-primary transition font-medium">77 จังหวัด</a>
+                <a href="#contact" class="px-6 py-2 bg-primary text-white rounded-full hover:bg-yellow-600 transition shadow-lg">เริ่มต้นเดินทาง</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl nav-text text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-parallax flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20 reveal">
+            <span class="text-primary font-heading tracking-widest uppercase text-sm md:text-base font-semibold mb-4 block">Unseen Thailand</span>
+            <h1 class="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
+                สัมผัสความงาม<br>ของประเทศไทย
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 font-light max-w-2xl mx-auto">
+                ค้นพบประสบการณ์การเดินทางที่ไม่มีวันลืม สำรวจธรรมชาติ วัฒนธรรม และวิถีชีวิตใน 77 จังหวัดทั่วแดนสยาม
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#destinations" class="px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-yellow-600 transition shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+                    ออกเดินทาง <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#all-provinces" class="px-8 py-4 bg-white/20 backdrop-blur-md text-white rounded-full font-medium hover:bg-white hover:text-dark transition">
+                    ค้นหาจังหวัด
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 reveal">
+                    <div class="relative img-zoom-container rounded-3xl shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Thai Culture" class="w-full h-[500px] object-cover">
+                        <div class="absolute -bottom-10 -right-10 bg-white p-6 rounded-2xl shadow-xl hidden md:block border border-gray-100">
+                            <p class="font-heading font-bold text-4xl text-primary">77</p>
+                            <p class="text-gray-600">จังหวัดให้คุณค้นหา</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 reveal delay-100">
+                    <h2 class="text-4xl font-heading font-bold text-dark mb-6">ความมหัศจรรย์ที่รอคุณอยู่<br>ในทุกมุมของประเทศ</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg text-justify">
+                        ไม่ว่าคุณจะหลงใหลในกลิ่นอายของเกาะสวรรค์ทางภาคใต้ ทะเลหมอกและภูเขาสูงทางภาคเหนือ แหล่งอารยธรรมโบราณในภาคอีสาน หรือสีสันที่ไม่เคยหลับใหลของเมืองหลวง ทุกความต้องการของคุณสามารถพบได้ที่นี่
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <span class="text-lg font-medium">ธรรมชาติที่อุดมสมบูรณ์</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <i class="fas fa-place-of-worship"></i>
+                            </div>
+                            <span class="text-lg font-medium">วัฒนธรรมและประเพณีอันงดงาม</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <span class="text-lg font-medium">อาหารท้องถิ่นรสเลิศระดับโลก</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations (Grid) -->
+    <section id="destinations" class="py-24 bg-light">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-primary font-medium tracking-wider mb-2 block">TOP DESTINATIONS</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-dark mb-4">จุดหมายปลายทางยอดฮิต</h2>
+                <p class="text-gray-600 text-lg">เริ่มต้นแรงบันดาลใจในการเดินทางของคุณกับจังหวัดที่ได้รับความนิยมสูงสุดจากนักท่องเที่ยวทั่วโลก</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer reveal">
+                    <div class="img-zoom-container h-[400px]">
+                        <img src="https://images.unsplash.com/photo-1582468546235-9bf31e5bc4cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bangkok" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity group-hover:opacity-100"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3 inline-block">ภาคกลาง</span>
+                        <h3 class="text-3xl font-heading font-bold text-white mb-2">กรุงเทพมหานคร</h3>
+                        <p class="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition duration-500 delay-100">มหานครที่ไม่เคยหลับใหล เต็มไปด้วยวัดวาอาราม แหล่งช้อปปิ้ง และสตรีทฟู้ดชื่อดัง</p>
+                        <a href="#" class="text-white font-medium flex items-center gap-2 hover:text-primary transition opacity-0 group-hover:opacity-100 delay-200">
+                            ดูข้อมูล <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer reveal delay-100">
+                    <div class="img-zoom-container h-[400px]">
+                        <img src="https://images.unsplash.com/photo-1513622470522-26c308a55ce8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chiang Mai" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity group-hover:opacity-100"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3 inline-block">ภาคเหนือ</span>
+                        <h3 class="text-3xl font-heading font-bold text-white mb-2">เชียงใหม่</h3>
+                        <p class="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition duration-500 delay-100">มนต์เสน่ห์แห่งล้านนา ภูเขาที่งดงาม และคาเฟ่ชิคๆ ที่รอให้คุณไปสัมผัส</p>
+                        <a href="#" class="text-white font-medium flex items-center gap-2 hover:text-primary transition opacity-0 group-hover:opacity-100 delay-200">
+                            ดูข้อมูล <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer reveal delay-200">
+                    <div class="img-zoom-container h-[400px]">
+                        <img src="https://images.unsplash.com/photo-1589394815804-964ce0fa5894?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Phuket" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity group-hover:opacity-100"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition duration-500">
+                        <span class="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3 inline-block">ภาคใต้</span>
+                        <h3 class="text-3xl font-heading font-bold text-white mb-2">ภูเก็ต</h3>
+                        <p class="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition duration-500 delay-100">ไข่มุกอันดามัน ทะเลสวยน้ำใส หาดทรายขาว และย่านเมืองเก่าชิโนโปรตุกีส</p>
+                        <a href="#" class="text-white font-medium flex items-center gap-2 hover:text-primary transition opacity-0 group-hover:opacity-100 delay-200">
+                            ดูข้อมูล <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal delay-300">
+                <a href="#" class="inline-flex items-center justify-center border-2 border-dark text-dark px-8 py-3 rounded-full font-medium hover:bg-dark hover:text-white transition duration-300">
+                    ดูจุดหมายยอดฮิตทั้งหมด
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore All 77 Provinces Section -->
+    <section id="all-provinces" class="py-24 bg-dark text-white relative overflow-hidden">
+        <!-- Abstract Decoration -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4"></div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between mb-16 gap-8">
+                <div class="lg:w-1/2 reveal">
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">เที่ยวทั่วไทย ไปได้ทุกที่<br><span class="text-primary">ทั้ง 77 จังหวัด</span></h2>
+                    <p class="text-gray-400 text-lg mb-8 max-w-lg">ค้นหาสถานที่ท่องเที่ยวลับๆ และสัมผัสวิถีชีวิตท้องถิ่นในแบบที่คุณไม่เคยเห็นมาก่อน พิมพ์ชื่อจังหวัดที่คุณอยากไป หรือเลือกตามภูมิภาคได้เลย</p>
+                    
+                    <!-- Search Bar -->
+                    <div class="relative max-w-md">
+                        <input type="text" placeholder="ค้นหาจังหวัด เช่น น่าน, กระบี่, อยุธยา..." class="w-full bg-white/10 border border-white/20 rounded-full py-4 pl-6 pr-14 text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary backdrop-blur-sm transition">
+                        <button class="absolute right-2 top-2 bottom-2 bg-primary text-white w-12 rounded-full flex items-center justify-center hover:bg-yellow-600 transition">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 w-full reveal delay-100">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <!-- Region Cards -->
+                        <a href="#" class="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition duration-300 rounded-2xl p-6 text-center group backdrop-blur-sm">
+                            <i class="fas fa-mountain text-3xl text-gray-500 group-hover:text-primary mb-3 transition"></i>
+                            <h4 class="font-heading font-medium text-lg">ภาคเหนือ</h4>
+                            <p class="text-xs text-gray-500 mt-1">9 จังหวัด</p>
+                        </a>
+                        <a href="#" class="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition duration-300 rounded-2xl p-6 text-center group backdrop-blur-sm">
+                            <i class="fas fa-tractor text-3xl text-gray-500 group-hover:text-primary mb-3 transition"></i>
+                            <h4 class="font-heading font-medium text-lg">ภาคอีสาน</h4>
+                            <p class="text-xs text-gray-500 mt-1">20 จังหวัด</p>
+                        </a>
+                        <a href="#" class="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition duration-300 rounded-2xl p-6 text-center group backdrop-blur-sm">
+                            <i class="fas fa-city text-3xl text-gray-500 group-hover:text-primary mb-3 transition"></i>
+                            <h4 class="font-heading font-medium text-lg">ภาคกลาง</h4>
+                            <p class="text-xs text-gray-500 mt-1">21 จังหวัด</p>
+                        </a>
+                        <a href="#" class="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition duration-300 rounded-2xl p-6 text-center group backdrop-blur-sm">
+                            <i class="fas fa-sun text-3xl text-gray-500 group-hover:text-primary mb-3 transition"></i>
+                            <h4 class="font-heading font-medium text-lg">ภาคตะวันออก</h4>
+                            <p class="text-xs text-gray-500 mt-1">7 จังหวัด</p>
+                        </a>
+                        <a href="#" class="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition duration-300 rounded-2xl p-6 text-center group backdrop-blur-sm">
+                            <i class="fas fa-water text-3xl text-gray-500 group-hover:text-primary mb-3 transition"></i>
+                            <h4 class="font-heading font-medium text-lg">ภาคตะวันตก</h4>
+                            <p class="text-xs text-gray-500 mt-1">5 จังหวัด</p>
+                        </a>
+                        <a href="#" class="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition duration-300 rounded-2xl p-6 text-center group backdrop-blur-sm">
+                            <i class="fas fa-umbrella-beach text-3xl text-gray-500 group-hover:text-primary mb-3 transition"></i>
+                            <h4 class="font-heading font-medium text-lg">ภาคใต้</h4>
+                            <p class="text-xs text-gray-500 mt-1">14 จังหวัด</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-24 bg-white text-center">
+        <div class="container mx-auto px-6 max-w-4xl reveal">
+            <h2 class="text-4xl md:text-5xl font-heading font-bold text-dark mb-6">พร้อมที่จะสร้างความทรงจำใหม่ๆ แล้วหรือยัง?</h2>
+            <p class="text-xl text-gray-600 mb-10">ร่วมเดินทางไปกับเรา และค้นพบความมหัศจรรย์ของประเทศไทยในมุมมองที่คุณไม่เคยเห็น สมัครรับข่าวสารการท่องเที่ยวและโปรโมชั่นพิเศษก่อนใคร</p>
+            <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
+                <input type="email" placeholder="กรอกอีเมลของคุณ" class="px-6 py-4 rounded-full border border-gray-300 w-full sm:w-2/3 focus:outline-none focus:border-primary">
+                <button type="submit" class="px-8 py-4 bg-dark text-white rounded-full font-medium hover:bg-primary transition w-full sm:w-1/3">
+                    ติดตามข่าวสาร
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark text-white pt-20 pb-10 border-t border-white/10">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="#" class="font-heading font-bold text-2xl tracking-wider mb-6 block">
+                        SIAM<span class="text-primary">EXPLORE</span>
+                    </a>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                        แพลตฟอร์มแนะนำสถานที่ท่องเที่ยวในประเทศไทย ครอบคลุมทั้ง 77 จังหวัด ให้คุณจัดทริปได้อย่างไร้รอยต่อ
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading font-medium text-lg mb-6">เมนูหลัก</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-primary transition">หน้าแรก</a></li>
+                        <li><a href="#about" class="hover:text-primary transition">เกี่ยวกับเรา</a></li>
+                        <li><a href="#destinations" class="hover:text-primary transition">จุดหมายยอดฮิต</a></li>
+                        <li><a href="#all-provinces" class="hover:text-primary transition">77 จังหวัด</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading font-medium text-lg mb-6">ภูมิภาค</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-primary transition">ภาคเหนือ</a></li>
+                        <li><a href="#" class="hover:text-primary transition">ภาคอีสาน</a></li>
+                        <li><a href="#" class="hover:text-primary transition">ภาคกลาง</a></li>
+                        <li><a href="#" class="hover:text-primary transition">ภาคใต้</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading font-medium text-lg mb-6">ติดต่อเรา</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary"></i>
+                            <span>กรุงเทพมหานคร, ประเทศไทย</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span>hello@siamexplore.com</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>+66 2 123 4567</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <p>&copy; 2026 SiamExplore. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition">นโยบายความเป็นส่วนตัว</a>
+                    <a href="#" class="hover:text-white transition">เงื่อนไขการให้บริการ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Animations and Interactions -->
+    <script>
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        const navTexts = document.querySelectorAll('.nav-text');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-3');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-3');
+            }
+        });
+
+        // Intersection Observer for Scroll Animations
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Stop observing once revealed
+                }
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+    </script>
+</body>
+</html>
