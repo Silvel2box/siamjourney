@@ -13,3 +13,25 @@ model Subscriber {
   email     String   @unique
   createdAt DateTime @default(now())
 }
+
+// Shop owner account (login identity + basic business info in one).
+model Merchant {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  passwordHash String
+  shopName     String
+  status       String    @default("pending") // pending | approved | suspended
+  createdAt    DateTime  @default(now())
+  sessions     Session[]
+}
+
+// Opaque server-side session; the id is the random token stored in the cookie.
+model Session {
+  id         String   @id
+  merchantId Int
+  merchant   Merchant @relation(fields: [merchantId], references: [id], onDelete: Cascade)
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+
+  @@index([merchantId])
+}
