@@ -20,7 +20,8 @@ model Merchant {
   email        String    @unique
   passwordHash String
   shopName     String
-  status       String    @default("pending") // pending | approved | suspended
+  status       String    @default("pending")   // pending | approved | suspended
+  role         String    @default("merchant")  // merchant | admin
   createdAt    DateTime  @default(now())
   sessions     Session[]
 }

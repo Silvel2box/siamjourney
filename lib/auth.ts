@@ -76,7 +76,13 @@ export const getMerchant = cache(async () => {
     where: { id: token },
     include: {
       merchant: {
-        select: { id: true, email: true, shopName: true, status: true },
+        select: {
+          id: true,
+          email: true,
+          shopName: true,
+          status: true,
+          role: true,
+        },
       },
     },
   });
@@ -94,5 +100,12 @@ export const getMerchant = cache(async () => {
 export async function requireMerchant() {
   const merchant = await getMerchant();
   if (!merchant) redirect("/login");
+  return merchant;
+}
+
+// Guard for admin-only pages/actions. Signed-out → /login, non-admin → /dashboard.
+export async function requireAdmin() {
+  const merchant = await requireMerchant();
+  if (merchant.role !== "admin") redirect("/dashboard");
   return merchant;
 }

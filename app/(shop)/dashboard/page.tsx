@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import { requireMerchant } from "@/lib/auth";
 import { logout } from "@/app/actions/auth";
@@ -48,14 +49,24 @@ export default async function DashboardPage() {
               บัญชีร้านค้าพร้อมใช้งานแล้ว — ระบบจัดการข้อมูลร้าน แพ็กเกจโปรโมต และสถิติ จะเปิดให้ใช้ในเร็ว ๆ นี้
             </p>
 
-            <form action={logout} className="mt-8">
-              <button
-                type="submit"
-                className="px-6 py-3 border border-gray-300 rounded-full font-medium hover:bg-gray-100 transition"
-              >
-                ออกจากระบบ
-              </button>
-            </form>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {merchant.role === "admin" && (
+                <Link
+                  href="/admin"
+                  className="px-6 py-3 bg-dark text-white rounded-full font-medium hover:bg-primary transition"
+                >
+                  จัดการร้านค้า (Admin)
+                </Link>
+              )}
+              <form action={logout}>
+                <button
+                  type="submit"
+                  className="px-6 py-3 border border-gray-300 rounded-full font-medium hover:bg-gray-100 transition"
+                >
+                  ออกจากระบบ
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
