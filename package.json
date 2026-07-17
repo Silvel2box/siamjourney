@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "node server.js",
     "lint": "eslint",
+    "migrate:deploy": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
     "postinstall": "prisma generate"
   },
   "prisma": {
