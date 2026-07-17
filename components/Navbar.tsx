@@ -8,6 +8,7 @@ const links = [
   { href: "/#destinations", label: "จุดหมายยอดฮิต" },
   { href: "/#regions", label: "ภูมิภาค" },
   { href: "/#about", label: "เกี่ยวกับเรา" },
+  { href: "/dashboard", label: "สำหรับร้านค้า" },
 ];
 
 export default function Navbar() {

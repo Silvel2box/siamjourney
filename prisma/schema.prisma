@@ -22,6 +22,14 @@ model Merchant {
   shopName     String
   status       String    @default("pending")   // pending | approved | suspended
   role         String    @default("merchant")  // merchant | admin
+  // Shop profile — edited on /dashboard, shown on /shop/[id] once approved.
+  description  String?   @db.Text
+  province     String?   // province slug (see lib/content getAllProvinces)
+  category     String?   // category slug (see lib/categories)
+  address      String?
+  phone        String?
+  website      String?
+  image        String?   @db.Text
   createdAt    DateTime  @default(now())
   sessions     Session[]
 }
