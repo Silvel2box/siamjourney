@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Kanit, Prompt } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { site } from "@/lib/site";
+import { adsense, adsenseEnabled } from "@/lib/adsense";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -50,6 +52,13 @@ export default function RootLayout({
         {children}
         <Footer />
         <ScrollReveal />
+        {adsenseEnabled && (
+          <Script
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.client}`}
+            strategy="afterInteractive"
+            crossOrigin="anonymous"
+          />
+        )}
       </body>
     </html>
   );
