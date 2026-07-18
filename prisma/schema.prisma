@@ -12,6 +12,10 @@ model Subscriber {
   id        Int      @id @default(autoincrement())
   email     String   @unique
   createdAt DateTime @default(now())
+
+  // Lowercase table name — Windows MySQL forces lowercase, Linux is case-sensitive.
+  // Explicit @@map keeps generated SQL identical on both so migrations stay portable.
+  @@map("subscriber")
 }
 
 // Shop owner account (login identity + basic business info in one).
@@ -32,6 +36,8 @@ model Merchant {
   image        String?   @db.Text
   createdAt    DateTime  @default(now())
   sessions     Session[]
+
+  @@map("merchant")
 }
 
 // Opaque server-side session; the id is the random token stored in the cookie.
@@ -43,4 +49,5 @@ model Session {
   createdAt  DateTime @default(now())
 
   @@index([merchantId])
+  @@map("session")
 }
