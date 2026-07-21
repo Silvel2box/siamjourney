@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { adsense, adsenseEnabled } from "@/lib/adsense";
+import { adsense, adUnitsEnabled } from "@/lib/adsense";
 
 // A single in-content ad placement. Renders a real Google AdSense unit once the
 // account is configured (lib/adsense.ts); until then it shows a dashed
@@ -20,7 +20,7 @@ export default function AdSlot({
   const pushed = useRef(false);
 
   useEffect(() => {
-    if (!adsenseEnabled || pushed.current) return;
+    if (!adUnitsEnabled || pushed.current) return;
     try {
       const w = window as unknown as { adsbygoogle?: unknown[] };
       (w.adsbygoogle = w.adsbygoogle || []).push({});
@@ -30,7 +30,7 @@ export default function AdSlot({
     }
   }, []);
 
-  if (!adsenseEnabled) {
+  if (!adUnitsEnabled) {
     // Dev: show where ads will appear. Prod: render nothing (keep it clean).
     if (process.env.NODE_ENV !== "development") return null;
     return (
