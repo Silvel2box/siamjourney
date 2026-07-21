@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Kanit, Prompt } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { site } from "@/lib/site";
 import { adsense, adsenseEnabled } from "@/lib/adsense";
@@ -46,19 +45,23 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
+        {/* Google's own snippet, written as a plain tag on purpose: AdSense
+            verification and review read the raw server HTML, and next/script
+            emits only a <link rel="preload"> there (both afterInteractive and
+            beforeInteractive) — which fails verification. */}
+        {adsenseEnabled && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.client}`}
+            crossOrigin="anonymous"
+          />
+        )}
       </head>
       <body className="bg-light text-gray-800 font-sans antialiased overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />
         <ScrollReveal />
-        {adsenseEnabled && (
-          <Script
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.client}`}
-            strategy="afterInteractive"
-            crossOrigin="anonymous"
-          />
-        )}
       </body>
     </html>
   );
