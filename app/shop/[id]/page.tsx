@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { getProvince } from "@/lib/content";
 import { categoryBySlug } from "@/lib/categories";
 import { regionBySlug } from "@/lib/regions";
-import { site } from "@/lib/site";
+import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 
 type Props = { params: Promise<{ id: string }> };
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: shop.shopName,
     description: shop.description ?? undefined,
     alternates: { canonical: `/shop/${shop.id}` },
-    ...(shop.image && { openGraph: { images: [shop.image] } }),
+    openGraph: pageOpenGraph(`/shop/${shop.id}`, shop.image || site.ogImage),
   };
 }
 

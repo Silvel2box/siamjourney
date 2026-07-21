@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { regions, regionBySlug } from "@/lib/regions";
 import { getProvincesByRegion } from "@/lib/content";
-import { site } from "@/lib/site";
+import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import ProvinceCard from "@/components/ProvinceCard";
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `เที่ยว${region.name}`,
     description: `รวมจังหวัดน่าเที่ยวใน${region.name} — ${region.blurb}`,
     alternates: { canonical: `/${region.slug}` },
-    openGraph: { images: [site.ogImage] },
+    openGraph: pageOpenGraph(`/${region.slug}`, site.ogImage),
   };
 }
 

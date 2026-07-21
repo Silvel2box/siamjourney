@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getAllProvinces, getProvince, getPlacesByProvinceCategory } from "@/lib/content";
 import { regionBySlug } from "@/lib/regions";
 import { categories } from "@/lib/categories";
-import { site } from "@/lib/site";
+import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import PlaceCard from "@/components/PlaceCard";
 import AdSlot from "@/components/AdSlot";
@@ -25,7 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `เที่ยว${province.name}`,
     description: province.summary,
     alternates: { canonical: `/${province.region}/${province.slug}` },
-    openGraph: { images: [province.image] },
+    openGraph: pageOpenGraph(
+      `/${province.region}/${province.slug}`,
+      province.image,
+    ),
   };
 }
 

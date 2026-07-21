@@ -4,7 +4,7 @@ import { marked } from "marked";
 import { getAllPlaces, getPlace, getProvince } from "@/lib/content";
 import { categoryBySlug } from "@/lib/categories";
 import { regionBySlug } from "@/lib/regions";
-import { site } from "@/lib/site";
+import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import AffiliateButton from "@/components/AffiliateButton";
 import AdSlot from "@/components/AdSlot";
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: place.name,
     description: place.summary,
     alternates: { canonical: `/place/${place.slug}` },
-    openGraph: { images: [place.image] },
+    openGraph: pageOpenGraph(`/place/${place.slug}`, place.image),
   };
 }
 

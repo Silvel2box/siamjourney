@@ -17,3 +17,18 @@ export const site = {
     twitter: "#",
   },
 } as const;
+
+// openGraph in a page's generateMetadata REPLACES the root layout's openGraph
+// wholesale (Next merges metadata shallowly), so a page that only sets `images`
+// silently drops og:url / og:type / og:site_name / og:locale. Every page that
+// customises its OG image should build the object with this instead.
+// `path` is the same route-relative path used for alternates.canonical.
+export function pageOpenGraph(path: string, image: string) {
+  return {
+    type: "website" as const,
+    locale: "th_TH",
+    siteName: site.name,
+    url: `${site.url}${path}`,
+    images: [image],
+  };
+}

@@ -8,7 +8,7 @@ import {
 } from "@/lib/content";
 import { categories, categoryBySlug } from "@/lib/categories";
 import { regionBySlug } from "@/lib/regions";
-import { site } from "@/lib/site";
+import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import PlaceCard from "@/components/PlaceCard";
 import AdSlot from "@/components/AdSlot";
@@ -47,7 +47,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `/${province.region}/${province.slug}/${category.slug}`,
     },
-    openGraph: { images: [province.image] },
+    openGraph: pageOpenGraph(
+      `/${province.region}/${province.slug}/${category.slug}`,
+      province.image,
+    ),
   };
 }
 
