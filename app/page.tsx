@@ -26,8 +26,7 @@ export default function Home() {
       <section
         className="relative h-screen bg-parallax flex items-center justify-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1920&q=80')",
+          backgroundImage: "url('/images/site/hero.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/40" />
@@ -67,7 +66,7 @@ export default function Home() {
             <div className="lg:w-1/2 reveal">
               <div className="relative img-zoom-container rounded-3xl shadow-2xl h-[500px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80"
+                  src="/images/site/culture.jpg"
                   alt="วัฒนธรรมไทย"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
