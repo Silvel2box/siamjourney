@@ -4,14 +4,20 @@ name: วัดพระแก้ว
 category: attraction
 province: bangkok
 summary: วัดพระศรีรัตนศาสดารามในพระบรมมหาราชวัง ที่ประดิษฐานพระแก้วมรกต
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/places/bangkok-wat-phra-kaew.jpg
 address: ถนนหน้าพระลาน แขวงพระบรมมหาราชวัง เขตพระนคร กรุงเทพฯ
-hours: เปิดทุกวัน 08:30 - 15:30 น.
+hours: 'เปิดทุกวัน 08:30 - 15:30 น.'
 priceRange: ชาวไทยฟรี / ชาวต่างชาติ 500 บาท
 sponsored: 1
 affiliate:
   label: จองทัวร์กรุงเทพมหานคร
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: Basile Morin
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Statue_of_Yaksha_supporting_one_of_the_Two_Golden_Chedi_of_Wat_Phra_Kaew,_Bangkok,_Thailand.jpg
+  license: CC BY-SA 4.0
 ---
 วัดพระศรีรัตนศาสดาราม หรือวัดพระแก้ว ตั้งอยู่ภายในพระบรมมหาราชวัง เป็นวัดที่งดงามและศักดิ์สิทธิ์ที่สุดของไทย ประดิษฐานพระพุทธมหามณีรัตนปฏิมากรหรือพระแก้วมรกต
 

@@ -4,8 +4,13 @@ name: ระนอง
 nameEn: Ranong
 region: south
 summary: เมืองฝนแปดแดดสี่ บ่อน้ำร้อนธรรมชาติ เกาะสวยอันดามัน และเม็ดมะม่วงหิมพานต์
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/ranong.png
 featured: false
+imageCredit:
+  author: Bank0303
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ranong_Province_Scout_Badge.png'
+  license: CC BY 4.0
 ---
 ระนองเป็นจังหวัดชายฝั่งอันดามันที่ได้ชื่อว่าเมืองฝนแปดแดดสี่ เพราะมีฝนตกชุกเกือบตลอดปี ทำให้ธรรมชาติเขียวชอุ่มอุดมสมบูรณ์ โดดเด่นด้วยบ่อน้ำร้อนธรรมชาติรักษะวารินที่เป็นน้ำแร่บริสุทธิ์ และหมู่เกาะสวยงามอย่างเกาะพยาม เกาะช้าง
 

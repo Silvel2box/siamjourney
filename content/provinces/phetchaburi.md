@@ -4,8 +4,15 @@ name: เพชรบุรี
 nameEn: Phetchaburi
 region: west
 summary: เมืองพระนครคีรี ขนมหวานเลื่องชื่อ และชายหาดชะอำ
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/phetchaburi.jpg
 featured: false
+imageCredit:
+  author: >-
+    This Photo was taken by Supanut Arunoprayote. Feel free to use any of my
+    images,
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Phra_Nakhon_Khiri_(II).jpg'
+  license: CC BY 4.0
 ---
 เพชรบุรีเป็นเมืองเก่าแก่ภาคตะวันตกที่เต็มไปด้วยมรดกทางวัฒนธรรม ทั้งพระนครคีรี (เขาวัง) วัดวาอารามงดงาม และชายหาดชะอำที่เป็นแหล่งพักผ่อนคลาสสิกของไทย
 

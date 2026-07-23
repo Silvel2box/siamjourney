@@ -4,8 +4,14 @@ name: ชุมพร
 nameEn: Chumphon
 region: south
 summary: ประตูสู่ภาคใต้ หาดทรายเงียบสงบ ดำน้ำดูปะการัง และกล้วยเล็บมือนางเลื่องชื่อ
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/chumphon.jpg
 featured: false
+imageCredit:
+  author: diego_cue
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Close_to_Chumphon_-_Thailand_-_panoramio.jpg
+  license: CC BY-SA 3.0
 ---
 ชุมพรเป็นจังหวัดแรกของภาคใต้ ได้ชื่อว่าเป็นประตูสู่ดินแดนปักษ์ใต้ มีแนวชายฝั่งทะเลยาวเหยียดที่ยังคงความเงียบสงบ หาดทรายสวยและจุดดำน้ำดูปะการังที่สมบูรณ์อย่างเกาะง่ามและหมู่เกาะทะเลใน
 

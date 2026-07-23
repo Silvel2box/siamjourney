@@ -4,11 +4,16 @@ name: ร้านเนื้อโคขุนโพนยางคำ
 category: restaurant
 province: sakon-nakhon
 summary: สเต๊กและเนื้อย่างโคขุนโพนยางคำคุณภาพเยี่ยม นุ่มลิ้นละลายในปาก
-image: https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80
+image: >-
+  https://images.pexels.com/photos/3639871/pexels-photo-3639871.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: อ.เมือง จ.สกลนคร
-hours: เปิดทุกวัน 11:00 - 21:00 น.
+hours: 'เปิดทุกวัน 11:00 - 21:00 น.'
 priceRange: 150 - 600 บาท
 sponsored: 0
+imageCredit:
+  author: Markus Winkler
+  source: Pexels
+  sourceUrl: 'https://www.pexels.com/photo/pasta-with-nuts-served-in-a-restaurant-3639871/'
 ---
 ร้านเนื้อโคขุนโพนยางคำเสิร์ฟเนื้อโคขุนคุณภาพเยี่ยมจากสหกรณ์โพนยางคำที่เลี้ยงด้วยมาตรฐานพิเศษ เนื้อนุ่มลิ้นละลายในปาก ทั้งสเต๊ก เนื้อย่าง และชาบู
 

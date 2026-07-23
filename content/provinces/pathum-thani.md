@@ -4,8 +4,14 @@ name: ปทุมธานี
 nameEn: Pathum Thani
 region: central
 summary: เมืองปริมณฑลริมคลองรังสิต แหล่งสวนสนุกและวิถีชีวิตริมน้ำ
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/pathum-thani.jpg
 featured: false
+imageCredit:
+  author: Serj Kras
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Bang_Yitho,_Thanyaburi_District,_Pathum_Thani,_Thailand_-_panoramio_(1).jpg
+  license: CC BY-SA 3.0
 ---
 ปทุมธานีเป็นจังหวัดปริมณฑลทางตอนเหนือของกรุงเทพมหานคร มีเครือข่ายคลองรังสิตและแม่น้ำเจ้าพระยาหล่อเลี้ยงพื้นที่ ทำให้เป็นเมืองเกษตรกรรมและวิถีชีวิตริมน้ำที่ยังมีเสน่ห์ ปัจจุบันเติบโตเป็นเมืองที่อยู่อาศัยและแหล่งการศึกษาสำคัญของภาคกลาง
 

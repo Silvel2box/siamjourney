@@ -7,10 +7,12 @@ const nextConfig: NextConfig = {
     root: import.meta.dirname,
   },
   images: {
-    // Hosts allowed for next/image. Add your real image host here when the team
-    // swaps placeholders for real photos. Optimizer stays on (runs under
-    // `next start` on Plesk); add `unoptimized: true` here if Plesk can't handle it.
-    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
+    // Pexels stock is hotlinked (their CDN allows it; next/image caches the
+    // optimized result). Wikimedia photos are self-hosted under public/images
+    // (Commons rate-limits hotlinking) so they need no remote pattern.
+    // Optimizer stays on (runs under `next start` on Plesk); add
+    // `unoptimized: true` here if Plesk can't handle it.
+    remotePatterns: [{ protocol: "https", hostname: "images.pexels.com" }],
   },
 };
 

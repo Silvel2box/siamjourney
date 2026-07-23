@@ -4,8 +4,14 @@ name: สุโขทัย
 nameEn: Sukhothai
 region: central
 summary: เมืองมรดกโลก ต้นกำเนิดอารยธรรมและอักษรไทยแห่งสยาม
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/sukhothai.jpg
 featured: false
+imageCredit:
+  author: Chainwit.
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Sukhothai_-_Wat_Sorasak_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%A3%E0%B8%A8%E0%B8%B1%E0%B8%81%E0%B8%94%E0%B8%B4%E0%B9%8C_(2025)_-_img_03.jpg
+  license: CC BY 4.0
 ---
 สุโขทัยคือราชธานีแห่งแรกของชาติไทย ดินแดนที่ได้ชื่อว่าเป็น "รุ่งอรุณแห่งความสุข" เต็มไปด้วยร่องรอยความรุ่งเรืองของอาณาจักรโบราณ ทั้งเจดีย์ พระพุทธรูปปางลีลาอันงดงาม และอุทยานประวัติศาสตร์ที่ได้รับการยกย่องเป็นมรดกโลกโดยองค์การยูเนสโก
 

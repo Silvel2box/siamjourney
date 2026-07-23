@@ -4,8 +4,14 @@ name: ตรัง
 nameEn: Trang
 region: south
 summary: เมืองแห่งทะเลใส เกาะสวย ถ้ำมรกตมหัศจรรย์ และติ่มซำอร่อยลือชื่อ
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/trang.jpg
 featured: false
+imageCredit:
+  author: Dominic Nelson
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Trang_-_Dugong_Roundabout_04_-_Sep_2024.jpg
+  license: CC BY-SA 4.0
 ---
 ตรังเป็นจังหวัดชายทะเลอันดามันที่เต็มไปด้วยเกาะแก่งสวยงามและน้ำทะเลใส โดดเด่นด้วยถ้ำมรกตมหัศจรรย์ที่ต้องว่ายน้ำลอดถ้ำเข้าไปสู่หาดทรายลับกลางเกาะ อีกทั้งยังมีเกาะกระดาน เกาะมุก และหมู่เกาะที่เหมาะแก่การดำน้ำ
 

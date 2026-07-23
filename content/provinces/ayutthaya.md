@@ -4,8 +4,14 @@ name: พระนครศรีอยุธยา
 nameEn: Phra Nakhon Si Ayutthaya
 region: central
 summary: อดีตราชธานีอันรุ่งเรือง เมืองมรดกโลกที่เต็มไปด้วยโบราณสถานและตำนาน
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/ayutthaya.jpg
 featured: true
+imageCredit:
+  author: Diego Delso
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Templo_Mahathat,_Ayutthaya,_Tailandia,_2013-08-23,_DD_16.jpg
+  license: CC BY-SA 3.0
 ---
 พระนครศรีอยุธยาเคยเป็นราชธานีของไทยยาวนานถึง 417 ปี ปัจจุบันได้รับการขึ้นทะเบียนเป็นมรดกโลกจากยูเนสโก เต็มไปด้วยซากเจดีย์ พระปรางค์ และวัดวาอารามที่บอกเล่าความรุ่งเรืองในอดีต
 

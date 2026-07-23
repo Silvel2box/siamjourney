@@ -4,8 +4,16 @@ name: พิษณุโลก
 nameEn: Phitsanulok
 region: central
 summary: เมืองสองแควแห่งพระพุทธชินราช ประตูสู่ภาคเหนือตอนล่าง
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/phitsanulok.jpg
 featured: false
+imageCredit:
+  author: >-
+    This Photo was taken by Supanut Arunoprayote. Feel free to use any of my
+    images,
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Wat_Mahathat,_Lop_Buri_(III)_-_Pano.jpg
+  license: CC BY 4.0
 ---
 พิษณุโลกเป็นจังหวัดใหญ่ในภาคเหนือตอนล่าง มีแม่น้ำน่านไหลผ่านกลางเมือง และเป็นเมืองประวัติศาสตร์สำคัญที่เคยเป็นราชธานีในสมัยสมเด็จพระนเรศวรมหาราช ปัจจุบันเป็นศูนย์กลางคมนาคม การศึกษา และการท่องเที่ยวของภูมิภาค
 

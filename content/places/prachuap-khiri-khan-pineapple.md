@@ -4,14 +4,20 @@ name: สับปะรดกวนประจวบ
 category: otop
 province: prachuap-khiri-khan
 summary: สับปะรดกวนหวานฉ่ำจากสับปะรดพันธุ์ดีเมืองประจวบ
-image: https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=80
+image: >-
+  https://images.pexels.com/photos/34675315/pexels-photo-34675315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: อำเภอเมือง จังหวัดประจวบคีรีขันธ์
 hours: เปิดทุกวัน 08.00-18.00 น.
 priceRange: 60-250 บาท
 sponsored: 0
 affiliate:
   label: สั่งซื้อสับปะรดกวนประจวบ
-  url: https://shopee.co.th/
+  url: 'https://shopee.co.th/'
+imageCredit:
+  author: David Tran
+  source: Pexels
+  sourceUrl: >-
+    https://www.pexels.com/photo/colorful-hanging-ornaments-in-a-vibrant-market-34675315/
 ---
 สับปะรดกวนประจวบเป็นสินค้า OTOP ขึ้นชื่อที่แปรรูปจากสับปะรดพันธุ์ดีของจังหวัดประจวบคีรีขันธ์ ซึ่งเป็นแหล่งปลูกสับปะรดสำคัญของประเทศ
 

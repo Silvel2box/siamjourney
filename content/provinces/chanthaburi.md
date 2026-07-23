@@ -4,8 +4,14 @@ name: จันทบุรี
 nameEn: Chanthaburi
 region: east
 summary: เมืองแห่งอัญมณี ผลไม้รสเลิศ และธรรมชาติน้ำตกอันร่มรื่น
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/chanthaburi.jpg
 featured: false
+imageCredit:
+  author: K.Phothiwijit
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Cathedral_of_the_Immaculate_Conception_9604.jpg
+  license: CC BY-SA 3.0
 ---
 จันทบุรีเป็นจังหวัดชายฝั่งภาคตะวันออกที่ขึ้นชื่อเรื่องอัญมณีและพลอยระดับโลก อีกทั้งยังเป็นแหล่งผลไม้เมืองร้อนชั้นดี ทั้งทุเรียน เงาะ และมังคุด ที่ส่งออกไปทั่วประเทศ
 

@@ -4,11 +4,16 @@ name: อัมพวา ริเวอร์ คาเฟ่
 category: cafe
 province: samut-songkhram
 summary: คาเฟ่ริมคลองอัมพวา จิบกาแฟชมวิถีเรือพายยามเย็น
-image: https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&q=80
+image: >-
+  https://images.pexels.com/photos/32791403/pexels-photo-32791403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: ริมคลองอัมพวา อำเภออัมพวา จังหวัดสมุทรสงคราม
 hours: เปิดทุกวัน 09.00-20.00 น.
 priceRange: 55-150 บาท
 sponsored: 0
+imageCredit:
+  author: "\U0001F1FB\U0001F1F3\U0001F1FB\U0001F1F3Nguyễn Tiến Thịnh \U0001F1FB\U0001F1F3\U0001F1FB\U0001F1F3"
+  source: Pexels
+  sourceUrl: 'https://www.pexels.com/photo/iced-coffee-and-water-on-sunlit-table-32791403/'
 ---
 อัมพวา ริเวอร์ คาเฟ่ เป็นคาเฟ่บ้านไม้เก่าริมคลองอัมพวาที่ให้บรรยากาศย้อนยุคอบอุ่น นั่งจิบกาแฟชมเรือพายและวิถีชีวิตริมน้ำได้อย่างเพลิดเพลิน เมนูเด่นคือกาแฟสดและขนมไทยประยุกต์
 

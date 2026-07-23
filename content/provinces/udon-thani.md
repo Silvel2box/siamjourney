@@ -4,8 +4,13 @@ name: อุดรธานี
 nameEn: Udon Thani
 region: northeast
 summary: เมืองมรดกโลกบ้านเชียง ทะเลบัวแดงงดงาม และผ้าหมี่ขิดบ้านนาข่า
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/udon-thani.jpg
 featured: false
+imageCredit:
+  author: Stefan Fussan
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Udon_Thani_-_Pavilion_-_0001.jpg'
+  license: CC BY-SA 3.0
 ---
 อุดรธานีเป็นเมืองศูนย์กลางเศรษฐกิจของอีสานตอนบน มีแหล่งมรดกโลกบ้านเชียงที่แสดงอารยธรรมยุคก่อนประวัติศาสตร์ และทะเลบัวแดงบานสะพรั่งกลางหนองน้ำในฤดูหนาว
 

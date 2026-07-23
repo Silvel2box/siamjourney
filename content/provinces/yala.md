@@ -4,8 +4,14 @@ name: ยะลา
 nameEn: Yala
 region: south
 summary: เมืองผังเมืองสวย เบตงสุดชายแดน ทะเลหมอกอัยเยอร์เวง และไก่เบตงเลื่องชื่อ
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/yala.jpg
 featured: false
+imageCredit:
+  author: กิตติ เลขะกุล
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Lam_Mai,_Mueang_Yala_District,_Yala,_Thailand_-_panoramio.jpg
+  license: CC BY 3.0
 ---
 ยะลาเป็นจังหวัดใต้สุดของประเทศไทยที่ไม่มีทางออกสู่ทะเล แต่เต็มไปด้วยขุนเขาและธรรมชาติอันงดงาม ตัวเมืองยะลาได้ชื่อว่ามีผังเมืองสวยเป็นระเบียบที่สุดแห่งหนึ่งของไทย ส่วนอำเภอเบตงสุดชายแดนคือไฮไลต์ด้วยทะเลหมอกอัยเยอร์เวงและสกายวอล์กชมวิว
 

@@ -4,8 +4,13 @@ name: กระบี่
 nameEn: Krabi
 region: south
 summary: เมืองแห่งทะเลอันดามัน หาดทรายขาว เกาะสวย และหน้าผาหินปูนสุดอลังการ
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/krabi.jpg
 featured: true
+imageCredit:
+  author: Vyacheslav Argenberg
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Railay,_Krabi,_Boat,_Thailand.jpg'
+  license: CC BY 4.0
 ---
 กระบี่คือหนึ่งในจุดหมายปลายทางยอดนิยมที่สุดของทะเลอันดามัน โดดเด่นด้วยหาดทรายขาวละเอียด น้ำทะเลใสสีมรกต และหน้าผาหินปูนสูงชันที่ตั้งตระหง่านริมทะเล เหมาะทั้งการพักผ่อน ดำน้ำ ปีนผา และล่องเรือชมเกาะแก่งน้อยใหญ่
 

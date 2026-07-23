@@ -4,8 +4,14 @@ name: สมุทรสาคร
 nameEn: Samut Sakhon
 region: central
 summary: เมืองมหาชัยแหล่งอาหารทะเลใหญ่ริมแม่น้ำท่าจีน
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/samut-sakhon.png
 featured: false
+imageCredit:
+  author: RWN38 ลงสีใหม่ โดย Bank0303
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Samut_Sakhon_Province_Scout_Badge.png
+  license: CC0
 ---
 สมุทรสาครหรือ "มหาชัย" เป็นเมืองท่าประมงสำคัญของภาคกลาง ขึ้นชื่อเรื่องตลาดอาหารทะเลสดขนาดใหญ่และอุตสาหกรรมแปรรูปสัตว์น้ำที่ส่งออกไปทั่วโลก
 

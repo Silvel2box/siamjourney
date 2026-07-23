@@ -4,8 +4,14 @@ name: สุรินทร์
 nameEn: Surin
 region: northeast
 summary: เมืองช้าง ปราสาทขอมโบราณ ผ้าไหมสุรินทร์ และข้าวหอมมะลิชั้นดี
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/surin.jpg
 featured: false
+imageCredit:
+  author: มะเดื่อ แสลงหลวง
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Elephants,Buffaloes_andCows_at_Bantaklang_-_panoramio_(2).jpg
+  license: CC BY 3.0
 ---
 สุรินทร์เป็นเมืองที่ผูกพันกับช้างมายาวนาน มีหมู่บ้านช้างที่ใหญ่ที่สุดในโลกและงานแสดงช้างประจำปีอันยิ่งใหญ่ พร้อมด้วยปราสาทขอมโบราณกระจายอยู่ทั่วจังหวัด
 

@@ -62,6 +62,7 @@ export default async function ProvincePage({ params }: Props) {
         title={province.name}
         subtitle={province.summary}
         image={province.image}
+        credit={province.imageCredit}
         crumbs={[
           { href: `/${province.region}`, label: regionInfo?.name ?? "ภูมิภาค" },
           { label: province.name },

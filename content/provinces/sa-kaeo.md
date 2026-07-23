@@ -4,8 +4,14 @@ name: สระแก้ว
 nameEn: Sa Kaeo
 region: east
 summary: เมืองชายแดนบูรพา ปราสาทขอมโบราณและตลาดโรงเกลือ
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/sa-kaeo.jpg
 featured: false
+imageCredit:
+  author: Winlyrung
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:The_entrance_of_Prasat_Sadok_Kok_Thom_historic_site_at_Sa_Kaeo_Province_in_Thailand.jpg
+  license: CC BY-SA 4.0
 ---
 สระแก้วเป็นจังหวัดชายแดนภาคตะวันออกที่ติดกับประเทศกัมพูชา มีร่องรอยอารยธรรมขอมโบราณอันทรงคุณค่า โดยเฉพาะปราสาทสด๊กก๊อกธมที่ใหญ่ที่สุดในภาคตะวันออก
 

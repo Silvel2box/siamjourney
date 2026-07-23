@@ -4,14 +4,21 @@ name: วัดพระธาตุหริภุญชัย
 category: attraction
 province: lamphun
 summary: พระธาตุคู่บ้านคู่เมืองลำพูน เจดีย์ทองอายุกว่าพันปี ศิลปะหริภุญชัย
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/places/lpn-wat-hariphunchai.jpg
 address: อ.เมือง จ.ลำพูน
-hours: เปิดทุกวัน 06:00 - 18:00 น.
+hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: เข้าชมฟรี
 sponsored: 1
 affiliate:
   label: จองทัวร์ลำพูน
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: >-
+    This Photo was taken by Supanut Arunoprayote. Feel free to use any of my
+    images,
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Phra_That_Hariphunchai_(II).jpg'
+  license: CC BY 4.0
 ---
 วัดพระธาตุหริภุญชัยวรมหาวิหารเป็นวัดเก่าแก่กลางเมืองลำพูน ประดิษฐานพระบรมธาตุหริภุญชัยเจดีย์ทองอร่ามที่มีอายุกว่าพันปี เป็นพระธาตุประจำปีเกิดปีระกา
 

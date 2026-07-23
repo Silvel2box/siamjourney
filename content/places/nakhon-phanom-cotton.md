@@ -4,14 +4,19 @@ name: ผ้าฝ้ายมุกนครพนม
 category: otop
 province: nakhon-phanom
 summary: ผ้าฝ้ายทอมือลายมุกอันเป็นเอกลักษณ์ของกลุ่มชาติพันธุ์เมืองนครพนม
-image: https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=80
+image: >-
+  https://images.pexels.com/photos/4219611/pexels-photo-4219611.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: อ.เรณูนคร จ.นครพนม
-hours: เปิดทุกวัน 09:00 - 17:00 น.
-priceRange: 400 - 5,000 บาท
+hours: 'เปิดทุกวัน 09:00 - 17:00 น.'
+priceRange: '400 - 5,000 บาท'
 sponsored: 0
 affiliate:
   label: สั่งซื้อผ้าฝ้ายมุกนครพนม
-  url: https://shopee.co.th/
+  url: 'https://shopee.co.th/'
+imageCredit:
+  author: www.kaboompics.com
+  source: Pexels
+  sourceUrl: 'https://www.pexels.com/photo/photo-of-hand-loom-4219611/'
 ---
 ผ้าฝ้ายมุกเป็นงานทอมือขึ้นชื่อของชาวผู้ไทยและชาติพันธุ์ในนครพนม โดยเฉพาะที่อำเภอเรณูนคร ลวดลาย "มุก" เกิดจากเทคนิคการทอที่ประณีตและสวยงามเป็นเอกลักษณ์
 

@@ -4,14 +4,20 @@ name: ชาอูหลงดอยแม่สลอง
 category: otop
 province: chiang-rai
 summary: ชาอูหลงคุณภาพสูงจากไร่ชาบนดอยแม่สลอง กลิ่นหอม รสนุ่มละมุน
-image: https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80
+image: >-
+  https://images.pexels.com/photos/10639532/pexels-photo-10639532.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: ดอยแม่สลอง อ.แม่ฟ้าหลวง จ.เชียงราย
-hours: เปิดทุกวัน 08:00 - 17:00 น.
+hours: 'เปิดทุกวัน 08:00 - 17:00 น.'
 priceRange: 150 - 800 บาท
 sponsored: 0
 affiliate:
   label: สั่งซื้อชาดอยแม่สลอง
-  url: https://shopee.co.th/
+  url: 'https://shopee.co.th/'
+imageCredit:
+  author: Alberto Capparelli
+  source: Pexels
+  sourceUrl: >-
+    https://www.pexels.com/photo/woman-wearing-a-traditional-necklace-selling-scarves-10639532/
 ---
 ชาอูหลงดอยแม่สลองปลูกบนพื้นที่สูงกว่า 1,200 เมตร โดยชุมชนชาวจีนยูนนาน ให้ใบชาคุณภาพสูงกลิ่นหอมและรสนุ่มเป็นเอกลักษณ์
 

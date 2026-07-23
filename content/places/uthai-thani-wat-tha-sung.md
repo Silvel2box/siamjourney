@@ -4,14 +4,20 @@ name: วัดท่าซุง
 category: attraction
 province: uthai-thani
 summary: วัดงามวิจิตร ชมวิหารแก้วประดับกระจกระยิบระยับทั้งหลัง
-image: https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80
+image: /images/places/uthai-thani-wat-tha-sung.jpg
 address: ตำบลน้ำซึม อำเภอเมืองอุทัยธานี จังหวัดอุทัยธานี
 hours: เปิดทุกวัน 09.00-16.30 น.
 priceRange: ฟรี (บริจาคตามศรัทธา)
 sponsored: 1
 affiliate:
   label: จองทัวร์อุทัยธานี
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: SupawatR
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Wat_Tha_Soong_Uthaithani_,_Thailand.jpg
+  license: CC BY-SA 4.0
 ---
 วัดท่าซุงหรือวัดจันทาราม เป็นวัดที่มีชื่อเสียงด้านสถาปัตยกรรมอันวิจิตรตระการตา โดยเฉพาะวิหารแก้วที่ประดับด้วยกระจกทั้งหลังจนแวววาวระยิบระยับราวกับปราสาทในเทพนิยาย ภายในประดิษฐานพระพุทธรูปและสรีระของหลวงพ่อฤๅษีลิงดำที่ผู้ศรัทธาเดินทางมากราบไหว้ นอกจากนี้ยังมีปราสาททองคำและมณฑปที่งดงามอลังการให้ชมอีกมากมาย
 

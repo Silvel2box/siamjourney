@@ -4,8 +4,14 @@ name: ประจวบคีรีขันธ์
 nameEn: Prachuap Khiri Khan
 region: west
 summary: ทะเลหัวหิน เขาสามร้อยยอด และสับปะรดหวานฉ่ำเลื่องชื่อ
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/prachuap-khiri-khan.jpg
 featured: false
+imageCredit:
+  author: '::::=UT=::::'
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Sam_Roi_Yot,_Sam_Roi_Yot_District,_Prachuap_Khiri_Khan,_Thailand_-_panoramio_(3).jpg
+  license: CC BY-SA 3.0
 ---
 ประจวบคีรีขันธ์เป็นจังหวัดชายทะเลภาคตะวันตกที่ขึ้นชื่อเรื่องหาดทรายสวยและอาหารทะเลสด ทั้งหัวหิน ปราณบุรี และบางสะพาน ล้วนเป็นจุดหมายพักผ่อนยอดนิยมของคนไทยและต่างชาติ
 

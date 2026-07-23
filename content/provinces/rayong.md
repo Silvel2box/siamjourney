@@ -4,8 +4,13 @@ name: ระยอง
 nameEn: Rayong
 region: east
 summary: เมืองผลไม้และทะเลสวย เกาะเสม็ดหาดทรายขาวละเอียด
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/rayong.jpg
 featured: false
+imageCredit:
+  author: PA
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Ko_Samet_-_Ancrage.jpg'
+  license: CC BY-SA 4.0
 ---
 ระยองเป็นจังหวัดชายทะเลภาคตะวันออกที่ขึ้นชื่อทั้งเรื่องผลไม้รสเลิศอย่างทุเรียนและมังคุด และชายหาดสวยงามที่ทอดยาวเลียบอ่าวไทย โดยมีเกาะเสม็ดเป็นจุดหมายยอดนิยมด้วยหาดทรายขาวละเอียดราวแป้ง
 

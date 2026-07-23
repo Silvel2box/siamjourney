@@ -4,8 +4,15 @@ name: ลพบุรี
 nameEn: Lopburi
 region: central
 summary: เมืองลิงแห่งที่ราบภาคกลาง เต็มไปด้วยโบราณสถานและทุ่งทานตะวันสีทอง
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/lopburi.jpg
 featured: false
+imageCredit:
+  author: >-
+    This Photo was taken by Supanut Arunoprayote. Feel free to use any of my
+    images,
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Phra_Prang_Sam_Yod_(II).jpg'
+  license: CC BY 4.0
 ---
 ลพบุรีเป็นจังหวัดเก่าแก่ในภาคกลางที่มีประวัติศาสตร์ยาวนานตั้งแต่สมัยทวารวดีและขอมโบราณ ผู้คนรู้จักที่นี่ในชื่อ "เมืองลิง" จากฝูงลิงแสมที่อาศัยอยู่รอบพระปรางค์สามยอดกลางเมือง
 

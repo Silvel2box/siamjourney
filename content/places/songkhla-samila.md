@@ -4,14 +4,20 @@ name: หาดสมิหลา
 category: attraction
 province: songkhla
 summary: หาดทรายขาวคู่รูปปั้นนางเงือก สัญลักษณ์คู่เมืองสงขลา
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/places/songkhla-samila.jpg
 address: ตำบลบ่อยาง อำเภอเมือง จังหวัดสงขลา
 hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ไม่มีค่าเข้าชม
 sponsored: 1
 affiliate:
   label: จองทัวร์สงขลา
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: OPK-Photography
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Songkhla,_Thailand,_Samila_Beach,_2024.jpg
+  license: CC BY-SA 4.0
 ---
 หาดสมิหลาเป็นหาดทรายขาวยาวใกล้ตัวเมืองสงขลา มีรูปปั้นนางเงือกทองสัมฤทธิ์อันเป็นสัญลักษณ์คู่เมืองที่นักท่องเที่ยวนิยมมาถ่ายรูป บรรยากาศร่มรื่นด้วยทิวสน มีลานกิจกรรมและร้านอาหารริมหาด เหมาะแก่การพักผ่อนยามเย็น
 

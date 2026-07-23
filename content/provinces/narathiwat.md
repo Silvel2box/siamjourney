@@ -4,8 +4,14 @@ name: นราธิวาส
 nameEn: Narathiwat
 region: south
 summary: เมืองชายแดนใต้สุด วัฒนธรรมมลายูอันงดงาม หาดทรายและงานหัตถกรรมกระจูด
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/narathiwat.jpg
 featured: false
+imageCredit:
+  author: 'Petty Officer 2nd Class Gloria J. Barry, U.S. Navy'
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Defense.gov_News_Photo_960506-N-4541B-007.jpg
+  license: Public domain
 ---
 นราธิวาสเป็นจังหวัดชายแดนใต้สุดของประเทศไทย เต็มไปด้วยเสน่ห์ของวัฒนธรรมมลายูที่ผสมผสานกับวิถีไทยได้อย่างกลมกลืน มีหาดทรายสวยริมอ่าวไทย มัสยิดเก่าแก่ และพระตำหนักทักษิณราชนิเวศน์อันร่มรื่น
 

@@ -4,8 +4,14 @@ name: อ่างทอง
 nameEn: Ang Thong
 region: central
 summary: เมืองเล็กริมเจ้าพระยา ดินแดนพระพุทธรูปใหญ่และหัตถกรรมพื้นบ้าน
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/ang-thong.jpg
 featured: false
+imageCredit:
+  author: Chainwit.
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Ang_Thong_(2024)_Wat_Muang_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87_02.jpg
+  license: CC BY 4.0
 ---
 อ่างทองเป็นจังหวัดเล็กๆ ในภาคกลางที่เต็มไปด้วยวัดวาอารามและงานหัตถกรรมพื้นบ้านอันเลื่องชื่อ ไฮไลต์สำคัญคือวัดม่วงที่ประดิษฐานพระพุทธรูปที่ใหญ่ที่สุดในประเทศไทย ซึ่งกลายเป็นหมุดหมายของนักท่องเที่ยวสายบุญ
 

@@ -4,14 +4,20 @@ name: อุทยานแห่งชาติภูกระดึง
 category: attraction
 province: loei
 summary: ภูเขายอดราบสุดคลาสสิก จุดหมายเดินป่าในฝันของนักเดินทาง
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/places/loei-phu-kradueng.jpg
 address: อ.ภูกระดึง จ.เลย
-hours: เปิดฤดูกาลตุลาคม - พฤษภาคม 07:00 - 14:00 น.
+hours: 'เปิดฤดูกาลตุลาคม - พฤษภาคม 07:00 - 14:00 น.'
 priceRange: 40 - 100 บาท
 sponsored: 1
 affiliate:
   label: จองทัวร์เลย
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: Threedays Twonights
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Si_Than,_Phu_Kradueng_District,_Loei_42180,_Thailand_-_panoramio_(1).jpg
+  license: CC BY 3.0
 ---
 อุทยานแห่งชาติภูกระดึงเป็นภูเขายอดราบชื่อดังที่นักเดินป่าใฝ่ฝันจะพิชิต การเดินขึ้นสูงชันกว่า 5 กิโลเมตรจะพาไปพบทุ่งหญ้ากว้าง ป่าสน และวิวสุดขอบผา
 

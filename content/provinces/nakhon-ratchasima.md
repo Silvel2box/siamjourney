@@ -4,8 +4,14 @@ name: นครราชสีมา
 nameEn: Nakhon Ratchasima
 region: northeast
 summary: ประตูสู่อีสาน เมืองย่าโม ปราสาทหินพิมาย และผ้าไหมปักธงชัยเลื่องชื่อ
-image: https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/nakhon-ratchasima.jpg
 featured: true
+imageCredit:
+  author: Philip Nalangan
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Phimai_Historical_Park_Thailand_11.jpg
+  license: CC BY 4.0
 ---
 นครราชสีมา หรือโคราช เป็นประตูสู่ภาคอีสานและจังหวัดที่ใหญ่ที่สุดของภาค เต็มไปด้วยประวัติศาสตร์ตั้งแต่ปราสาทหินขอมโบราณ อนุสาวรีย์ท้าวสุรนารี ไปจนถึงธรรมชาติบนเขาใหญ่
 

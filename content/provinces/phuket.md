@@ -4,8 +4,13 @@ name: ภูเก็ต
 nameEn: Phuket
 region: south
 summary: ไข่มุกอันดามัน หาดทรายระดับโลก เมืองเก่าชิโนโปรตุกีส และอาหารเลื่องชื่อ
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/phuket.jpg
 featured: false
+imageCredit:
+  author: QLDGold
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:View_of_Patong,_Phuket,_Thailand.jpg'
+  license: CC BY 4.0
 ---
 ภูเก็ตคือเกาะที่ใหญ่ที่สุดของไทยและจุดหมายปลายทางระดับโลก ได้สมญาว่าไข่มุกแห่งอันดามัน โดดเด่นด้วยหาดทรายขาวสวยงามอย่างหาดป่าตอง หาดกะตะ และหาดในหาน น้ำทะเลใสเหมาะแก่การเล่นน้ำ ดำน้ำ และกิจกรรมทางทะเลครบครัน
 

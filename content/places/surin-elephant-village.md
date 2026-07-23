@@ -4,14 +4,20 @@ name: หมู่บ้านช้างบ้านตากลาง
 category: attraction
 province: surin
 summary: หมู่บ้านช้างเลี้ยงที่ใหญ่ที่สุดในโลก สัมผัสวิถีคนกับช้างอย่างใกล้ชิด
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/places/surin-elephant-village.jpg
 address: บ้านตากลาง อ.ท่าตูม จ.สุรินทร์
-hours: เปิดทุกวัน 08:00 - 17:00 น.
+hours: 'เปิดทุกวัน 08:00 - 17:00 น.'
 priceRange: 50 - 150 บาท
 sponsored: 1
 affiliate:
   label: จองทัวร์สุรินทร์
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: มะเดื่อ แสลงหลวง
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Elephants,Buffaloes_andCows_at_Bantaklang_-_panoramio.jpg
+  license: CC BY 3.0
 ---
 หมู่บ้านช้างบ้านตากลางเป็นชุมชนชาวกูยที่เลี้ยงช้างมาแต่โบราณ ได้ชื่อว่าเป็นหมู่บ้านช้างเลี้ยงที่ใหญ่ที่สุดในโลก นักท่องเที่ยวได้สัมผัสวิถีคนกับช้างอย่างใกล้ชิด
 

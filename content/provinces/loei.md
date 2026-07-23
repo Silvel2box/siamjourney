@@ -4,8 +4,14 @@ name: เลย
 nameEn: Loei
 region: northeast
 summary: เมืองภูเขาอากาศเย็น ภูกระดึงเลื่องชื่อ เชียงคานริมโขง และผีตาโขน
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/loei.jpg
 featured: false
+imageCredit:
+  author: Threedays Twonights
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Si_Than,_Phu_Kradueng_District,_Loei_42180,_Thailand_-_panoramio_(36).jpg
+  license: CC BY 3.0
 ---
 เลยเป็นจังหวัดภูเขาทางตอนเหนือของอีสานที่มีอากาศเย็นสบายตลอดปี เต็มไปด้วยธรรมชาติงดงามอย่างภูกระดึง ภูเรือ และภูป่าเปาะ พร้อมทะเลหมอกยามเช้า
 

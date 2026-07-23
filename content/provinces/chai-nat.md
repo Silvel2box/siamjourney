@@ -4,8 +4,13 @@ name: ชัยนาท
 nameEn: Chai Nat
 region: central
 summary: เมืองเล็กริมเจ้าพระยา บ้านของสวนนกและเขื่อนชลประทานอันเลื่องชื่อ
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/chai-nat.jpg
 featured: false
+imageCredit:
+  author: Media lib
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:View_on_the_Bird_Park_of_Chainat.JPG'
+  license: CC BY-SA 3.0
 ---
 ชัยนาทเป็นจังหวัดในภาคกลางที่ตั้งอยู่ริมแม่น้ำเจ้าพระยา มีชื่อเสียงเรื่องเขื่อนเจ้าพระยาซึ่งเป็นเขื่อนทดน้ำขนาดใหญ่แห่งแรกของประเทศ และสวนนกชัยนาทที่เป็นแหล่งรวมนกนานาชนิดในกรงนกขนาดใหญ่
 

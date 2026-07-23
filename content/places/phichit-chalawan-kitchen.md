@@ -4,10 +4,15 @@ name: ครัวชาละวัน
 category: restaurant
 province: phichit
 summary: อาหารปลาแม่น้ำสดๆ รสมือถิ่นเมืองพิจิตร
-image: https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=80
+image: >-
+  https://images.pexels.com/photos/12866496/pexels-photo-12866496.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: อำเภอเมืองพิจิตร จังหวัดพิจิตร
 hours: 10.00 - 21.00 น.
 priceRange: 100 - 400 บาท
 sponsored: 0
+imageCredit:
+  author: Augustinus Martinus Noppé
+  source: Pexels
+  sourceUrl: 'https://www.pexels.com/photo/mouthwatering-food-on-ceramic-plates-12866496/'
 ---
 ครัวชาละวันเป็นร้านอาหารพื้นถิ่นที่ขึ้นชื่อเรื่องเมนูปลาแม่น้ำสดๆ จากลุ่มน้ำน่านและน้ำยม ไม่ว่าจะเป็นปลาเนื้ออ่อนทอด ปลาช่อนลุยสวน หรือแกงส้มปลา ปรุงด้วยรสมือแบบดั้งเดิมที่กลมกล่อมจัดจ้าน บรรยากาศร้านเป็นกันเองสไตล์ท้องถิ่น เหมาะกับมื้อครอบครัวที่อยากลิ้มรสอาหารประจำเมืองพิจิตร

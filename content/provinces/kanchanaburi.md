@@ -4,8 +4,13 @@ name: กาญจนบุรี
 nameEn: Kanchanaburi
 region: west
 summary: เมืองแห่งสายน้ำแคว ประวัติศาสตร์สงครามโลก และธรรมชาติป่าเขาน้ำตก
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/kanchanaburi.jpg
 featured: true
+imageCredit:
+  author: Wayne77
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kanchanaburi-07.jpg'
+  license: CC BY-SA 4.0
 ---
 กาญจนบุรีเป็นจังหวัดใหญ่ทางภาคตะวันตกที่อุดมด้วยธรรมชาติ ทั้งแม่น้ำแคว น้ำตก ถ้ำ และผืนป่าอันกว้างใหญ่ พร้อมเรื่องราวประวัติศาสตร์สมัยสงครามโลกครั้งที่สองที่ยังคงตราตรึงใจผู้มาเยือน
 

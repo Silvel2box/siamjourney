@@ -4,8 +4,15 @@ name: อุบลราชธานี
 nameEn: Ubon Ratchathani
 region: northeast
 summary: เมืองดอกบัวงาม ผาแต้มริมโขง งานเทียนพรรษา และผ้ากาบบัวเลื่องชื่อ
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/ubon-ratchathani.jpg
 featured: false
+imageCredit:
+  author: >-
+    This Photo was taken by Supanut Arunoprayote. Feel free to use any of my
+    images,
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Pha_Taem_Cave_Paintings_20251226.jpg'
+  license: CC BY 4.0
 ---
 อุบลราชธานีเป็นจังหวัดใหญ่สุดขอบตะวันออกของอีสาน เป็นแผ่นดินที่พระอาทิตย์ขึ้นก่อนใครในสยาม มีธรรมชาติงดงามอย่างผาแต้มริมโขงและอุทยานแห่งชาติหลายแห่ง
 

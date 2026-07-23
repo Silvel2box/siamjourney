@@ -4,14 +4,20 @@ name: วัดม่วง
 category: attraction
 province: ang-thong
 summary: ที่ประดิษฐานพระพุทธรูปที่ใหญ่ที่สุดในประเทศไทย
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/places/ang-thong-wat-muang.jpg
 address: ตำบลหัวตะพาน อำเภอวิเศษชัยชาญ จังหวัดอ่างทอง
 hours: เปิดทุกวัน 06.00-18.00 น.
 priceRange: ฟรี (บริจาคตามศรัทธา)
 sponsored: 1
 affiliate:
   label: จองทัวร์อ่างทอง
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: Chainwit.
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Ang_Thong_(2024)_Wat_Muang_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87_04.jpg
+  license: CC BY 4.0
 ---
 วัดม่วงเป็นวัดที่มีชื่อเสียงที่สุดของจังหวัดอ่างทอง เป็นที่ประดิษฐานพระพุทธมหานวมินทรศากยมุนีศรีวิเศษชัยชาญ พระพุทธรูปปางมารวิชัยองค์ใหญ่ที่สุดในประเทศไทย สีทองอร่ามโดดเด่นเห็นได้แต่ไกล ภายในบริเวณวัดยังมีประติมากรรมเล่าเรื่องนรก-สวรรค์ และงานปูนปั้นวิจิตรมากมาย ดึงดูดนักท่องเที่ยวและผู้แสวงบุญจากทั่วประเทศให้มาเยือน
 

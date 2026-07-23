@@ -4,8 +4,13 @@ name: นครสวรรค์
 nameEn: Nakhon Sawan
 region: central
 summary: ประตูสู่ภาคเหนือ จุดกำเนิดแม่น้ำเจ้าพระยาและบึงน้ำจืดใหญ่ที่สุด
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/nakhon-sawan.jpg
 featured: false
+imageCredit:
+  author: 'JJ Harrison (https://www.jjharrison.com.au/)'
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hirundo_rustica_-_Bueng_Boraphet.jpg'
+  license: CC BY-SA 3.0
 ---
 นครสวรรค์เป็นจังหวัดที่ได้ชื่อว่าเป็นประตูสู่ภาคเหนือ เป็นจุดที่แม่น้ำปิงและน่านไหลมาบรรจบกันเป็นแม่น้ำเจ้าพระยา ตัวเมืองหรือที่เรียกกันว่า "ปากน้ำโพ" เต็มไปด้วยวัฒนธรรมไทย-จีนที่ผสมผสานอย่างลงตัว โดยเฉพาะงานประเพณีแห่เจ้าพ่อเจ้าแม่ปากน้ำโพที่โด่งดัง
 

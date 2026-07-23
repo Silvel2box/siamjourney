@@ -4,14 +4,19 @@ name: วัดล้านขวด
 category: attraction
 province: sisaket
 summary: วัดมหัศจรรย์ที่สร้างจากขวดแก้วนับล้านใบ งดงามหนึ่งเดียวในไทย
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/places/sisaket-wat-lan-khuat.jpg
 address: อ.ขุนหาญ จ.ศรีสะเกษ
-hours: เปิดทุกวัน 06:00 - 18:00 น.
+hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: เข้าชมฟรี
 sponsored: 1
 affiliate:
   label: จองทัวร์ศรีสะเกษ
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: Markus G. Klötzer
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Lan_Khuat_(MGK20899).jpg'
+  license: CC BY-SA 4.0
 ---
 วัดล้านขวด หรือวัดป่ามหาเจดีย์แก้ว เป็นวัดมหัศจรรย์ที่ก่อสร้างอาคารและเจดีย์จากขวดแก้วสีเขียวและน้ำตาลนับล้านใบ สะท้อนแนวคิดการนำวัสดุเหลือใช้มาสร้างงานพุทธศิลป์
 

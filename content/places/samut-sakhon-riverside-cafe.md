@@ -4,11 +4,17 @@ name: ริมท่าจีน คาเฟ่
 category: cafe
 province: samut-sakhon
 summary: คาเฟ่ริมแม่น้ำท่าจีน จิบกาแฟชมเรือประมงยามเย็น
-image: https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80
+image: >-
+  https://images.pexels.com/photos/32416016/pexels-photo-32416016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: ริมแม่น้ำท่าจีน อำเภอเมือง จังหวัดสมุทรสาคร
 hours: เปิดทุกวัน 09.00-19.00 น.
 priceRange: 55-150 บาท
 sponsored: 0
+imageCredit:
+  author: Gül Işık
+  source: Pexels
+  sourceUrl: >-
+    https://www.pexels.com/photo/cozy-cafe-interior-with-barista-in-yokosuka-32416016/
 ---
 ริมท่าจีน คาเฟ่ ตั้งอยู่ริมแม่น้ำท่าจีน มอบบรรยากาศผ่อนคลายให้นั่งจิบกาแฟพร้อมชมเรือประมงและวิถีชีวิตริมน้ำของชาวมหาชัย เมนูเด่นคือกาแฟสดคั่วใหม่และเครื่องดื่มโซดาสดชื่น
 

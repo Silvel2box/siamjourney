@@ -4,8 +4,14 @@ name: สุราษฎร์ธานี
 nameEn: Surat Thani
 region: south
 summary: เมืองคนดี ประตูสู่เกาะสมุยเกาะพะงัน ธรรมชาติเขื่อนเชี่ยวหลาน และไข่เค็มไชยา
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/surat-thani.jpg
 featured: false
+imageCredit:
+  author: Mark Stepanov
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Ang_Thong,_Ko_Samui_District,_Surat_Thani,_Thailand_-_panoramio.jpg
+  license: CC BY 3.0
 ---
 สุราษฎร์ธานีเป็นจังหวัดที่ใหญ่ที่สุดของภาคใต้ ได้สมญาว่าเมืองคนดี เป็นประตูสู่หมู่เกาะชื่อดังระดับโลกอย่างเกาะสมุย เกาะพะงัน และเกาะเต่า ที่ขึ้นชื่อเรื่องหาดทรายขาว น้ำทะเลใส และกิจกรรมดำน้ำ
 

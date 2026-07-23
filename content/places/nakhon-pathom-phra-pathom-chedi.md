@@ -4,14 +4,20 @@ name: พระปฐมเจดีย์
 category: attraction
 province: nakhon-pathom
 summary: เจดีย์ที่สูงที่สุดในประเทศไทย ศูนย์รวมจิตใจชาวพุทธมาแต่โบราณ
-image: https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80
+image: /images/places/nakhon-pathom-phra-pathom-chedi.jpg
 address: ตำบลพระปฐมเจดีย์ อำเภอเมือง จังหวัดนครปฐม
 hours: ทุกวัน 06.00-20.00 น.
 priceRange: ฟรี-40 บาท
 sponsored: 1
 affiliate:
   label: จองทัวร์นครปฐม
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: NATNAREE K.
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Phra_Pathom_Chedi,_Nakhon_Pathom_Province,_Thailand.jpg
+  license: CC BY-SA 4.0
 ---
 พระปฐมเจดีย์เป็นพระสถูปเจดีย์ที่สูงที่สุดในประเทศไทย สูงกว่า 120 เมตร ถือเป็นปูชนียสถานสำคัญที่แสดงถึงการเข้ามาของพระพุทธศาสนาในดินแดนสุวรรณภูมิเป็นครั้งแรก องค์เจดีย์สีทองอร่ามเป็นศูนย์รวมจิตใจของชาวพุทธและเป็นสัญลักษณ์ประจำจังหวัด
 

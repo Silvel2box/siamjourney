@@ -4,8 +4,14 @@ name: กำแพงเพชร
 nameEn: Kamphaeng Phet
 region: central
 summary: เมืองมรดกโลกริมแม่น้ำปิง เต็มไปด้วยโบราณสถานและกล้วยไข่ขึ้นชื่อ
-image: https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/kamphaeng-phet.jpg
 featured: false
+imageCredit:
+  author: Ruslik0
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Kamphaeng_Phet_historical_park_01.JPG
+  license: CC BY-SA 4.0
 ---
 กำแพงเพชรเป็นจังหวัดเก่าแก่ในภาคกลางตอนบน ตั้งอยู่ริมฝั่งแม่น้ำปิง เคยเป็นเมืองหน้าด่านสำคัญของอาณาจักรสุโขทัยและอยุธยา ปัจจุบันยังคงหลงเหลือร่องรอยความรุ่งเรืองผ่านกลุ่มโบราณสถานในเขตอุทยานประวัติศาสตร์ที่ได้รับการยกย่องเป็นมรดกโลก
 

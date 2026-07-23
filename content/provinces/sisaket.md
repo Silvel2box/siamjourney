@@ -4,8 +4,14 @@ name: ศรีสะเกษ
 nameEn: Sisaket
 region: northeast
 summary: เมืองปราสาทขอมชายแดน วัดล้านขวด ทุเรียนภูเขาไฟ และผ้าเบญจศรี
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/sisaket.jpg
 featured: false
+imageCredit:
+  author: Markus G. Klötzer
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Wat_Lan_Khuat_-_Detail_(MGK20905).jpg
+  license: CC BY-SA 4.0
 ---
 ศรีสะเกษเป็นจังหวัดชายแดนทางใต้ของอีสาน ติดกับกัมพูชา มีปราสาทขอมโบราณ ผามออีแดงริมหน้าผา และวัดล้านขวดที่สร้างจากขวดแก้วนับล้านใบอันเป็นเอกลักษณ์
 

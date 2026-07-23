@@ -4,8 +4,13 @@ name: ปัตตานี
 nameEn: Pattani
 region: south
 summary: เมืองประวัติศาสตร์มลายู มัสยิดงดงาม ชายหาดสงบ และผ้าจวนตานีเลื่องชื่อ
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/pattani.jpg
 featured: false
+imageCredit:
+  author: P.khiao
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Pattani_Banner.jpg'
+  license: CC BY-SA 4.0
 ---
 ปัตตานีเป็นเมืองเก่าแก่ที่เคยเป็นศูนย์กลางการค้าและอาณาจักรมลายูในอดีต เต็มไปด้วยมรดกทางประวัติศาสตร์และวัฒนธรรมอันหลากหลาย ทั้งมัสยิดกลางปัตตานีอันงดงาม มัสยิดกรือเซะเก่าแก่ และย่านเมืองเก่าที่ยังคงกลิ่นอายสถาปัตยกรรมจีนผสมมลายู
 

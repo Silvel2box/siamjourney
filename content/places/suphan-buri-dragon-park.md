@@ -3,15 +3,20 @@ slug: suphan-buri-dragon-park
 name: อุทยานมังกรสวรรค์
 category: attraction
 province: suphan-buri
-summary: พิพิธภัณฑ์มังกรยักษ์ เล่าเรื่องอารยธรรมจีนกว่า 5,000 ปี
-image: https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1200&q=80
+summary: 'พิพิธภัณฑ์มังกรยักษ์ เล่าเรื่องอารยธรรมจีนกว่า 5,000 ปี'
+image: >-
+  https://images.pexels.com/photos/24973195/pexels-photo-24973195.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: ตำบลรั้วใหญ่ อำเภอเมืองสุพรรณบุรี จังหวัดสุพรรณบุรี
 hours: เปิดวันอังคาร-อาทิตย์ 09.00-17.00 น. (ปิดวันจันทร์)
 priceRange: 199-299 บาท
 sponsored: 1
 affiliate:
   label: จองทัวร์สุพรรณบุรี
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: Kirandeep Singh Walia
+  source: Pexels
+  sourceUrl: 'https://www.pexels.com/photo/a-historical-building-in-a-town-24973195/'
 ---
 อุทยานมังกรสวรรค์เป็นสถานที่ท่องเที่ยวที่สร้างขึ้นเพื่อเฉลิมฉลองความสัมพันธ์ไทย-จีน จุดเด่นคืออาคารมังกรยักษ์ขนาดมหึมาที่ภายในจัดแสดงเรื่องราวประวัติศาสตร์และอารยธรรมจีนอันยาวนาน ผ่านเทคนิคแสง สี เสียงที่ตื่นตาตื่นใจ นักท่องเที่ยวจะได้เรียนรู้เรื่องราวตั้งแต่กำเนิดชนชาติจีนไปจนถึงราชวงศ์ต่างๆ อย่างเพลิดเพลิน
 

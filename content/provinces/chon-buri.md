@@ -4,8 +4,14 @@ name: ชลบุรี
 nameEn: Chon Buri
 region: east
 summary: ประตูสู่ทะเลตะวันออก เมืองพัทยาที่ไม่เคยหลับใหล
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/chon-buri.jpg
 featured: true
+imageCredit:
+  author: 7777777kz
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Kasetsin_6,_Muang_Pattaya,_Amphoe_Bang_Lamung,_Chang_Wat_Chon_Buri_20150,_Thailand_-_panoramio_(1).jpg
+  license: CC BY 3.0
 ---
 ชลบุรีเป็นจังหวัดชายทะเลภาคตะวันออกที่ได้รับความนิยมมากที่สุดแห่งหนึ่งของไทย มีเมืองพัทยาเป็นแม่เหล็กดึงดูดนักท่องเที่ยวจากทั่วโลก ด้วยชายหาด แสงสี และกิจกรรมทางทะเลที่หลากหลาย
 

@@ -4,11 +4,16 @@ name: คาเฟ่ชะอำริมทะเล
 category: cafe
 province: phetchaburi
 summary: คาเฟ่บรรยากาศริมหาดชะอำ จิบกาแฟชมวิวทะเล
-image: https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80
+image: >-
+  https://images.pexels.com/photos/20360834/pexels-photo-20360834.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: หาดชะอำ อำเภอชะอำ จังหวัดเพชรบุรี
 hours: เปิดทุกวัน 08.00-19.00 น.
 priceRange: 70-160 บาท
 sponsored: 0
+imageCredit:
+  author: Ánh Đặng
+  source: Pexels
+  sourceUrl: 'https://www.pexels.com/photo/windows-in-a-wooden-kitchen-20360834/'
 ---
 คาเฟ่ชะอำริมทะเลเป็นคาเฟ่บรรยากาศสบายๆ ริมหาดชะอำ มีมุมนั่งชมวิวทะเลและรับลมเย็น เหมาะแก่การพักผ่อนระหว่างเที่ยวชายหาดคลาสสิกของเพชรบุรี
 

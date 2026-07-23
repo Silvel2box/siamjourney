@@ -4,14 +4,20 @@ name: สวนนกชัยนาท
 category: attraction
 province: chai-nat
 summary: สวนนกที่มีกรงนกใหญ่ที่สุดในเอเชีย รวมนกนานาพันธุ์ให้ชมใกล้ชิด
-image: https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1200&q=80
+image: /images/places/chai-nat-bird-park.jpg
 address: ตำบลเขาท่าพระ อำเภอเมือง จังหวัดชัยนาท
 hours: ทุกวัน 08.00-17.00 น.
 priceRange: 20-50 บาท
 sponsored: 1
 affiliate:
   label: จองทัวร์ชัยนาท
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: Philsacor
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Chai_Nat_Bird_Park_lake_and_eagle_statue.jpg
+  license: CC0
 ---
 สวนนกชัยนาทเป็นแหล่งท่องเที่ยวเชิงอนุรักษ์ที่มีชื่อเสียง โดดเด่นด้วยกรงนกขนาดใหญ่ที่ครอบคลุมพื้นที่เชิงเขา ให้นักท่องเที่ยวได้เดินชมนกนานาชนิดในสภาพแวดล้อมที่ใกล้เคียงธรรมชาติ นอกจากนกแล้วยังมีส่วนจัดแสดงสัตว์อื่นและพิพิธภัณฑ์ให้ความรู้
 

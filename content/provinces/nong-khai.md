@@ -4,8 +4,13 @@ name: หนองคาย
 nameEn: Nong Khai
 region: northeast
 summary: เมืองริมโขงประตูสู่ลาว ศาลาแก้วกู่แปลกตา และแหนมเนืองรสเด็ด
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/nong-khai.jpg
 featured: false
+imageCredit:
+  author: P.khiao
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Nong_Khai_Banner.jpg'
+  license: CC BY-SA 4.0
 ---
 หนองคายเป็นเมืองริมแม่น้ำโขงที่เชื่อมต่อกับเวียงจันทน์ประเทศลาวผ่านสะพานมิตรภาพไทย-ลาวแห่งแรก มีถนนเลียบโขงและตลาดท่าเสด็จที่คึกคักด้วยสินค้าอินโดจีน
 

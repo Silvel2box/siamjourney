@@ -4,8 +4,14 @@ name: กาฬสินธุ์
 nameEn: Kalasin
 region: northeast
 summary: เมืองฟอสซิลไดโนเสาร์ ถิ่นผ้าไหมแพรวา และวัฒนธรรมโปงลางอันไพเราะ
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/kalasin.jpg
 featured: false
+imageCredit:
+  author: '::::=UT=::::'
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Non_Buri,_Sahatsakhan_District,_Kalasin_46140,_Thailand_-_panoramio.jpg
+  license: CC BY-SA 3.0
 ---
 กาฬสินธุ์เป็นจังหวัดในภาคอีสานที่ขึ้นชื่อเรื่องแหล่งขุดค้นซากดึกดำบรรพ์ไดโนเสาร์ที่สมบูรณ์ที่สุดแห่งหนึ่งของไทย ควบคู่ไปกับมรดกทางวัฒนธรรมของชาวผู้ไทย ทั้งผ้าไหมแพรวาอันวิจิตรและดนตรีโปงลางที่เป็นเอกลักษณ์
 

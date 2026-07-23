@@ -4,14 +4,19 @@ name: ผ้าทอน้ำไหลไทลื้อ
 category: otop
 province: nan
 summary: ผ้าทอมือลายน้ำไหลอันเป็นเอกลักษณ์ของชาวไทลื้อเมืองน่าน งานฝีมือประณีต
-image: https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=80
+image: >-
+  https://images.pexels.com/photos/5484587/pexels-photo-5484587.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: บ้านหนองบัว อ.ท่าวังผา จ.น่าน
-hours: เปิดทุกวัน 09:00 - 17:00 น.
-priceRange: 250 - 3,500 บาท
+hours: 'เปิดทุกวัน 09:00 - 17:00 น.'
+priceRange: '250 - 3,500 บาท'
 sponsored: 0
 affiliate:
   label: สั่งซื้อผ้าทอไทลื้อ
-  url: https://shopee.co.th/
+  url: 'https://shopee.co.th/'
+imageCredit:
+  author: Mike van Schoonderwalt
+  source: Pexels
+  sourceUrl: 'https://www.pexels.com/photo/photo-of-colorful-scarves-5484587/'
 ---
 ผ้าทอน้ำไหลเป็นงานหัตถกรรมขึ้นชื่อของชาวไทลื้อบ้านหนองบัว จังหวัดน่าน ลวดลาย "น้ำไหล" เกิดจากเทคนิคการทอที่ประณีตและสืบทอดกันมาหลายชั่วอายุคน
 

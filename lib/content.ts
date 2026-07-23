@@ -12,6 +12,14 @@ const CONTENT_DIR = path.join(process.cwd(), "content");
 const categorySlugs = categories.map((c) => c.slug) as [string, ...string[]];
 const regionSlugs = regions.map((r) => r.slug) as [string, ...string[]];
 
+// ที่มาของรูป — Wikimedia (CC) ต้องแสดงเครดิตตามไลเซนส์, Pexels เป็นมารยาท
+const imageCreditSchema = z.object({
+  author: z.string(),
+  source: z.string(),
+  sourceUrl: z.string(),
+  license: z.string().optional(),
+});
+
 const provinceSchema = z.object({
   slug: z.string(),
   name: z.string(),
@@ -19,6 +27,7 @@ const provinceSchema = z.object({
   region: z.enum(regionSlugs),
   summary: z.string(),
   image: z.string(),
+  imageCredit: imageCreditSchema.optional(),
   featured: z.boolean().default(false),
 });
 
@@ -29,6 +38,7 @@ const placeSchema = z.object({
   province: z.string(),
   summary: z.string(),
   image: z.string(),
+  imageCredit: imageCreditSchema.optional(),
   address: z.string().optional(),
   hours: z.string().optional(),
   priceRange: z.string().optional(),

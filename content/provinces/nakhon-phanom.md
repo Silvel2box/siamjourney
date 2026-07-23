@@ -4,8 +4,14 @@ name: นครพนม
 nameEn: Nakhon Phanom
 region: northeast
 summary: เมืองริมโขงงดงาม พระธาตุพนมศักดิ์สิทธิ์ และวิวภูเขาฝั่งลาว
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/nakhon-phanom.jpg
 featured: false
+imageCredit:
+  author: Hdamm
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Nakhon_Phanom_Wat_Phra_That_Phanom.jpg
+  license: CC BY-SA 3.0
 ---
 นครพนมเป็นเมืองริมแม่น้ำโขงที่มีทัศนียภาพงดงาม มองเห็นแนวภูเขาฝั่งลาวเป็นฉากหลัง มีถนนเลียบโขงสวยงามและวัฒนธรรมหลากหลายชาติพันธุ์
 

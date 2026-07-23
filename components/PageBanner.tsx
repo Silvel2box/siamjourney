@@ -6,15 +6,24 @@ type Crumb = { href?: string; label: string };
 
 // Top banner for inner pages. Adds padding to clear the fixed navbar and gives
 // the transparent white-text navbar a dark backdrop to sit on.
+type ImageCredit = {
+  author: string;
+  source: string;
+  sourceUrl: string;
+  license?: string;
+};
+
 export default function PageBanner({
   title,
   subtitle,
   image,
+  credit,
   crumbs = [],
 }: {
   title: string;
   subtitle?: string;
   image?: string;
+  credit?: ImageCredit;
   crumbs?: Crumb[];
 }) {
   // BreadcrumbList JSON-LD mirroring the visual breadcrumb (home + crumbs).
@@ -49,6 +58,16 @@ export default function PageBanner({
             className="object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/30" />
+          {credit && (
+            <a
+              href={credit.sourceUrl}
+              target="_blank"
+              rel="noopener nofollow"
+              className="absolute bottom-2 right-3 z-10 text-[11px] leading-none text-white/55 hover:text-white/90 focus-visible:text-white transition"
+            >
+              {credit.source === "Pexels" ? "ภาพประกอบ" : "ภาพ"}: {credit.author} · {credit.source}
+            </a>
+          )}
         </>
       )}
       <div className="container mx-auto px-6 md:px-12 relative z-10">

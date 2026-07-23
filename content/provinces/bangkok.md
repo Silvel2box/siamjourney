@@ -4,8 +4,13 @@ name: กรุงเทพมหานคร
 nameEn: Bangkok
 region: central
 summary: มหานครที่ไม่เคยหลับใหล ผสานวัดวังทองอร่ามเข้ากับตึกระฟ้าและสตรีทฟู้ดระดับโลก
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/bangkok.jpg
 featured: false
+imageCredit:
+  author: Nawit science
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Temple_of_the_Emerald_Buddha.jpg'
+  license: CC BY-SA 4.0
 ---
 กรุงเทพมหานครคือเมืองหลวงและหัวใจของประเทศไทย ที่ซึ่งพระบรมมหาราชวังและวัดเก่าแก่ริมแม่น้ำเจ้าพระยาตั้งตระหง่านเคียงข้างตึกระฟ้าและห้างสรรพสินค้าทันสมัย
 

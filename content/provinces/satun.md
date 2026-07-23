@@ -4,8 +4,14 @@ name: สตูล
 nameEn: Satun
 region: south
 summary: เมืองแห่งอุทยานธรณีโลก เกาะหลีเป๊ะน้ำใส และธรรมชาติอันดามันบริสุทธิ์
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/satun.jpg
 featured: false
+imageCredit:
+  author: Vyacheslav Argenberg
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Koh_Lipe_(island),_Beach_shack,_Thailand.jpg
+  license: CC BY 4.0
 ---
 สตูลเป็นจังหวัดชายแดนใต้ริมทะเลอันดามันที่ยังคงความบริสุทธิ์ของธรรมชาติ โดดเด่นด้วยเกาะหลีเป๊ะที่ได้ชื่อว่ามัลดีฟส์เมืองไทย น้ำทะเลใสและปะการังสวยงาม รวมถึงหมู่เกาะตะรุเตาและอาดังราวีที่เป็นสวรรค์ของนักดำน้ำ
 

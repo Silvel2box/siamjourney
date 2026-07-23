@@ -89,6 +89,7 @@ export default async function PlacePage({ params }: Props) {
         title={place.name}
         subtitle={category?.name}
         image={place.image}
+        credit={place.imageCredit}
         crumbs={crumbs}
       />
 

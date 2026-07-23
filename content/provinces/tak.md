@@ -4,8 +4,14 @@ name: ตาก
 nameEn: Tak
 region: west
 summary: ดินแดนน้ำตกทีลอซู เขื่อนภูมิพล และวัฒนธรรมชายแดนแม่สอด
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/tak.jpg
 featured: false
+imageCredit:
+  author: Maewong Adventure
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Mae_Chan,_Umphang_District,_Tak_63170,_Thailand_-_panoramio_(12).jpg
+  license: CC BY-SA 3.0
 ---
 ตากเป็นจังหวัดชายแดนภาคตะวันตกที่มีธรรมชาติงดงามและวัฒนธรรมหลากหลาย จุดเด่นคือน้ำตกทีลอซูอันเลื่องชื่อ ผืนป่าอุ้มผาง และเขื่อนภูมิพลที่ยิ่งใหญ่
 

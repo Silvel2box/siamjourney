@@ -4,8 +4,14 @@ name: สิงห์บุรี
 nameEn: Sing Buri
 region: central
 summary: เมืองวีรชนค่ายบางระจัน กับปลาช่อนแม่ลาและวัดพระนอนองค์ใหญ่
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/sing-buri.jpg
 featured: false
+imageCredit:
+  author: Chainwit.
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Ceramics_from_Mae_Nam_Noi_Kiln,_Sing_Buri_(2022).jpg
+  license: CC BY 4.0
 ---
 สิงห์บุรีเป็นจังหวัดเล็ก ๆ ริมแม่น้ำเจ้าพระยาที่มีชื่อเสียงด้านประวัติศาสตร์วีรกรรมชาวบ้านบางระจัน และเป็นแหล่งกำเนิดปลาช่อนแม่ลาอันเลื่องชื่อ
 

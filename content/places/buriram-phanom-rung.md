@@ -4,14 +4,19 @@ name: ปราสาทพนมรุ้ง
 category: attraction
 province: buriram
 summary: ปราสาทหินขอมบนปากปล่องภูเขาไฟ งดงามด้วยปรากฏการณ์แสงลอดประตู
-image: https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=1200&q=80
+image: /images/places/buriram-phanom-rung.jpg
 address: อ.เฉลิมพระเกียรติ จ.บุรีรัมย์
-hours: เปิดทุกวัน 06:00 - 18:00 น.
+hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: 20 - 100 บาท
 sponsored: 1
 affiliate:
   label: จองทัวร์บุรีรัมย์
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: Philip Nalangan
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Phanom_Rung_Buriram_Thailand_06.jpg'
+  license: CC BY-SA 4.0
 ---
 ปราสาทพนมรุ้งเป็นปราสาทหินทรายสีชมพูที่สร้างบนปากปล่องภูเขาไฟที่ดับสนิท เป็นเทวสถานในศาสนาฮินดูที่งดงามและสมบูรณ์ที่สุดแห่งหนึ่งของไทย
 

@@ -4,8 +4,13 @@ name: ร้อยเอ็ด
 nameEn: Roi Et
 region: northeast
 summary: เมืองบึงพลาญชัย พระมหาเจดีย์ชัยมงคล และผ้าไหมสาเกตงดงาม
-image: https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/roi-et.jpg
 featured: false
+imageCredit:
+  author: Pawyilee
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Phra_Maha_Chedi_Chai_Mongkol.JPG'
+  license: Public domain
 ---
 ร้อยเอ็ดเป็นเมืองเก่าแก่ใจกลางอีสาน มีบึงพลาญชัยเป็นสวนสาธารณะกลางเมืองอันร่มรื่น และพระมหาเจดีย์ชัยมงคลที่งดงามตระการตาบนเทือกเขาเขียว
 

@@ -4,14 +4,20 @@ name: อุทยานประวัติศาสตร์พิมาย
 category: attraction
 province: nakhon-ratchasima
 summary: ปราสาทหินขอมที่ใหญ่ที่สุดในไทย งดงามด้วยสถาปัตยกรรมพันปี
-image: https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80
+image: /images/places/nakhon-ratchasima-phimai.jpg
 address: อ.พิมาย จ.นครราชสีมา
-hours: เปิดทุกวัน 07:00 - 18:00 น.
+hours: 'เปิดทุกวัน 07:00 - 18:00 น.'
 priceRange: 20 - 100 บาท
 sponsored: 1
 affiliate:
   label: จองทัวร์นครราชสีมา
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: Philip Nalangan
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Phimai_Historical_Park_Thailand_08.jpg
+  license: CC BY 4.0
 ---
 อุทยานประวัติศาสตร์พิมายเป็นที่ตั้งของปราสาทหินพิมาย ปราสาทขอมที่ใหญ่ที่สุดในประเทศไทย สร้างขึ้นราวพุทธศตวรรษที่ 16-17 เป็นต้นแบบก่อนปราสาทนครวัด
 

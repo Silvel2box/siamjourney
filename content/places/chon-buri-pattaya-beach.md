@@ -4,14 +4,20 @@ name: หาดพัทยา
 category: attraction
 province: chon-buri
 summary: ชายหาดชื่อดังระดับโลก ศูนย์รวมความสนุกและกิจกรรมทางทะเล
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/places/chon-buri-pattaya-beach.jpg
 address: ถนนเลียบชายหาด เมืองพัทยา อำเภอบางละมุง จังหวัดชลบุรี
 hours: เปิดตลอด 24 ชั่วโมง
 priceRange: เข้าชมฟรี
 sponsored: 1
 affiliate:
   label: จองทัวร์ชลบุรี
-  url: https://www.klook.com/th/
+  url: 'https://www.klook.com/th/'
+imageCredit:
+  author: easy4444
+  source: Wikimedia Commons
+  sourceUrl: >-
+    https://commons.wikimedia.org/wiki/File:Jomtiensaineung_Rd,_Pattaya,_Chon_Buri,_Thailand._-_panoramio.jpg
+  license: CC BY 3.0
 ---
 หาดพัทยาเป็นชายหาดที่มีชื่อเสียงระดับโลก ทอดยาวโค้งเว้าเป็นรูปพระจันทร์เสี้ยว เต็มไปด้วยกิจกรรมทางทะเล ทั้งเจ็ตสกี พาราเซล และเรือสปีดโบ๊ตออกไปเกาะล้าน ยามค่ำคืนถนนเลียบหาดคึกคักด้วยแสงสี ร้านอาหาร และความบันเทิงตลอดทั้งคืน
 

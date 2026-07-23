@@ -4,8 +4,13 @@ name: อำนาจเจริญ
 nameEn: Amnat Charoen
 region: northeast
 summary: เมืองพระใหญ่มิ่งเมือง พุทธอุทยานสงบร่มรื่น และผ้าฝ้ายทอมือ
-image: https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/amnat-charoen.png
 featured: false
+imageCredit:
+  author: The original uploader was Tak thaweesup at Thai Wikipedia.
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Flag_of_Amnat_Charoen_Province.png'
+  license: Public domain
 ---
 อำนาจเจริญเป็นจังหวัดเล็กเงียบสงบทางตะวันออกของอีสาน เป็นที่ตั้งของพระมงคลมิ่งเมือง พระพุทธรูปปางมารวิชัยขนาดใหญ่ที่เป็นศูนย์รวมศรัทธาของชาวเมือง
 

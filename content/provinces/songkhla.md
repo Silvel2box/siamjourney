@@ -4,8 +4,13 @@ name: สงขลา
 nameEn: Songkhla
 region: south
 summary: เมืองสองทะเล หาดสมิหลานางเงือก ย่านเมืองเก่ามีเสน่ห์ และเกาะยอเลื่องชื่อ
-image: https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/songkhla.jpg
 featured: false
+imageCredit:
+  author: Ahoerstemeier
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Songkhla_Laem_Samila.jpg'
+  license: CC BY-SA 3.0
 ---
 สงขลาเป็นเมืองชายทะเลที่มีเสน่ห์หลากหลาย ตั้งอยู่ระหว่างทะเลอ่าวไทยและทะเลสาบสงขลา จึงได้ชื่อว่าเมืองสองทะเล มีหาดสมิหลาที่มีรูปปั้นนางเงือกอันเป็นสัญลักษณ์ และย่านเมืองเก่าถนนนางงามที่เต็มไปด้วยตึกเก่าสถาปัตยกรรมจีนผสมยุโรป
 

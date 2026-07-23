@@ -4,14 +4,20 @@ name: ผ้าไหมบ้านเขว้า
 category: otop
 province: chaiyaphum
 summary: ผ้าไหมทอมือลายโบราณจากบ้านเขว้า แหล่งผ้าไหมชั้นเลิศของชัยภูมิ
-image: https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80
+image: >-
+  https://images.pexels.com/photos/37179770/pexels-photo-37179770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: อ.บ้านเขว้า จ.ชัยภูมิ
-hours: เปิดทุกวัน 09:00 - 17:00 น.
-priceRange: 700 - 10,000 บาท
+hours: 'เปิดทุกวัน 09:00 - 17:00 น.'
+priceRange: '700 - 10,000 บาท'
 sponsored: 0
 affiliate:
   label: สั่งซื้อผ้าไหมบ้านเขว้า
-  url: https://shopee.co.th/
+  url: 'https://shopee.co.th/'
+imageCredit:
+  author: MINEIA  MARTINS
+  source: Pexels
+  sourceUrl: >-
+    https://www.pexels.com/photo/traditional-thai-silk-weaver-outdoors-in-bangkok-37179770/
 ---
 ผ้าไหมบ้านเขว้าเป็นสินค้าหัตถกรรมขึ้นชื่อของชัยภูมิ ทอมือด้วยเส้นไหมคุณภาพและลวดลายโบราณที่สืบทอดกันมายาวนาน เนื้อผ้าเรียบเนียนเป็นเงางาม
 

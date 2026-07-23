@@ -4,11 +4,16 @@ name: ร้านอาหารริมโขงนครพนม
 category: restaurant
 province: nakhon-phanom
 summary: อาหารพื้นเมืองและปลาแม่น้ำโขงสดๆ วิวแม่น้ำโขงงดงาม
-image: https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80
+image: >-
+  https://images.pexels.com/photos/12561890/pexels-photo-12561890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 address: ถนนสุนทรวิจิตร อ.เมือง จ.นครพนม
-hours: เปิดทุกวัน 10:00 - 21:00 น.
+hours: 'เปิดทุกวัน 10:00 - 21:00 น.'
 priceRange: 80 - 300 บาท
 sponsored: 0
+imageCredit:
+  author: Augustinus Martinus Noppé
+  source: Pexels
+  sourceUrl: 'https://www.pexels.com/photo/chicken-pad-thai-in-close-up-shot-12561890/'
 ---
 ร้านอาหารริมโขงนครพนมเสิร์ฟอาหารพื้นเมืองอีสานและเมนูปลาแม่น้ำโขงสดๆ อย่างปลาคังลวกจิ้ม ต้มยำปลา และลาบปลา พร้อมวิวแม่น้ำโขงกว้างไกล
 

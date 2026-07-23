@@ -4,8 +4,13 @@ name: พิจิตร
 nameEn: Phichit
 region: central
 summary: เมืองชาละวันริมแม่น้ำน่าน แหล่งบึงสีไฟและส้มโอชื่อดัง
-image: https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80
+image: /images/provinces/phichit.jpg
 featured: false
+imageCredit:
+  author: P.khiao
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Phichit_Banner.jpg'
+  license: CC BY-SA 4.0
 ---
 พิจิตรเป็นจังหวัดในภาคเหนือตอนล่าง ตั้งอยู่ระหว่างแม่น้ำน่านและแม่น้ำยม เป็นเมืองเกษตรกรรมที่อุดมสมบูรณ์และมีตำนานพญาชาละวันจระเข้ยักษ์เป็นสัญลักษณ์ประจำเมือง วิถีชีวิตผู้คนผูกพันกับสายน้ำและเรือกสวนไร่นามาช้านาน
 
