@@ -9,10 +9,12 @@ import PageBanner from "@/components/PageBanner";
 import AffiliateButton from "@/components/AffiliateButton";
 import AdSlot from "@/components/AdSlot";
 
-export const dynamicParams = false;
+// New places added via the admin render on-demand (ISR); no rebuild needed.
+export const dynamicParams = true;
+export const revalidate = 3600;
 
-export function generateStaticParams() {
-  return getAllPlaces().map((p) => ({ slug: p.slug }));
+export async function generateStaticParams() {
+  return (await getAllPlaces()).map((p) => ({ slug: p.slug }));
 }
 
 type Props = { params: Promise<{ slug: string }> };
@@ -26,7 +28,7 @@ const schemaType: Record<string, string> = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const place = getPlace(slug);
+  const place = await getPlace(slug);
   if (!place) return {};
   return {
     title: place.name,
@@ -38,10 +40,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PlacePage({ params }: Props) {
   const { slug } = await params;
-  const place = getPlace(slug);
+  const place = await getPlace(slug);
   if (!place) notFound();
 
-  const province = getProvince(place.province);
+  const province = await getProvince(place.province);
   const region = province ? regionBySlug(province.region) : undefined;
   const category = categoryBySlug(place.category);
   const bodyHtml = await marked.parse(place.body);

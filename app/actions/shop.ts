@@ -27,7 +27,7 @@ const categorySlugs = categories.map((c) => c.slug);
 export async function updateShop(_prev: State, formData: FormData): Promise<State> {
   const { id } = await requireMerchant();
 
-  const provinceSlugs = getAllProvinces().map((p) => p.slug);
+  const provinceSlugs = (await getAllProvinces()).map((p) => p.slug);
   const schema = z.object({
     shopName: z.string().trim().min(2, "กรุณากรอกชื่อร้าน (อย่างน้อย 2 ตัวอักษร)"),
     description: optText,

@@ -40,6 +40,53 @@ model Merchant {
   @@map("merchant")
 }
 
+// Tourist place (attraction/restaurant/cafe/otop). Migrated from content/places
+// markdown so non-dev staff can manage it in the admin. imageCredit + affiliate
+// keep their nested object shape as JSON so the read layer / DTO stay identical.
+model Place {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  name        String
+  category    String // category slug (see lib/categories)
+  province    String // province slug (see lib/content)
+  summary     String   @db.Text
+  image       String   @db.Text
+  imageCredit Json? // { author, source, sourceUrl, license? }
+  address     String?
+  hours       String?
+  priceRange  String?
+  lat         Float?
+  lng         Float?
+  affiliate   Json? // { label, url }
+  sponsored   Int      @default(0) // 0 = ปกติ, 1 = featured, 2 = พาร์ทเนอร์จ่ายเงิน
+  body        String   @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([province])
+  @@index([category])
+  @@map("place")
+}
+
+// Province landing page content. Migrated from content/provinces markdown.
+model Province {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  name        String
+  nameEn      String
+  region      String // region slug (see lib/regions)
+  summary     String   @db.Text
+  image       String   @db.Text
+  imageCredit Json?
+  featured    Boolean  @default(false)
+  body        String   @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([region])
+  @@map("province")
+}
+
 // Opaque server-side session; the id is the random token stored in the cookie.
 model Session {
   id         String   @id

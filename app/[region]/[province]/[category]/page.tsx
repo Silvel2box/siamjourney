@@ -13,14 +13,15 @@ import PageBanner from "@/components/PageBanner";
 import PlaceCard from "@/components/PlaceCard";
 import AdSlot from "@/components/AdSlot";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = 3600;
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   const params: { region: string; province: string; category: string }[] = [];
-  for (const province of getAllProvinces()) {
+  for (const province of await getAllProvinces()) {
     for (const category of categories) {
       // Only build a page when the category actually has places (no thin pages).
-      if (getPlacesByProvinceCategory(province.slug, category.slug).length > 0) {
+      if ((await getPlacesByProvinceCategory(province.slug, category.slug)).length > 0) {
         params.push({
           region: province.region,
           province: province.slug,
@@ -38,7 +39,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { region, province: slug, category: cat } = await params;
-  const province = getProvince(slug);
+  const province = await getProvince(slug);
   const category = categoryBySlug(cat);
   if (!province || province.region !== region || !category) return {};
   return {
@@ -56,11 +57,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CategoryPage({ params }: Props) {
   const { region, province: slug, category: cat } = await params;
-  const province = getProvince(slug);
+  const province = await getProvince(slug);
   const category = categoryBySlug(cat);
   if (!province || province.region !== region || !category) notFound();
 
-  const places = getPlacesByProvinceCategory(slug, cat);
+  const places = await getPlacesByProvinceCategory(slug, cat);
   if (places.length === 0) notFound();
 
   const regionInfo = regionBySlug(province.region);

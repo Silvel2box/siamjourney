@@ -9,17 +9,18 @@ import PageBanner from "@/components/PageBanner";
 import PlaceCard from "@/components/PlaceCard";
 import AdSlot from "@/components/AdSlot";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = 3600;
 
-export function generateStaticParams() {
-  return getAllProvinces().map((p) => ({ region: p.region, province: p.slug }));
+export async function generateStaticParams() {
+  return (await getAllProvinces()).map((p) => ({ region: p.region, province: p.slug }));
 }
 
 type Props = { params: Promise<{ region: string; province: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { region, province: slug } = await params;
-  const province = getProvince(slug);
+  const province = await getProvince(slug);
   if (!province || province.region !== region) return {};
   return {
     title: `เที่ยว${province.name}`,
@@ -34,13 +35,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProvincePage({ params }: Props) {
   const { region, province: slug } = await params;
-  const province = getProvince(slug);
+  const province = await getProvince(slug);
   if (!province || province.region !== region) notFound();
 
   const regionInfo = regionBySlug(province.region);
-  const sections = categories
-    .map((c) => ({ category: c, places: getPlacesByProvinceCategory(slug, c.slug) }))
-    .filter((s) => s.places.length > 0);
+  const sections = (
+    await Promise.all(
+      categories.map(async (c) => ({
+        category: c,
+        places: await getPlacesByProvinceCategory(slug, c.slug),
+      })),
+    )
+  ).filter((s) => s.places.length > 0);
 
   const jsonLd = {
     "@context": "https://schema.org",

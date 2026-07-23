@@ -6,15 +6,18 @@ import { getAllProvinces, getFeaturedProvinces } from "@/lib/content";
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
+
+// Featured provinces come from the DB; revalidate so admin changes show up.
+export const revalidate = 3600;
 import ProvinceCard from "@/components/ProvinceCard";
 import RegionGrid from "@/components/RegionGrid";
 import ProvinceSearch from "@/components/ProvinceSearch";
 import AdSlot from "@/components/AdSlot";
 import NewsletterForm from "@/components/NewsletterForm";
 
-export default function Home() {
-  const featured = getFeaturedProvinces();
-  const provinces = getAllProvinces().map((p) => ({
+export default async function Home() {
+  const featured = await getFeaturedProvinces();
+  const provinces = (await getAllProvinces()).map((p) => ({
     slug: p.slug,
     name: p.name,
     region: p.region,

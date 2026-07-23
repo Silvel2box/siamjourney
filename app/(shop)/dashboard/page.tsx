@@ -49,7 +49,7 @@ export default async function DashboardPage() {
     },
   });
 
-  const provinces = getAllProvinces()
+  const provinces = (await getAllProvinces())
     .map((p) => ({ slug: p.slug, name: p.name }))
     .sort((a, b) => a.name.localeCompare(b.name, "th"));
 

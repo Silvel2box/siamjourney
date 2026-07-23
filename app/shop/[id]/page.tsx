@@ -50,7 +50,7 @@ export default async function ShopPage({ params }: Props) {
   const shop = await getApprovedShop(id);
   if (!shop) notFound();
 
-  const province = shop.province ? getProvince(shop.province) : undefined;
+  const province = shop.province ? await getProvince(shop.province) : undefined;
   const region = province ? regionBySlug(province.region) : undefined;
   const category = shop.category ? categoryBySlug(shop.category) : undefined;
 

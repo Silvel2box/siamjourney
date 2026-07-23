@@ -10,6 +10,7 @@
     "migrate:deploy": "prisma migrate deploy",
     "migrate:reset": "prisma migrate reset --force --skip-seed",
     "db:seed": "prisma db seed",
+    "import:content": "node scripts/import-content.mjs",
     "postinstall": "prisma generate"
   },
   "prisma": {

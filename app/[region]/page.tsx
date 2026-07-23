@@ -7,6 +7,9 @@ import PageBanner from "@/components/PageBanner";
 import ProvinceCard from "@/components/ProvinceCard";
 
 export const dynamicParams = false;
+// Region set is fixed, but its province list comes from the DB — revalidate so
+// admin edits (new/featured provinces) appear without a rebuild.
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return regions.map((r) => ({ region: r.slug }));
@@ -31,7 +34,7 @@ export default async function RegionPage({ params }: Props) {
   const region = regionBySlug(slug);
   if (!region) notFound();
 
-  const provinces = getProvincesByRegion(slug);
+  const provinces = await getProvincesByRegion(slug);
 
   return (
     <>

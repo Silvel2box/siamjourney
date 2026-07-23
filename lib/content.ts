@@ -1,124 +1,134 @@
-// Reads markdown content from /content at build time, validates frontmatter with
-// Zod, and exposes typed getters. Runs only in Server Components / build (uses fs).
-import fs from "node:fs";
-import path from "node:path";
-import matter from "gray-matter";
-import { z } from "zod";
-import { categories } from "./categories";
-import { regions } from "./regions";
+// Reads place/province content from the database (migrated from markdown so
+// non-dev staff can manage it in the admin). Getters are async + React-cached
+// so all callers in a request share a single query per collection.
+import { cache } from "react";
+import type { Place as PlaceRow, Province as ProvinceRow } from "@prisma/client";
+import { prisma } from "./prisma";
 
-const CONTENT_DIR = path.join(process.cwd(), "content");
+export type ImageCredit = {
+  author: string;
+  source: string;
+  sourceUrl: string;
+  license?: string;
+};
+export type Affiliate = { label: string; url: string };
 
-const categorySlugs = categories.map((c) => c.slug) as [string, ...string[]];
-const regionSlugs = regions.map((r) => r.slug) as [string, ...string[]];
+export type Place = {
+  slug: string;
+  name: string;
+  category: string;
+  province: string;
+  summary: string;
+  image: string;
+  imageCredit?: ImageCredit;
+  address?: string;
+  hours?: string;
+  priceRange?: string;
+  lat?: number;
+  lng?: number;
+  affiliate?: Affiliate;
+  // 0 = ปกติ, 1 = featured (ขึ้นบน), 2 = พาร์ทเนอร์จ่ายเงิน
+  sponsored: 0 | 1 | 2;
+  body: string;
+};
 
-// ที่มาของรูป — Wikimedia (CC) ต้องแสดงเครดิตตามไลเซนส์, Pexels เป็นมารยาท
-const imageCreditSchema = z.object({
-  author: z.string(),
-  source: z.string(),
-  sourceUrl: z.string(),
-  license: z.string().optional(),
-});
+export type Province = {
+  slug: string;
+  name: string;
+  nameEn: string;
+  region: string;
+  summary: string;
+  image: string;
+  imageCredit?: ImageCredit;
+  featured: boolean;
+  body: string;
+};
 
-const provinceSchema = z.object({
-  slug: z.string(),
-  name: z.string(),
-  nameEn: z.string(),
-  region: z.enum(regionSlugs),
-  summary: z.string(),
-  image: z.string(),
-  imageCredit: imageCreditSchema.optional(),
-  featured: z.boolean().default(false),
-});
-
-const placeSchema = z.object({
-  slug: z.string(),
-  name: z.string(),
-  category: z.enum(categorySlugs),
-  province: z.string(),
-  summary: z.string(),
-  image: z.string(),
-  imageCredit: imageCreditSchema.optional(),
-  address: z.string().optional(),
-  hours: z.string().optional(),
-  priceRange: z.string().optional(),
-  lat: z.number().optional(),
-  lng: z.number().optional(),
-  // Affiliate / "ติดแท๊กขาย": outbound partner link (Agoda, Booking, Shopee, ...)
-  affiliate: z
-    .object({ label: z.string(), url: z.string() })
-    .optional(),
-  // 0 = ปกติ, 1 = featured (ขึ้นบน), 2 = พาร์ทเนอร์จ่ายเงิน. เตรียมสำหรับเฟสขายพื้นที่
-  sponsored: z.union([z.literal(0), z.literal(1), z.literal(2)]).default(0),
-});
-
-export type Province = z.infer<typeof provinceSchema> & { body: string };
-export type Place = z.infer<typeof placeSchema> & { body: string };
-
-function readCollection<T>(dir: string, schema: z.ZodType<T>): (T & { body: string })[] {
-  const full = path.join(CONTENT_DIR, dir);
-  if (!fs.existsSync(full)) {
-    return [];
-  }
-  return fs
-    .readdirSync(full)
-    .filter((f) => f.endsWith(".md"))
-    .map((file) => {
-      const raw = fs.readFileSync(path.join(full, file), "utf8");
-      const { data, content } = matter(raw);
-      const parsed = schema.safeParse(data);
-      if (!parsed.success) {
-        throw new Error(
-          `Invalid frontmatter in ${dir}/${file}: ${parsed.error.message}`,
-        );
-      }
-      return { ...(parsed.data as T), body: content.trim() };
-    });
+// Prisma keeps nested objects as JSON and empty columns as null; normalise to
+// the DTO shape the rest of the app expects (optional fields, not null).
+function toPlace(r: PlaceRow): Place {
+  return {
+    slug: r.slug,
+    name: r.name,
+    category: r.category,
+    province: r.province,
+    summary: r.summary,
+    image: r.image,
+    imageCredit: (r.imageCredit as unknown as ImageCredit) ?? undefined,
+    address: r.address ?? undefined,
+    hours: r.hours ?? undefined,
+    priceRange: r.priceRange ?? undefined,
+    lat: r.lat ?? undefined,
+    lng: r.lng ?? undefined,
+    affiliate: (r.affiliate as unknown as Affiliate) ?? undefined,
+    sponsored: (r.sponsored as 0 | 1 | 2) ?? 0,
+    body: r.body,
+  };
 }
 
-// Sort so paid/featured places float to the top, then alphabetically by name.
+function toProvince(r: ProvinceRow): Province {
+  return {
+    slug: r.slug,
+    name: r.name,
+    nameEn: r.nameEn,
+    region: r.region,
+    summary: r.summary,
+    image: r.image,
+    imageCredit: (r.imageCredit as unknown as ImageCredit) ?? undefined,
+    featured: r.featured,
+    body: r.body,
+  };
+}
+
+// One query per collection per request (deduped across the getters below).
+const allPlaces = cache(async (): Promise<Place[]> => {
+  return (await prisma.place.findMany()).map(toPlace);
+});
+const allProvinces = cache(async (): Promise<Province[]> => {
+  return (await prisma.province.findMany()).map(toProvince);
+});
+
+// Paid/featured float to the top, then alphabetical by Thai name.
 function bySponsorThenName(a: Place, b: Place) {
-  if (a.sponsored !== b.sponsored) {
-    return b.sponsored - a.sponsored;
-  }
+  if (a.sponsored !== b.sponsored) return b.sponsored - a.sponsored;
   return a.name.localeCompare(b.name, "th");
 }
 
-export function getAllProvinces(): Province[] {
-  return readCollection("provinces", provinceSchema);
+export async function getAllProvinces(): Promise<Province[]> {
+  return allProvinces();
 }
 
-export function getProvince(slug: string): Province | undefined {
-  return getAllProvinces().find((p) => p.slug === slug);
+export async function getProvince(slug: string): Promise<Province | undefined> {
+  return (await allProvinces()).find((p) => p.slug === slug);
 }
 
-export function getProvincesByRegion(regionSlug: string): Province[] {
-  return getAllProvinces().filter((p) => p.region === regionSlug);
+export async function getProvincesByRegion(regionSlug: string): Promise<Province[]> {
+  return (await allProvinces()).filter((p) => p.region === regionSlug);
 }
 
-export function getFeaturedProvinces(): Province[] {
-  return getAllProvinces().filter((p) => p.featured);
+export async function getFeaturedProvinces(): Promise<Province[]> {
+  return (await allProvinces()).filter((p) => p.featured);
 }
 
-export function getAllPlaces(): Place[] {
-  return readCollection("places", placeSchema);
+export async function getAllPlaces(): Promise<Place[]> {
+  return allPlaces();
 }
 
-export function getPlace(slug: string): Place | undefined {
-  return getAllPlaces().find((p) => p.slug === slug);
+export async function getPlace(slug: string): Promise<Place | undefined> {
+  return (await allPlaces()).find((p) => p.slug === slug);
 }
 
-export function getPlacesByProvince(provinceSlug: string): Place[] {
-  return getAllPlaces()
+export async function getPlacesByProvince(provinceSlug: string): Promise<Place[]> {
+  return (await allPlaces())
     .filter((p) => p.province === provinceSlug)
     .sort(bySponsorThenName);
 }
 
-export function getPlacesByProvinceCategory(
+export async function getPlacesByProvinceCategory(
   provinceSlug: string,
   category: string,
-): Place[] {
-  return getPlacesByProvince(provinceSlug).filter(
+): Promise<Place[]> {
+  return (await getPlacesByProvince(provinceSlug)).filter(
     (p) => p.category === category,
   );
 }
