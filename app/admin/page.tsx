@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
+import AdminNav from "@/components/admin/AdminNav";
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { updateStatus } from "@/app/actions/admin";
@@ -67,6 +68,7 @@ export default async function AdminPage() {
       />
       <section className="py-16 bg-light">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+          <AdminNav />
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             {merchants.length === 0 ? (
               <p className="p-8 text-center text-gray-500">ยังไม่มีร้านค้าสมัคร</p>
