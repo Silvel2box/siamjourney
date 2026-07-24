@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { savePlace } from "@/app/actions/content";
+import ImageUploadField from "@/components/admin/ImageUploadField";
 
 type State = { error: string } | null;
 type Option = { slug: string; name: string };
@@ -116,9 +117,7 @@ export default function PlaceForm({
         <textarea id="body" name="body" required rows={6} defaultValue={values.body} className={input} />
       </Field>
 
-      <Field id="image" label="รูป (URL หรือ /images/...) *">
-        <input id="image" name="image" required defaultValue={values.image} className={input} />
-      </Field>
+      <ImageUploadField name="image" label="รูปสถานที่ *" defaultValue={values.image} />
 
       <fieldset className="border border-gray-200 rounded-2xl p-4">
         <legend className="text-sm font-medium text-gray-600 px-2">เครดิตรูป (ถ้ามี)</legend>

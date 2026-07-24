@@ -24,6 +24,10 @@
 .DS_Store
 *.pem
 
+# admin-uploaded images (self-hosted at runtime, persist on the server disk;
+# not version-controlled — back these up with the server)
+/public/uploads
+
 # debug
 npm-debug.log*
 yarn-debug.log*
