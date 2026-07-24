@@ -26,6 +26,7 @@ export type Place = {
   summary: string;
   image: string;
   imageCredit?: ImageCredit;
+  gallery?: GalleryImage[];
   address?: string;
   hours?: string;
   priceRange?: string;
@@ -78,6 +79,7 @@ function toPlace(r: PlaceRow): Place {
     summary: r.summary,
     image: r.image,
     imageCredit: (r.imageCredit as unknown as ImageCredit) ?? undefined,
+    gallery: (r.gallery as unknown as GalleryImage[]) ?? undefined,
     address: r.address ?? undefined,
     hours: r.hours ?? undefined,
     priceRange: r.priceRange ?? undefined,

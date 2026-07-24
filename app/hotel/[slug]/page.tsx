@@ -7,7 +7,7 @@ import { regionBySlug } from "@/lib/regions";
 import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import AffiliateButton from "@/components/AffiliateButton";
-import HotelGallery from "@/components/HotelGallery";
+import PhotoGallery from "@/components/PhotoGallery";
 import AdSlot from "@/components/AdSlot";
 
 // New hotels added via the admin render on-demand (ISR); no rebuild needed.
@@ -110,7 +110,7 @@ export default async function HotelPage({ params }: Props) {
                 </div>
               )}
 
-              <HotelGallery images={gallery} hotelName={hotel.name} />
+              <PhotoGallery images={gallery} title={hotel.name} />
             </div>
 
             {/* Info card */}

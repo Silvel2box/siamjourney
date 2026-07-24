@@ -16,6 +16,7 @@ type Props = { params: Promise<{ id: string }> };
 
 type Credit = { author?: string; source?: string; sourceUrl?: string; license?: string } | null;
 type Aff = { label?: string; url?: string } | null;
+type Gallery = { url: string; caption?: string }[] | null;
 
 export default async function EditPlacePage({ params }: Props) {
   await requireAdmin();
@@ -31,6 +32,7 @@ export default async function EditPlacePage({ params }: Props) {
 
   const credit = place.imageCredit as Credit;
   const aff = place.affiliate as Aff;
+  const gallery = (place.gallery as Gallery) ?? [];
 
   const values = {
     id: place.id,
@@ -44,6 +46,7 @@ export default async function EditPlacePage({ params }: Props) {
     imageCreditSource: credit?.source ?? "",
     imageCreditSourceUrl: credit?.sourceUrl ?? "",
     imageCreditLicense: credit?.license ?? "",
+    gallery,
     address: place.address ?? "",
     hours: place.hours ?? "",
     priceRange: place.priceRange ?? "",

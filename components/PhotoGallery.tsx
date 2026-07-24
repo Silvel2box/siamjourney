@@ -5,12 +5,12 @@ import Image from "next/image";
 import type { GalleryImage } from "@/lib/content";
 
 // Thumbnail grid + fullscreen lightbox (prev/next/Esc). Dependency-free.
-export default function HotelGallery({
+export default function PhotoGallery({
   images,
-  hotelName,
+  title,
 }: {
   images: GalleryImage[];
-  hotelName: string;
+  title: string;
 }) {
   const [active, setActive] = useState<number | null>(null);
   const open = active !== null;
@@ -40,7 +40,7 @@ export default function HotelGallery({
 
   if (images.length === 0) return null;
 
-  const alt = (img: GalleryImage) => (img.caption ? `${hotelName} – ${img.caption}` : hotelName);
+  const alt = (img: GalleryImage) => (img.caption ? `${title} – ${img.caption}` : title);
 
   return (
     <section className="mt-14">
@@ -76,7 +76,7 @@ export default function HotelGallery({
           onClick={close}
           role="dialog"
           aria-modal="true"
-          aria-label={`รูป ${hotelName}`}
+          aria-label={`รูป ${title}`}
         >
           <button
             type="button"

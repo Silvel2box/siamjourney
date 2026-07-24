@@ -7,6 +7,7 @@ import { regionBySlug } from "@/lib/regions";
 import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import AffiliateButton from "@/components/AffiliateButton";
+import PhotoGallery from "@/components/PhotoGallery";
 import AdSlot from "@/components/AdSlot";
 
 // New places added via the admin render on-demand (ISR); no rebuild needed.
@@ -47,6 +48,7 @@ export default async function PlacePage({ params }: Props) {
   const region = province ? regionBySlug(province.region) : undefined;
   const category = categoryBySlug(place.category);
   const bodyHtml = await marked.parse(place.body);
+  const gallery = place.gallery ?? [];
 
   const crumbs = [];
   if (region && province) {
@@ -60,7 +62,7 @@ export default async function PlacePage({ params }: Props) {
     "@type": schemaType[place.category] ?? "LocalBusiness",
     name: place.name,
     description: place.summary,
-    image: place.image,
+    image: gallery.length > 0 ? [place.image, ...gallery.map((g) => g.url)] : place.image,
     ...(place.address && { address: place.address }),
     ...(place.lat != null && place.lng != null && {
       geo: {
@@ -113,6 +115,8 @@ export default async function PlacePage({ params }: Props) {
                   />
                 </div>
               )}
+
+              <PhotoGallery images={gallery} title={place.name} />
             </div>
 
             {/* Info card */}

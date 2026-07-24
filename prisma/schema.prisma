@@ -52,6 +52,7 @@ model Place {
   summary     String   @db.Text
   image       String   @db.Text
   imageCredit Json? // { author, source, sourceUrl, license? }
+  gallery     Json? // [{ url, caption? }] — extra photos beyond the hero image
   address     String?
   hours       String?
   priceRange  String?

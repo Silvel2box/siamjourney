@@ -3,6 +3,8 @@
 import { useActionState } from "react";
 import { savePlace } from "@/app/actions/content";
 import ImageUploadField from "@/components/admin/ImageUploadField";
+import GalleryField from "@/components/admin/GalleryField";
+import type { GalleryImage } from "@/lib/content";
 
 type State = { error: string } | null;
 type Option = { slug: string; name: string };
@@ -19,6 +21,7 @@ export type PlaceFormValues = {
   imageCreditSource: string;
   imageCreditSourceUrl: string;
   imageCreditLicense: string;
+  gallery: GalleryImage[];
   address: string;
   hours: string;
   priceRange: string;
@@ -136,6 +139,8 @@ export default function PlaceForm({
           </Field>
         </div>
       </fieldset>
+
+      <GalleryField name="gallery" label="แกลเลอรีรูปเพิ่มเติม (มุมต่างๆ)" defaultValue={values.gallery} />
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <Field id="address" label="ที่อยู่">

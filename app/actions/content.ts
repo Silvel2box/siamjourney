@@ -139,6 +139,9 @@ export async function savePlace(_prev: State, fd: FormData): Promise<State> {
   const aff = affiliateFrom(fd);
   if ("error" in aff) return aff;
 
+  const gal = galleryFrom(fd);
+  if ("error" in gal) return gal;
+
   const data = {
     name: parsed.data.name,
     category: parsed.data.category,
@@ -153,6 +156,7 @@ export async function savePlace(_prev: State, fd: FormData): Promise<State> {
     lat,
     lng,
     imageCredit: imageCreditFrom(fd),
+    gallery: gal.gallery,
     affiliate: aff.affiliate,
   };
 

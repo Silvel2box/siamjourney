@@ -139,6 +139,11 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
   - scope: แกลเลอรีอย่างเดียว (ไม่มีรีวิวข้อความ/ดาว) · โรงแรมก่อน (places ขยายทีหลังได้ด้วย JSON pattern เดิม) · caption optional
   - verify (next dev + seed hotel มี 3 รูป): กริด+caption render, JSON-LD image[]=hero+3, admin edit guard 307, build ผ่าน · lightbox interaction = browser-test ตอน deploy
   - **DEPLOY: มี migration → pull → NPM install → `migrate:deploy` → build → restart**
+- [x] **แกลเลอรี places ✅ (2026-07-24)** — ขยายแกลเลอรี (จากโรงแรม) ไปที่ 308 places ด้วย (สถานที่/ร้าน/คาเฟ่/OTOP)
+  - reuse ทั้งหมด: rename `HotelGallery`→**`PhotoGallery`** (generic, prop `hotelName`→`title`) ใช้ร่วม hotel+place · `GalleryField` + helper `galleryFrom` เดิม
+  - `gallery Json?` บน Place + migration `add_place_gallery` · content.ts Place DTO+toPlace · `savePlace` + gallery · `PlaceForm` เสียบ `<GalleryField>` + 2 admin pages · หน้า `/place/[slug]` render + JSON-LD image[]
+  - verify (next dev + seed gallery ใส่ 1 place แล้ว clear): กริด+caption render, image[]=hero+2, place ไม่มี gallery=ไม่โชว์ section, hotel/place page ยัง 200 หลัง rename, build ผ่าน
+  - **DEPLOY: มี migration → pull → NPM install → `migrate:deploy` → build → restart**
 - [ ] **2D-a — จัดการร้านค้าเต็ม** — admin แก้ร้านคนอื่นได้ (ตอนนี้ได้แค่เปลี่ยนสถานะ)
 - [ ] **2E — Sponsored/payment** (= งาน monetization เดิม ข้อ "แพ็กเกจ featured/sponsored") สร้างบน CMS/DB ที่พร้อมแล้ว
 
