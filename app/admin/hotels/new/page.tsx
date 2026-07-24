@@ -20,6 +20,7 @@ const empty = {
   imageCreditSource: "",
   imageCreditSourceUrl: "",
   imageCreditLicense: "",
+  gallery: [],
   address: "",
   priceRange: "",
   lat: "",

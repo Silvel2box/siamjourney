@@ -16,6 +16,7 @@ export type ImageCredit = {
   license?: string;
 };
 export type Affiliate = { label: string; url: string };
+export type GalleryImage = { url: string; caption?: string };
 
 export type Place = {
   slug: string;
@@ -56,6 +57,7 @@ export type Hotel = {
   summary: string;
   image: string;
   imageCredit?: ImageCredit;
+  gallery?: GalleryImage[];
   address?: string;
   priceRange?: string;
   lat?: number;
@@ -95,6 +97,7 @@ function toHotel(r: HotelRow): Hotel {
     summary: r.summary,
     image: r.image,
     imageCredit: (r.imageCredit as unknown as ImageCredit) ?? undefined,
+    gallery: (r.gallery as unknown as GalleryImage[]) ?? undefined,
     address: r.address ?? undefined,
     priceRange: r.priceRange ?? undefined,
     lat: r.lat ?? undefined,

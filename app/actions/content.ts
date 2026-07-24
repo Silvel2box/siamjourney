@@ -42,6 +42,31 @@ function coord(fd: FormData, k: string): number | null | undefined {
   return Number.isFinite(n) ? n : undefined; // undefined = invalid
 }
 
+// Gallery images arrive as a JSON string (hidden input from GalleryField).
+// Parse + validate [{ url, caption? }] (max 20). Empty → Prisma.DbNull (clear).
+const galleryItemSchema = z.object({
+  url: z.string().trim().min(1),
+  caption: z.string().trim().optional(),
+});
+function galleryFrom(
+  fd: FormData,
+): { gallery: Prisma.InputJsonValue | typeof Prisma.DbNull } | { error: string } {
+  const raw = str(fd, "gallery");
+  if (!raw) return { gallery: Prisma.DbNull };
+  let json: unknown;
+  try {
+    json = JSON.parse(raw);
+  } catch {
+    return { error: "ข้อมูลแกลเลอรีไม่ถูกต้อง" };
+  }
+  const parsed = z.array(galleryItemSchema).max(20).safeParse(json);
+  if (!parsed.success) return { error: "ข้อมูลแกลเลอรีไม่ถูกต้อง" };
+  const items = parsed.data.map((g) =>
+    g.caption ? { url: g.url, caption: g.caption } : { url: g.url },
+  );
+  return { gallery: items.length ? items : Prisma.DbNull };
+}
+
 // Booking/partner link { label, url } → JSON (Prisma.DbNull = clear). Returns an
 // error string when a url is given but malformed. Shared by place + hotel.
 function affiliateFrom(
@@ -301,6 +326,9 @@ export async function saveHotel(_prev: State, fd: FormData): Promise<State> {
   const aff = affiliateFrom(fd);
   if ("error" in aff) return aff;
 
+  const gal = galleryFrom(fd);
+  if ("error" in gal) return gal;
+
   const data = {
     name: parsed.data.name,
     province: parsed.data.province,
@@ -313,6 +341,7 @@ export async function saveHotel(_prev: State, fd: FormData): Promise<State> {
     lat,
     lng,
     imageCredit: imageCreditFrom(fd),
+    gallery: gal.gallery,
     affiliate: aff.affiliate,
   };
 

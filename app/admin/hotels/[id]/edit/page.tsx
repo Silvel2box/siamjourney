@@ -15,6 +15,7 @@ type Props = { params: Promise<{ id: string }> };
 
 type Credit = { author?: string; source?: string; sourceUrl?: string; license?: string } | null;
 type Aff = { label?: string; url?: string } | null;
+type Gallery = { url: string; caption?: string }[] | null;
 
 export default async function EditHotelPage({ params }: Props) {
   await requireAdmin();
@@ -30,6 +31,7 @@ export default async function EditHotelPage({ params }: Props) {
 
   const credit = hotel.imageCredit as Credit;
   const aff = hotel.affiliate as Aff;
+  const gallery = (hotel.gallery as Gallery) ?? [];
 
   const values = {
     id: hotel.id,
@@ -42,6 +44,7 @@ export default async function EditHotelPage({ params }: Props) {
     imageCreditSource: credit?.source ?? "",
     imageCreditSourceUrl: credit?.sourceUrl ?? "",
     imageCreditLicense: credit?.license ?? "",
+    gallery,
     address: hotel.address ?? "",
     priceRange: hotel.priceRange ?? "",
     lat: hotel.lat != null ? String(hotel.lat) : "",

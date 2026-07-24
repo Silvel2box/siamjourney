@@ -3,6 +3,8 @@
 import { useActionState } from "react";
 import { saveHotel } from "@/app/actions/content";
 import ImageUploadField from "@/components/admin/ImageUploadField";
+import GalleryField from "@/components/admin/GalleryField";
+import type { GalleryImage } from "@/lib/content";
 
 type State = { error: string } | null;
 type Option = { slug: string; name: string };
@@ -18,6 +20,7 @@ export type HotelFormValues = {
   imageCreditSource: string;
   imageCreditSourceUrl: string;
   imageCreditLicense: string;
+  gallery: GalleryImage[];
   address: string;
   priceRange: string;
   lat: string;
@@ -122,6 +125,8 @@ export default function HotelForm({
           </Field>
         </div>
       </fieldset>
+
+      <GalleryField name="gallery" label="แกลเลอรีรูปเพิ่มเติม (มุมต่างๆ)" defaultValue={values.gallery} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field id="address" label="ที่อยู่">

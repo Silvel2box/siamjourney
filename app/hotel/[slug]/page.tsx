@@ -7,6 +7,7 @@ import { regionBySlug } from "@/lib/regions";
 import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import AffiliateButton from "@/components/AffiliateButton";
+import HotelGallery from "@/components/HotelGallery";
 import AdSlot from "@/components/AdSlot";
 
 // New hotels added via the admin render on-demand (ISR); no rebuild needed.
@@ -39,6 +40,7 @@ export default async function HotelPage({ params }: Props) {
   const province = await getProvince(hotel.province);
   const region = province ? regionBySlug(province.region) : undefined;
   const bodyHtml = await marked.parse(hotel.body);
+  const gallery = hotel.gallery ?? [];
 
   const crumbs = [];
   if (region && province) {
@@ -53,7 +55,7 @@ export default async function HotelPage({ params }: Props) {
     "@type": "LodgingBusiness",
     name: hotel.name,
     description: hotel.summary,
-    image: hotel.image,
+    image: gallery.length > 0 ? [hotel.image, ...gallery.map((g) => g.url)] : hotel.image,
     ...(hotel.address && { address: hotel.address }),
     ...(hotel.priceRange && { priceRange: hotel.priceRange }),
     ...(hotel.lat != null && hotel.lng != null && {
@@ -107,6 +109,8 @@ export default async function HotelPage({ params }: Props) {
                   />
                 </div>
               )}
+
+              <HotelGallery images={gallery} hotelName={hotel.name} />
             </div>
 
             {/* Info card */}

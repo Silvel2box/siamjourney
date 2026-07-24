@@ -98,6 +98,7 @@ model Hotel {
   summary     String   @db.Text
   image       String   @db.Text
   imageCredit Json? // { author, source, sourceUrl, license? }
+  gallery     Json? // [{ url, caption? }] — extra photos beyond the hero image
   address     String?
   priceRange  String?
   lat         Float?
