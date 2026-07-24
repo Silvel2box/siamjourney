@@ -2,7 +2,11 @@
 // non-dev staff can manage it in the admin). Getters are async + React-cached
 // so all callers in a request share a single query per collection.
 import { cache } from "react";
-import type { Place as PlaceRow, Province as ProvinceRow } from "@prisma/client";
+import type {
+  Place as PlaceRow,
+  Province as ProvinceRow,
+  Hotel as HotelRow,
+} from "@prisma/client";
 import { prisma } from "./prisma";
 
 export type ImageCredit = {
@@ -44,6 +48,23 @@ export type Province = {
   body: string;
 };
 
+// Hotel = Place without the category taxonomy; affiliate holds the booking link.
+export type Hotel = {
+  slug: string;
+  name: string;
+  province: string;
+  summary: string;
+  image: string;
+  imageCredit?: ImageCredit;
+  address?: string;
+  priceRange?: string;
+  lat?: number;
+  lng?: number;
+  affiliate?: Affiliate;
+  sponsored: 0 | 1 | 2;
+  body: string;
+};
+
 // Prisma keeps nested objects as JSON and empty columns as null; normalise to
 // the DTO shape the rest of the app expects (optional fields, not null).
 function toPlace(r: PlaceRow): Place {
@@ -57,6 +78,24 @@ function toPlace(r: PlaceRow): Place {
     imageCredit: (r.imageCredit as unknown as ImageCredit) ?? undefined,
     address: r.address ?? undefined,
     hours: r.hours ?? undefined,
+    priceRange: r.priceRange ?? undefined,
+    lat: r.lat ?? undefined,
+    lng: r.lng ?? undefined,
+    affiliate: (r.affiliate as unknown as Affiliate) ?? undefined,
+    sponsored: (r.sponsored as 0 | 1 | 2) ?? 0,
+    body: r.body,
+  };
+}
+
+function toHotel(r: HotelRow): Hotel {
+  return {
+    slug: r.slug,
+    name: r.name,
+    province: r.province,
+    summary: r.summary,
+    image: r.image,
+    imageCredit: (r.imageCredit as unknown as ImageCredit) ?? undefined,
+    address: r.address ?? undefined,
     priceRange: r.priceRange ?? undefined,
     lat: r.lat ?? undefined,
     lng: r.lng ?? undefined,
@@ -87,9 +126,12 @@ const allPlaces = cache(async (): Promise<Place[]> => {
 const allProvinces = cache(async (): Promise<Province[]> => {
   return (await prisma.province.findMany()).map(toProvince);
 });
+const allHotels = cache(async (): Promise<Hotel[]> => {
+  return (await prisma.hotel.findMany()).map(toHotel);
+});
 
 // Paid/featured float to the top, then alphabetical by Thai name.
-function bySponsorThenName(a: Place, b: Place) {
+function bySponsorThenName(a: { sponsored: number; name: string }, b: { sponsored: number; name: string }) {
   if (a.sponsored !== b.sponsored) return b.sponsored - a.sponsored;
   return a.name.localeCompare(b.name, "th");
 }
@@ -131,4 +173,18 @@ export async function getPlacesByProvinceCategory(
   return (await getPlacesByProvince(provinceSlug)).filter(
     (p) => p.category === category,
   );
+}
+
+export async function getAllHotels(): Promise<Hotel[]> {
+  return allHotels();
+}
+
+export async function getHotel(slug: string): Promise<Hotel | undefined> {
+  return (await allHotels()).find((h) => h.slug === slug);
+}
+
+export async function getHotelsByProvince(provinceSlug: string): Promise<Hotel[]> {
+  return (await allHotels())
+    .filter((h) => h.province === provinceSlug)
+    .sort(bySponsorThenName);
 }

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 const TABS = [
   { href: "/admin", label: "ร้านค้า" },
   { href: "/admin/places", label: "สถานที่" },
+  { href: "/admin/hotels", label: "ที่พัก" },
   { href: "/admin/provinces", label: "จังหวัด" },
 ];
 

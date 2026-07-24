@@ -1,12 +1,18 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllProvinces, getProvince, getPlacesByProvinceCategory } from "@/lib/content";
+import {
+  getAllProvinces,
+  getProvince,
+  getPlacesByProvinceCategory,
+  getHotelsByProvince,
+} from "@/lib/content";
 import { regionBySlug } from "@/lib/regions";
 import { categories } from "@/lib/categories";
 import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import PlaceCard from "@/components/PlaceCard";
+import HotelCard from "@/components/HotelCard";
 import AdSlot from "@/components/AdSlot";
 
 export const dynamicParams = true;
@@ -39,14 +45,16 @@ export default async function ProvincePage({ params }: Props) {
   if (!province || province.region !== region) notFound();
 
   const regionInfo = regionBySlug(province.region);
-  const sections = (
-    await Promise.all(
+  const [sectionsRaw, hotels] = await Promise.all([
+    Promise.all(
       categories.map(async (c) => ({
         category: c,
         places: await getPlacesByProvinceCategory(slug, c.slug),
       })),
-    )
-  ).filter((s) => s.places.length > 0);
+    ),
+    getHotelsByProvince(slug),
+  ]);
+  const sections = sectionsRaw.filter((s) => s.places.length > 0);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -108,6 +116,30 @@ export default async function ProvincePage({ params }: Props) {
             <p className="text-center text-gray-500 py-16">
               กำลังรวบรวมข้อมูลของจังหวัดนี้ เร็วๆ นี้
             </p>
+          )}
+
+          {hotels.length > 0 && (
+            <section id="hotel">
+              <div className="flex items-center justify-between gap-3 mb-8">
+                <div className="flex items-center gap-3">
+                  <span className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl">
+                    <i className="fas fa-bed" />
+                  </span>
+                  <h2 className="text-3xl font-heading font-bold text-dark">ที่พัก</h2>
+                </div>
+                <Link
+                  href="/hotel"
+                  className="text-primary font-medium hover:underline whitespace-nowrap flex items-center gap-2"
+                >
+                  ดูที่พักทั้งหมด <i className="fas fa-arrow-right text-sm" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {hotels.map((hotel) => (
+                  <HotelCard key={hotel.slug} hotel={hotel} />
+                ))}
+              </div>
+            </section>
           )}
         </div>
       </div>

@@ -7,6 +7,7 @@ import { site } from "@/lib/site";
 const links = [
   { href: "/#destinations", label: "จุดหมายยอดฮิต" },
   { href: "/#regions", label: "ภูมิภาค" },
+  { href: "/hotel", label: "ที่พัก" },
   { href: "/#about", label: "เกี่ยวกับเรา" },
   { href: "/dashboard", label: "สำหรับร้านค้า" },
 ];

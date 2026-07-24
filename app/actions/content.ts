@@ -42,6 +42,19 @@ function coord(fd: FormData, k: string): number | null | undefined {
   return Number.isFinite(n) ? n : undefined; // undefined = invalid
 }
 
+// Booking/partner link { label, url } → JSON (Prisma.DbNull = clear). Returns an
+// error string when a url is given but malformed. Shared by place + hotel.
+function affiliateFrom(
+  fd: FormData,
+): { affiliate: { label: string; url: string } | typeof Prisma.DbNull } | { error: string } {
+  const label = str(fd, "affiliateLabel");
+  const url = str(fd, "affiliateUrl");
+  if (label && url && !/^https?:\/\//.test(url)) {
+    return { error: "ลิงก์ affiliate ต้องขึ้นต้นด้วย http:// หรือ https://" };
+  }
+  return { affiliate: label && url ? { label, url } : Prisma.DbNull };
+}
+
 async function revalidatePlacePaths(p: { slug: string; province: string; category: string }) {
   const prov = await prisma.province.findUnique({
     where: { slug: p.province },
@@ -98,12 +111,8 @@ export async function savePlace(_prev: State, fd: FormData): Promise<State> {
   const lng = coord(fd, "lng");
   if (lat === undefined || lng === undefined) return { error: "พิกัดต้องเป็นตัวเลข" };
 
-  const affLabel = str(fd, "affiliateLabel");
-  const affUrl = str(fd, "affiliateUrl");
-  if (affLabel && affUrl && !/^https?:\/\//.test(affUrl)) {
-    return { error: "ลิงก์ affiliate ต้องขึ้นต้นด้วย http:// หรือ https://" };
-  }
-  const affiliate = affLabel && affUrl ? { label: affLabel, url: affUrl } : Prisma.DbNull;
+  const aff = affiliateFrom(fd);
+  if ("error" in aff) return aff;
 
   const data = {
     name: parsed.data.name,
@@ -119,7 +128,7 @@ export async function savePlace(_prev: State, fd: FormData): Promise<State> {
     lat,
     lng,
     imageCredit: imageCreditFrom(fd),
-    affiliate,
+    affiliate: aff.affiliate,
   };
 
   const idRaw = str(fd, "id");
@@ -234,10 +243,114 @@ export async function deleteProvince(fd: FormData): Promise<void> {
     select: { slug: true, region: true },
   });
   if (!province) return;
-  // Don't orphan places that reference this province.
-  const placeCount = await prisma.place.count({ where: { province: province.slug } });
-  if (placeCount > 0) return; // guarded in the UI too
+  // Don't orphan places/hotels that reference this province.
+  const [placeCount, hotelCount] = await Promise.all([
+    prisma.place.count({ where: { province: province.slug } }),
+    prisma.hotel.count({ where: { province: province.slug } }),
+  ]);
+  if (placeCount > 0 || hotelCount > 0) return; // guarded in the UI too
   await prisma.province.delete({ where: { id } });
   revalidateProvincePaths(province);
   revalidatePath("/admin/provinces");
+}
+
+// ---------------- Hotel ----------------
+
+async function revalidateHotelPaths(h: { slug: string; province: string }) {
+  const prov = await prisma.province.findUnique({
+    where: { slug: h.province },
+    select: { region: true },
+  });
+  revalidatePath(`/hotel/${h.slug}`);
+  revalidatePath("/hotel");
+  if (prov) revalidatePath(`/${prov.region}/${h.province}`); // province page lists hotels
+  revalidatePath("/sitemap.xml");
+}
+
+export async function saveHotel(_prev: State, fd: FormData): Promise<State> {
+  await requireAdmin();
+  const provinceSlugs = (await prisma.province.findMany({ select: { slug: true } })).map(
+    (p) => p.slug,
+  );
+  if (provinceSlugs.length === 0) return { error: "ยังไม่มีจังหวัดในระบบ" };
+
+  const schema = z.object({
+    slug: z.string().trim().regex(/^[a-z0-9-]+$/, "slug ใช้ได้เฉพาะ a-z 0-9 และ -"),
+    name: z.string().trim().min(1, "กรุณากรอกชื่อโรงแรม/ที่พัก"),
+    province: z.enum(provinceSlugs),
+    summary: z.string().trim().min(1, "กรุณากรอกคำโปรย"),
+    image: z.string().trim().min(1, "กรุณากรอกรูป (URL หรือ /images/...)"),
+    body: z.string().trim().min(1, "กรุณากรอกเนื้อหา"),
+    sponsored: z.coerce.number().int().min(0).max(2),
+  });
+  const parsed = schema.safeParse({
+    slug: str(fd, "slug"),
+    name: str(fd, "name"),
+    province: str(fd, "province"),
+    summary: str(fd, "summary"),
+    image: str(fd, "image"),
+    body: str(fd, "body"),
+    sponsored: str(fd, "sponsored") || "0",
+  });
+  if (!parsed.success) return { error: parsed.error.issues[0].message };
+
+  const lat = coord(fd, "lat");
+  const lng = coord(fd, "lng");
+  if (lat === undefined || lng === undefined) return { error: "พิกัดต้องเป็นตัวเลข" };
+
+  const aff = affiliateFrom(fd);
+  if ("error" in aff) return aff;
+
+  const data = {
+    name: parsed.data.name,
+    province: parsed.data.province,
+    summary: parsed.data.summary,
+    image: parsed.data.image,
+    body: parsed.data.body,
+    sponsored: parsed.data.sponsored,
+    address: orNull(str(fd, "address")),
+    priceRange: orNull(str(fd, "priceRange")),
+    lat,
+    lng,
+    imageCredit: imageCreditFrom(fd),
+    affiliate: aff.affiliate,
+  };
+
+  const idRaw = str(fd, "id");
+  if (idRaw) {
+    const id = Number(idRaw);
+    const before = await prisma.hotel.findUnique({
+      where: { id },
+      select: { slug: true, province: true },
+    });
+    const updated = await prisma.hotel.update({ where: { id }, data });
+    await revalidateHotelPaths(updated);
+    if (before && before.province !== updated.province) await revalidateHotelPaths(before);
+  } else {
+    try {
+      const created = await prisma.hotel.create({ data: { slug: parsed.data.slug, ...data } });
+      await revalidateHotelPaths(created);
+    } catch (e) {
+      if (e instanceof Prisma.PrismaClientKnownRequestError && e.code === "P2002") {
+        return { error: `slug "${parsed.data.slug}" มีอยู่แล้ว` };
+      }
+      throw e;
+    }
+  }
+  revalidatePath("/admin/hotels");
+  redirect("/admin/hotels");
+}
+
+export async function deleteHotel(fd: FormData): Promise<void> {
+  await requireAdmin();
+  const id = Number(str(fd, "id"));
+  if (!id) return;
+  const hotel = await prisma.hotel.findUnique({
+    where: { id },
+    select: { slug: true, province: true },
+  });
+  if (!hotel) return;
+  await prisma.hotel.delete({ where: { id } });
+  await revalidateHotelPaths(hotel);
+  revalidatePath("/admin/hotels");
 }

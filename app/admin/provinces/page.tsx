@@ -16,14 +16,16 @@ export const metadata: Metadata = {
 export default async function AdminProvincesPage() {
   await requireAdmin();
 
-  const [provinces, grouped] = await Promise.all([
+  const [provinces, grouped, hotelGrouped] = await Promise.all([
     prisma.province.findMany({
       orderBy: [{ region: "asc" }, { name: "asc" }],
       select: { id: true, slug: true, name: true, nameEn: true, region: true, featured: true },
     }),
     prisma.place.groupBy({ by: ["province"], _count: { _all: true } }),
+    prisma.hotel.groupBy({ by: ["province"], _count: { _all: true } }),
   ]);
   const placeCount = Object.fromEntries(grouped.map((g) => [g.province, g._count._all]));
+  const hotelCount = Object.fromEntries(hotelGrouped.map((g) => [g.province, g._count._all]));
 
   return (
     <>
@@ -55,6 +57,11 @@ export default async function AdminProvincesPage() {
               <tbody>
                 {provinces.map((p) => {
                   const count = placeCount[p.slug] ?? 0;
+                  const hotels = hotelCount[p.slug] ?? 0;
+                  const blockReason =
+                    count > 0 || hotels > 0
+                      ? `มี ${count} สถานที่ / ${hotels} ที่พักในจังหวัดนี้ ลบไม่ได้`
+                      : undefined;
                   return (
                     <tr key={p.id} className="border-b border-gray-50 last:border-0">
                       <td className="px-5 py-4">
@@ -78,7 +85,7 @@ export default async function AdminProvincesPage() {
                             action={deleteProvince}
                             id={p.id}
                             name={p.name}
-                            disabledReason={count > 0 ? `มี ${count} สถานที่ในจังหวัดนี้ ลบไม่ได้` : undefined}
+                            disabledReason={blockReason}
                           />
                         </div>
                       </td>

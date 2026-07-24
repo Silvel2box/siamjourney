@@ -87,6 +87,31 @@ model Province {
   @@map("province")
 }
 
+// Hotel / accommodation listing. Same shape as Place minus the 4-category
+// taxonomy (hotels aren't attraction/restaurant/cafe/otop). affiliate holds the
+// booking deep-link { label, url } and reuses AffiliateButton (agoda/booking).
+model Hotel {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  name        String
+  province    String // province slug (see lib/content)
+  summary     String   @db.Text
+  image       String   @db.Text
+  imageCredit Json? // { author, source, sourceUrl, license? }
+  address     String?
+  priceRange  String?
+  lat         Float?
+  lng         Float?
+  affiliate   Json? // { label, url } — booking deep-link
+  sponsored   Int      @default(0) // 0 = ปกติ, 1 = แนะนำ, 2 = พาร์ทเนอร์จ่ายเงิน
+  body        String   @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([province])
+  @@map("hotel")
+}
+
 // Opaque server-side session; the id is the random token stored in the cookie.
 model Session {
   id         String   @id
