@@ -152,6 +152,13 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
   - scope Core: ไม่รวมลบร้าน/สร้างร้าน/ค้นหา · email ไม่แก้ (identity) · สถานะคุมที่ปุ่ม list เดิม
   - verify (next dev + forge admin session): guard anon 307, admin 200 + prefill + hidden merchantId + email/สถานะ, invalid id 404, /admin มีลิงก์แก้ไข, regression /dashboard 200 (ไม่มี merchantId=session-bound) + /shop/[id] 200, build ผ่าน · **write path (กด Save) = browser-test ตอน deploy**
   - **DEPLOY: ไม่มี migration → pull → build → restart เท่านั้น** (ไม่ต้อง install/migrate)
+- [x] **Admin search/filter UX ✅ (2026-07-25)** — ปรับหน้า admin ให้ค้นหา+กรองได้ทุก list
+  - component กลาง `components/admin/AdminSearchBar.tsx` (client) — ช่องค้นหา + dropdown filter → debounce 300ms อัปเดต URL searchParams (ไม่มีปุ่ม), หน้า server อ่าน searchParams สร้าง Prisma `where` (contains) กรองที่ DB (scale + URL แชร์ได้)
+  - `/admin/places`: ค้นชื่อ/slug + filter จังหวัด+หมวด · `/admin/hotels`: ค้น + จังหวัด · `/admin` (ร้านค้า): ค้นชื่อ/อีเมล + filter สถานะ (เดิมไม่มีอะไรเลย) · `/admin/provinces`: ค้นชื่อไทย/อังกฤษ/slug + ภูมิภาค · empty state "ไม่พบ..." ทุกหน้า
+  - a11y (รัน skill web-design-guidelines): native `<select>` (semantic), aria-label, type=search, `focus-visible:ring` (แก้ focus ring หาย), aria-hidden ไอคอน, spellCheck/autoComplete off, placeholder จบ …
+  - 🔴 **บทเรียน: siamjourney globals.css ไม่มี a11y base** (focus-visible/touch/reduced-motion) — ที่ memory ว่ามีนั่นคือของ **Tarot** คนละโปรเจกต์ (สับสน) → `focus:outline-none focus:border-primary` ที่ใช้ทั่ว admin/ฟอร์ม = **ลบ focus ring ทิ้ง** ผิด WCAG 2.4.7. แก้เฉพาะ AdminSearchBar แล้ว · **ค้าง (optional): เพิ่ม a11y base global ใน globals.css** เพื่ออุด focus ring ทั้งเว็บทีเดียว (แทนไล่แก้ทุก input)
+  - verify (next dev + forge admin): filter narrows ถูก (region=north→9, cat=cafe&q=chiang→1, q=amnat→amnat-only), empty state, guard 307, build ผ่าน
+  - **DEPLOY: ไม่มี migration → pull → build → restart**
 - [ ] **2E — Sponsored/payment** (= งาน monetization เดิม ข้อ "แพ็กเกจ featured/sponsored") สร้างบน CMS/DB ที่พร้อมแล้ว
 
 ## 🌐 เฟส 3 — ขยาย

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import AdminNav from "@/components/admin/AdminNav";
+import AdminSearchBar from "@/components/admin/AdminSearchBar";
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { updateStatus } from "@/app/actions/admin";
@@ -43,36 +44,65 @@ function ActionButton({
   );
 }
 
-export default async function AdminPage() {
+type Props = { searchParams: Promise<{ q?: string; status?: string }> };
+
+export default async function AdminPage({ searchParams }: Props) {
   await requireAdmin();
+  const { q, status } = await searchParams;
 
-  const merchants = await prisma.merchant.findMany({
-    orderBy: { createdAt: "desc" },
-    select: {
-      id: true,
-      shopName: true,
-      email: true,
-      status: true,
-      role: true,
-      createdAt: true,
-    },
-  });
+  const where = {
+    ...(status ? { status } : {}),
+    ...(q ? { OR: [{ shopName: { contains: q } }, { email: { contains: q } }] } : {}),
+  };
 
-  const pendingCount = merchants.filter((m) => m.status === "pending").length;
+  const [merchants, totalCount, pendingCount] = await Promise.all([
+    prisma.merchant.findMany({
+      where,
+      orderBy: { createdAt: "desc" },
+      select: {
+        id: true,
+        shopName: true,
+        email: true,
+        status: true,
+        role: true,
+        createdAt: true,
+      },
+    }),
+    prisma.merchant.count(),
+    prisma.merchant.count({ where: { status: "pending" } }),
+  ]);
 
   return (
     <>
       <PageBanner
         title="จัดการร้านค้า"
-        subtitle={`ทั้งหมด ${merchants.length} ร้าน · รอตรวจสอบ ${pendingCount} ร้าน`}
+        subtitle={`ทั้งหมด ${totalCount} ร้าน · รอตรวจสอบ ${pendingCount} ร้าน`}
         crumbs={[{ label: "Admin" }]}
       />
       <section className="py-16 bg-light">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
           <AdminNav />
+
+          <AdminSearchBar
+            placeholder="ค้นหาชื่อร้าน หรือ อีเมล…"
+            filters={[
+              {
+                key: "status",
+                label: "ทุกสถานะ",
+                options: [
+                  { value: "pending", label: "รอตรวจสอบ" },
+                  { value: "approved", label: "อนุมัติแล้ว" },
+                  { value: "suspended", label: "ระงับ" },
+                ],
+              },
+            ]}
+          />
+
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             {merchants.length === 0 ? (
-              <p className="p-8 text-center text-gray-500">ยังไม่มีร้านค้าสมัคร</p>
+              <p className="p-8 text-center text-gray-500">
+                {q || status ? "ไม่พบร้านค้าที่ตรงกับเงื่อนไข" : "ยังไม่มีร้านค้าสมัคร"}
+              </p>
             ) : (
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">

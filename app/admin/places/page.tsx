@@ -5,24 +5,31 @@ import AdminNav from "@/components/admin/AdminNav";
 import DeleteButton from "@/components/admin/DeleteButton";
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import AdminSearchBar from "@/components/admin/AdminSearchBar";
 import { deletePlace } from "@/app/actions/content";
-import { categoryBySlug } from "@/lib/categories";
+import { categories, categoryBySlug } from "@/lib/categories";
 
 export const metadata: Metadata = {
   title: "จัดการสถานที่ (Admin)",
   robots: { index: false },
 };
 
-type Props = { searchParams: Promise<{ province?: string }> };
+type Props = { searchParams: Promise<{ province?: string; cat?: string; q?: string }> };
 
 export default async function AdminPlacesPage({ searchParams }: Props) {
   await requireAdmin();
-  const { province } = await searchParams;
+  const { province, cat, q } = await searchParams;
+
+  const where = {
+    ...(province ? { province } : {}),
+    ...(cat ? { category: cat } : {}),
+    ...(q ? { OR: [{ name: { contains: q } }, { slug: { contains: q } }] } : {}),
+  };
 
   const [provinces, places] = await Promise.all([
     prisma.province.findMany({ select: { slug: true, name: true }, orderBy: { name: "asc" } }),
     prisma.place.findMany({
-      where: province ? { province } : undefined,
+      where,
       orderBy: [{ province: "asc" }, { name: "asc" }],
       select: { id: true, slug: true, name: true, province: true, category: true, sponsored: true },
     }),
@@ -36,24 +43,7 @@ export default async function AdminPlacesPage({ searchParams }: Props) {
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
           <AdminNav />
 
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-            <form className="flex gap-2">
-              <select
-                name="province"
-                defaultValue={province ?? ""}
-                className="px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:border-primary"
-              >
-                <option value="">ทุกจังหวัด</option>
-                {provinces.map((p) => (
-                  <option key={p.slug} value={p.slug}>
-                    {p.name}
-                  </option>
-                ))}
-              </select>
-              <button className="px-4 py-2 rounded-xl bg-white border border-gray-200 text-gray-600 hover:border-primary transition">
-                กรอง
-              </button>
-            </form>
+          <div className="flex justify-end mb-4">
             <Link
               href="/admin/places/new"
               className="px-5 py-2 rounded-full bg-primary text-white font-medium hover:bg-yellow-600 transition"
@@ -61,6 +51,22 @@ export default async function AdminPlacesPage({ searchParams }: Props) {
               + เพิ่มสถานที่
             </Link>
           </div>
+
+          <AdminSearchBar
+            placeholder="ค้นหาชื่อสถานที่ หรือ slug…"
+            filters={[
+              {
+                key: "province",
+                label: "ทุกจังหวัด",
+                options: provinces.map((p) => ({ value: p.slug, label: p.name })),
+              },
+              {
+                key: "cat",
+                label: "ทุกหมวด",
+                options: categories.map((c) => ({ value: c.slug, label: c.name })),
+              },
+            ]}
+          />
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-x-auto">
             <table className="w-full text-sm">

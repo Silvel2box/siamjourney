@@ -3,21 +3,39 @@ import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import AdminNav from "@/components/admin/AdminNav";
 import DeleteButton from "@/components/admin/DeleteButton";
+import AdminSearchBar from "@/components/admin/AdminSearchBar";
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { deleteProvince } from "@/app/actions/content";
-import { regionBySlug } from "@/lib/regions";
+import { regions, regionBySlug } from "@/lib/regions";
 
 export const metadata: Metadata = {
   title: "จัดการจังหวัด (Admin)",
   robots: { index: false },
 };
 
-export default async function AdminProvincesPage() {
+type Props = { searchParams: Promise<{ q?: string; region?: string }> };
+
+export default async function AdminProvincesPage({ searchParams }: Props) {
   await requireAdmin();
+  const { q, region } = await searchParams;
+
+  const where = {
+    ...(region ? { region } : {}),
+    ...(q
+      ? {
+          OR: [
+            { name: { contains: q } },
+            { nameEn: { contains: q } },
+            { slug: { contains: q } },
+          ],
+        }
+      : {}),
+  };
 
   const [provinces, grouped, hotelGrouped] = await Promise.all([
     prisma.province.findMany({
+      where,
       orderBy: [{ region: "asc" }, { name: "asc" }],
       select: { id: true, slug: true, name: true, nameEn: true, region: true, featured: true },
     }),
@@ -34,7 +52,7 @@ export default async function AdminProvincesPage() {
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
           <AdminNav />
 
-          <div className="flex justify-end mb-6">
+          <div className="flex justify-end mb-4">
             <Link
               href="/admin/provinces/new"
               className="px-5 py-2 rounded-full bg-primary text-white font-medium hover:bg-yellow-600 transition"
@@ -42,6 +60,17 @@ export default async function AdminProvincesPage() {
               + เพิ่มจังหวัด
             </Link>
           </div>
+
+          <AdminSearchBar
+            placeholder="ค้นหาชื่อจังหวัด (ไทย/อังกฤษ) หรือ slug…"
+            filters={[
+              {
+                key: "region",
+                label: "ทุกภูมิภาค",
+                options: regions.map((r) => ({ value: r.slug, label: r.name })),
+              },
+            ]}
+          />
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-x-auto">
             <table className="w-full text-sm">
@@ -55,6 +84,13 @@ export default async function AdminProvincesPage() {
                 </tr>
               </thead>
               <tbody>
+                {provinces.length === 0 && (
+                  <tr>
+                    <td colSpan={5} className="p-8 text-center text-gray-500">
+                      {q || region ? "ไม่พบจังหวัดที่ตรงกับเงื่อนไข" : "ไม่มีจังหวัด"}
+                    </td>
+                  </tr>
+                )}
                 {provinces.map((p) => {
                   const count = placeCount[p.slug] ?? 0;
                   const hotels = hotelCount[p.slug] ?? 0;
