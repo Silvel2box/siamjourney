@@ -20,24 +20,28 @@ export type ShopValues = {
 const inputClass =
   "px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-primary";
 
-// Merchant-facing form to edit the shop profile. Prefilled with current values;
-// the server action reads the merchant from the session, not from this form.
+// Shop-profile form. Default action is updateShop (session-bound, used on the
+// merchant dashboard). Pass `action` + `merchantId` for the admin edit-any-shop
+// flow — the hidden merchantId tells adminUpdateShop which record to update.
 export default function ShopForm({
   values,
   provinces,
   categories,
+  action = updateShop,
+  merchantId,
 }: {
   values: ShopValues;
   provinces: Option[];
   categories: Option[];
+  action?: (prev: State, fd: FormData) => Promise<State>;
+  merchantId?: number;
 }) {
-  const [state, formAction, pending] = useActionState<State, FormData>(
-    updateShop,
-    null,
-  );
+  const [state, formAction, pending] = useActionState<State, FormData>(action, null);
 
   return (
     <form action={formAction} className="flex flex-col gap-4">
+      {merchantId != null && <input type="hidden" name="merchantId" value={merchantId} />}
+
       <div className="flex flex-col gap-1">
         <label htmlFor="shopName" className="text-sm font-medium text-gray-700">
           ชื่อร้าน *

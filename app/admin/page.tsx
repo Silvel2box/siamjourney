@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import AdminNav from "@/components/admin/AdminNav";
 import { requireAdmin } from "@/lib/auth";
@@ -113,6 +114,12 @@ export default async function AdminPage() {
                           </td>
                           <td className="px-5 py-4">
                             <div className="flex flex-wrap gap-2">
+                              <Link
+                                href={`/admin/merchants/${m.id}/edit`}
+                                className="px-3 py-1 rounded-full text-xs font-medium border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition"
+                              >
+                                แก้ไข
+                              </Link>
                               {m.status !== "approved" && (
                                 <ActionButton
                                   merchantId={m.id}

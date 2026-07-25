@@ -144,7 +144,14 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
   - `gallery Json?` บน Place + migration `add_place_gallery` · content.ts Place DTO+toPlace · `savePlace` + gallery · `PlaceForm` เสียบ `<GalleryField>` + 2 admin pages · หน้า `/place/[slug]` render + JSON-LD image[]
   - verify (next dev + seed gallery ใส่ 1 place แล้ว clear): กริด+caption render, image[]=hero+2, place ไม่มี gallery=ไม่โชว์ section, hotel/place page ยัง 200 หลัง rename, build ผ่าน
   - **DEPLOY: มี migration → pull → NPM install → `migrate:deploy` → build → restart**
-- [ ] **2D-a — จัดการร้านค้าเต็ม** — admin แก้ร้านคนอื่นได้ (ตอนนี้ได้แค่เปลี่ยนสถานะ)
+- [x] **2D-a — จัดการร้านค้าเต็ม (Core) ✅ (2026-07-25)** — admin แก้โปรไฟล์ร้านใดก็ได้ (เดิมได้แค่เปลี่ยนสถานะ)
+  - `lib/shop.ts` (ใหม่) — extract `parseShopForm(fd)` (zod 8 ฟิลด์ + data-mapping) ใช้ร่วม `updateShop`+`adminUpdateShop` กัน validation drift · `updateShop` (shop.ts) เรียก helper แทน (พฤติกรรมเดิมเป๊ะ)
+  - `adminUpdateShop` (admin.ts) — `requireAdmin` ก่อนอ่าน `merchantId` จากฟอร์ม (แพทเทิร์นเดียวกับ `updateStatus`) → update ร้านใดก็ได้ · revalidate /admin + edit page + /shop/[id]
+  - `ShopForm` เพิ่ม 2 props: `action` (default `updateShop`) + `merchantId` (→ hidden input) — reuse ฟอร์มเดียวทั้ง dashboard(session-bound) + admin(by-id) เหมือน PlaceForm mode
+  - หน้าใหม่ `/admin/merchants/[id]/edit` (mirror places edit) — findUnique + prefill + แสดง email/สถานะ read-only · ลิงก์ "แก้ไข" ต่อแถวใน `/admin` · AdminNav ไฮไลต์แท็บร้านค้าครอบ /admin/merchants
+  - scope Core: ไม่รวมลบร้าน/สร้างร้าน/ค้นหา · email ไม่แก้ (identity) · สถานะคุมที่ปุ่ม list เดิม
+  - verify (next dev + forge admin session): guard anon 307, admin 200 + prefill + hidden merchantId + email/สถานะ, invalid id 404, /admin มีลิงก์แก้ไข, regression /dashboard 200 (ไม่มี merchantId=session-bound) + /shop/[id] 200, build ผ่าน · **write path (กด Save) = browser-test ตอน deploy**
+  - **DEPLOY: ไม่มี migration → pull → build → restart เท่านั้น** (ไม่ต้อง install/migrate)
 - [ ] **2E — Sponsored/payment** (= งาน monetization เดิม ข้อ "แพ็กเกจ featured/sponsored") สร้างบน CMS/DB ที่พร้อมแล้ว
 
 ## 🌐 เฟส 3 — ขยาย
