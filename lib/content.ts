@@ -161,6 +161,12 @@ export async function getAllPlaces(): Promise<Place[]> {
   return allPlaces();
 }
 
+// The homepage stat only needs the number, not 308 rows of markdown.
+const placeCount = cache(async () => prisma.place.count());
+export async function getPlaceCount(): Promise<number> {
+  return placeCount();
+}
+
 export async function getPlace(slug: string): Promise<Place | undefined> {
   return (await allPlaces()).find((p) => p.slug === slug);
 }

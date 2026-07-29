@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { getAllProvinces, getFeaturedProvinces } from "@/lib/content";
+import {
+  getAllProvinces,
+  getFeaturedProvinces,
+  getPlaceCount,
+} from "@/lib/content";
+import { regions } from "@/lib/regions";
+import { categories } from "@/lib/categories";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -22,6 +28,13 @@ export default async function Home() {
     name: p.name,
     region: p.region,
   }));
+
+  const stats = [
+    { value: provinces.length, label: "จังหวัด" },
+    { value: await getPlaceCount(), label: "สถานที่แนะนำ" },
+    { value: regions.length, label: "ภูมิภาค" },
+    { value: categories.length, label: "หมวดหมู่" },
+  ];
 
   return (
     <>
@@ -69,50 +82,67 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* About */}
-      <section id="about" className="py-24 bg-white">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2 reveal">
-              <div className="relative img-zoom-container rounded-3xl shadow-2xl h-[500px]">
-                <Image
-                  src="/images/site/culture.jpg"
-                  alt="วัฒนธรรมไทย"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-                <div className="absolute -bottom-10 -right-10 bg-white p-6 rounded-2xl shadow-xl hidden md:block border border-gray-100">
-                  <p className="font-heading font-bold text-4xl text-primary">77</p>
-                  <p className="text-gray-600">จังหวัดให้คุณค้นหา</p>
-                </div>
-              </div>
+      {/* About. The photo runs to the viewport edge from lg up and the copy card
+          overlaps it; below lg the two simply stack. Capped at the same 1536px
+          the `container` utility uses so ultra-wide screens stay aligned. */}
+      <section id="about" className="py-16 md:py-24 bg-white overflow-hidden">
+        <div className="mx-auto max-w-[1536px] lg:grid lg:grid-cols-12 lg:items-center">
+          <div className="px-6 md:px-12 lg:px-0 lg:col-start-1 lg:col-span-7 lg:row-start-1 reveal">
+            <div className="img-zoom-container relative h-72 md:h-[420px] lg:h-[560px] rounded-3xl lg:rounded-l-none shadow-2xl">
+              <Image
+                src="/images/site/culture.jpg"
+                alt="วัฒนธรรมไทย"
+                fill
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="object-cover"
+              />
             </div>
-            <div className="lg:w-1/2 reveal delay-100">
-              <h2 className="text-4xl font-heading font-bold text-dark mb-6">
+          </div>
+
+          <div className="relative z-10 lg:col-start-7 lg:col-span-6 lg:row-start-1 lg:-ml-12 reveal delay-100">
+            <div className="bg-white px-6 pt-10 md:px-12 lg:mr-6 xl:mr-12 lg:p-12 lg:rounded-3xl lg:shadow-2xl">
+              <span className="inline-flex items-center gap-3 text-primary font-heading tracking-widest text-sm font-semibold mb-5">
+                <span className="h-px w-8 bg-primary" aria-hidden="true" />
+                เกี่ยวกับเรา
+              </span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark mb-6">
                 ความมหัศจรรย์ที่รอคุณอยู่
                 <br />
                 ในทุกมุมของประเทศ
               </h2>
-              <p className="text-gray-600 mb-6 leading-relaxed text-lg text-justify">
+              <p className="text-gray-600 mb-8 leading-relaxed text-lg">
                 ไม่ว่าคุณจะหลงใหลในเกาะสวรรค์ทางภาคใต้ ทะเลหมอกทางภาคเหนือ อารยธรรมโบราณในภาคอีสาน หรือสีสันของเมืองหลวง เราคัดสถานที่ท่องเที่ยว ร้านอาหาร คาเฟ่ และของดีประจำถิ่นมาให้คุณครบในที่เดียว
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {[
                   { icon: "mountain", text: "ธรรมชาติที่อุดมสมบูรณ์" },
                   { icon: "utensils", text: "อาหารท้องถิ่นรสเลิศ" },
                   { icon: "store", text: "สินค้า OTOP ประจำท้องถิ่น" },
                 ].map((item) => (
                   <li key={item.icon} className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                       <i className={`fas fa-${item.icon}`} />
                     </div>
-                    <span className="text-lg font-medium">{item.text}</span>
+                    <span className="font-medium">{item.text}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Counts come straight from the data, so they can't drift. */}
+        <div className="container mx-auto px-6 md:px-12 mt-14 md:mt-20 reveal">
+          <dl className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 border-t border-gray-200 pt-10 md:pt-12">
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col-reverse items-center text-center">
+                <dt className="text-gray-600 mt-2">{s.label}</dt>
+                <dd className="font-heading font-bold text-4xl md:text-5xl text-primary">
+                  {s.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
