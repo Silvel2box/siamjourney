@@ -179,6 +179,14 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
   - verify: `tsc --noEmit` สะอาด · curl ครบ 8 เคส (hover gate=0, min-h-svh, hero ไม่มี reveal, flex-wrap 4 จุด, การ์ดเดี่ยว max-w-2xl, ลิงก์ place หน้าหมวด=4 ใบ, related=3 ใบไม่มีตัวเอง, href="#"=0) · CSS คอมไพล์: `100svh` + parallax ใน `@media (hover:hover)` + reduced-motion อยู่หลัง · `npm run build` 719 หน้า ไม่มีหน้าไหนหลุดจาก static/SSG
   - 📌 **ยังต้องเทสต์ในเบราว์เซอร์จริง** (curl พิสูจน์ไม่ได้): การ์ดจังหวัดบน iOS/Android จริง (DevTools ย่อจอเฉยๆ ยังรายงาน `hover: hover` = ผ่านหลอก) · hero พอดีจอตอนมีแถบ URL · h1 ขึ้นตอนปิด JS · หัวข้อที่ 360px
   - **DEPLOY: ไม่มี migration → pull → build → restart**
+- [x] **รื้อเซคชัน "เกี่ยวกับเรา" หน้าแรก ✅ (2026-07-29, commit dd89af3)** — user เปิดมือถือจริงแล้วติว่า space เยอะ + เดสก์ท็อปดูไม่มีเนื้อ
+  - **มือถือ: 660px → 392px ก่อนถึงหัวข้อ** — เดิม `py-24`(96) + รูป `h-[500px]` + `gap-16`(64) **ไม่มี breakpoint สักตัว** → `py-16 md:py-24` + `h-72 md:h-[420px] lg:h-[560px]` + ข้อความต่อทันที (`pt-10`)
+  - 🐛 **การ์ด "77 จังหวัด" โดนตัดขาดทุกจอ** — มันอยู่ข้างใน `.img-zoom-container` ที่มี `overflow:hidden` แต่ตั้ง `-bottom-10 -right-10` ให้ล้นออก → โดน clip · **อย่าวาง absolute ที่ล้นกรอบไว้ใน .img-zoom-container** · แก้โดยเลิกใช้การ์ดลอย
+  - **layout ใหม่ (asymmetric):** รูปชิดขอบจอซ้าย `lg:col-start-1 lg:col-span-7` + การ์ดขาวมีเงาซ้อนทับ `lg:col-start-7 lg:col-span-6 lg:-ml-12` (คอลัมน์ 7 ทับกันเอง + ดึงซ้ายอีก 48px) · ครอบ `max-w-[1536px]` = ค่าเดียวกับ `container` เพื่อให้จอ ultra-wide ตรงแนวเซคชันอื่น · eyebrow "— เกี่ยวกับเรา" ทอง (แพทเทิร์นเดียวกับ hero/destinations)
+  - **แถบสถิติแทนการ์ดลอย:** `77 จังหวัด · 308 สถานที่แนะนำ · 6 ภูมิภาค · 4 หมวดหมู่` — **ดึงจากข้อมูลจริงหมด ไม่ hardcode** (`provinces.length` / `getPlaceCount()` ใหม่ = `prisma.place.count()` ไม่โหลด 308 แถวที่มี body / `regions.length` / `categories.length`) → เลขไม่เพี้ยนเมื่อเพิ่มสถานที่ในแอดมิน · มือถือ 2×2 เดสก์ท็อป 4 ช่อง · `<dl>` + `flex-col-reverse` (semantic dt ก่อน dd แต่โชว์เลขบน)
+  - เอา `text-justify` ออก (ไทยไม่มีช่องว่างระหว่างคำ จัดชิดขอบทำช่องไฟฉีก · เป็นที่เดียวในเว็บที่ใช้)
+  - verify: `tsc` สะอาด · build 719 หน้าเท่าเดิม · curl ยืนยันโครงใหม่ครบ + ของเก่าหาย 0 (`h-[500px]` เดิม / การ์ดลอย / text-justify)
+  - **DEPLOY: ไม่มี migration → pull → build → restart**
 - [ ] **2E — Sponsored/payment** (= งาน monetization เดิม ข้อ "แพ็กเกจ featured/sponsored") สร้างบน CMS/DB ที่พร้อมแล้ว
 
 ## 🌐 เฟส 3 — ขยาย
