@@ -156,8 +156,15 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
   - component กลาง `components/admin/AdminSearchBar.tsx` (client) — ช่องค้นหา + dropdown filter → debounce 300ms อัปเดต URL searchParams (ไม่มีปุ่ม), หน้า server อ่าน searchParams สร้าง Prisma `where` (contains) กรองที่ DB (scale + URL แชร์ได้)
   - `/admin/places`: ค้นชื่อ/slug + filter จังหวัด+หมวด · `/admin/hotels`: ค้น + จังหวัด · `/admin` (ร้านค้า): ค้นชื่อ/อีเมล + filter สถานะ (เดิมไม่มีอะไรเลย) · `/admin/provinces`: ค้นชื่อไทย/อังกฤษ/slug + ภูมิภาค · empty state "ไม่พบ..." ทุกหน้า
   - a11y (รัน skill web-design-guidelines): native `<select>` (semantic), aria-label, type=search, `focus-visible:ring` (แก้ focus ring หาย), aria-hidden ไอคอน, spellCheck/autoComplete off, placeholder จบ …
-  - 🔴 **บทเรียน: siamjourney globals.css ไม่มี a11y base** (focus-visible/touch/reduced-motion) — ที่ memory ว่ามีนั่นคือของ **Tarot** คนละโปรเจกต์ (สับสน) → `focus:outline-none focus:border-primary` ที่ใช้ทั่ว admin/ฟอร์ม = **ลบ focus ring ทิ้ง** ผิด WCAG 2.4.7. แก้เฉพาะ AdminSearchBar แล้ว · **ค้าง (optional): เพิ่ม a11y base global ใน globals.css** เพื่ออุด focus ring ทั้งเว็บทีเดียว (แทนไล่แก้ทุก input)
+  - 🔴 **บทเรียน: siamjourney globals.css ไม่มี a11y base** (focus-visible/touch/reduced-motion) — ที่ memory ว่ามีนั่นคือของ **Tarot** คนละโปรเจกต์ (สับสน) → `focus:outline-none focus:border-primary` ที่ใช้ทั่ว admin/ฟอร์ม = **ลบ focus ring ทิ้ง** ผิด WCAG 2.4.7. แก้เฉพาะ AdminSearchBar แล้ว · ✅ อุดทั้งเว็บแล้วด้านล่าง
   - verify (next dev + forge admin): filter narrows ถูก (region=north→9, cat=cafe&q=chiang→1, q=amnat→amnat-only), empty state, guard 307, build ผ่าน
+  - **DEPLOY: ไม่มี migration → pull → build → restart**
+- [x] **a11y base ใน `app/globals.css` ✅ (2026-07-29, commit 32d119d)** — 3 บล็อก ~40 บรรทัด อุดทั้งเว็บทีเดียว (ไม่ต้องไล่แก้ทุก input)
+  - `:focus-visible { outline: 2px solid var(--color-primary) !important; outline-offset: 2px }` — **ต้องมี `!important`** เพราะ Tailwind คอมไพล์ `.focus\:outline-none:focus { outline-style: none }` (specificity 0,2,0 ชนะ `:focus-visible` 0,1,0) ที่ใช้อยู่ 12 จุดในฟอร์ม/admin → คืน focus ring ทุกที่ (WCAG 2.4.7)
+  - `touch-action: manipulation` บน a/button/input/select/textarea/summary/[role=button] — ตัด tap delay 300ms บนมือถือ
+  - `@media (prefers-reduced-motion: reduce)` — ตัด transition/animation + `.reveal` โชว์เลย (ปกติ opacity:0 รอ JS) + ปิด hover zoom + parallax→scroll
+  - 🐛 **บทเรียน: บล็อก reduced-motion ต้องอยู่ท้ายไฟล์** — `@media` ไม่เพิ่ม specificity ตอนแรกวางไว้บนสุด `.reveal{opacity:1}` เลยแพ้ `.reveal{opacity:0}` ที่อยู่ล่างกว่า (dead code) · จับได้ตอน**อ่าน CSS ที่คอมไพล์จริง** ไม่ใช่ดูแค่ source
+  - verify: curl `/_next/static/chunks/*.css` จาก dev → เห็นทั้ง 3 บล็อก + ลำดับถูก (`.reveal` opacity:0 บรรทัด 2578 → override 2661) + ยืนยัน utility `focus:outline-none` ไม่มี `!important` · `npm run build` ผ่าน
   - **DEPLOY: ไม่มี migration → pull → build → restart**
 - [ ] **2E — Sponsored/payment** (= งาน monetization เดิม ข้อ "แพ็กเกจ featured/sponsored") สร้างบน CMS/DB ที่พร้อมแล้ว
 
