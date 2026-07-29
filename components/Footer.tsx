@@ -25,15 +25,18 @@ export default function Footer() {
                 { icon: "facebook-f", href: site.social.facebook },
                 { icon: "instagram", href: site.social.instagram },
                 { icon: "twitter", href: site.social.twitter },
-              ].map((s) => (
-                <a
-                  key={s.icon}
-                  href={s.href}
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition"
-                >
-                  <i className={`fab fa-${s.icon}`} />
-                </a>
-              ))}
+              ]
+                // Hide until a real URL lands in lib/site.ts (placeholder is "#").
+                .filter((s) => s.href !== "#")
+                .map((s) => (
+                  <a
+                    key={s.icon}
+                    href={s.href}
+                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition"
+                  >
+                    <i className={`fab fa-${s.icon}`} />
+                  </a>
+                ))}
             </div>
           </div>
 
@@ -76,7 +79,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>&copy; 2026 {site.name}. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
           <div className="flex space-x-6">
             <Link href="/privacy" className="hover:text-white transition">นโยบายความเป็นส่วนตัว</Link>
             <Link href="/terms" className="hover:text-white transition">เงื่อนไขการให้บริการ</Link>

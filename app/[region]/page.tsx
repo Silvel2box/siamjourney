@@ -5,6 +5,7 @@ import { getProvincesByRegion } from "@/lib/content";
 import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import ProvinceCard from "@/components/ProvinceCard";
+import RegionGrid from "@/components/RegionGrid";
 
 export const dynamicParams = false;
 // Region set is fixed, but its province list comes from the DB — revalidate so
@@ -57,6 +58,16 @@ export default async function RegionPage({ params }: Props) {
               กำลังรวบรวมข้อมูลจังหวัดในภูมิภาคนี้ เร็วๆ นี้
             </p>
           )}
+        </div>
+      </section>
+
+      {/* RegionGrid tiles are white-on-translucent — they need a dark backdrop. */}
+      <section className="py-16 bg-dark text-white">
+        <div className="container mx-auto px-6 md:px-12">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold mb-8">
+            เที่ยวภาคอื่น
+          </h2>
+          <RegionGrid />
         </div>
       </section>
     </>

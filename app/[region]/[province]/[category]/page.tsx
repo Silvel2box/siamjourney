@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   getAllProvinces,
   getProvince,
+  getPlacesByProvince,
   getPlacesByProvinceCategory,
 } from "@/lib/content";
 import { categories, categoryBySlug } from "@/lib/categories";
@@ -66,6 +67,14 @@ export default async function CategoryPage({ params }: Props) {
 
   const regionInfo = regionBySlug(province.region);
 
+  // Top place of every OTHER category in this province — one card each, so the
+  // block stays balanced no matter how many places a single category grows to.
+  const siblings = await getPlacesByProvince(slug);
+  const others = categories
+    .filter((c) => c.slug !== category.slug)
+    .map((c) => siblings.find((p) => p.category === c.slug))
+    .filter((p) => p !== undefined);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -87,7 +96,11 @@ export default async function CategoryPage({ params }: Props) {
 
       <PageBanner
         title={`${category.name}ใน${province.name}`}
-        subtitle={`${category.name}แนะนำ ${places.length} แห่งใน${province.name}`}
+        subtitle={
+          places.length > 1
+            ? `${category.name}แนะนำ ${places.length} แห่งใน${province.name}`
+            : `${category.name}แนะนำใน${province.name}`
+        }
         image={province.image}
         crumbs={[
           { href: `/${province.region}`, label: regionInfo?.name ?? "ภูมิภาค" },
@@ -119,11 +132,31 @@ export default async function CategoryPage({ params }: Props) {
             })}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* A lone card in a 3-col grid reads as an empty page; widen it instead. */}
+          <div
+            className={`grid gap-8 ${
+              places.length === 1
+                ? "max-w-2xl"
+                : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            }`}
+          >
             {places.map((place) => (
               <PlaceCard key={place.slug} place={place} />
             ))}
           </div>
+
+          {others.length > 0 && (
+            <div className="mt-20">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark mb-8">
+                หมวดอื่นใน{province.name}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {others.map((p) => (
+                  <PlaceCard key={p.slug} place={p} />
+                ))}
+              </div>
+            </div>
+          )}
 
           <AdSlot className="mt-12" />
         </div>

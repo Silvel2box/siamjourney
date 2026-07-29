@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { site } from "@/lib/site";
 
 const links = [
   { href: "/#destinations", label: "จุดหมายยอดฮิต" },

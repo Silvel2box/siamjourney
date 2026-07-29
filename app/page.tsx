@@ -25,15 +25,22 @@ export default async function Home() {
 
   return (
     <>
-      {/* Hero */}
+      {/* Hero. svh (not vh) so the CTAs clear the mobile URL bar.
+          No `reveal` here: the h1 is the LCP element and must not wait for JS. */}
+      <link
+        rel="preload"
+        as="image"
+        href="/images/site/hero.jpg"
+        fetchPriority="high"
+      />
       <section
-        className="relative h-screen bg-parallax flex items-center justify-center"
+        className="relative min-h-svh py-24 bg-parallax flex items-center justify-center"
         style={{
           backgroundImage: "url('/images/site/hero.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20 reveal">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
           <span className="text-primary font-heading tracking-widest uppercase text-sm md:text-base font-semibold mb-4 block">
             Unseen Thailand
           </span>

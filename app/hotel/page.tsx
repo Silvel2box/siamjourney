@@ -47,12 +47,12 @@ export default async function HotelIndexPage() {
           {groups.length > 0 ? (
             groups.map(({ province, hotels }, i) => (
               <section key={province.slug} id={province.slug}>
-                <div className="flex items-center justify-between gap-3 mb-8">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
                   <div className="flex items-center gap-3">
                     <span className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl">
                       <i className="fas fa-bed" />
                     </span>
-                    <h2 className="text-3xl font-heading font-bold text-dark">
+                    <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark">
                       ที่พักใน{province.name}
                     </h2>
                   </div>

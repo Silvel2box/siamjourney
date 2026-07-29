@@ -1,11 +1,18 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { marked } from "marked";
-import { getAllPlaces, getPlace, getProvince } from "@/lib/content";
+import {
+  getAllPlaces,
+  getPlace,
+  getPlacesByProvince,
+  getProvince,
+} from "@/lib/content";
 import { categoryBySlug } from "@/lib/categories";
 import { regionBySlug } from "@/lib/regions";
 import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
+import PlaceCard from "@/components/PlaceCard";
 import AffiliateButton from "@/components/AffiliateButton";
 import PhotoGallery from "@/components/PhotoGallery";
 import AdSlot from "@/components/AdSlot";
@@ -49,6 +56,12 @@ export default async function PlacePage({ params }: Props) {
   const category = categoryBySlug(place.category);
   const bodyHtml = await marked.parse(place.body);
   const gallery = place.gallery ?? [];
+  // Every province ships 4 places (one per category), so this fills the row.
+  const related = province
+    ? (await getPlacesByProvince(place.province))
+        .filter((p) => p.slug !== place.slug)
+        .slice(0, 3)
+    : [];
 
   const crumbs = [];
   if (region && province) {
@@ -167,6 +180,27 @@ export default async function PlacePage({ params }: Props) {
               </div>
             </aside>
           </div>
+
+          {province && region && related.length > 0 && (
+            <div className="mt-20">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark">
+                  ที่เที่ยวอื่นใน{province.name}
+                </h2>
+                <Link
+                  href={`/${region.slug}/${province.slug}`}
+                  className="text-primary font-medium hover:underline whitespace-nowrap flex items-center gap-2"
+                >
+                  ดูทั้งหมด <i className="fas fa-arrow-right text-sm" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {related.map((p) => (
+                  <PlaceCard key={p.slug} place={p} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </>

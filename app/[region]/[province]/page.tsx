@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { marked } from "marked";
 import {
   getAllProvinces,
   getProvince,
@@ -55,6 +56,7 @@ export default async function ProvincePage({ params }: Props) {
     getHotelsByProvince(slug),
   ]);
   const sections = sectionsRaw.filter((s) => s.places.length > 0);
+  const bodyHtml = province.body ? await marked.parse(province.body) : "";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -85,15 +87,27 @@ export default async function ProvincePage({ params }: Props) {
 
       <div className="py-20 bg-light">
         <div className="container mx-auto px-6 md:px-12 space-y-20">
+          {province.body && (
+            <section className="max-w-3xl">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark mb-4">
+                เกี่ยวกับ{province.name}
+              </h2>
+              <div
+                className="prose-body text-gray-700 text-lg"
+                dangerouslySetInnerHTML={{ __html: bodyHtml }}
+              />
+            </section>
+          )}
+
           {sections.length > 0 ? (
             sections.map(({ category, places }, i) => (
               <section key={category.slug} id={category.slug}>
-                <div className="flex items-center justify-between gap-3 mb-8">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
                   <div className="flex items-center gap-3">
                     <span className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl">
                       <i className={`fas fa-${category.icon}`} />
                     </span>
-                    <h2 className="text-3xl font-heading font-bold text-dark">
+                    <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark">
                       {category.name}
                     </h2>
                   </div>
@@ -120,12 +134,14 @@ export default async function ProvincePage({ params }: Props) {
 
           {hotels.length > 0 && (
             <section id="hotel">
-              <div className="flex items-center justify-between gap-3 mb-8">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
                 <div className="flex items-center gap-3">
                   <span className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl">
                     <i className="fas fa-bed" />
                   </span>
-                  <h2 className="text-3xl font-heading font-bold text-dark">ที่พัก</h2>
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark">
+                    ที่พัก
+                  </h2>
                 </div>
                 <Link
                   href="/hotel"

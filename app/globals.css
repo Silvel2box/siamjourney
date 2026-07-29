@@ -70,12 +70,17 @@ summary,
   transform: scale(1.1);
 }
 
-/* Parallax hero background */
+/* Parallax hero background. `background-attachment: fixed` is unsupported /
+   janky on iOS Safari, so it only applies where there is a real pointer. */
 .bg-parallax {
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media (hover: hover) and (pointer: fine) {
+  .bg-parallax {
+    background-attachment: fixed;
+  }
 }
 
 /* Navbar scrolled state */
