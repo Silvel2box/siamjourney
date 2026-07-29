@@ -166,6 +166,19 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
   - 🐛 **บทเรียน: บล็อก reduced-motion ต้องอยู่ท้ายไฟล์** — `@media` ไม่เพิ่ม specificity ตอนแรกวางไว้บนสุด `.reveal{opacity:1}` เลยแพ้ `.reveal{opacity:0}` ที่อยู่ล่างกว่า (dead code) · จับได้ตอน**อ่าน CSS ที่คอมไพล์จริง** ไม่ใช่ดูแค่ source
   - verify: curl `/_next/static/chunks/*.css` จาก dev → เห็นทั้ง 3 บล็อก + ลำดับถูก (`.reveal` opacity:0 บรรทัด 2578 → override 2661) + ยืนยัน utility `focus:outline-none` ไม่มี `!important` · `npm run build` ผ่าน
   - **DEPLOY: ไม่มี migration → pull → build → restart**
+- [x] **แก้บั๊ก UI มือถือ + หน้าโล่ง ✅ (2026-07-29, commit 586d4e0)** — งานเก็บก่อนเริ่ม 2E · แก้ของที่พัง ไม่ใช่ redesign · ไม่เพิ่มคอนเทนต์ใหม่ (ใช้ข้อมูลที่มีอยู่)
+  - 🔴 **บั๊กหลัก: `ProvinceCard` โชว์แค่ชื่อจังหวัดบนมือถือ** — คำอธิบาย+ปุ่ม CTA อยู่ใต้ `opacity-0 group-hover:opacity-100` และ **Tailwind v4 ห่อ `group-hover:` ทุกตัวด้วย `@media (hover: hover)`** (ยืนยันจาก CSS ที่คอมไพล์: `.group-hover\:opacity-100:is(:where(.group):hover *)` อยู่ในบล็อก hover) → มือถือ/แท็บเล็ตไม่มีทางเห็น · **แก้ด้วย `md:` ไม่ได้** เพราะ hover เป็นเรื่อง pointer ไม่ใช่ความกว้าง (iPad 768px = md แต่ไม่มี hover) → เอา hover gate ออก โชว์ตลอด (คีย์บอร์ดบนเดสก์ท็อปก็เพิ่งจะเห็นครั้งแรก) + `h-[400px]` → `h-80 md:h-[400px]`
+  - hero: `h-screen` → `min-h-svh py-24` (100vh สูงเกินจอมือถือตอนมีแถบ URL) · **ลบ `.reveal` ออกจาก hero** — `<h1>` เป็น LCP แต่ `opacity:0` จนกว่า IntersectionObserver จะทำงาน · เพิ่ม `<link rel=preload as=image>` (React 19 hoist เอง) · **ไม่แปลงเป็น next/image** (จะฆ่า parallax = คนละการตัดสินใจ, รูป 302KB ยังไม่ผ่าน optimizer = หนี้ค้าง)
+  - `globals.css`: `background-attachment: fixed` ย้ายเข้า `@media (hover: hover) and (pointer: fine)` (iOS Safari กระตุก) · เดสก์ท็อปเหมือนเดิมเป๊ะ · บล็อก reduced-motion ยังอยู่ท้ายสุดจึงยังชนะ
+  - หัวข้อเซคชัน 3 จุด (`[province]` ×2, `/hotel`): `flex-wrap` + `text-2xl md:text-3xl` — ไทยไม่มีช่องว่างระหว่างคำ "ที่พักในประจวบคีรีขันธ์" ล้นที่ 360px · **ไม่ extract `<SectionHeader>`** (แก้แค่ 2 class × 3 จุด, extract จะ diff ใหญ่กว่าบั๊ก)
+  - **หน้าโล่ง (ข้อมูลจริง = 1 สถานที่/หมวด/จังหวัด):** หน้าหมวด → การ์ดเดี่ยวขยายเป็น `max-w-2xl` (672×256) + subtitle ตัด "1 แห่ง" + เพิ่มบล็อก "หมวดอื่นใน<จังหวัด>" (1 ใบ/หมวดที่เหลือ ผ่าน `getPlacesByProvince` = React-cached **0 query เพิ่ม**) → 1 การ์ดเป็น 4
+  - **`province.body` ไม่เคยแสดงบนเว็บเลย** ทั้งที่มีย่อหน้าจริงทุกจังหวัด + แก้ได้ในแอดมิน → render เป็นบล็อกแรกหน้าจังหวัด (`marked` + `.prose-body` แพทเทิร์นเดิมจาก place page)
+  - หน้าสถานที่เพิ่ม "ที่เที่ยวอื่นใน<จังหวัด>" 3 ใบ (ตัดตัวเองด้วย slug) · หน้าภาคเพิ่ม `<RegionGrid>` "เที่ยวภาคอื่น" — 🔴 **ต้องครอบ `bg-dark`** เพราะ RegionGrid เป็น `bg-white/5` + ตัวอักษรขาว (มองไม่เห็นบน bg-light)
+  - เศษงาน: ซ่อนปุ่มโซเชียลที่ href ยังเป็น `"#"` (filter — พอใส่ URL จริงกลับมาเอง) · `© 2026` → `getFullYear()` · ลบ import ที่ไม่ใช้ใน Navbar
+  - **ตัดสินใจไม่ทำ:** ลิงก์ "ที่พัก" บน navbar คงไว้เหมือนเดิม (user สั่ง — ไม่แตะ root layout/ไม่เพิ่ม DB query) · `PlaceCard` `h-64` ไม่ได้พัง · จัดระบบดีไซน์ (ปุ่มทอง 4 ขนาด, radius 5 ค่า, `hover:bg-yellow-600` เพี้ยนเลมอน, Font Awesome CDN render-blocking) = รอบหน้า
+  - verify: `tsc --noEmit` สะอาด · curl ครบ 8 เคส (hover gate=0, min-h-svh, hero ไม่มี reveal, flex-wrap 4 จุด, การ์ดเดี่ยว max-w-2xl, ลิงก์ place หน้าหมวด=4 ใบ, related=3 ใบไม่มีตัวเอง, href="#"=0) · CSS คอมไพล์: `100svh` + parallax ใน `@media (hover:hover)` + reduced-motion อยู่หลัง · `npm run build` 719 หน้า ไม่มีหน้าไหนหลุดจาก static/SSG
+  - 📌 **ยังต้องเทสต์ในเบราว์เซอร์จริง** (curl พิสูจน์ไม่ได้): การ์ดจังหวัดบน iOS/Android จริง (DevTools ย่อจอเฉยๆ ยังรายงาน `hover: hover` = ผ่านหลอก) · hero พอดีจอตอนมีแถบ URL · h1 ขึ้นตอนปิด JS · หัวข้อที่ 360px
+  - **DEPLOY: ไม่มี migration → pull → build → restart**
 - [ ] **2E — Sponsored/payment** (= งาน monetization เดิม ข้อ "แพ็กเกจ featured/sponsored") สร้างบน CMS/DB ที่พร้อมแล้ว
 
 ## 🌐 เฟส 3 — ขยาย
