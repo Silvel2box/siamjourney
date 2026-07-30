@@ -40,6 +40,10 @@ export default async function EditProvincePage({ params }: Props) {
     imageCreditLicense: credit?.license ?? "",
     featured: province.featured,
     body: province.body,
+    highlights: (province.highlights as string[] | null) ?? [],
+    bestTime: province.bestTime ?? "",
+    gettingThere: province.gettingThere ?? "",
+    localFood: province.localFood ?? "",
   };
 
   return (

@@ -67,6 +67,24 @@ function galleryFrom(
   return { gallery: items.length ? items : Prisma.DbNull };
 }
 
+// Province highlights arrive as a JSON string array (hidden input from
+// HighlightsField). Empty → Prisma.DbNull (clear).
+function highlightsFrom(
+  fd: FormData,
+): { highlights: Prisma.InputJsonValue | typeof Prisma.DbNull } | { error: string } {
+  const raw = str(fd, "highlights");
+  if (!raw) return { highlights: Prisma.DbNull };
+  let json: unknown;
+  try {
+    json = JSON.parse(raw);
+  } catch {
+    return { error: "ข้อมูลไฮไลต์ไม่ถูกต้อง" };
+  }
+  const parsed = z.array(z.string().trim().min(1)).max(8).safeParse(json);
+  if (!parsed.success) return { error: "ข้อมูลไฮไลต์ไม่ถูกต้อง" };
+  return { highlights: parsed.data.length ? parsed.data : Prisma.DbNull };
+}
+
 // Booking/partner link { label, url } → JSON (Prisma.DbNull = clear). Returns an
 // error string when a url is given but malformed. Shared by place + hotel.
 function affiliateFrom(
@@ -227,6 +245,9 @@ export async function saveProvince(_prev: State, fd: FormData): Promise<State> {
   });
   if (!parsed.success) return { error: parsed.error.issues[0].message };
 
+  const hl = highlightsFrom(fd);
+  if ("error" in hl) return hl;
+
   const data = {
     name: parsed.data.name,
     nameEn: parsed.data.nameEn,
@@ -236,6 +257,10 @@ export async function saveProvince(_prev: State, fd: FormData): Promise<State> {
     body: parsed.data.body,
     featured: str(fd, "featured") === "on",
     imageCredit: imageCreditFrom(fd),
+    highlights: hl.highlights,
+    bestTime: orNull(str(fd, "bestTime")),
+    gettingThere: orNull(str(fd, "gettingThere")),
+    localFood: orNull(str(fd, "localFood")),
   };
 
   const idRaw = str(fd, "id");

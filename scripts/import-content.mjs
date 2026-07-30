@@ -2,6 +2,10 @@
 // markdown into the DB (Place / Province tables). Safe to re-run — upserts by
 // slug. Markdown files stay as a backup. Run once per environment after the
 // add_content_models migration:  node scripts/import-content.mjs
+//
+// `--provinces` (npm run import:provinces) imports provinces only. Use that on
+// prod: upsert overwrites DB rows with the markdown values, and places have been
+// edited/added through the admin since the first import.
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
@@ -24,8 +28,9 @@ const read = (dir) =>
     });
 
 async function main() {
+  const provincesOnly = process.argv.includes("--provinces");
   const provinces = read("provinces");
-  const places = read("places");
+  const places = provincesOnly ? [] : read("places");
 
   let pv = 0;
   for (const { data, body } of provinces) {
@@ -37,6 +42,10 @@ async function main() {
       image: data.image,
       imageCredit: data.imageCredit ?? null,
       featured: Boolean(data.featured),
+      highlights: data.highlights ?? null,
+      bestTime: data.bestTime ?? null,
+      gettingThere: data.gettingThere ?? null,
+      localFood: data.localFood ?? null,
       body,
     };
     await prisma.province.upsert({

@@ -58,6 +58,13 @@ export default async function ProvincePage({ params }: Props) {
   const sections = sectionsRaw.filter((s) => s.places.length > 0);
   const bodyHtml = province.body ? await marked.parse(province.body) : "";
 
+  // "รู้ก่อนไป" — only the fields that have been written up for this province.
+  const tips = [
+    { icon: "calendar-days", label: "ช่วงเวลาที่ควรไป", text: province.bestTime },
+    { icon: "route", label: "การเดินทาง", text: province.gettingThere },
+    { icon: "bowl-food", label: "ของกินขึ้นชื่อ", text: province.localFood },
+  ].filter((t) => t.text);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "TouristDestination",
@@ -96,6 +103,48 @@ export default async function ProvincePage({ params }: Props) {
                 className="prose-body text-gray-700 text-lg"
                 dangerouslySetInnerHTML={{ __html: bodyHtml }}
               />
+            </section>
+          )}
+
+          {province.highlights && province.highlights.length > 0 && (
+            <section id="highlights">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark mb-8">
+                ไฮไลต์ของ{province.name}
+              </h2>
+              <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {province.highlights.map((h) => (
+                  <li
+                    key={h}
+                    className="bg-white rounded-2xl p-6 shadow-sm flex items-start gap-4"
+                  >
+                    <span className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                      <i className="fas fa-star" />
+                    </span>
+                    <span className="text-gray-700 leading-relaxed">{h}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {tips.length > 0 && (
+            <section id="tips">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark mb-8">
+                รู้ก่อนไป{province.name}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {tips.map((t) => (
+                  <div key={t.icon} className="bg-white rounded-2xl p-6 shadow-sm">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                        <i className={`fas fa-${t.icon}`} />
+                      </span>
+                      <h3 className="font-heading font-bold text-dark">{t.label}</h3>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">{t.text}</p>
+                  </div>
+                ))}
+              </div>
             </section>
           )}
 

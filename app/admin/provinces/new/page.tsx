@@ -23,6 +23,10 @@ const empty = {
   imageCreditLicense: "",
   featured: false,
   body: "",
+  highlights: [] as string[],
+  bestTime: "",
+  gettingThere: "",
+  localFood: "",
 };
 
 export default async function NewProvincePage() {

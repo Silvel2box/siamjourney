@@ -81,6 +81,12 @@ model Province {
   imageCredit Json?
   featured    Boolean  @default(false)
   body        String   @db.Text
+  // Trip-planning content shown on the province page (all optional — a province
+  // that hasn't been written up yet simply renders fewer blocks).
+  highlights   Json? // ["...", "..."] 4-6 ข้อ — ไฮไลต์ของจังหวัด
+  bestTime     String? @db.Text // ช่วงเวลาที่ควรไป
+  gettingThere String? @db.Text // การเดินทาง
+  localFood    String? @db.Text // ของกิน/ของฝากขึ้นชื่อ
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 

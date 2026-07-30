@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { saveProvince } from "@/app/actions/content";
 import ImageUploadField from "@/components/admin/ImageUploadField";
+import HighlightsField from "@/components/admin/HighlightsField";
 
 type State = { error: string } | null;
 type Option = { slug: string; name: string };
@@ -21,6 +22,10 @@ export type ProvinceFormValues = {
   imageCreditLicense: string;
   featured: boolean;
   body: string;
+  highlights: string[];
+  bestTime: string;
+  gettingThere: string;
+  localFood: string;
 };
 
 const input =
@@ -93,6 +98,25 @@ export default function ProvinceForm({
       <Field id="body" label="เนื้อหา (รองรับ markdown) *">
         <textarea id="body" name="body" required rows={5} defaultValue={values.body} className={input} />
       </Field>
+
+      <HighlightsField
+        name="highlights"
+        label="ไฮไลต์ของจังหวัด"
+        hint="4-6 ข้อ ข้อละบรรทัดสั้นๆ — แสดงเป็นการ์ดในหน้าจังหวัด"
+        defaultValue={values.highlights}
+      />
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <Field id="bestTime" label="ช่วงเวลาที่ควรไป">
+          <textarea id="bestTime" name="bestTime" rows={3} defaultValue={values.bestTime} className={input} />
+        </Field>
+        <Field id="gettingThere" label="การเดินทาง">
+          <textarea id="gettingThere" name="gettingThere" rows={3} defaultValue={values.gettingThere} className={input} />
+        </Field>
+        <Field id="localFood" label="ของกินขึ้นชื่อ">
+          <textarea id="localFood" name="localFood" rows={3} defaultValue={values.localFood} className={input} />
+        </Field>
+      </div>
 
       <ImageUploadField name="image" label="รูปจังหวัด *" defaultValue={values.image} />
 

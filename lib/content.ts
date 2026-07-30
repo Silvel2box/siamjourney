@@ -48,6 +48,11 @@ export type Province = {
   imageCredit?: ImageCredit;
   featured: boolean;
   body: string;
+  // Trip-planning content — optional, written up province by province.
+  highlights?: string[];
+  bestTime?: string;
+  gettingThere?: string;
+  localFood?: string;
 };
 
 // Hotel = Place without the category taxonomy; affiliate holds the booking link.
@@ -121,6 +126,10 @@ function toProvince(r: ProvinceRow): Province {
     imageCredit: (r.imageCredit as unknown as ImageCredit) ?? undefined,
     featured: r.featured,
     body: r.body,
+    highlights: (r.highlights as unknown as string[]) ?? undefined,
+    bestTime: r.bestTime ?? undefined,
+    gettingThere: r.gettingThere ?? undefined,
+    localFood: r.localFood ?? undefined,
   };
 }
 
