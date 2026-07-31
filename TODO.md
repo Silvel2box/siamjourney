@@ -187,7 +187,24 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
   - เอา `text-justify` ออก (ไทยไม่มีช่องว่างระหว่างคำ จัดชิดขอบทำช่องไฟฉีก · เป็นที่เดียวในเว็บที่ใช้)
   - verify: `tsc` สะอาด · build 719 หน้าเท่าเดิม · curl ยืนยันโครงใหม่ครบ + ของเก่าหาย 0 (`h-[500px]` เดิม / การ์ดลอย / text-justify)
   - **DEPLOY: ไม่มี migration → pull → build → restart**
-- [ ] **2E — Sponsored/payment** (= งาน monetization เดิม ข้อ "แพ็กเกจ featured/sponsored") สร้างบน CMS/DB ที่พร้อมแล้ว
+- [~] **2E — Sponsored/payment = พับแล้ว (2026-07-30)** — ตัดสินใจร่วมกับ user ว่าไม่ทำ
+  - **เหตุผล:** ขาย sponsored ได้ตั้งแต่วันนี้โดยไม่ต้องเขียนโค้ด — dropdown `sponsored` (0/1/2) มีในแอดมินทั้ง place และ hotel, `bySponsorThenName` (`lib/content.ts`) ดันขึ้นบนสุด, badge "แนะนำ/พาร์ทเนอร์" มีใน PlaceCard/HotelCard แล้ว → รับเงิน → กด dropdown จบ
+  - สร้างระบบ order/ใบเสร็จ/วันหมดอายุ/payment gateway ให้สินค้าที่ยัง**ไม่มีลูกค้าแม้แต่รายเดียว** = speculative เต็มรูปแบบ · ถ้าวันหนึ่งขายได้จริงหลายเจ้าค่อยกลับมาทำ (ของที่ยังขาด: merchant↔listing link, plan/period/expiry, order table, webhook, admin การเงิน, email)
+  - **สิ่งที่พบระหว่างวิเคราะห์ (สำคัญกว่า 2E):** ทุกช่องทางรายได้ที่สร้างไว้ยัง**ปิดอยู่หมด** — AdSense `slots.inContent: ""` → `adUnitsEnabled=false` → `<ins>` ไม่ render สักตัวใน prod (มีคนเข้าเท่าไรก็ได้ 0฿) · affiliate `id` ทั้ง 5 network = `""` → ปุ่ม 154 ปุ่มไม่มี publisher ID ติดไป · ลิงก์ affiliate ส่วนใหญ่ชี้หน้าแรกเปล่า (klook.com/th/ 77 + shopee.co.th/ 77 เหมือนกันทุกไฟล์) · **ไม่มี analytics ใดๆ ทั้ง GA4/GTM/Plausible และไม่ได้ verify GSC** → "traffic น้อย" เป็นการเดา ไม่ใช่การวัด และข้อมูลย้อนหลังไม่มีทางได้คืน · `/privacy` เขียนว่าใช้ Google Analytics ซึ่งไม่จริง
+  - **ลำดับที่ตกลงกันแทน:** (1) เติมเนื้อหาหน้าจังหวัด ← ทำอยู่ (2) GA4 + แก้ /privacy + AdSense review (3) ลิงก์ค้นหาที่พักต่อจังหวัด (รอ Agoda/Booking partner ID — ตอนนี้มีแต่ Shopee)
+- [ ] **เติมเนื้อหาหน้าจังหวัด 77 หน้า — 🚧 58/77 (2026-07-31, `017284a` → `5fd061f`, push ขึ้น GitHub แล้ว ยังไม่ deploy)**
+  - **ปัญหาที่วัดได้:** body จังหวัด median 335 ตัวอักษร (min 165 uttaradit / max 465 sukhothai) และ **ไม่มี `##` เลยแม้แต่ไฟล์เดียวใน 77 ไฟล์** · เนื้อหา unique ต่อหน้า ≈ 600 ตัวอักษร = เสี่ยง low value content ตอน AdSense review
+  - **schema:** `Province` +4 คอลัมน์ `highlights Json?` (string[]), `bestTime/gettingThere/localFood String? @db.Text` · migration `20260730092013_add_province_content` (ADD COLUMN ล้วน ไม่แตะของเดิม)
+  - **หน้าจังหวัด:** 2 บล็อกใหม่เขียน inline ใน `app/[region]/[province]/page.tsx` (call site เดียว ไม่ extract) — "ไฮไลต์ของ<จังหวัด>" กริดการ์ด 6 ข้อ + "รู้ก่อนไป<จังหวัด>" 3 กล่องไอคอน · **ทุกบล็อกมีเงื่อนไข** → 19 จังหวัดที่ยังไม่เขียนแสดงผลเหมือนเดิมเป๊ะ ไม่มีกล่องเปล่า
+  - **แอดมิน:** `components/admin/HighlightsField.tsx` (repeatable text list เพิ่ม/ลบ/↑↓ → hidden JSON, ก๊อปโครง GalleryField ตัด upload ออก) + 3 textarea ใน ProvinceForm + `highlightsFrom()` ใน saveProvince (zod max 8, ว่าง → `Prisma.DbNull`)
+  - 🔴 **importer มี guard ใหม่ `--provinces` (`npm run import:provinces`)** — importer เป็น upsert ที่ `update: row` = ทับ DB ด้วยค่าจาก markdown · **prod มี 309 places (local 308) เพราะ user เพิ่มเองผ่านแอดมิน** → รัน importer เต็มบน prod = ทับงานแอดมิน ห้ามเด็ดขาด
+  - **มาตรฐานเนื้อหาที่ตกลงกับ user:** body ~700-1,100 ตัวอักษร (ลองยาว ~1,000-1,200 แล้ว user ว่ายาวไป) = ย่อหน้าเปิดเดิม + `##` 2 หัวข้อ**ที่ไม่ซ้ำแบบเทมเพลตข้ามจังหวัด** · ไฮไลต์ 6 ข้อ · 3 field สั้น · **เลี่ยงตัวเลขเจาะจง** (ราคา/เวลาเปิด-ปิด/วันจัดงาน/ระยะทาง กม.) ยึดของที่ไม่เปลี่ยน (ภูมิศาสตร์ แลนด์มาร์ก ฤดูกาลกว้างๆ ของกินขึ้นชื่อ) · ใช้ได้แค่ `p/h2/ul` เพราะ `.prose-body` มีสไตล์แค่ 3 ตัวนี้
+  - เสร็จแล้ว: เหนือ 9 · อีสาน 20 · กลาง 22 · ตะวันออก 7 → **เหลือ ใต้ 14 · ตะวันตก 5**
+  - verify ทุก batch: `import:provinces` → เช็ค DB (ไฮไลต์ ≥4, 3 field ครบ, `##` = 2, places ยัง 308) → `npm run build` 719 หน้าเท่าเดิม → curl หน้า enriched + หน้าที่ยังไม่เขียน
+  - 🔴 **DEPLOY (มี migration):** `pull → NPM install (ให้ prisma generate จบก่อน) → Run script: migrate:deploy → Run script: import:provinces → build → restart`
+  - 🐛 **gotcha ที่เพิ่งเจอ:** `npm run import:provinces` พังด้วย `EPERM ... query_engine-windows.dll.node` เมื่อ node ตัวอื่น (dev server ค้าง) ล็อก engine อยู่ — schema ไม่เปลี่ยนก็ข้าม generate ได้ด้วย `node scripts/import-content.mjs --provinces` · และ `git push` ผ่าน PowerShell ที่มี `2>&1` จะรายงาน exit 255 ทั้งที่ push สำเร็จ (NativeCommandError) ให้ยืนยันด้วย `git status -sb`
+- [x] **รูป hero อำนาจเจริญ ✅ (2026-07-31, `b3e011c`)** — ของเดิมเป็น**ธงประจำจังหวัด**จาก Wikimedia ไม่ใช่รูปสถานที่ → เปลี่ยนเป็นภาพจาก อบจ.อำนาจเจริญ (user ส่งลิงก์มา) · **ต้อง self-host เสมอ** เพราะ `next.config.ts` remotePatterns มีแค่ pexels · บีบ sharp q82 (300KB→61KB) · credit = องค์การบริหารส่วนจังหวัดอำนาจเจริญ (ไม่ใส่ license เพราะไม่ใช่ CC) · ลบ .png เดิม + grep ยืนยันไม่มีที่ไหนอ้างถึง
+  - 📌 ค้าง: รูปนี้ 1030×450 (2.29:1) — บน hero สวย แต่ `ProvinceCard` เป็นกรอบแนวตั้ง (`h-80 md:h-[400px]` + object-cover) จะครอปจนฐานพระธาตุด้านขวาโดนตัด ถ้าจะแก้ต้องครอปใหม่ (เหลือ ~675×450 = hero ความละเอียดลด) หรือหารูปใหญ่กว่ามาแทน
 
 ## 🌐 เฟส 3 — ขยาย
 - [ ] i18n `/en/` เป็นหน้าจริง + hreflang (ไม่พึ่ง Google Translate)
