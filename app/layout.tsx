@@ -3,6 +3,7 @@ import { Kanit, Prompt } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import { adsense, adsenseEnabled } from "@/lib/adsense";
+import { ga4MeasurementId, analyticsEnabled } from "@/lib/analytics";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -55,6 +56,20 @@ export default function RootLayout({
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.client}`}
             crossOrigin="anonymous"
           />
+        )}
+        {/* GA4, plain tags for the same reason as the AdSense loader above. */}
+        {analyticsEnabled && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${ga4MeasurementId}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${ga4MeasurementId}');`,
+              }}
+            />
+          </>
         )}
       </head>
       <body className="bg-light text-gray-800 font-sans antialiased overflow-x-hidden">
