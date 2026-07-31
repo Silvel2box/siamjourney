@@ -4,7 +4,7 @@ name: อำนาจเจริญ
 nameEn: Amnat Charoen
 region: northeast
 summary: เมืองพระใหญ่มิ่งเมือง พุทธอุทยานสงบร่มรื่น และผ้าฝ้ายทอมือ
-image: /images/provinces/amnat-charoen.png
+image: /images/provinces/amnat-charoen.jpg
 featured: false
 highlights:
   - พระมงคลมิ่งเมือง พระพุทธรูปปางมารวิชัยขนาดใหญ่คู่เมือง
@@ -17,10 +17,10 @@ bestTime: ปลายฝนถึงต้นหนาวราวตุลา�
 gettingThere: ขับรถหรือนั่งรถโดยสารต่อจากอุบลราชธานีได้ไม่ไกล ผู้ที่มาทางเครื่องบินมักลงสนามบินอุบลราชธานีแล้วต่อรถ จุดหมายในจังหวัดกระจายตัว ควรมีรถส่วนตัว
 localFood: ส้มตำ ลาบ ก้อย ปลาแม่น้ำโขงจากอำเภอชานุมาน ของฝากคือผ้าฝ้ายทอมือและข้าวหอมมะลิ
 imageCredit:
-  author: The original uploader was Tak thaweesup at Thai Wikipedia.
-  source: Wikimedia Commons
-  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Flag_of_Amnat_Charoen_Province.png'
-  license: Public domain
+  author: องค์การบริหารส่วนจังหวัดอำนาจเจริญ
+  source: amnatpao.go.th
+  sourceUrl: >-
+    https://amnatpao.go.th/upload/files/yknJPhUstJTnpgqW7xJgm8vgyjW6puaurSPCcWxO.jpeg
 ---
 อำนาจเจริญเป็นจังหวัดเล็กเงียบสงบทางตะวันออกของอีสาน เป็นที่ตั้งของพระมงคลมิ่งเมือง พระพุทธรูปปางมารวิชัยขนาดใหญ่ที่เป็นศูนย์รวมศรัทธาของชาวเมือง
 
