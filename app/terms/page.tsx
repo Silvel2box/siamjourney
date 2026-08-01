@@ -19,9 +19,7 @@ export default function TermsPage() {
 
       <section className="py-16 bg-light">
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
-          <p className="mb-8 rounded-2xl bg-primary/10 border border-primary/20 p-5 text-sm text-gray-700">
-            หมายเหตุ: เอกสารนี้เป็นแบบร่างเริ่มต้น ควรให้ที่ปรึกษากฎหมายตรวจสอบและปรับให้เหมาะกับการดำเนินงานจริงก่อนเผยแพร่ · ปรับปรุงล่าสุด: กรกฎาคม 2569
-          </p>
+          <p className="mb-8 text-sm text-gray-500">ปรับปรุงล่าสุด: สิงหาคม 2569</p>
 
           <div className="prose-body text-gray-700">
             <p>
