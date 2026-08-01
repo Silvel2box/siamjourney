@@ -6,16 +6,17 @@
 //   - slot ID also set  → real ad units render (only after approval, when the
 //     dashboard actually gives you a slot ID).
 //
-// Remaining step (once the account is approved):
-//   1. Create an in-content ad unit in AdSense → paste its slot ID into slots.
-//   2. git pull + rebuild on Plesk.
+// Both switches are on. Units only fill once the account itself is approved —
+// until then AdSense serves nothing and the placement stays blank.
 export const adsense = {
   // Publisher ID. The publisher ID is public (it ships in the page HTML), so a
   // plain constant is fine — no env var needed.
   client: "ca-pub-1938381370106852",
   // Per-placement ad unit slot IDs from the AdSense dashboard.
   slots: {
-    inContent: "",
+    // "siamjourney-incontent" — Display, responsive. Matches the format AdSlot
+    // renders (data-ad-format="auto" + full-width-responsive).
+    inContent: "1608333357",
   },
 } as const;
 
