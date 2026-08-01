@@ -12,6 +12,7 @@
     "db:seed": "prisma db seed",
     "import:content": "prisma generate && node scripts/import-content.mjs",
     "import:provinces": "prisma generate && node scripts/import-content.mjs --provinces",
+    "seed:hotels": "node scripts/seed-hotels.mjs",
     "postinstall": "prisma generate"
   },
   "prisma": {
