@@ -44,7 +44,7 @@ export default function AdSlot({
   }
 
   return (
-    <div className={`w-full text-center ${className}`}>
+    <div className={`ad-placement w-full text-center ${className}`}>
       <span className="block text-[11px] uppercase tracking-wide text-gray-400 mb-1">
         {label}
       </span>

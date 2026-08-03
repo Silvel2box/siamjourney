@@ -110,6 +110,14 @@ summary,
   margin-bottom: 1rem;
 }
 
+/* Collapse a placement Google could not fill. AdSense stamps the <ins> with
+   data-ad-status="unfilled" after it gives up, so this also hides the "โฆษณา"
+   label — otherwise visitors see an empty labelled box on every page while the
+   account is still under review. The ad markup stays in the HTML either way. */
+.ad-placement:has(ins[data-ad-status="unfilled"]) {
+  display: none;
+}
+
 /* Reduced motion — must stay last: the overrides below share specificity with
    the rules they cancel, so the cascade decides by source order. */
 @media (prefers-reduced-motion: reduce) {
