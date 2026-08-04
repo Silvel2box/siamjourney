@@ -44,7 +44,7 @@ export default async function AdminHotelsPage({ searchParams }: Props) {
           <div className="flex justify-end mb-4">
             <Link
               href="/admin/hotels/new"
-              className="px-5 py-2 rounded-full bg-primary text-white font-medium hover:bg-yellow-600 transition"
+              className="px-5 py-2 rounded-full bg-primary text-white font-medium hover:bg-primary-dark transition"
             >
               + เพิ่มที่พัก
             </Link>

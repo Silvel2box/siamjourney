@@ -18,7 +18,7 @@ export default function AffiliateButton({
       href={href}
       target="_blank"
       rel="sponsored nofollow noopener"
-      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-full font-medium hover:bg-yellow-600 transition shadow-lg shadow-primary/30"
+      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary-dark transition shadow-lg shadow-primary/30"
     >
       <i className="fas fa-tag" />
       {label}

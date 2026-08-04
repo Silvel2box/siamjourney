@@ -7,6 +7,10 @@
    these: bg-primary, text-dark, bg-light, font-sans, font-heading. */
 @theme {
   --color-primary: #c28e46; /* elegant gold */
+  /* Hover shade for gold buttons. They used to hover to Tailwind's yellow-600
+     (#ca8a04) — inherited from the HTML template — which is both brighter and
+     far more saturated than the gold, so buttons flashed lemon on hover. */
+  --color-primary-dark: #a77a3c;
   --color-dark: #1a1a1a;
   --color-light: #f9f9f9;
 

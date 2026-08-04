@@ -55,7 +55,7 @@ export default async function AdminProvincesPage({ searchParams }: Props) {
           <div className="flex justify-end mb-4">
             <Link
               href="/admin/provinces/new"
-              className="px-5 py-2 rounded-full bg-primary text-white font-medium hover:bg-yellow-600 transition"
+              className="px-5 py-2 rounded-full bg-primary text-white font-medium hover:bg-primary-dark transition"
             >
               + เพิ่มจังหวัด
             </Link>

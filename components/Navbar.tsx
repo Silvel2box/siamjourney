@@ -48,7 +48,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/#regions"
-            className="px-6 py-2 bg-primary text-white rounded-full hover:bg-yellow-600 transition shadow-lg"
+            className="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition shadow-lg"
           >
             เริ่มต้นเดินทาง
           </Link>

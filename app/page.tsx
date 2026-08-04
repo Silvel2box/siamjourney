@@ -73,7 +73,7 @@ export default async function Home() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="#destinations"
-              className="px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-yellow-600 transition shadow-lg shadow-primary/30 flex items-center justify-center gap-2"
+              className="px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-primary-dark transition shadow-lg shadow-primary/30 flex items-center justify-center gap-2"
             >
               ออกเดินทาง <i className="fas fa-arrow-right" />
             </Link>

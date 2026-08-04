@@ -17,7 +17,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/"
-            className="px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-yellow-600 transition shadow-lg shadow-primary/30 flex items-center justify-center gap-2"
+            className="px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-primary-dark transition shadow-lg shadow-primary/30 flex items-center justify-center gap-2"
           >
             <i className="fas fa-house" /> กลับหน้าแรก
           </Link>
