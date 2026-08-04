@@ -272,14 +272,16 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
 - [x] Git pull deploy ผ่าน Plesk panel (ไม่มี SSH — build/migrate/seed รันผ่าน "Run script" = npm scripts)
 - [x] DB: MySQL `mutelu_siamjourney`, `migrate deploy`/`reset` ผ่าน npm scripts, admin ตั้งผ่าน `db:seed` (ADMIN_EMAIL)
 - แก้ระหว่าง deploy (ดู PROJECT_MEMORY): (1) casing ตาราง Windows→Linux → `@@map` ตัวเล็ก + squash migration, (2) `.env` แยกสำหรับ CLI (panel env ไม่ถึง Run script), (3) **ModSecurity react2shell (CVE-2025-55182) บล็อก Server Action** → whitelist rule `1055182010` ใน WAF "Security rule IDs"
-- [ ] (เหลือ) build hook อัตโนมัติตอน git push (ตอนนี้ pull+build มือ), เช็ก `next/image` optimizer บน Passenger (ยังใช้ remotePatterns unsplash)
+- [ ] (เหลือ) build hook อัตโนมัติตอน git push (ตอนนี้ pull+build มือ)
+- [x] **`next/image` optimizer ทำงานบน Passenger ✅ verify ไลฟ์ (2026-08-04)** — เสิร์ฟ `image/webp` จริงเมื่อเบราว์เซอร์ส่ง `Accept: image/webp` + `Cache-Control: max-age=31536000` (remotePatterns = pexels เท่านั้นแล้ว ไม่มี unsplash)
 
 ---
 
 ## 📝 หนี้ทางเทคนิค / หมายเหตุ
-- รูป **สถานที่ (places)** = เฉพาะต่อแห่งแล้ว (Wikimedia จริง 66 + Pexels 242) · รูป **จังหวัด (provinces)** ยังเป็น Unsplash วนซ้ำ
+- ⭐ **กฎรูปของโปรเจกต์ (verify ไลฟ์ 2026-08-04 — ไม่ต้องเช็คซ้ำ):** รูปที่ผ่าน `next/image` (จังหวัด/สถานที่/โรงแรม/แกลเลอรี/`culture.jpg` = **ทุกอย่างที่แก้ผ่านแอดมิน**) **optimizer แปลง WebP ให้อัตโนมัติต่อ request** ตาม `Accept` header + cache 1 ปี · พิสูจน์: รูปเดียวกัน `Accept: image/webp`→`image/webp` 23,324B / `Accept: */*`→`image/jpeg` 30,819B (−24%) · **อัปโหลด .jpg เข้าแอดมินได้เลย ไม่ต้องแปลงมือ** (route อัปโหลดมี sharp ย่อ ≤1500px q82 ให้อยู่แล้ว) · 🔴 **ข้อยกเว้นเดียว = รูปที่เป็น CSS background** — CSS ต่อรองฟอร์แมตกับเบราว์เซอร์ไม่ได้ ต้องเขียน `image-set()` เอง → ทั้งเว็บมีรูปเดียวคือ hero (ทำแล้ว) · **เพิ่ม CSS-background ตัวใหม่เมื่อไหร่ = ต้องแปลง WebP มือเมื่อนั้น**
+- รูป **สถานที่ (places)** = เฉพาะต่อแห่งแล้ว (Wikimedia จริง 66 + Pexels 242) · รูป **จังหวัด (provinces)** = Wikimedia จริง 77/77 self-host แล้ว (ไม่ใช่ Unsplash วนซ้ำอีกต่อไป)
 - affiliate URL เป็นตัวอย่าง (ยังไม่มี tag รายได้)
-- ใช้ `<img>` ธรรมดา ยังไม่ใช้ `next/image`
+- ใช้ `next/image` ทุกจุดแล้ว (PageBanner/ProvinceCard/PlaceCard/HotelCard/PhotoGallery/หน้าแรก) — ยกเว้น `app/shop/[id]` ที่รูปมาจากโฮสต์ไหนก็ได้ที่ merchant กรอก จึงต้องเป็น `<img>` ธรรมดา (ไม่อยู่ใน remotePatterns)
 - newsletter form ต่อ DB แล้ว (Server Action + Prisma)
 - **deployed จริงแล้ว** ที่ https://siam-journey.com (Plesk/Passenger/MySQL)
 - content เป็น markdown — ถ้าโตมากพิจารณา Velite หรือย้ายเข้า DB
