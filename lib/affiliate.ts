@@ -12,12 +12,23 @@ type NetworkCfg = {
   idParam: string;
   id: string;
   subIdParam: string;
+  // Some programs don't take the affiliate id on the destination URL at all.
+  // Klook hands out a redirect endpoint that carries the id and swallows the
+  // real page in a `k_site` param. Set this to that endpoint to get a wrapped
+  // link; leave it off and the id is appended to the destination instead.
+  redirectBase?: string;
 };
 
 export const affiliateConfig = {
   utmSource: "siamjourney",
   networks: [
-    { match: "klook.com", idParam: "aid", id: "", subIdParam: "aff_sub" },
+    {
+      match: "klook.com",
+      idParam: "aid",
+      id: "129762",
+      subIdParam: "aff_label1",
+      redirectBase: "https://affiliate.klook.com/redirect",
+    },
     { match: "agoda.com", idParam: "cid", id: "", subIdParam: "tag" },
     { match: "booking.com", idParam: "aid", id: "", subIdParam: "label" },
     { match: "shopee.", idParam: "af_siteid", id: "", subIdParam: "af_sub_siteid" },
@@ -38,6 +49,19 @@ export function buildAffiliateUrl(rawUrl: string, placeSlug: string): string {
   const net = affiliateConfig.networks.find((n) =>
     url.hostname.includes(n.match),
   );
+
+  // Wrapped programs (Klook): the destination goes in untouched and all the
+  // tracking rides on the wrapper. The sub id is per place, not one label for
+  // the whole site — otherwise every click lands in a single bucket and the
+  // dashboard can't say which page earned it.
+  if (net?.id && net.redirectBase) {
+    const wrapper = new URL(net.redirectBase);
+    wrapper.searchParams.set(net.idParam, net.id);
+    wrapper.searchParams.set("_currency", "THB");
+    wrapper.searchParams.set("k_site", url.toString());
+    wrapper.searchParams.set(net.subIdParam, placeSlug);
+    return wrapper.toString();
+  }
 
   // affiliate ID — only when you've filled it in
   if (net?.id && !url.searchParams.has(net.idParam)) {
