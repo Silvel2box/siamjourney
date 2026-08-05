@@ -192,7 +192,11 @@ export default async function Home() {
 
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between mb-16 gap-8">
-            <div className="lg:w-1/2 reveal">
+            {/* relative z-20 lifts the whole column, not just the dropdown:
+                `reveal` sets a transform, and a transform makes its own
+                stacking context, so the dropdown's own z-index can never
+                escape this div to beat the RegionGrid column beside it. */}
+            <div className="lg:w-1/2 reveal relative z-20">
               <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
                 เที่ยวทั่วไทย ไปได้ทุกที่
                 <br />
