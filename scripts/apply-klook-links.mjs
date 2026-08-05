@@ -38,32 +38,50 @@ const PRODUCTS = {
     label: "จองทัวร์ปางช้าง Living Green ชลบุรี",
     url: "https://www.klook.com/th/activity/144699-living-green-elephant-sanctuary-chonburi-from-bangkok-or-pattaya",
   },
+  "phuket-patong": {
+    label: "จองทัวร์เกาะพีพี + อ่าวมาหยา จากภูเก็ต",
+    url: "https://www.klook.com/th/activity/138073-phuket-phi-phi-island-day-tour-by-speedboat-catamaran",
+  },
+  "phang-nga-jamesbond": {
+    label: "จองทัวร์เกาะตะปูเต็มวัน (ออกจากภูเก็ต)",
+    url: "https://www.klook.com/th/activity/3227-james-bond-day-tour-big-boat-longtail-speedboat",
+  },
+  "krabi-railay": {
+    label: "จองทัวร์เกาะพีพี + อ่าวมาหยา (ออกจากภูเก็ต)",
+    url: "https://www.klook.com/th/activity/14913-phi-phi-islands-day-tour-phuket",
+  },
 };
 
 // The block is always these three lines, in this order, at the top level.
 const BLOCK = /^affiliate:\n {2}label: .*\n {2}url: .*\n/m;
 
+const block = (p) => `affiliate:\n  label: ${p.label}\n  url: '${p.url}'\n`;
+
+// Re-runnable in both directions: a later export can hand a product to a place
+// whose button this script already took away, so it has to be able to put the
+// block back. Slots in ahead of imageCredit, where it sat originally.
+function withBlock(text, product) {
+  if (BLOCK.test(text)) return text.replace(BLOCK, block(product));
+  if (/^imageCredit:/m.test(text)) {
+    return text.replace(/^imageCredit:/m, `${block(product)}imageCredit:`);
+  }
+  return text.replace(/^---\n([\s\S]*?)^---\n/m, (_, fm) => `---\n${fm}${block(product)}---\n`);
+}
+
 const dry = process.argv.includes("--dry");
 const dir = path.join(process.cwd(), "content", "places");
 
-let linked = 0, removed = 0, skipped = 0;
+let linked = 0, removed = 0, untouched = 0;
 for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".md"))) {
   const full = path.join(dir, file);
   const text = fs.readFileSync(full, "utf8");
-  if (!text.includes("klook.com")) continue; // Shopee places are a separate job
+  if (text.includes("shopee")) continue; // Shopee places are a separate job
 
   const slug = file.replace(/\.md$/, "");
-  if (!BLOCK.test(text)) {
-    console.warn(`  ! ${slug}: affiliate block is not the expected shape — left alone`);
-    skipped++;
-    continue;
-  }
-
   const product = PRODUCTS[slug];
-  const next = product
-    ? text.replace(BLOCK, `affiliate:\n  label: ${product.label}\n  url: '${product.url}'\n`)
-    : text.replace(BLOCK, "");
+  const next = product ? withBlock(text, product) : text.replace(BLOCK, "");
 
+  if (next === text) { untouched++; continue; }
   if (!dry) fs.writeFileSync(full, next);
   product ? linked++ : removed++;
 }
@@ -74,6 +92,5 @@ const missing = Object.keys(PRODUCTS).filter(
 if (missing.length) console.warn("  ! product mapped to a slug that does not exist:", missing);
 
 console.log(
-  `${dry ? "[dry] " : ""}klook links: ${linked} pointed at a product, ${removed} buttons removed` +
-    (skipped ? `, ${skipped} skipped` : ""),
+  `${dry ? "[dry] " : ""}klook links: ${linked} written, ${removed} buttons removed, ${untouched} already correct`,
 );

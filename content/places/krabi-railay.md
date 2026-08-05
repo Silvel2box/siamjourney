@@ -9,6 +9,9 @@ address: ตำบลอ่าวนาง อำเภอเมือง จั
 hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ค่าเรือหางยาวประมาณ 100-200 บาท
 sponsored: 1
+affiliate:
+  label: จองทัวร์เกาะพีพี + อ่าวมาหยา (ออกจากภูเก็ต)
+  url: 'https://www.klook.com/th/activity/14913-phi-phi-islands-day-tour-phuket'
 imageCredit:
   author: Vyacheslav Argenberg
   source: Wikimedia Commons

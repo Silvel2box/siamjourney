@@ -9,6 +9,9 @@ address: ตำบลป่าตอง อำเภอกะทู้ จัง
 hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ไม่มีค่าเข้าชม
 sponsored: 1
+affiliate:
+  label: จองทัวร์เกาะพีพี + อ่าวมาหยา จากภูเก็ต
+  url: 'https://www.klook.com/th/activity/138073-phuket-phi-phi-island-day-tour-by-speedboat-catamaran'
 imageCredit:
   author: Arnaud-Victor Monteux
   source: Wikimedia Commons
