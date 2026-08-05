@@ -81,6 +81,11 @@ const PRODUCTS = {
     url: "https://www.klook.com/th/activity/1168-coral-island-snorkeling-tour-pattaya",
     image: "https://res.klook.com/image/upload/activities/net4xhzgfs66pnzagjro.jpg",
   },
+  "trat-koh-chang": {
+    label: "จองล่องเรือกอนโดลาที่เกาะช้าง",
+    url: "https://www.klook.com/th/activity/57264-thai-gondola-cruise-koh-chang-salak-kok",
+    image: "https://res.klook.com/image/upload/activities/cavzw44pkqfu7nopvw8z.jpg",
+  },
 };
 
 // label + url, then the partner's product photo when their feed ships one.

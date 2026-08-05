@@ -80,6 +80,18 @@ const TOURS = {
     { label: "บัตรเข้า Bouncetopia เซ็นทรัลหาดใหญ่", url: k(137530, "bouncetopia-ticket-at-central-hatyai"), image: img("houa9itnnzf31efxahca") },
     { label: "พิพิธภัณฑ์มายากล หาดใหญ่", url: k(41392, "magic-museum-hatyai"), image: img("zhcqxhcs4gt3fwtmsj5s") },
   ],
+  "phang-nga": [
+    { label: "ทัวร์ดำน้ำตื้นหมู่เกาะสิมิลัน", url: k(89618, "join-similan-islands-snorkel-tour-fantastic-similan-phang-nga"), image: img("whs44hdfmx1k6x3vj0hc") },
+    { label: "ทัวร์อ่าวพังงา + เกาะเจมส์บอนด์ + พายเรือแคนู", url: k(76625, "join-in-james-bond-by-chic-chic"), image: img("cqkbil8wxn25xoefvi68") },
+    { label: "ล่องแก่ง + ขับ ATV เต็มวันในพังงา", url: k(75973, "rafting-experience-phang-nga"), image: img("kdrdtxeo2getxbjvbdfz") },
+    { label: "บัตรมวยไทยสนามมวยเขาหลัก", url: k(80778, "join-khao-lak-boxing-stadium-muay-thai-phang-nga"), image: img("k8e2qdlx2qnv2p7uoioq") },
+    { label: "คลาสทำอาหารไทย Riverside เขาหลัก", url: k(82126, "join-riverside-thai-cooking-class-khao-lak-phang-nga"), image: img("pqag1j0afhhyy0trzpas") },
+    { label: "อควา สปา ที่ The Haven เขาหลัก", url: k(126218, "aqua-spa-at-the-heaven-khao-lak-experience-in-phang-nga"), image: img("rzwdfhyoncombvuqksuc") },
+  ],
+  "trat": [
+    { label: "ล่องเรือกอนโดลาที่เกาะช้าง", url: k(57264, "thai-gondola-cruise-koh-chang-salak-kok"), image: img("cavzw44pkqfu7nopvw8z") },
+    { label: "พายเรือยืน SUP ป่าชายเลนเกาะช้าง", url: k(57426, "sup-paddle-board-experience-iyara-seafood-koh-chang"), image: img("jmfljz0aaim0z56lrpcy") },
+  ],
 };
 
 // tours is the last key in the frontmatter, so it runs to the closing fence.

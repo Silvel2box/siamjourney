@@ -22,6 +22,13 @@ imageCredit:
   sourceUrl: >-
     https://commons.wikimedia.org/wiki/File:Baan_Salak_Petch_Pier,_Ko_Chang,_Thailand.jpg
   license: CC BY 4.0
+tours:
+  - label: ล่องเรือกอนโดลาที่เกาะช้าง
+    url: 'https://www.klook.com/th/activity/57264-thai-gondola-cruise-koh-chang-salak-kok'
+    image: 'https://res.klook.com/image/upload/activities/cavzw44pkqfu7nopvw8z.jpg'
+  - label: พายเรือยืน SUP ป่าชายเลนเกาะช้าง
+    url: 'https://www.klook.com/th/activity/57426-sup-paddle-board-experience-iyara-seafood-koh-chang'
+    image: 'https://res.klook.com/image/upload/activities/jmfljz0aaim0z56lrpcy.jpg'
 ---
 ตราดเป็นจังหวัดชายฝั่งสุดเขตแดนภาคตะวันออกที่มีทะเลสวยงามและหมู่เกาะน้อยใหญ่กว่าห้าสิบเกาะ โดยมีเกาะช้างเป็นไข่มุกเม็ดงามที่นักท่องเที่ยวทั้งไทยและต่างชาติหลงใหล
 
