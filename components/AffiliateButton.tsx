@@ -47,7 +47,7 @@ export default function AffiliateButton({
   return (
     <a
       {...common}
-      className="block sm:flex items-stretch bg-white rounded-2xl shadow-sm hover:shadow-lg transition overflow-hidden max-w-2xl"
+      className="block sm:flex items-stretch h-full bg-white rounded-2xl shadow-sm hover:shadow-lg transition overflow-hidden"
     >
       <div className="relative h-44 sm:h-auto sm:w-52 shrink-0">
         <Image

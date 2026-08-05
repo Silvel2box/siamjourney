@@ -120,7 +120,7 @@ export default async function PlacePage({ params }: Props) {
                 dangerouslySetInnerHTML={{ __html: bodyHtml }}
               />
               {place.affiliate && (
-                <div className="mt-10">
+                <div className="mt-10 max-w-2xl">
                   <AffiliateButton
                     label={place.affiliate.label}
                     url={place.affiliate.url}

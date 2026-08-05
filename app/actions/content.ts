@@ -48,6 +48,31 @@ const galleryItemSchema = z.object({
   url: z.string().trim().min(1),
   caption: z.string().trim().optional(),
 });
+// Partner tours on a province page arrive the same way — a JSON string from
+// ToursField. Capped at 6: past that the block stops reading as a short list of
+// suggestions and starts reading as an ad unit.
+const tourSchema = z.object({
+  label: z.string().trim().min(1),
+  url: z.string().trim().url(),
+  image: z.string().trim().url().optional(),
+});
+function toursFrom(
+  fd: FormData,
+): { tours: Prisma.InputJsonValue | typeof Prisma.DbNull } | { error: string } {
+  const raw = str(fd, "tours");
+  if (!raw) return { tours: Prisma.DbNull };
+  let json: unknown;
+  try {
+    json = JSON.parse(raw);
+  } catch {
+    return { error: "ข้อมูลทัวร์ไม่ถูกต้อง" };
+  }
+  const parsed = z.array(tourSchema).max(6).safeParse(json);
+  if (!parsed.success) return { error: "ข้อมูลทัวร์ไม่ถูกต้อง (ต้องมีชื่อ + ลิงก์ http, ไม่เกิน 6 รายการ)" };
+  const items = parsed.data.map((t) => (t.image ? { ...t } : { label: t.label, url: t.url }));
+  return { tours: items.length ? items : Prisma.DbNull };
+}
+
 function galleryFrom(
   fd: FormData,
 ): { gallery: Prisma.InputJsonValue | typeof Prisma.DbNull } | { error: string } {
@@ -258,6 +283,9 @@ export async function saveProvince(_prev: State, fd: FormData): Promise<State> {
   const hl = highlightsFrom(fd);
   if ("error" in hl) return hl;
 
+  const tr = toursFrom(fd);
+  if ("error" in tr) return tr;
+
   const data = {
     name: parsed.data.name,
     nameEn: parsed.data.nameEn,
@@ -271,6 +299,7 @@ export async function saveProvince(_prev: State, fd: FormData): Promise<State> {
     bestTime: orNull(str(fd, "bestTime")),
     gettingThere: orNull(str(fd, "gettingThere")),
     localFood: orNull(str(fd, "localFood")),
+    tours: tr.tours,
   };
 
   const idRaw = str(fd, "id");

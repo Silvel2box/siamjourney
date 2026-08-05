@@ -57,6 +57,8 @@ export type Province = {
   bestTime?: string;
   gettingThere?: string;
   localFood?: string;
+  // Partner tours/activities — the same shape a Place carries one of, as a list.
+  tours?: Affiliate[];
 };
 
 // Hotel = Place without the category taxonomy; affiliate holds the booking link.
@@ -134,6 +136,7 @@ function toProvince(r: ProvinceRow): Province {
     bestTime: r.bestTime ?? undefined,
     gettingThere: r.gettingThere ?? undefined,
     localFood: r.localFood ?? undefined,
+    tours: (r.tours as unknown as Affiliate[]) ?? undefined,
   };
 }
 

@@ -24,6 +24,7 @@ const empty = {
   featured: false,
   body: "",
   highlights: [] as string[],
+  tours: [] as { label: string; url: string; image?: string }[],
   bestTime: "",
   gettingThere: "",
   localFood: "",

@@ -15,6 +15,7 @@ import PageBanner from "@/components/PageBanner";
 import PlaceCard from "@/components/PlaceCard";
 import HotelCard from "@/components/HotelCard";
 import AdSlot from "@/components/AdSlot";
+import AffiliateButton from "@/components/AffiliateButton";
 
 export const dynamicParams = true;
 export const revalidate = 3600;
@@ -143,6 +144,28 @@ export default async function ProvincePage({ params }: Props) {
                     </div>
                     <p className="text-gray-700 leading-relaxed">{t.text}</p>
                   </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {province.tours && province.tours.length > 0 && (
+            <section id="tours">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark mb-2">
+                ทัวร์และกิจกรรมใน{province.name}
+              </h2>
+              <p className="text-gray-500 mb-8">
+                จองผ่านพาร์ทเนอร์ของเรา — เราอาจได้ค่าตอบแทนเมื่อคุณจอง โดยคุณจ่ายเท่าเดิม
+              </p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {province.tours.map((t) => (
+                  <AffiliateButton
+                    key={t.url}
+                    label={t.label}
+                    url={t.url}
+                    image={t.image}
+                    placeSlug={province.slug}
+                  />
                 ))}
               </div>
             </section>

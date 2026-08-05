@@ -46,6 +46,7 @@ async function main() {
       bestTime: data.bestTime ?? null,
       gettingThere: data.gettingThere ?? null,
       localFood: data.localFood ?? null,
+      tours: data.tours ?? null,
       body,
     };
     await prisma.province.upsert({

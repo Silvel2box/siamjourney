@@ -101,7 +101,7 @@ export default async function HotelPage({ params }: Props) {
                 dangerouslySetInnerHTML={{ __html: bodyHtml }}
               />
               {hotel.affiliate && (
-                <div className="mt-10">
+                <div className="mt-10 max-w-2xl">
                   <AffiliateButton
                     label={hotel.affiliate.label}
                     url={hotel.affiliate.url}

@@ -41,6 +41,7 @@ export default async function EditProvincePage({ params }: Props) {
     featured: province.featured,
     body: province.body,
     highlights: (province.highlights as string[] | null) ?? [],
+    tours: (province.tours as { label: string; url: string; image?: string }[] | null) ?? [],
     bestTime: province.bestTime ?? "",
     gettingThere: province.gettingThere ?? "",
     localFood: province.localFood ?? "",

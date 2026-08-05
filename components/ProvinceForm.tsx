@@ -4,6 +4,7 @@ import { useActionState } from "react";
 import { saveProvince } from "@/app/actions/content";
 import ImageUploadField from "@/components/admin/ImageUploadField";
 import HighlightsField from "@/components/admin/HighlightsField";
+import ToursField from "@/components/admin/ToursField";
 
 type State = { error: string } | null;
 type Option = { slug: string; name: string };
@@ -23,6 +24,7 @@ export type ProvinceFormValues = {
   featured: boolean;
   body: string;
   highlights: string[];
+  tours: { label: string; url: string; image?: string }[];
   bestTime: string;
   gettingThere: string;
   localFood: string;
@@ -104,6 +106,12 @@ export default function ProvinceForm({
         label="ไฮไลต์ของจังหวัด"
         hint="4-6 ข้อ ข้อละบรรทัดสั้นๆ — แสดงเป็นการ์ดในหน้าจังหวัด"
         defaultValue={values.highlights}
+      />
+
+      <ToursField
+        name="tours"
+        label="ทัวร์และกิจกรรมจากพาร์ทเนอร์ (ถ้ามี)"
+        defaultValue={values.tours}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

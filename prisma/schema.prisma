@@ -87,6 +87,10 @@ model Province {
   bestTime     String? @db.Text // ช่วงเวลาที่ควรไป
   gettingThere String? @db.Text // การเดินทาง
   localFood    String? @db.Text // ของกิน/ของฝากขึ้นชื่อ
+  // Partner tours/activities [{ label, url, image? }] — same shape a Place's
+  // single `affiliate` holds, as a list. A province page is the top of the
+  // funnel, so it can carry several where a place carries one.
+  tours        Json?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
