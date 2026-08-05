@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 type Props = { params: Promise<{ id: string }> };
 
 type Credit = { author?: string; source?: string; sourceUrl?: string; license?: string } | null;
-type Aff = { label?: string; url?: string } | null;
+type Aff = { label?: string; url?: string; image?: string } | null;
 type Gallery = { url: string; caption?: string }[] | null;
 
 export default async function EditHotelPage({ params }: Props) {
@@ -51,6 +51,7 @@ export default async function EditHotelPage({ params }: Props) {
     lng: hotel.lng != null ? String(hotel.lng) : "",
     affiliateLabel: aff?.label ?? "",
     affiliateUrl: aff?.url ?? "",
+    affiliateImage: aff?.image ?? "",
     sponsored: String(hotel.sponsored),
     body: hotel.body,
   };

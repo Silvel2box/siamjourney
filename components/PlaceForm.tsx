@@ -29,6 +29,7 @@ export type PlaceFormValues = {
   lng: string;
   affiliateLabel: string;
   affiliateUrl: string;
+  affiliateImage: string;
   sponsored: string;
   body: string;
 };
@@ -171,6 +172,9 @@ export default function PlaceForm({
           </Field>
           <Field id="affiliateUrl" label="ลิงก์ (http...)">
             <input id="affiliateUrl" name="affiliateUrl" type="url" defaultValue={values.affiliateUrl} placeholder="https://" className={input} />
+          </Field>
+          <Field id="affiliateImage" label="รูปสินค้าจากพาร์ทเนอร์ (ถ้ามี — ใส่แล้วปุ่มจะกลายเป็นการ์ด)">
+            <input id="affiliateImage" name="affiliateImage" type="url" defaultValue={values.affiliateImage} placeholder="https://res.klook.com/..." className={input} />
           </Field>
         </div>
       </fieldset>

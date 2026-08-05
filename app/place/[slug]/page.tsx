@@ -124,6 +124,7 @@ export default async function PlacePage({ params }: Props) {
                   <AffiliateButton
                     label={place.affiliate.label}
                     url={place.affiliate.url}
+                    image={place.affiliate.image}
                     placeSlug={place.slug}
                   />
                 </div>

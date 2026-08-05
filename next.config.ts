@@ -12,7 +12,14 @@ const nextConfig: NextConfig = {
     // (Commons rate-limits hotlinking) so they need no remote pattern.
     // Optimizer stays on (runs under `next start` on Plesk); add
     // `unoptimized: true` here if Plesk can't handle it.
-    remotePatterns: [{ protocol: "https", hostname: "images.pexels.com" }],
+    // res.klook.com serves the product photos that come with the affiliate
+    // feed. Hotlinked on purpose, unlike our editorial images: the photo
+    // belongs to the operator, and keeping Klook's copy means the card follows
+    // the product if they reshoot it rather than showing a frozen old one.
+    remotePatterns: [
+      { protocol: "https", hostname: "images.pexels.com" },
+      { protocol: "https", hostname: "res.klook.com" },
+    ],
   },
 };
 

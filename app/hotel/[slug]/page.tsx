@@ -105,6 +105,7 @@ export default async function HotelPage({ params }: Props) {
                   <AffiliateButton
                     label={hotel.affiliate.label}
                     url={hotel.affiliate.url}
+                    image={hotel.affiliate.image}
                     placeSlug={hotel.slug}
                   />
                 </div>

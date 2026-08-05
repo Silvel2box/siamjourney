@@ -12,6 +12,7 @@ sponsored: 1
 affiliate:
   label: จองทัวร์น้ำตกเอราวัณ + เขตรักษาพันธุ์ช้าง
   url: 'https://www.klook.com/th/activity/66910-elephant-sanctuary-erawan-waterfall-from-bangkok-fullday-tour'
+  image: 'https://res.klook.com/image/upload/activities/qistubfsahv6wigdieyq.jpg'
 imageCredit:
   author: PumpkinSky
   source: Wikimedia Commons

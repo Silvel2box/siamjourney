@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 type Props = { params: Promise<{ id: string }> };
 
 type Credit = { author?: string; source?: string; sourceUrl?: string; license?: string } | null;
-type Aff = { label?: string; url?: string } | null;
+type Aff = { label?: string; url?: string; image?: string } | null;
 type Gallery = { url: string; caption?: string }[] | null;
 
 export default async function EditPlacePage({ params }: Props) {
@@ -54,6 +54,7 @@ export default async function EditPlacePage({ params }: Props) {
     lng: place.lng != null ? String(place.lng) : "",
     affiliateLabel: aff?.label ?? "",
     affiliateUrl: aff?.url ?? "",
+    affiliateImage: aff?.image ?? "",
     sponsored: String(place.sponsored),
     body: place.body,
   };

@@ -30,6 +30,7 @@ const empty = {
   lng: "",
   affiliateLabel: "",
   affiliateUrl: "",
+  affiliateImage: "",
   sponsored: "0",
   body: "",
 };

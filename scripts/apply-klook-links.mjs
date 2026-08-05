@@ -21,41 +21,51 @@ const PRODUCTS = {
   "bangkok-wat-phra-kaew": {
     label: "จองบัตรเข้าพระบรมมหาราชวัง (ไม่ต้องต่อคิว)",
     url: "https://www.klook.com/th/activity/129462-skip-the-line-grand-palace-and-emerald-buddha-ticket-in-bangkok",
+    image: "https://res.klook.com/image/upload/activities/fm2hokjdojtimgu4rebd.jpg",
   },
   "cr-wat-rong-khun": {
     label: "จองทัวร์วัดร่องขุ่นพร้อมไกด์",
     url: "https://www.klook.com/th/activity/49271-visit-white-temple-with-online-tour-guide-in-thailand",
+    image: "https://res.klook.com/image/upload/activities/bwjdqiv3hyvcnqsblqws.jpg",
   },
   "phetchabun-khao-kho": {
     label: "จองทัวร์เขาค้อ 3 วัน 2 คืน (ออกจากกรุงเทพฯ)",
     url: "https://www.klook.com/th/activity/12729-3d2n-khao-kho-private-tour-bangkok",
+    image: "https://res.klook.com/image/upload/activities/bxmrgsexmwofwi3b2ikr.jpg",
   },
   "kanchanaburi-river-kwai-bridge": {
     label: "จองทัวร์น้ำตกเอราวัณ + เขตรักษาพันธุ์ช้าง",
     url: "https://www.klook.com/th/activity/66910-elephant-sanctuary-erawan-waterfall-from-bangkok-fullday-tour",
+    image: "https://res.klook.com/image/upload/activities/qistubfsahv6wigdieyq.jpg",
   },
   "chon-buri-pattaya-beach": {
     label: "จองทัวร์ปางช้าง Living Green ชลบุรี",
     url: "https://www.klook.com/th/activity/144699-living-green-elephant-sanctuary-chonburi-from-bangkok-or-pattaya",
+    image: "https://res.klook.com/image/upload/activities/grlbyaqlg3b0y6gljigp.jpg",
   },
   "phuket-patong": {
     label: "จองทัวร์เกาะพีพี + อ่าวมาหยา จากภูเก็ต",
     url: "https://www.klook.com/th/activity/138073-phuket-phi-phi-island-day-tour-by-speedboat-catamaran",
+    image: "https://res.klook.com/image/upload/activities/bgzcwbtakhy5lm0lzzft.jpg",
   },
   "phang-nga-jamesbond": {
     label: "จองทัวร์เกาะตะปูเต็มวัน (ออกจากภูเก็ต)",
     url: "https://www.klook.com/th/activity/3227-james-bond-day-tour-big-boat-longtail-speedboat",
+    image: "https://res.klook.com/image/upload/activities/py3fvxtvbxpubsmolb0t.jpg",
   },
   "krabi-railay": {
     label: "จองทัวร์เกาะพีพี + อ่าวมาหยา (ออกจากภูเก็ต)",
     url: "https://www.klook.com/th/activity/14913-phi-phi-islands-day-tour-phuket",
+    image: "https://res.klook.com/image/upload/activities/dqjufjdglqdiccaha0em.jpg",
   },
 };
 
-// The block is always these three lines, in this order, at the top level.
-const BLOCK = /^affiliate:\n {2}label: .*\n {2}url: .*\n/m;
+// label + url, then the partner's product photo when their feed ships one.
+const BLOCK = /^affiliate:\n {2}label: .*\n {2}url: .*\n( {2}image: .*\n)?/m;
 
-const block = (p) => `affiliate:\n  label: ${p.label}\n  url: '${p.url}'\n`;
+const block = (p) =>
+  `affiliate:\n  label: ${p.label}\n  url: '${p.url}'\n` +
+  (p.image ? `  image: '${p.image}'\n` : "");
 
 // Re-runnable in both directions: a later export can hand a product to a place
 // whose button this script already took away, so it has to be able to put the

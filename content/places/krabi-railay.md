@@ -12,6 +12,7 @@ sponsored: 1
 affiliate:
   label: จองทัวร์เกาะพีพี + อ่าวมาหยา (ออกจากภูเก็ต)
   url: 'https://www.klook.com/th/activity/14913-phi-phi-islands-day-tour-phuket'
+  image: 'https://res.klook.com/image/upload/activities/dqjufjdglqdiccaha0em.jpg'
 imageCredit:
   author: Vyacheslav Argenberg
   source: Wikimedia Commons

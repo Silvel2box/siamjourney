@@ -85,17 +85,27 @@ function highlightsFrom(
   return { highlights: parsed.data.length ? parsed.data : Prisma.DbNull };
 }
 
-// Booking/partner link { label, url } → JSON (Prisma.DbNull = clear). Returns an
-// error string when a url is given but malformed. Shared by place + hotel.
+// Booking/partner link { label, url, image? } → JSON (Prisma.DbNull = clear).
+// Returns an error string when a url is given but malformed. The optional image
+// is the partner's product photo, which turns the link into a card.
+// Shared by place + hotel.
 function affiliateFrom(
   fd: FormData,
-): { affiliate: { label: string; url: string } | typeof Prisma.DbNull } | { error: string } {
+):
+  | { affiliate: { label: string; url: string; image?: string } | typeof Prisma.DbNull }
+  | { error: string } {
   const label = str(fd, "affiliateLabel");
   const url = str(fd, "affiliateUrl");
+  const image = str(fd, "affiliateImage");
   if (label && url && !/^https?:\/\//.test(url)) {
     return { error: "ลิงก์ affiliate ต้องขึ้นต้นด้วย http:// หรือ https://" };
   }
-  return { affiliate: label && url ? { label, url } : Prisma.DbNull };
+  if (image && !/^https?:\/\//.test(image)) {
+    return { error: "รูปสินค้า affiliate ต้องเป็นลิงก์ http:// หรือ https://" };
+  }
+  return {
+    affiliate: label && url ? { label, url, ...(image ? { image } : {}) } : Prisma.DbNull,
+  };
 }
 
 async function revalidatePlacePaths(p: { slug: string; province: string; category: string }) {

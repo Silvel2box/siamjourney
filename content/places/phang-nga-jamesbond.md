@@ -13,6 +13,7 @@ sponsored: 1
 affiliate:
   label: จองทัวร์เกาะตะปูเต็มวัน (ออกจากภูเก็ต)
   url: 'https://www.klook.com/th/activity/3227-james-bond-day-tour-big-boat-longtail-speedboat'
+  image: 'https://res.klook.com/image/upload/activities/py3fvxtvbxpubsmolb0t.jpg'
 imageCredit:
   author: Jeffry Surianto
   source: Pexels

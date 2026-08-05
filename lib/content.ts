@@ -15,7 +15,11 @@ export type ImageCredit = {
   sourceUrl: string;
   license?: string;
 };
-export type Affiliate = { label: string; url: string };
+// `image` is the partner's own product photo, when their feed ships one. With
+// it the link renders as a card instead of a bare button. No price field on
+// purpose — a partner's price moves and we have nothing that refreshes it, so a
+// number here would go quietly wrong.
+export type Affiliate = { label: string; url: string; image?: string };
 export type GalleryImage = { url: string; caption?: string };
 
 export type Place = {

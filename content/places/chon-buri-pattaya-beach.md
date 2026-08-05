@@ -12,6 +12,7 @@ sponsored: 1
 affiliate:
   label: จองทัวร์ปางช้าง Living Green ชลบุรี
   url: 'https://www.klook.com/th/activity/144699-living-green-elephant-sanctuary-chonburi-from-bangkok-or-pattaya'
+  image: 'https://res.klook.com/image/upload/activities/grlbyaqlg3b0y6gljigp.jpg'
 imageCredit:
   author: easy4444
   source: Wikimedia Commons
