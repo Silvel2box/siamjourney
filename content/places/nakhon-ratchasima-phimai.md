@@ -9,9 +9,6 @@ address: อ.พิมาย จ.นครราชสีมา
 hours: 'เปิดทุกวัน 07:00 - 18:00 น.'
 priceRange: 20 - 100 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์นครราชสีมา
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Philip Nalangan
   source: Wikimedia Commons

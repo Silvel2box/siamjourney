@@ -9,9 +9,6 @@ address: ตำบลเมืองเก่า อำเภอเมือง�
 hours: เปิดทุกวัน 06.30-19.30 น.
 priceRange: 100-150 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์สุโขทัย
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: >-
     This Photo was taken by Supanut Arunoprayote. Feel free to use any of my

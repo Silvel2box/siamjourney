@@ -9,9 +9,6 @@ address: อำเภอเมือง จังหวัดนครสวร�
 hours: ทุกวัน 06.00-18.00 น.
 priceRange: 20-100 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์นครสวรรค์
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: 'JJ Harrison (https://www.jjharrison.com.au/)'
   source: Wikimedia Commons

@@ -9,9 +9,6 @@ address: ตำบลน้ำซึม อำเภอเมืองอุท�
 hours: เปิดทุกวัน 09.00-16.30 น.
 priceRange: ฟรี (บริจาคตามศรัทธา)
 sponsored: 1
-affiliate:
-  label: จองทัวร์อุทัยธานี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: SupawatR
   source: Wikimedia Commons

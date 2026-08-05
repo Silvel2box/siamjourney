@@ -9,9 +9,6 @@ address: อ.ขุนหาญ จ.ศรีสะเกษ
 hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์ศรีสะเกษ
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Markus G. Klötzer
   source: Wikimedia Commons

@@ -9,9 +9,6 @@ address: ถนนรังสิต-องครักษ์ อำเภอธ
 hours: 10.00 - 17.00 น. (เสาร์-อาทิตย์ถึง 19.00 น.)
 priceRange: '500 - 1,200 บาท'
 sponsored: 1
-affiliate:
-  label: จองทัวร์ปทุมธานี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Serj Kras
   source: Wikimedia Commons

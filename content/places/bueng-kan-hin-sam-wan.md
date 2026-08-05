@@ -10,9 +10,6 @@ address: ภูสิงห์ อ.เมือง จ.บึงกาฬ
 hours: 'เปิดทุกวัน 05:00 - 18:00 น.'
 priceRange: ค่ารถนำเที่ยวประมาณ 400 - 500 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์บึงกาฬ
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: icon0 com
   source: Pexels

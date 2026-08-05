@@ -9,9 +9,6 @@ address: ตำบลหนองปลิง อำเภอเมือง จ
 hours: ทุกวัน 08.00-18.00 น.
 priceRange: 20-100 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์กำแพงเพชร
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Ruslik0
   source: Wikimedia Commons

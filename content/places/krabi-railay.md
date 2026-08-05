@@ -9,9 +9,6 @@ address: ตำบลอ่าวนาง อำเภอเมือง จั
 hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ค่าเรือหางยาวประมาณ 100-200 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์กระบี่
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Vyacheslav Argenberg
   source: Wikimedia Commons

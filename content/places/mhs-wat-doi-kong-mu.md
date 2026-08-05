@@ -9,9 +9,6 @@ address: อ.เมือง จ.แม่ฮ่องสอน
 hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์แม่ฮ่องสอน
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Vyacheslav Argenberg
   source: Wikimedia Commons

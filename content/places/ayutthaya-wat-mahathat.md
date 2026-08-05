@@ -9,9 +9,6 @@ address: ถนนชีกุน ต.ท่าวาสุกรี อ.พร�
 hours: 'เปิดทุกวัน 08:00 - 18:00 น.'
 priceRange: ชาวไทย 10 บาท / ชาวต่างชาติ 50 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์พระนครศรีอยุธยา
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Diego Delso
   source: Wikimedia Commons

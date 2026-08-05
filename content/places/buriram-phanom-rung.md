@@ -9,9 +9,6 @@ address: อ.เฉลิมพระเกียรติ จ.บุรีร�
 hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: 20 - 100 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์บุรีรัมย์
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Philip Nalangan
   source: Wikimedia Commons

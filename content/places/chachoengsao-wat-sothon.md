@@ -9,9 +9,6 @@ address: ถนนมรุพงษ์ ตำบลหน้าเมือง 
 hours: 07.00 - 16.30 น. ทุกวัน
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์ฉะเชิงเทรา
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Preecha.MJ
   source: Wikimedia Commons

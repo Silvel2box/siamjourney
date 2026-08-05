@@ -9,9 +9,6 @@ address: ตำบลบ่อยาง อำเภอเมือง จัง
 hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ไม่มีค่าเข้าชม
 sponsored: 1
-affiliate:
-  label: จองทัวร์สงขลา
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: OPK-Photography
   source: Wikimedia Commons

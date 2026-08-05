@@ -9,9 +9,6 @@ address: ตำบลเกาะเกร็ด อำเภอปากเก�
 hours: 09.00 - 18.00 น. (คึกคักช่วงเสาร์-อาทิตย์)
 priceRange: ฟรีค่าเข้า (ค่าเรือข้ามฟากประมาณ 5-20 บาท)
 sponsored: 1
-affiliate:
-  label: จองทัวร์นนทบุรี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Supanut Arunoprayote
   source: Wikimedia Commons

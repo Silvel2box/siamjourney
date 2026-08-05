@@ -9,9 +9,6 @@ address: อำเภอเมือง จังหวัดเพชรบุ�
 hours: เปิดทุกวัน 08.30-16.30 น.
 priceRange: ค่าเข้า 150 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์เพชรบุรี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: >-
     This Photo was taken by Supanut Arunoprayote. Feel free to use any of my

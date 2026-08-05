@@ -10,9 +10,6 @@ address: ต.บุ่ง อ.เมือง จ.อำนาจเจริญ
 hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์อำนาจเจริญ
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: wutthichai charoenburi
   source: Pexels

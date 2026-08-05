@@ -9,9 +9,6 @@ address: ตำบลพันท้ายนรสิงห์ อำเภอ�
 hours: เปิดทุกวัน 06.00-18.00 น.
 priceRange: ฟรีค่าเข้า
 sponsored: 1
-affiliate:
-  label: จองทัวร์สมุทรสาคร
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Dharmadana
   source: Wikimedia Commons

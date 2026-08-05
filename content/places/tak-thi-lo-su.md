@@ -9,9 +9,6 @@ address: เขตรักษาพันธุ์สัตว์ป่าอ�
 hours: เปิดตามฤดูกาล (ช่วงน้ำมากประมาณ พ.ย.-พ.ค.)
 priceRange: ค่าเข้า 200 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์ตาก
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Snobbird
   source: Wikimedia Commons

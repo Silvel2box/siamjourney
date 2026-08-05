@@ -9,9 +9,6 @@ address: ต.ในเวียง อ.เมือง จ.น่าน
 hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์น่าน
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: (WT-fr) Ellnik at French Wikivoyage
   source: Wikimedia Commons

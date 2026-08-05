@@ -9,9 +9,6 @@ address: ตำบลหัวตะพาน อำเภอวิเศษช�
 hours: เปิดทุกวัน 06.00-18.00 น.
 priceRange: ฟรี (บริจาคตามศรัทธา)
 sponsored: 1
-affiliate:
-  label: จองทัวร์อ่างทอง
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Chainwit.
   source: Wikimedia Commons

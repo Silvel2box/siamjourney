@@ -9,9 +9,6 @@ address: บ้านตากลาง อ.ท่าตูม จ.สุริ�
 hours: 'เปิดทุกวัน 08:00 - 17:00 น.'
 priceRange: 50 - 150 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์สุรินทร์
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: มะเดื่อ แสลงหลวง
   source: Wikimedia Commons

@@ -10,9 +10,6 @@ address: เกาะมุก อำเภอกันตัง จังหว
 hours: เปิดทุกวัน 08.00-16.00 น.
 priceRange: 'ค่าทัวร์เรือประมาณ 500-1,200 บาท'
 sponsored: 1
-affiliate:
-  label: จองทัวร์ตรัง
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: suzukii xingfu
   source: Pexels

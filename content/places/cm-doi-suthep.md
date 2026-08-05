@@ -11,9 +11,6 @@ priceRange: ค่าเข้าชาวไทยฟรี / ชาวต่�
 lat: 18.8048
 lng: 98.9217
 sponsored: 1
-affiliate:
-  label: จองทัวร์ดอยสุเทพ
-  url: 'https://www.klook.com/th/city/6-chiang-mai-things-to-do/'
 imageCredit:
   author: Didier Descouens
   source: Wikimedia Commons

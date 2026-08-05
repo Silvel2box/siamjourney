@@ -9,9 +9,6 @@ address: อ.ธาตุพนม จ.นครพนม
 hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์นครพนม
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Guido Johannes Joerg (Endimione)
   source: Wikimedia Commons

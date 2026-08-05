@@ -10,9 +10,6 @@ address: ตำบลบางริ้น อำเภอเมือง จั
 hours: เปิดทุกวัน 08.00-20.00 น.
 priceRange: ไม่มีค่าเข้าชม
 sponsored: 1
-affiliate:
-  label: จองทัวร์ระนอง
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Wei86 Travel
   source: Pexels

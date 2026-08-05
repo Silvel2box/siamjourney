@@ -9,9 +9,6 @@ address: หน้าศาลากลางจังหวัด อ.เมื
 hours: เปิดทุกวัน (พื้นที่สาธารณะ)
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์อุตรดิตถ์
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Tmd
   source: Wikimedia Commons

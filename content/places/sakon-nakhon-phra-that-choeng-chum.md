@@ -9,9 +9,6 @@ address: ต.ธาตุเชิงชุม อ.เมือง จ.สกล
 hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์สกลนคร
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: 'User:Mattes'
   source: Wikimedia Commons

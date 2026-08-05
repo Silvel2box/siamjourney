@@ -9,9 +9,6 @@ address: ตำบลพระปฐมเจดีย์ อำเภอเม�
 hours: ทุกวัน 06.00-20.00 น.
 priceRange: ฟรี-40 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์นครปฐม
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: NATNAREE K.
   source: Wikimedia Commons

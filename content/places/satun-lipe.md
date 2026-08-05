@@ -9,9 +9,6 @@ address: ตำบลเกาะสาหร่าย อำเภอเมื�
 hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: 'ค่าเรือไป-กลับประมาณ 600-1,200 บาท'
 sponsored: 1
-affiliate:
-  label: จองทัวร์สตูล
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: '::::=UT=::::'
   source: Wikimedia Commons

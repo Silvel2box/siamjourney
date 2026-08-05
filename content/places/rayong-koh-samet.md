@@ -9,9 +9,6 @@ address: อุทยานแห่งชาติเขาแหลมหญ�
 hours: เปิดตลอด 24 ชั่วโมง
 priceRange: ค่าเข้าอุทยาน 40 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์ระยอง
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: PA
   source: Wikimedia Commons

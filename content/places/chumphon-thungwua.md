@@ -10,9 +10,6 @@ address: ตำบลสะพลี อำเภอปะทิว จังห
 hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ไม่มีค่าเข้าชม
 sponsored: 1
-affiliate:
-  label: จองทัวร์ชุมพร
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Optical Chemist
   source: Pexels

@@ -10,9 +10,6 @@ address: ตำบลอัยเยอร์เวง อำเภอเบต�
 hours: เปิดทุกวัน 04.30-18.00 น.
 priceRange: ค่าเข้าชมประมาณ 40-100 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์ยะลา
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Boo Normi
   source: Pexels

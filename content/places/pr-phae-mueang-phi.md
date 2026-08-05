@@ -9,9 +9,6 @@ address: อ.เมือง จ.แพร่
 hours: 'เปิดทุกวัน 08:00 - 17:00 น.'
 priceRange: ค่าเข้า 20 - 40 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์แพร่
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Danai khoche
   source: Wikimedia Commons

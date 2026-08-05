@@ -10,8 +10,8 @@ hours: เปิดตลอด 24 ชั่วโมง
 priceRange: เข้าชมฟรี
 sponsored: 1
 affiliate:
-  label: จองทัวร์ชลบุรี
-  url: 'https://www.klook.com/th/'
+  label: จองทัวร์ปางช้าง Living Green ชลบุรี
+  url: 'https://www.klook.com/th/activity/144699-living-green-elephant-sanctuary-chonburi-from-bangkok-or-pattaya'
 imageCredit:
   author: easy4444
   source: Wikimedia Commons

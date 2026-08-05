@@ -9,9 +9,6 @@ address: ตำบลในเมือง อำเภอเมือง จั
 hours: เปิดทุกวัน 06.00-18.00 น.
 priceRange: ไม่มีค่าเข้าชม
 sponsored: 1
-affiliate:
-  label: จองทัวร์นครศรีธรรมราช
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Vyacheslav Argenberg
   source: Wikimedia Commons

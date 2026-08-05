@@ -9,9 +9,6 @@ address: อ.โขงเจียม จ.อุบลราชธานี
 hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: 40 - 100 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์อุบลราชธานี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: SunnyCamera
   source: Wikimedia Commons

@@ -9,9 +9,6 @@ address: ต.หาดคำ อ.เมือง จ.หนองคาย
 hours: 'เปิดทุกวัน 07:00 - 18:00 น.'
 priceRange: 20 - 40 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์หนองคาย
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Alfons55555
   source: Wikimedia Commons

@@ -9,9 +9,6 @@ address: อ.เมือง จ.ยโสธร
 hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์ยโสธร
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: >-
     This Photo was taken by Supanut Arunoprayote. Feel free to use any of my

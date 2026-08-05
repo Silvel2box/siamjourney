@@ -9,9 +9,6 @@ address: อ.หนองพอก จ.ร้อยเอ็ด
 hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์ร้อยเอ็ด
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Pawyilee
   source: Wikimedia Commons

@@ -9,9 +9,6 @@ address: ถนนพุทธบูชา ริมแม่น้ำน่า�
 hours: 06.00 - 18.00 น.
 priceRange: ฟรีค่าเข้า (ชาวต่างชาติ 40 บาท)
 sponsored: 1
-affiliate:
-  label: จองทัวร์พิษณุโลก
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: >-
     This Photo was taken by Supanut Arunoprayote. Feel free to use any of my

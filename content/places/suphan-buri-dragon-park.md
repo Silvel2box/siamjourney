@@ -10,9 +10,6 @@ address: ตำบลรั้วใหญ่ อำเภอเมืองส�
 hours: เปิดวันอังคาร-อาทิตย์ 09.00-17.00 น. (ปิดวันจันทร์)
 priceRange: 199-299 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์สุพรรณบุรี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Kirandeep Singh Walia
   source: Pexels

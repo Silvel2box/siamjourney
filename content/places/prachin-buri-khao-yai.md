@@ -9,9 +9,6 @@ address: อุทยานแห่งชาติเขาใหญ่ อำ�
 hours: 06.00 - 18.00 น. ทุกวัน
 priceRange: ค่าเข้าอุทยาน 40 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์ปราจีนบุรี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: mohigan
   source: Wikimedia Commons

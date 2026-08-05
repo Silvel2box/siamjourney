@@ -9,9 +9,6 @@ address: อ.โนนสัง จ.หนองบัวลำภู
 hours: 'เปิดทุกวัน 08:00 - 17:00 น.'
 priceRange: 40 - 100 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์หนองบัวลำภู
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Nick Hubbard
   source: Wikimedia Commons

@@ -9,9 +9,6 @@ address: ริมแม่น้ำจันทบุรี ตำบลจั�
 hours: 08.00 - 17.00 น. ทุกวัน
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์จันทบุรี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Travelpleb
   source: Wikimedia Commons

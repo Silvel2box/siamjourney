@@ -9,9 +9,6 @@ address: อุทยานแห่งชาติหมู่เกาะช�
 hours: เปิดตลอด 24 ชั่วโมง
 priceRange: ค่าเรือข้ามฟากเริ่มต้น 80 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์ตราด
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Vyacheslav Argenberg
   source: Wikimedia Commons

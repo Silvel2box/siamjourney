@@ -10,9 +10,6 @@ address: อุทยานแห่งชาติอ่าวพังงา �
 hours: เปิดทุกวัน 08.00-17.00 น.
 priceRange: 'ค่าทัวร์เรือประมาณ 800-1,500 บาท'
 sponsored: 1
-affiliate:
-  label: จองทัวร์พังงา
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Jeffry Surianto
   source: Pexels

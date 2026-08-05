@@ -9,9 +9,6 @@ address: อ.เมือง จ.พะเยา
 hours: 'เปิดทุกวัน (ล่องเรือ 08:00 - 18:00 น.)'
 priceRange: ล่องเรือ 50 - 100 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์พะเยา
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Dominic Nelson
   source: Wikimedia Commons

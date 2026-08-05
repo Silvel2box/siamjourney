@@ -10,9 +10,6 @@ address: อุทยานแห่งชาติเขาใหญ่ อำ�
 hours: ทุกวัน 08.00-17.00 น.
 priceRange: 20-40 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์นครนายก
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Kirandeep Singh Walia
   source: Pexels

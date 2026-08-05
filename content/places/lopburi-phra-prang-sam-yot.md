@@ -9,9 +9,6 @@ address: ถนนวิชาเยนทร์ ตำบลท่าหิน 
 hours: เปิดทุกวัน 06.00-18.00 น.
 priceRange: 30-50 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์ลพบุรี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Dominic Nelson
   source: Wikimedia Commons

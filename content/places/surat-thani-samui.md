@@ -9,9 +9,6 @@ address: อำเภอเกาะสมุย จังหวัดสุร�
 hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ค่าเรือเฟอร์รีประมาณ 300-600 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์สุราษฎร์ธานี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Manfred Werner
   source: Wikimedia Commons

@@ -9,9 +9,6 @@ address: ตำบลขุนโขลน อำเภอพระพุทธ�
 hours: เปิดทุกวัน 06.00-18.00 น.
 priceRange: ฟรี (บริจาคตามศรัทธา)
 sponsored: 1
-affiliate:
-  label: จองทัวร์สระบุรี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Ahoerstemeier
   source: Wikimedia Commons

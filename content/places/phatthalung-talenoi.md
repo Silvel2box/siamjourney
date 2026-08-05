@@ -10,9 +10,6 @@ address: อำเภอควนขนุน จังหวัดพัทล�
 hours: เปิดทุกวัน 05.30-18.00 น.
 priceRange: ค่าเรือประมาณ 400-800 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์พัทลุง
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Kirandeep Singh Walia
   source: Pexels

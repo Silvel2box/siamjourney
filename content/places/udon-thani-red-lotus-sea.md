@@ -9,9 +9,6 @@ address: อ.กุมภวาปี จ.อุดรธานี
 hours: 'เปิดฤดูกาลธันวาคม - กุมภาพันธ์ 06:00 - 11:00 น.'
 priceRange: ค่าเรือประมาณ 300 - 500 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์อุดรธานี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Unknown authorUnknown author
   source: Wikimedia Commons

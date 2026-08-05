@@ -9,9 +9,6 @@ address: อำเภอดำเนินสะดวก จังหวัด�
 hours: เปิดทุกวัน 07.00-17.00 น.
 priceRange: ค่าล่องเรือ 150-300 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์ราชบุรี
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Reversemos.sapanaht
   source: Wikimedia Commons

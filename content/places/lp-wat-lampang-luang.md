@@ -9,9 +9,6 @@ address: อ.เกาะคา จ.ลำปาง
 hours: 'เปิดทุกวัน 07:30 - 17:00 น.'
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์ลำปาง
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Bienvenue en Thaïlande
   source: Wikimedia Commons

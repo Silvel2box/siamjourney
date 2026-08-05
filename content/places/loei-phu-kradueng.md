@@ -9,9 +9,6 @@ address: อ.ภูกระดึง จ.เลย
 hours: 'เปิดฤดูกาลตุลาคม - พฤษภาคม 07:00 - 14:00 น.'
 priceRange: 40 - 100 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์เลย
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Threedays Twonights
   source: Wikimedia Commons

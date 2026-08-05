@@ -9,9 +9,6 @@ address: อ.เทพสถิต จ.ชัยภูมิ
 hours: 'เปิดทุกวัน 08:00 - 17:00 น.'
 priceRange: 40 - 100 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์ชัยภูมิ
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Piith.hant
   source: Wikimedia Commons

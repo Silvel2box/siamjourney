@@ -9,9 +9,6 @@ address: อ.สหัสขันธ์ จ.กาฬสินธุ์
 hours: 'เปิดวันอังคาร - อาทิตย์ 09:00 - 17:00 น.'
 priceRange: 40 - 60 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์กาฬสินธุ์
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: '::::=UT=::::'
   source: Wikimedia Commons

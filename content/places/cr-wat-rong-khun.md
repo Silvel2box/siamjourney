@@ -10,8 +10,8 @@ hours: 'เปิดทุกวัน 08:00 - 17:00 น.'
 priceRange: ชาวไทยฟรี / ชาวต่างชาติ 100 บาท
 sponsored: 1
 affiliate:
-  label: จองทัวร์เชียงราย
-  url: 'https://www.klook.com/th/'
+  label: จองทัวร์วัดร่องขุ่นพร้อมไกด์
+  url: 'https://www.klook.com/th/activity/49271-visit-white-temple-with-online-tour-guide-in-thailand'
 imageCredit:
   author: Chainwit.
   source: Wikimedia Commons

@@ -9,9 +9,6 @@ address: ตำบลป่าตอง อำเภอกะทู้ จัง
 hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ไม่มีค่าเข้าชม
 sponsored: 1
-affiliate:
-  label: จองทัวร์ภูเก็ต
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Arnaud-Victor Monteux
   source: Wikimedia Commons

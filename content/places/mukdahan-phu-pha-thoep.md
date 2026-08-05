@@ -9,9 +9,6 @@ address: อ.เมือง จ.มุกดาหาร
 hours: 'เปิดทุกวัน 08:00 - 17:00 น.'
 priceRange: 40 - 100 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์มุกดาหาร
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Markus G. Klötzer
   source: Wikimedia Commons

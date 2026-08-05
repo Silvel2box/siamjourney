@@ -9,9 +9,6 @@ address: ถนนสุขุมวิท ตำบลบางปูใหม�
 hours: เปิดทุกวัน 09.00-19.00 น.
 priceRange: 350-700 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์สมุทรปราการ
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: >-
     This Photo was taken by Supanut Arunoprayote. Feel free to use any of my

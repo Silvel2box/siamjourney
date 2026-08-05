@@ -9,9 +9,6 @@ address: ตำบลบางนาค อำเภอเมือง จัง
 hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ไม่มีค่าเข้าชม
 sponsored: 1
-affiliate:
-  label: จองทัวร์นราธิวาส
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: P.khiao
   source: Wikimedia Commons

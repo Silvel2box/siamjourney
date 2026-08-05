@@ -9,9 +9,6 @@ address: ตำบลเขาท่าพระ อำเภอเมือง 
 hours: ทุกวัน 08.00-17.00 น.
 priceRange: 20-50 บาท
 sponsored: 1
-affiliate:
-  label: จองทัวร์ชัยนาท
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Philsacor
   source: Wikimedia Commons

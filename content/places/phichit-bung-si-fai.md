@@ -10,9 +10,6 @@ address: ตำบลในเมือง อำเภอเมืองพิ�
 hours: 06.00 - 18.00 น.
 priceRange: ฟรีค่าเข้า
 sponsored: 1
-affiliate:
-  label: จองทัวร์พิจิตร
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: มหฺ ปณฺฑิโต
   source: Pexels

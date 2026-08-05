@@ -9,9 +9,6 @@ address: ตำบลโคกสูง อำเภอโคกสูง จั
 hours: 08.00 - 17.00 น. ทุกวัน
 priceRange: เข้าชมฟรี
 sponsored: 1
-affiliate:
-  label: จองทัวร์สระแก้ว
-  url: 'https://www.klook.com/th/'
 imageCredit:
   author: Winlyrung
   source: Wikimedia Commons
