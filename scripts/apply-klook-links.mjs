@@ -53,10 +53,13 @@ const PRODUCTS = {
     url: "https://www.klook.com/th/activity/3227-james-bond-day-tour-big-boat-longtail-speedboat",
     image: "https://res.klook.com/image/upload/activities/py3fvxtvbxpubsmolb0t.jpg",
   },
+  // The Krabi export replaced a stand-in: this page's own summary calls Railay
+  // สวรรค์ของนักปีนผา, and the climbing school is on that beach — where the
+  // placeholder was a Phi Phi tour boarding in another province entirely.
   "krabi-railay": {
-    label: "จองทัวร์เกาะพีพี + อ่าวมาหยา (ออกจากภูเก็ต)",
-    url: "https://www.klook.com/th/activity/14913-phi-phi-islands-day-tour-phuket",
-    image: "https://res.klook.com/image/upload/activities/dqjufjdglqdiccaha0em.jpg",
+    label: "จองคอร์สปีนผาที่หาดไร่เลย์",
+    url: "https://www.klook.com/th/activity/25995-rock-climbing-courses-railay-beach",
+    image: "https://res.klook.com/image/upload/activities/rbwje4keirzoxgnquq8a.jpg",
   },
 };
 

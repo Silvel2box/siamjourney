@@ -10,9 +10,9 @@ hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ค่าเรือหางยาวประมาณ 100-200 บาท
 sponsored: 1
 affiliate:
-  label: จองทัวร์เกาะพีพี + อ่าวมาหยา (ออกจากภูเก็ต)
-  url: 'https://www.klook.com/th/activity/14913-phi-phi-islands-day-tour-phuket'
-  image: 'https://res.klook.com/image/upload/activities/dqjufjdglqdiccaha0em.jpg'
+  label: จองคอร์สปีนผาที่หาดไร่เลย์
+  url: 'https://www.klook.com/th/activity/25995-rock-climbing-courses-railay-beach'
+  image: 'https://res.klook.com/image/upload/activities/rbwje4keirzoxgnquq8a.jpg'
 imageCredit:
   author: Vyacheslav Argenberg
   source: Wikimedia Commons
