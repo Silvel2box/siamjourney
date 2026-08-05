@@ -44,6 +44,14 @@ const TOURS = {
     { label: "บัตรเข้าชมมาดามทุสโซ กรุงเทพฯ", url: k(77176, "madame-tussaudmadame-tussauds-bangkok-thailands-bangkok-thailand"), image: img("z0trfwzwm8jdvwunhloq") },
     { label: "ทัวร์ปั่นจักรยานรอบกรุงเทพฯ", url: k(8633, "bangkok-cultural-tour-bangkok"), image: img("hi7wzrituzgsaktvuwqu") },
   ],
+  "chiang-mai": [
+    { label: "ทัวร์ดอยอินทนนท์เต็มวัน", url: k(17443, "doi-inthanon-park-tour-chiang-mai"), image: img("jmwmaoq4q0q8wbfovcxn") },
+    { label: "บัตรเข้าเชียงใหม่ไนท์ซาฟารี", url: k(1112, "night-safari-park-chiang-mai"), image: img("fh1kpaqwx9w98xp30hwf") },
+    { label: "ขันโตกดินเนอร์ + การแสดงล้านนา", url: k(1180, "khantoke-dinner-cultural-show-chiang-mai"), image: img("c6llzjhyog4wsek350at") },
+    { label: "Elephant Jungle Sanctuary เชียงใหม่", url: k(3631, "elephant-jungle-sanctuary-chiang-mai"), image: img("nksgoxtoqwu0glyj5g6f") },
+    { label: "คลาสทำอาหารไทย + ทัวร์ตลาดสด", url: k(10239, "thai-akha-kitchen-cooking-class-local-market-tour-chiang-mai"), image: img("jhnm0nwy4un06cti8n3e") },
+    { label: "ล่องแก่งแม่น้ำแม่แตง", url: k(1962, "rafting-8adventures-chiang-mai"), image: img("crsrl2gi2h3vvbljwme3") },
+  ],
 };
 
 // tours is the last key in the frontmatter, so it runs to the closing fence.

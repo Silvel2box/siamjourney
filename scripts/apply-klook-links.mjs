@@ -61,6 +61,11 @@ const PRODUCTS = {
     url: "https://www.klook.com/th/activity/25995-rock-climbing-courses-railay-beach",
     image: "https://res.klook.com/image/upload/activities/rbwje4keirzoxgnquq8a.jpg",
   },
+  "cm-doi-suthep": {
+    label: "จองทัวร์ดอยสุเทพ + วัดอุโมงค์",
+    url: "https://www.klook.com/th/activity/18014-doi-suthep-wat-umong-chiang-mai",
+    image: "https://res.klook.com/image/upload/activities/gdqthwbwzmhbbq7ck1cz.jpg",
+  },
 };
 
 // label + url, then the partner's product photo when their feed ships one.
