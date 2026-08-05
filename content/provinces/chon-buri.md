@@ -22,6 +22,25 @@ imageCredit:
   sourceUrl: >-
     https://commons.wikimedia.org/wiki/File:Kasetsin_6,_Muang_Pattaya,_Amphoe_Bang_Lamung,_Chang_Wat_Chon_Buri_20150,_Thailand_-_panoramio_(1).jpg
   license: CC BY 3.0
+tours:
+  - label: บัตรเข้าชมปราสาทสัจธรรม
+    url: 'https://www.klook.com/th/activity/1109-the-sanctuary-of-truth-pattaya'
+    image: 'https://res.klook.com/image/upload/activities/d2990de4-%E8%8A%AD%E6%8F%90%E9%9B%85%E7%9C%9F%E7%90%86%E5%AF%BA-KLOOK%E5%AE%A2%E8%B7%AF.jpg'
+  - label: บัตรเข้าสวนน้ำรามายณะ
+    url: 'https://www.klook.com/th/activity/2322-ramayana-water-park-pattaya'
+    image: 'https://res.klook.com/image/upload/activities/tdpv3hbftfsowp6z5opx.jpg'
+  - label: บัตรเข้าสวนน้ำโคลัมเบียพิคเจอร์ส อควาเวิร์ส
+    url: 'https://www.klook.com/th/activity/85772-columbia-pictures-aquaverse-admission-ticket'
+    image: 'https://res.klook.com/image/upload/activities/gkhzt7soog5732sz5g9r.jpg'
+  - label: บัตรเข้า Underwater World พัทยา
+    url: 'https://www.klook.com/th/activity/1106-underwater-world-pattaya'
+    image: 'https://res.klook.com/image/upload/activities/82e136c5-Underwater-World-Pattaya.jpg'
+  - label: บัตรแม็กซ์มวยไทย พัทยา
+    url: 'https://www.klook.com/th/activity/80757-max-muay-thai-pattaya'
+    image: 'https://res.klook.com/image/upload/activities/nq3kn6jhfibv2svctq9s.jpg'
+  - label: ปางช้าง Elephant Jungle Sanctuary พัทยา
+    url: 'https://www.klook.com/th/activity/8053-elephant-jungle-sanctuary-pattaya-experience'
+    image: 'https://res.klook.com/image/upload/activities/amkbaveek2vfh5f6mgms.jpg'
 ---
 ชลบุรีเป็นจังหวัดชายทะเลภาคตะวันออกที่ได้รับความนิยมมากที่สุดแห่งหนึ่งของไทย มีเมืองพัทยาเป็นแม่เหล็กดึงดูดนักท่องเที่ยวจากทั่วโลก ด้วยชายหาด แสงสี และกิจกรรมทางทะเลที่หลากหลาย
 

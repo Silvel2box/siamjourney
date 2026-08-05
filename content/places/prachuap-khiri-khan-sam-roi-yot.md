@@ -9,6 +9,10 @@ address: อำเภอสามร้อยยอด จังหวัดป�
 hours: เปิดทุกวัน 06.00-18.00 น.
 priceRange: ค่าเข้า 200 บาท
 sponsored: 1
+affiliate:
+  label: จองทัวร์อุทยานเขาสามร้อยยอด
+  url: 'https://www.klook.com/th/activity/74146-khao-sam-roi-yot-customize-tour'
+  image: 'https://res.klook.com/image/upload/activities/biatvbhkxnq3lmk0qsku.jpg'
 imageCredit:
   author: '::::=UT=::::'
   source: Wikimedia Commons

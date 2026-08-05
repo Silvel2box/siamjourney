@@ -66,6 +66,21 @@ const PRODUCTS = {
     url: "https://www.klook.com/th/activity/18014-doi-suthep-wat-umong-chiang-mai",
     image: "https://res.klook.com/image/upload/activities/gdqthwbwzmhbbq7ck1cz.jpg",
   },
+  "prachuap-khiri-khan-sam-roi-yot": {
+    label: "จองทัวร์อุทยานเขาสามร้อยยอด",
+    url: "https://www.klook.com/th/activity/74146-khao-sam-roi-yot-customize-tour",
+    image: "https://res.klook.com/image/upload/activities/biatvbhkxnq3lmk0qsku.jpg",
+  },
+  "cr-wat-rong-khun": {
+    label: "จองทัวร์วัดร่องขุ่น + วัดร่องเสือเต้น + บ้านดำ",
+    url: "https://www.klook.com/th/activity/66954-chiangrai-white-blue-temple-blackhouse-daytour",
+    image: "https://res.klook.com/image/upload/activities/i68munyq225hn0fz8v8v.jpg",
+  },
+  "chon-buri-pattaya-beach": {
+    label: "จองทัวร์เกาะล้านเต็มวันจากพัทยา",
+    url: "https://www.klook.com/th/activity/1168-coral-island-snorkeling-tour-pattaya",
+    image: "https://res.klook.com/image/upload/activities/net4xhzgfs66pnzagjro.jpg",
+  },
 };
 
 // label + url, then the partner's product photo when their feed ships one.

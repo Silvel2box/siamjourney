@@ -52,6 +52,34 @@ const TOURS = {
     { label: "คลาสทำอาหารไทย + ทัวร์ตลาดสด", url: k(10239, "thai-akha-kitchen-cooking-class-local-market-tour-chiang-mai"), image: img("jhnm0nwy4un06cti8n3e") },
     { label: "ล่องแก่งแม่น้ำแม่แตง", url: k(1962, "rafting-8adventures-chiang-mai"), image: img("crsrl2gi2h3vvbljwme3") },
   ],
+  "prachuap-khiri-khan": [
+    { label: "บัตรเข้าสวนน้ำวานา นาวา หัวหิน", url: k(3871, "vana-nava-waterpark-hua-hin"), image: img("gul8thajn1spks2beec7") },
+    { label: "บัตรเข้าสวนน้ำแบล็คเมาท์เทน", url: k(3970, "black-mountain-water-park-day-pass-hua-hin"), image: img("hjfeasz2jeaibh8ox550") },
+    { label: "ทัวร์น้ำตกป่าละอู + ไร่องุ่นมอนซูนแวลลีย์", url: k(4134, "pa-la-u-waterfall-monsoon-valley-vineyards-tour-hua-hin"), image: img("mlkzifhqsox3c2ymcfie") },
+    { label: "บัตรมวยไทยเวที Antza หัวหิน", url: k(122428, "antza-muay-thai-stadium-huahin"), image: img("z1oyitwome1rny1kmmto") },
+    { label: "ซิปไลน์ Tree Top Adventure หัวหิน", url: k(44174, "zipline-experience-hua-hin"), image: img("eiuunucskvlwj5f3tvah") },
+    { label: "ทัวร์ธรรมชาติเขาสามร้อยยอด", url: k(77299, "khao-sam-roi-yod-nature-tour-experience-start-from-hua-hin"), image: img("krizmulrprorggg18sgr") },
+  ],
+  "chiang-rai": [
+    { label: "ทัวร์วัดร่องขุ่น + วัดร่องเสือเต้น + บ้านดำ", url: k(66954, "chiangrai-white-blue-temple-blackhouse-daytour"), image: img("i68munyq225hn0fz8v8v") },
+    { label: "ทัวร์สามเหลี่ยมทองคำ + หมู่บ้านกะเหรี่ยงคอยาว", url: k(118527, "chiang-rai-day-trip-with-golden-triangle-and-long-neck-tribe"), image: img("amfelpglt54t6i8uh7gz") },
+    { label: "ทัวร์ดอยตุง + ดอยแม่สลอง", url: k(36304, "doi-tung-doi-mea-salong-day-tour"), image: img("ekgqxo5jsdxaydeaokrl") },
+    { label: "ทัวร์เดินป่าเชียงราย 1 วัน", url: k(35997, "chiang-rai-trekking-day-tour"), image: img("mcanoddzwksjnwatkwre") },
+    { label: "ทัวร์จุดถ่ายรูปเด็ดเชียงราย", url: k(75512, "chiang-rai-instagrammable-places-day-tour-by-ak-travel"), image: img("y2y5ruazknyzig0anrvw") },
+    { label: "ทัวร์เชียงรายเต็มวันแบบเลือกเส้นทางเอง", url: k(67411, "diy-chiangrai-fullday-tour"), image: img("ia3rnqfu2xq8cpxg8aip") },
+  ],
+  "chon-buri": [
+    { label: "บัตรเข้าชมปราสาทสัจธรรม", url: k(1109, "the-sanctuary-of-truth-pattaya"), image: img("d2990de4-%E8%8A%AD%E6%8F%90%E9%9B%85%E7%9C%9F%E7%90%86%E5%AF%BA-KLOOK%E5%AE%A2%E8%B7%AF") },
+    { label: "บัตรเข้าสวนน้ำรามายณะ", url: k(2322, "ramayana-water-park-pattaya"), image: img("tdpv3hbftfsowp6z5opx") },
+    { label: "บัตรเข้าสวนน้ำโคลัมเบียพิคเจอร์ส อควาเวิร์ส", url: k(85772, "columbia-pictures-aquaverse-admission-ticket"), image: img("gkhzt7soog5732sz5g9r") },
+    { label: "บัตรเข้า Underwater World พัทยา", url: k(1106, "underwater-world-pattaya"), image: img("82e136c5-Underwater-World-Pattaya") },
+    { label: "บัตรแม็กซ์มวยไทย พัทยา", url: k(80757, "max-muay-thai-pattaya"), image: img("nq3kn6jhfibv2svctq9s") },
+    { label: "ปางช้าง Elephant Jungle Sanctuary พัทยา", url: k(8053, "elephant-jungle-sanctuary-pattaya-experience"), image: img("amkbaveek2vfh5f6mgms") },
+  ],
+  "songkhla": [
+    { label: "บัตรเข้า Bouncetopia เซ็นทรัลหาดใหญ่", url: k(137530, "bouncetopia-ticket-at-central-hatyai"), image: img("houa9itnnzf31efxahca") },
+    { label: "พิพิธภัณฑ์มายากล หาดใหญ่", url: k(41392, "magic-museum-hatyai"), image: img("zhcqxhcs4gt3fwtmsj5s") },
+  ],
 };
 
 // tours is the last key in the frontmatter, so it runs to the closing fence.

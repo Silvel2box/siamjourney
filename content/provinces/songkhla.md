@@ -21,6 +21,13 @@ imageCredit:
   source: Wikimedia Commons
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:Songkhla_Laem_Samila.jpg'
   license: CC BY-SA 3.0
+tours:
+  - label: บัตรเข้า Bouncetopia เซ็นทรัลหาดใหญ่
+    url: 'https://www.klook.com/th/activity/137530-bouncetopia-ticket-at-central-hatyai'
+    image: 'https://res.klook.com/image/upload/activities/houa9itnnzf31efxahca.jpg'
+  - label: พิพิธภัณฑ์มายากล หาดใหญ่
+    url: 'https://www.klook.com/th/activity/41392-magic-museum-hatyai'
+    image: 'https://res.klook.com/image/upload/activities/zhcqxhcs4gt3fwtmsj5s.jpg'
 ---
 สงขลาเป็นเมืองชายทะเลที่มีเสน่ห์หลากหลาย ตั้งอยู่ระหว่างทะเลอ่าวไทยและทะเลสาบสงขลา จึงได้ชื่อว่าเมืองสองทะเล มีหาดสมิหลาที่มีรูปปั้นนางเงือกอันเป็นสัญลักษณ์ และย่านเมืองเก่าถนนนางงามที่เต็มไปด้วยตึกเก่าสถาปัตยกรรมจีนผสมยุโรป
 
