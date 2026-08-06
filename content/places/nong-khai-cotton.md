@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 09:00 - 17:00 น.'
 priceRange: '350 - 5,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อผ้าหมักโคลนหนองคาย
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าหมักโคลนหนองคาย'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B1%E0%B8%81%E0%B9%82%E0%B8%84%E0%B8%A5%E0%B8%99'
 imageCredit:
   author: Kristy Ng
   source: Pexels

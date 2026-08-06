@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 09:00 - 17:00 น.'
 priceRange: '700 - 10,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อผ้าไหมบ้านเขว้า
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าไหมบ้านเขว้า'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AB%E0%B8%A1%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%82%E0%B8%A7%E0%B9%89%E0%B8%B2'
 imageCredit:
   author: MINEIA  MARTINS
   source: Pexels

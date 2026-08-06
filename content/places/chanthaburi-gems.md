@@ -11,8 +11,8 @@ hours: 10.00 - 15.00 น. ตลาดนัดพลอยเสาร์-อ�
 priceRange: 500 บาทขึ้นไป
 sponsored: 0
 affiliate:
-  label: สั่งซื้อพลอยจันทบุรี
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อพลอยจันทบุรี'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9E%E0%B8%A5%E0%B8%AD%E0%B8%A2%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5'
 imageCredit:
   author: NEOSiAM 2026+
   source: Pexels

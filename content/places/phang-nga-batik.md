@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 09.00-17.00 น.
 priceRange: '200-2,500 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อผ้าบาติกพังงา
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าบาติกพังงา'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%95%E0%B8%B4%E0%B8%81'
 imageCredit:
   author: Dung NH Tia architects
   source: Pexels

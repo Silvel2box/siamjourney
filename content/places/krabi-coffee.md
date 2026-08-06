@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 09.00-18.00 น.
 priceRange: 120-350 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อกาแฟเขาทอง
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อกาแฟเขาทอง'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B8%87'
 imageCredit:
   author: SOO CHUL PARK
   source: Pexels

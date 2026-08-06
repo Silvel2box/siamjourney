@@ -11,8 +11,8 @@ hours: 08.00 - 18.00 น.
 priceRange: 80 - 400 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อมะขามหวานเพชรบูรณ์
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อมะขามหวานเพชรบูรณ์'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%A1%E0%B8%B0%E0%B8%82%E0%B8%B2%E0%B8%A1%E0%B8%AB%E0%B8%A7%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9A%E0%B8%B9%E0%B8%A3%E0%B8%93%E0%B9%8C'
 imageCredit:
   author: Karolina
   source: Pexels

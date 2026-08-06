@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 08:00 - 17:30 น.'
 priceRange: '180 - 1,800 บาท'
 sponsored: 2
 affiliate:
-  label: สั่งซื้อผ้าหม้อห้อม
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าหม้อห้อม'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B9%89%E0%B8%AD%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%A1'
 imageCredit:
   author: Firman Marek_Brew
   source: Pexels

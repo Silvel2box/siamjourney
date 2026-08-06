@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 08:00 - 17:00 น.'
 priceRange: 150 - 800 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อชาดอยแม่สลอง
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อชาดอยแม่สลอง'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%8A%E0%B8%B2%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%A5%E0%B8%AD%E0%B8%87'
 imageCredit:
   author: Alberto Capparelli
   source: Pexels

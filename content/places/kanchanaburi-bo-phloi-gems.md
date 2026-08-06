@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 09.00-17.00 น.
 priceRange: 500-20000 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้ออัญมณีบ่อพลอย
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้ออัญมณีบ่อพลอย'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%AD%E0%B8%B1%E0%B8%8D%E0%B8%A1%E0%B8%93%E0%B8%B5%E0%B8%9A%E0%B9%88%E0%B8%AD%E0%B8%9E%E0%B8%A5%E0%B8%AD%E0%B8%A2'
 imageCredit:
   author: Elias Jara
   source: Pexels

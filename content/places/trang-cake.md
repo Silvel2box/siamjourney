@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 08.00-18.00 น.
 priceRange: 80-250 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อเค้กเมืองตรัง
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อเค้กเมืองตรัง'
+  url: 'https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%84%E0%B9%89%E0%B8%81%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%A3%E0%B8%B1%E0%B8%87'
 imageCredit:
   author: Dilantha Walpola
   source: Pexels

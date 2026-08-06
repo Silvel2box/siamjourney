@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 09:00 - 17:00 น.'
 priceRange: '200 - 3,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อหมอนขิดบ้านศรีฐาน
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อหมอนขิดบ้านศรีฐาน'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%99%E0%B8%82%E0%B8%B4%E0%B8%94%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%90%E0%B8%B2%E0%B8%99'
 imageCredit:
   author: Roger Brown
   source: Pexels

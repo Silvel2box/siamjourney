@@ -1,0 +1,387 @@
+[
+    {
+        "slug":  "amnat-charoen-cotton",
+        "label":  "สั่งซื้อผ้าฝ้ายทอมืออำนาจเจริญ",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%9D%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%A1%E0%B8%B7%E0%B8%AD"
+    },
+    {
+        "slug":  "ang-thong-court-doll",
+        "label":  "สั่งซื้อตุ๊กตาชาววังบางเสด็จ",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%95%E0%B8%B8%E0%B9%8A%E0%B8%81%E0%B8%95%E0%B8%B2%E0%B8%8A%E0%B8%B2%E0%B8%A7%E0%B8%A7%E0%B8%B1%E0%B8%87%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%94%E0%B9%87%E0%B8%88"
+    },
+    {
+        "slug":  "ayutthaya-roti-sai-mai",
+        "label":  "สั่งซื้อโรตีสายไหม",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%82%E0%B8%A3%E0%B8%95%E0%B8%B5%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%AB%E0%B8%A1"
+    },
+    {
+        "slug":  "bangkok-benjarong",
+        "label":  "สั่งซื้อเครื่องเบญจรงค์",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%9A%E0%B8%8D%E0%B8%88%E0%B8%A3%E0%B8%87%E0%B8%84%E0%B9%8C"
+    },
+    {
+        "slug":  "bueng-kan-cotton",
+        "label":  "สั่งซื้อผ้าทอมือบึงกาฬ",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B8%A1%E0%B8%B7%E0%B8%AD"
+    },
+    {
+        "slug":  "buriram-phu-akkhani-cloth",
+        "label":  "สั่งซื้อผ้าภูอัคนี",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%A0%E0%B8%B9%E0%B8%AD%E0%B8%B1%E0%B8%84%E0%B8%99%E0%B8%B5"
+    },
+    {
+        "slug":  "chachoengsao-mango",
+        "label":  "สั่งซื้อมะม่วงน้ำดอกไม้แปดริ้ว",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%A1%E0%B8%B0%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%94%E0%B8%AD%E0%B8%81%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B9%81%E0%B8%9B%E0%B8%94%E0%B8%A3%E0%B8%B4%E0%B9%89%E0%B8%A7"
+    },
+    {
+        "slug":  "chai-nat-pomelo",
+        "label":  "สั่งซื้อส้มโอขาวแตงกวา",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B9%82%E0%B8%AD%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B9%81%E0%B8%95%E0%B8%87%E0%B8%81%E0%B8%A7%E0%B8%B2"
+    },
+    {
+        "slug":  "chaiyaphum-ban-khwao-silk",
+        "label":  "สั่งซื้อผ้าไหมบ้านเขว้า",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AB%E0%B8%A1%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%82%E0%B8%A7%E0%B9%89%E0%B8%B2"
+    },
+    {
+        "slug":  "chanthaburi-gems",
+        "label":  "สั่งซื้อพลอยจันทบุรี",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9E%E0%B8%A5%E0%B8%AD%E0%B8%A2%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5"
+    },
+    {
+        "slug":  "chon-buri-khao-lam",
+        "label":  "สั่งซื้อข้าวหลามหนองมน",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%AB%E0%B8%A5%E0%B8%B2%E0%B8%A1%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%99"
+    },
+    {
+        "slug":  "chumphon-banana",
+        "label":  "สั่งซื้อกล้วยเล็บมือนาง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%A5%E0%B9%87%E0%B8%9A%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B8%B2%E0%B8%87"
+    },
+    {
+        "slug":  "cm-bosang-umbrella",
+        "label":  "สั่งซื้อร่มบ่อสร้างออนไลน์",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%A3%E0%B9%88%E0%B8%A1%E0%B8%9A%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B8%AD%E0%B8%99%E0%B9%84%E0%B8%A5%E0%B8%99%E0%B9%8C"
+    },
+    {
+        "slug":  "cr-mae-salong-tea",
+        "label":  "สั่งซื้อชาดอยแม่สลอง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%8A%E0%B8%B2%E0%B8%94%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%AA%E0%B8%A5%E0%B8%AD%E0%B8%87"
+    },
+    {
+        "slug":  "kalasin-praewa-silk",
+        "label":  "สั่งซื้อผ้าไหมแพรวา",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AB%E0%B8%A1%E0%B9%81%E0%B8%9E%E0%B8%A3%E0%B8%A7%E0%B8%B2"
+    },
+    {
+        "slug":  "kamphaeng-phet-kluai-khai",
+        "label":  "สั่งซื้อกล้วยไข่กำแพงเพชร",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B9%84%E0%B8%82%E0%B9%88%E0%B8%81%E0%B8%B3%E0%B9%81%E0%B8%9E%E0%B8%87%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3"
+    },
+    {
+        "slug":  "kanchanaburi-bo-phloi-gems",
+        "label":  "สั่งซื้ออัญมณีบ่อพลอย",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%AD%E0%B8%B1%E0%B8%8D%E0%B8%A1%E0%B8%93%E0%B8%B5%E0%B8%9A%E0%B9%88%E0%B8%AD%E0%B8%9E%E0%B8%A5%E0%B8%AD%E0%B8%A2"
+    },
+    {
+        "slug":  "khon-kaen-mudmee-silk",
+        "label":  "สั่งซื้อผ้าไหมมัดหมี่",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AB%E0%B8%A1%E0%B8%A1%E0%B8%B1%E0%B8%94%E0%B8%AB%E0%B8%A1%E0%B8%B5%E0%B9%88"
+    },
+    {
+        "slug":  "krabi-coffee",
+        "label":  "สั่งซื้อกาแฟเขาทอง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B8%87"
+    },
+    {
+        "slug":  "loei-quilt",
+        "label":  "สั่งซื้อผ้าห่มนวมเชียงคาน",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B9%88%E0%B8%A1%E0%B8%99%E0%B8%A7%E0%B8%A1%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%99"
+    },
+    {
+        "slug":  "lopburi-sunflower-seed",
+        "label":  "สั่งซื้อเมล็ดทานตะวันอบลพบุรี",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%97%E0%B8%B2%E0%B8%99%E0%B8%95%E0%B8%B0%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%AD%E0%B8%9A"
+    },
+    {
+        "slug":  "lp-chicken-bowl-ceramic",
+        "label":  "สั่งซื้อชามตราไก่",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%8A%E0%B8%B2%E0%B8%A1%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B9%84%E0%B8%81%E0%B9%88"
+    },
+    {
+        "slug":  "lpn-donluang-cotton",
+        "label":  "สั่งซื้อผ้าฝ้ายบ้านดอนหลวง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%9D%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%94%E0%B8%AD%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87"
+    },
+    {
+        "slug":  "maha-sarakham-mat",
+        "label":  "สั่งซื้อเสื่อกกบ้านแพง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%81%E0%B8%81%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%9E%E0%B8%87"
+    },
+    {
+        "slug":  "mhs-karen-textile",
+        "label":  "สั่งซื้อผ้าทอกะเหรี่ยง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%AB%E0%B8%A3%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%87"
+    },
+    {
+        "slug":  "mukdahan-cotton",
+        "label":  "สั่งซื้อผ้าฝ้ายทอมือมุกดาหาร",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%9D%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%A1%E0%B8%B7%E0%B8%AD"
+    },
+    {
+        "slug":  "nakhon-nayok-mayongchid",
+        "label":  "สั่งซื้อมะยงชิดนครนายก",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%A1%E0%B8%B0%E0%B8%A2%E0%B8%87%E0%B8%8A%E0%B8%B4%E0%B8%94%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%81"
+    },
+    {
+        "slug":  "nakhon-pathom-pomelo",
+        "label":  "สั่งซื้อส้มโอนครชัยศรี",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A8%E0%B8%A3%E0%B8%B5"
+    },
+    {
+        "slug":  "nakhon-phanom-cotton",
+        "label":  "สั่งซื้อผ้าฝ้ายมุกนครพนม",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%9D%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%A1%E0%B8%B8%E0%B8%81"
+    },
+    {
+        "slug":  "nakhon-ratchasima-pak-thong-chai-silk",
+        "label":  "สั่งซื้อผ้าไหมปักธงชัย",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AB%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B8%81%E0%B8%98%E0%B8%87%E0%B8%8A%E0%B8%B1%E0%B8%A2"
+    },
+    {
+        "slug":  "nakhon-sawan-mochi",
+        "label":  "สั่งซื้อโมจินครสวรรค์",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%82%E0%B8%A1%E0%B8%88%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%AA%E0%B8%A7%E0%B8%A3%E0%B8%A3%E0%B8%84%E0%B9%8C"
+    },
+    {
+        "slug":  "nakhon-si-thammarat-nielloware",
+        "label":  "สั่งซื้อเครื่องถมนคร",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%96%E0%B8%A1%E0%B8%99%E0%B8%84%E0%B8%A3"
+    },
+    {
+        "slug":  "nan-tai-lue-textile",
+        "label":  "สั่งซื้อผ้าทอไทลื้อ",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B9%84%E0%B8%97%E0%B8%A5%E0%B8%B7%E0%B9%89%E0%B8%AD"
+    },
+    {
+        "slug":  "narathiwat-krajood",
+        "label":  "สั่งซื้อเครื่องจักสานกระจูด",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B9%E0%B8%94"
+    },
+    {
+        "slug":  "nong-bua-lamphu-khit-cloth",
+        "label":  "สั่งซื้อผ้าทอลายขิดหนองบัวลำภู",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B8%82%E0%B8%B4%E0%B8%94"
+    },
+    {
+        "slug":  "nong-khai-cotton",
+        "label":  "สั่งซื้อผ้าหมักโคลนหนองคาย",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B1%E0%B8%81%E0%B9%82%E0%B8%84%E0%B8%A5%E0%B8%99"
+    },
+    {
+        "slug":  "nonthaburi-pottery",
+        "label":  "สั่งซื้อเครื่องปั้นดินเผาเกาะเกร็ด",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B9%80%E0%B8%9C%E0%B8%B2%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A3%E0%B9%87%E0%B8%94"
+    },
+    {
+        "slug":  "pathum-thani-lotus-soap",
+        "label":  "สั่งซื้อสบู่ดอกบัวหลวง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%AA%E0%B8%9A%E0%B8%B9%E0%B9%88%E0%B8%94%E0%B8%AD%E0%B8%81%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87"
+    },
+    {
+        "slug":  "pattani-batik",
+        "label":  "สั่งซื้อผ้าจวนตานี",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%88%E0%B8%A7%E0%B8%99%E0%B8%95%E0%B8%B2%E0%B8%99%E0%B8%B5"
+    },
+    {
+        "slug":  "phang-nga-batik",
+        "label":  "สั่งซื้อผ้าบาติกพังงา",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%95%E0%B8%B4%E0%B8%81"
+    },
+    {
+        "slug":  "phatthalung-krajood",
+        "label":  "สั่งซื้อกระจูดทะเลน้อย",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%B9%E0%B8%94%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B9%89%E0%B8%AD%E0%B8%A2"
+    },
+    {
+        "slug":  "phetchabun-sweet-tamarind",
+        "label":  "สั่งซื้อมะขามหวานเพชรบูรณ์",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%A1%E0%B8%B0%E0%B8%82%E0%B8%B2%E0%B8%A1%E0%B8%AB%E0%B8%A7%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9A%E0%B8%B9%E0%B8%A3%E0%B8%93%E0%B9%8C"
+    },
+    {
+        "slug":  "phetchaburi-mor-kaeng",
+        "label":  "สั่งซื้อขนมหม้อแกงเมืองเพชร",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%AB%E0%B8%A1%E0%B9%89%E0%B8%AD%E0%B9%81%E0%B8%81%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3"
+    },
+    {
+        "slug":  "phichit-pomelo",
+        "label":  "สั่งซื้อส้มโอท่าข่อยพิจิตร",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B9%82%E0%B8%AD%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B8%82%E0%B9%88%E0%B8%AD%E0%B8%A2"
+    },
+    {
+        "slug":  "phitsanulok-dried-banana",
+        "label":  "สั่งซื้อกล้วยตากบางกระทุ่ม",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%95%E0%B8%B2%E0%B8%81%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%B8%E0%B9%88%E0%B8%A1"
+    },
+    {
+        "slug":  "phuket-pearl",
+        "label":  "สั่งซื้อมุกภูเก็ต",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%84%E0%B8%82%E0%B9%88%E0%B8%A1%E0%B8%B8%E0%B8%81"
+    },
+    {
+        "slug":  "prachin-buri-herbal",
+        "label":  "สั่งซื้อสมุนไพรอภัยภูเบศร",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%99%E0%B9%84%E0%B8%9E%E0%B8%A3%E0%B8%AD%E0%B8%A0%E0%B8%B1%E0%B8%A2%E0%B8%A0%E0%B8%B9%E0%B9%80%E0%B8%9A%E0%B8%A8%E0%B8%A3"
+    },
+    {
+        "slug":  "prachuap-khiri-khan-pineapple",
+        "label":  "สั่งซื้อสับปะรดกวนประจวบ",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%AA%E0%B8%B1%E0%B8%9A%E0%B8%9B%E0%B8%B0%E0%B8%A3%E0%B8%94%E0%B8%81%E0%B8%A7%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%A7%E0%B8%9A"
+    },
+    {
+        "slug":  "pr-mor-hom",
+        "label":  "สั่งซื้อผ้าหม้อห้อม",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B9%89%E0%B8%AD%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%A1"
+    },
+    {
+        "slug":  "py-water-hyacinth-craft",
+        "label":  "สั่งซื้อกระเป๋าผักตบชวา",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9B%E0%B9%8B%E0%B8%B2%E0%B8%9C%E0%B8%B1%E0%B8%81%E0%B8%95%E0%B8%9A%E0%B8%8A%E0%B8%A7%E0%B8%B2"
+    },
+    {
+        "slug":  "ranong-cashew",
+        "label":  "สั่งซื้อเม็ดมะม่วงหิมพานต์ระนอง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%A1%E0%B9%87%E0%B8%94%E0%B8%A1%E0%B8%B0%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B8%AB%E0%B8%B4%E0%B8%A1%E0%B8%9E%E0%B8%B2%E0%B8%99%E0%B8%95%E0%B9%8C"
+    },
+    {
+        "slug":  "ratchaburi-dragon-jar",
+        "label":  "สั่งซื้อโอ่งมังกรราชบุรี",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%82%E0%B8%AD%E0%B9%88%E0%B8%87%E0%B8%A1%E0%B8%B1%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5"
+    },
+    {
+        "slug":  "rayong-fish-sauce",
+        "label":  "สั่งซื้อน้ำปลาแท้ระยอง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B9%81%E0%B8%97%E0%B9%89"
+    },
+    {
+        "slug":  "roi-et-saket-silk",
+        "label":  "สั่งซื้อผ้าไหมสาเกต",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AB%E0%B8%A1%E0%B8%AA%E0%B8%B2%E0%B9%80%E0%B8%81%E0%B8%95"
+    },
+    {
+        "slug":  "sa-kaeo-jasmine-rice",
+        "label":  "สั่งซื้อข้าวหอมมะลิสระแก้ว",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%AB%E0%B8%AD%E0%B8%A1%E0%B8%A1%E0%B8%B0%E0%B8%A5%E0%B8%B4"
+    },
+    {
+        "slug":  "sakon-nakhon-indigo-cloth",
+        "label":  "สั่งซื้อผ้าย้อมครามสกลนคร",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%AA%E0%B8%81%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3"
+    },
+    {
+        "slug":  "samut-prakan-pla-salid",
+        "label":  "สั่งซื้อปลาสลิดบางบ่อ",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%A5%E0%B8%B4%E0%B8%94%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%9A%E0%B9%88%E0%B8%AD"
+    },
+    {
+        "slug":  "samut-sakhon-fish-sauce",
+        "label":  "สั่งซื้อน้ำปลาแท้มหาชัย",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B9%81%E0%B8%97%E0%B9%89%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%8A%E0%B8%B1%E0%B8%A2"
+    },
+    {
+        "slug":  "samut-songkhram-coconut-sugar",
+        "label":  "สั่งซื้อน้ำตาลมะพร้าวอัมพวา",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B2%E0%B8%A5%E0%B8%A1%E0%B8%B0%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%AD%E0%B8%B1%E0%B8%A1%E0%B8%9E%E0%B8%A7%E0%B8%B2"
+    },
+    {
+        "slug":  "saraburi-kari-pap",
+        "label":  "สั่งซื้อกะหรี่ปั๊บสระบุรี",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%B0%E0%B8%AB%E0%B8%A3%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%B1%E0%B9%8A%E0%B8%9A"
+    },
+    {
+        "slug":  "satun-batik",
+        "label":  "สั่งซื้อผ้าบาติกสตูล",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%95%E0%B8%B4%E0%B8%81"
+    },
+    {
+        "slug":  "sing-buri-dried-snakehead",
+        "label":  "สั่งซื้อปลาช่อนแม่ลาแดดเดียว",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A5%E0%B8%B2%E0%B9%81%E0%B8%94%E0%B8%94%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A7"
+    },
+    {
+        "slug":  "sisaket-benjasri-silk",
+        "label":  "สั่งซื้อผ้าไหมเบญจศรี",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AB%E0%B8%A1%E0%B9%80%E0%B8%9A%E0%B8%8D%E0%B8%88%E0%B8%A8%E0%B8%A3%E0%B8%B5"
+    },
+    {
+        "slug":  "songkhla-kohyo",
+        "label":  "สั่งซื้อผ้าทอเกาะยอ",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%A2%E0%B8%AD"
+    },
+    {
+        "slug":  "sukhothai-sangkhalok",
+        "label":  "สั่งซื้อเครื่องสังคโลก",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B9%82%E0%B8%A5%E0%B8%81"
+    },
+    {
+        "slug":  "suphan-buri-salee",
+        "label":  "สั่งซื้อขนมสาลี่สุพรรณ",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%AA%E0%B8%B2%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%AA%E0%B8%B8%E0%B8%9E%E0%B8%A3%E0%B8%A3%E0%B8%93"
+    },
+    {
+        "slug":  "surat-thani-saltedegg",
+        "label":  "สั่งซื้อไข่เค็มไชยา",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%84%E0%B8%82%E0%B9%88%E0%B9%80%E0%B8%84%E0%B9%87%E0%B8%A1%E0%B9%84%E0%B8%8A%E0%B8%A2%E0%B8%B2"
+    },
+    {
+        "slug":  "surin-silk",
+        "label":  "สั่งซื้อผ้าไหมสุรินทร์",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AB%E0%B8%A1%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C"
+    },
+    {
+        "slug":  "tak-karen-woven-cloth",
+        "label":  "สั่งซื้อผ้าทอกะเหรี่ยง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%AB%E0%B8%A3%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%87"
+    },
+    {
+        "slug":  "trang-cake",
+        "label":  "สั่งซื้อเค้กเมืองตรัง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%84%E0%B9%89%E0%B8%81%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%A3%E0%B8%B1%E0%B8%87"
+    },
+    {
+        "slug":  "trat-ngob",
+        "label":  "สั่งซื้องอบใบจากคลองน้ำเชี่ยว",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%87%E0%B8%AD%E0%B8%9A%E0%B9%83%E0%B8%9A%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7"
+    },
+    {
+        "slug":  "ubon-ratchathani-kap-bua-silk",
+        "label":  "สั่งซื้อผ้ากาบบัว",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%9A%E0%B8%9A%E0%B8%B1%E0%B8%A7"
+    },
+    {
+        "slug":  "udon-thani-na-kha-cloth",
+        "label":  "สั่งซื้อผ้าหมี่ขิดบ้านนาข่า",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B5%E0%B9%88%E0%B8%82%E0%B8%B4%E0%B8%94%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%99%E0%B8%B2%E0%B8%82%E0%B9%88%E0%B8%B2"
+    },
+    {
+        "slug":  "uthai-thani-lao-khrang-textile",
+        "label":  "สั่งซื้อผ้าทอลาวครั่ง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B8%A5%E0%B8%B2%E0%B8%A7%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B9%88%E0%B8%87"
+    },
+    {
+        "slug":  "ut-teen-jok-cloth",
+        "label":  "สั่งซื้อผ้าตีนจกลับแล",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%95%E0%B8%B5%E0%B8%99%E0%B8%88%E0%B8%81%E0%B8%A5%E0%B8%B1%E0%B8%9A%E0%B9%81%E0%B8%A5"
+    },
+    {
+        "slug":  "yala-shogun",
+        "label":  "สั่งซื้อส้มโชกุนเบตง",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B9%82%E0%B8%8A%E0%B8%81%E0%B8%B8%E0%B8%99%E0%B9%80%E0%B8%9A%E0%B8%95%E0%B8%87"
+    },
+    {
+        "slug":  "yasothon-mon-khit",
+        "label":  "สั่งซื้อหมอนขิดบ้านศรีฐาน",
+        "url":  "https://shopee.co.th/search?keyword=%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%99%E0%B8%82%E0%B8%B4%E0%B8%94%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%90%E0%B8%B2%E0%B8%99"
+    }
+]

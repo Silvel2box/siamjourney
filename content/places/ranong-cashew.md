@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 08.00-18.00 น.
 priceRange: 80-350 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อเม็ดมะม่วงหิมพานต์ระนอง
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อเม็ดมะม่วงหิมพานต์ระนอง'
+  url: 'https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%A1%E0%B9%87%E0%B8%94%E0%B8%A1%E0%B8%B0%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B8%AB%E0%B8%B4%E0%B8%A1%E0%B8%9E%E0%B8%B2%E0%B8%99%E0%B8%95%E0%B9%8C'
 imageCredit:
   author: aboodi vesakaran
   source: Pexels

@@ -11,8 +11,8 @@ hours: 08.00 - 17.00 น. ทุกวัน
 priceRange: 120 - 400 บาทต่อถุง
 sponsored: 0
 affiliate:
-  label: สั่งซื้อข้าวหอมมะลิสระแก้ว
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อข้าวหอมมะลิสระแก้ว'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%AB%E0%B8%AD%E0%B8%A1%E0%B8%A1%E0%B8%B0%E0%B8%A5%E0%B8%B4'
 imageCredit:
   author: Moussa Idrissi
   source: Pexels

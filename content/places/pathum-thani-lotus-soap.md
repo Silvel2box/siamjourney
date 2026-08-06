@@ -11,8 +11,8 @@ hours: 09.00 - 17.00 น.
 priceRange: 60 - 250 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อสบู่ดอกบัวหลวง
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อสบู่ดอกบัวหลวง'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%AA%E0%B8%9A%E0%B8%B9%E0%B9%88%E0%B8%94%E0%B8%AD%E0%B8%81%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87'
 imageCredit:
   author: Klub Boks
   source: Pexels

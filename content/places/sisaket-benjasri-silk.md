@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 09:00 - 17:00 น.'
 priceRange: '700 - 12,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อผ้าไหมเบญจศรี
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าไหมเบญจศรี'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AB%E0%B8%A1%E0%B9%80%E0%B8%9A%E0%B8%8D%E0%B8%88%E0%B8%A8%E0%B8%A3%E0%B8%B5'
 imageCredit:
   author: Digital Buggu
   source: Pexels

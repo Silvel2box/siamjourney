@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 07.00-19.00 น.
 priceRange: 40-200 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อขนมหม้อแกงเมืองเพชร
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อขนมหม้อแกงเมืองเพชร'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%AB%E0%B8%A1%E0%B9%89%E0%B8%AD%E0%B9%81%E0%B8%81%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3'
 imageCredit:
   author: Rebecca Zaal
   source: Pexels

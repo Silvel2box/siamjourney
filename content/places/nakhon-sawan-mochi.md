@@ -11,8 +11,8 @@ hours: ทุกวัน 08.00-18.00 น.
 priceRange: 50-200 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อโมจินครสวรรค์
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อโมจินครสวรรค์'
+  url: 'https://shopee.co.th/search?keyword=%E0%B9%82%E0%B8%A1%E0%B8%88%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%AA%E0%B8%A7%E0%B8%A3%E0%B8%A3%E0%B8%84%E0%B9%8C'
 imageCredit:
   author: Murat Halıcı
   source: Pexels

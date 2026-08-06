@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 09.00-17.00 น.
 priceRange: '300-5,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อผ้าทอเกาะยอ
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าทอเกาะยอ'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%B2%E0%B8%B0%E0%B8%A2%E0%B8%AD'
 imageCredit:
   author: มหฺ ปณฺฑิโต
   source: Pexels

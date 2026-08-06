@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 09:00 - 17:00 น.'
 priceRange: '800 - 15,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อผ้าไหมปักธงชัย
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าไหมปักธงชัย'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AB%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B8%81%E0%B8%98%E0%B8%87%E0%B8%8A%E0%B8%B1%E0%B8%A2'
 imageCredit:
   author: Quang Nguyen Vinh
   source: Pexels

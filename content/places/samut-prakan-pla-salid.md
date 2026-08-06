@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 08.00-17.00 น.
 priceRange: 100-350 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อปลาสลิดบางบ่อ
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อปลาสลิดบางบ่อ'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%A5%E0%B8%B4%E0%B8%94%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%9A%E0%B9%88%E0%B8%AD'
 imageCredit:
   author: Kashvi Shah
   source: Pexels

@@ -23,6 +23,11 @@ type NetworkCfg = {
   // cannot be the place slug. Leave unset to keep using the per-place slug.
   // Which page a click came from is answered by GA4 outbound clicks instead.
   fixedSubId?: string;
+  // Some programs hand out links that already carry every bit of tracking they
+  // need — Shopee's affiliate short links are one. Appending our own params to
+  // those can only cost us the attribution they arrived with, so they go out
+  // byte for byte as given.
+  preTracked?: boolean;
 };
 
 export const affiliateConfig = {
@@ -38,6 +43,9 @@ export const affiliateConfig = {
     },
     { match: "agoda.com", idParam: "cid", id: "", subIdParam: "tag" },
     { match: "booking.com", idParam: "aid", id: "", subIdParam: "label" },
+    // Ahead of the generic shopee entry on purpose — "s.shopee.co.th" matches
+    // both, and the first match wins.
+    { match: "s.shopee.", idParam: "", id: "", subIdParam: "", preTracked: true },
     { match: "shopee.", idParam: "af_siteid", id: "", subIdParam: "af_sub_siteid" },
     { match: "lazada.", idParam: "sub_aff_id", id: "", subIdParam: "sub_id" },
   ] as NetworkCfg[],
@@ -57,6 +65,9 @@ export function buildAffiliateUrl(rawUrl: string, placeSlug: string): string {
     url.hostname.includes(n.match),
   );
 
+  // Already tracked by whoever generated it — hands off.
+  if (net?.preTracked) return rawUrl;
+
   // Wrapped programs (Klook): the destination goes in untouched and all the
   // tracking rides on the wrapper.
   if (net?.id && net.redirectBase) {
@@ -73,10 +84,12 @@ export function buildAffiliateUrl(rawUrl: string, placeSlug: string): string {
     url.searchParams.set(net.idParam, net.id);
   }
 
-  // per-place sub id → see which place drives clicks in the affiliate dashboard
-  const subParam = net?.subIdParam ?? "subid";
-  if (!url.searchParams.has(subParam)) {
-    url.searchParams.set(subParam, placeSlug);
+  // per-place sub id → see which place drives clicks in the affiliate dashboard.
+  // Only once there is an affiliate id for it to hang off: a sub id on its own
+  // reports to nobody, and until today every Shopee link on the site was going
+  // out carrying one.
+  if (net?.id && !url.searchParams.has(net.subIdParam)) {
+    url.searchParams.set(net.subIdParam, placeSlug);
   }
 
   // UTM for our own analytics (GA etc. later)

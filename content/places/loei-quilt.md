@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 09:00 - 18:00 น.'
 priceRange: '300 - 3,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อผ้าห่มนวมเชียงคาน
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าห่มนวมเชียงคาน'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B9%88%E0%B8%A1%E0%B8%99%E0%B8%A7%E0%B8%A1%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%99'
 imageCredit:
   author: Lizette Prieto
   source: Pexels

@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 08.00-17.00 น.
 priceRange: 35-120 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อเมล็ดทานตะวันอบลพบุรี
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อเมล็ดทานตะวันอบลพบุรี'
+  url: 'https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%97%E0%B8%B2%E0%B8%99%E0%B8%95%E0%B8%B0%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%AD%E0%B8%9A'
 imageCredit:
   author: ilham izzul
   source: Pexels

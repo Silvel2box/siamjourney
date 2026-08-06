@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 08:00 - 18:00 น.'
 priceRange: '400 - 8,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อผ้าหมี่ขิดบ้านนาข่า
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าหมี่ขิดบ้านนาข่า'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B5%E0%B9%88%E0%B8%82%E0%B8%B4%E0%B8%94%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%99%E0%B8%B2%E0%B8%82%E0%B9%88%E0%B8%B2'
 imageCredit:
   author: Frans van Heerden
   source: Pexels

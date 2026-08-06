@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 08.00-18.00 น.
 priceRange: 35-100 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อกะหรี่ปั๊บสระบุรี
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อกะหรี่ปั๊บสระบุรี'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%B0%E0%B8%AB%E0%B8%A3%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%B1%E0%B9%8A%E0%B8%9A'
 imageCredit:
   author: Eduardo Amorim
   source: Pexels

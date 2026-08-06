@@ -11,8 +11,8 @@ hours: ทุกวัน 08.00-17.00 น.
 priceRange: 60-250 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อส้มโอขาวแตงกวา
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อส้มโอขาวแตงกวา'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B9%82%E0%B8%AD%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B9%81%E0%B8%95%E0%B8%87%E0%B8%81%E0%B8%A7%E0%B8%B2'
 imageCredit:
   author: Nguyễn Thị Thảo Hà (Ha Nguyen)
   source: Pexels

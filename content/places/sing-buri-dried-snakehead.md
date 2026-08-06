@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 08.00-17.00 น.
 priceRange: 120-400 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อปลาช่อนแม่ลาแดดเดียว
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อปลาช่อนแม่ลาแดดเดียว'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%A5%E0%B8%B2%E0%B9%81%E0%B8%94%E0%B8%94%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A7'
 imageCredit:
   author: Markus Winkler
   source: Pexels

@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 09.00-17.00 น.
 priceRange: '500-8,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อผ้าจวนตานี
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าจวนตานี'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%88%E0%B8%A7%E0%B8%99%E0%B8%95%E0%B8%B2%E0%B8%99%E0%B8%B5'
 imageCredit:
   author: Doğan Alpaslan  Demir
   source: Pexels

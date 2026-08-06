@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 08:30 - 17:00 น.'
 priceRange: '120 - 1,200 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อกระเป๋าผักตบชวา
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อกระเป๋าผักตบชวา'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9B%E0%B9%8B%E0%B8%B2%E0%B8%9C%E0%B8%B1%E0%B8%81%E0%B8%95%E0%B8%9A%E0%B8%8A%E0%B8%A7%E0%B8%B2'
 imageCredit:
   author: MEHMET KAYNAR
   source: Pexels

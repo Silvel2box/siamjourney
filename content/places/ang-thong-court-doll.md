@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 08.30-17.00 น.
 priceRange: 50-500 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อตุ๊กตาชาววังบางเสด็จ
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อตุ๊กตาชาววังบางเสด็จ'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%95%E0%B8%B8%E0%B9%8A%E0%B8%81%E0%B8%95%E0%B8%B2%E0%B8%8A%E0%B8%B2%E0%B8%A7%E0%B8%A7%E0%B8%B1%E0%B8%87%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%94%E0%B9%87%E0%B8%88'
 imageCredit:
   author: Markus Winkler
   source: Pexels

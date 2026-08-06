@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 09:00 - 17:00 น.'
 priceRange: '250 - 8,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อเครื่องเบญจรงค์
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อเครื่องเบญจรงค์'
+  url: 'https://shopee.co.th/search?keyword=%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%9A%E0%B8%8D%E0%B8%88%E0%B8%A3%E0%B8%87%E0%B8%84%E0%B9%8C'
 imageCredit:
   author: Lâm Thanh
   source: Pexels

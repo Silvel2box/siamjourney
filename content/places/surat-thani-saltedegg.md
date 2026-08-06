@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 08.00-18.00 น.
 priceRange: 60-250 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อไข่เค็มไชยา
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อไข่เค็มไชยา'
+  url: 'https://shopee.co.th/search?keyword=%E0%B9%84%E0%B8%82%E0%B9%88%E0%B9%80%E0%B8%84%E0%B9%87%E0%B8%A1%E0%B9%84%E0%B8%8A%E0%B8%A2%E0%B8%B2'
 imageCredit:
   author: Digital Buggu
   source: Pexels

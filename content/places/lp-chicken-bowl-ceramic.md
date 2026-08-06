@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 08:30 - 17:30 น.'
 priceRange: 60 - 900 บาท
 sponsored: 2
 affiliate:
-  label: สั่งซื้อชามตราไก่
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อชามตราไก่'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%8A%E0%B8%B2%E0%B8%A1%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B9%84%E0%B8%81%E0%B9%88'
 imageCredit:
   author: Mesayu Elida Irawati
   source: Pexels

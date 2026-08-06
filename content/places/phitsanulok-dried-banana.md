@@ -11,8 +11,8 @@ hours: 08.00 - 17.00 น.
 priceRange: 50 - 250 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อกล้วยตากบางกระทุ่ม
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อกล้วยตากบางกระทุ่ม'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%95%E0%B8%B2%E0%B8%81%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%B8%E0%B9%88%E0%B8%A1'
 imageCredit:
   author: Mew wy.
   source: Pexels

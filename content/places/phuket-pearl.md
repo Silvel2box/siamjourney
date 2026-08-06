@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 09.00-18.00 น.
 priceRange: '500-50,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อมุกภูเก็ต
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อมุกภูเก็ต'
+  url: 'https://shopee.co.th/search?keyword=%E0%B9%84%E0%B8%82%E0%B9%88%E0%B8%A1%E0%B8%B8%E0%B8%81'
 imageCredit:
   author: Huy Phan
   source: Pexels

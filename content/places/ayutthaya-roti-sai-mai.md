@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 08:00 - 18:00 น.'
 priceRange: 30 - 100 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อโรตีสายไหม
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อโรตีสายไหม'
+  url: 'https://shopee.co.th/search?keyword=%E0%B9%82%E0%B8%A3%E0%B8%95%E0%B8%B5%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%AB%E0%B8%A1'
 imageCredit:
   author: Nguyễn Viết Minh Lâm
   source: Pexels

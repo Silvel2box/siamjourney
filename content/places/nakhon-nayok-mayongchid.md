@@ -11,8 +11,8 @@ hours: ตามฤดูกาล 08.00-17.00 น.
 priceRange: 100-400 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อมะยงชิดนครนายก
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อมะยงชิดนครนายก'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%A1%E0%B8%B0%E0%B8%A2%E0%B8%87%E0%B8%8A%E0%B8%B4%E0%B8%94%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%81'
 imageCredit:
   author: "The  Duluwa\U0001F1F3\U0001F1F5"
   source: Pexels

@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 08:30 - 17:00 น.'
 priceRange: '120 - 1,500 บาท'
 sponsored: 2
 affiliate:
-  label: สั่งซื้อร่มบ่อสร้างออนไลน์
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อร่มบ่อสร้างออนไลน์'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%A3%E0%B9%88%E0%B8%A1%E0%B8%9A%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B8%AD%E0%B8%99%E0%B9%84%E0%B8%A5%E0%B8%99%E0%B9%8C'
 imageCredit:
   author: Sóc Năng Động
   source: Pexels

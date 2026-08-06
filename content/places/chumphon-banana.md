@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 08.00-18.00 น.
 priceRange: 60-200 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อกล้วยเล็บมือนาง
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อกล้วยเล็บมือนาง'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%A5%E0%B9%87%E0%B8%9A%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B8%B2%E0%B8%87'
 imageCredit:
   author: Ramius Aquiler
   source: Pexels

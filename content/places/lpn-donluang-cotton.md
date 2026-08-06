@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 08:30 - 17:00 น.'
 priceRange: '150 - 2,000 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อผ้าฝ้ายบ้านดอนหลวง
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าฝ้ายบ้านดอนหลวง'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%9D%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%94%E0%B8%AD%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87'
 imageCredit:
   author: www.kaboompics.com
   source: Pexels

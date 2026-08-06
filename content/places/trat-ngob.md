@@ -11,8 +11,8 @@ hours: 08.00 - 17.00 น. ทุกวัน
 priceRange: 150 - 500 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้องอบใบจากคลองน้ำเชี่ยว
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้องอบใบจากคลองน้ำเชี่ยว'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%87%E0%B8%AD%E0%B8%9A%E0%B9%83%E0%B8%9A%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7'
 imageCredit:
   author: Son Tung Tran
   source: Pexels

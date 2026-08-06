@@ -11,8 +11,8 @@ hours: 07.00 - 19.00 น. ทุกวัน
 priceRange: 30 - 100 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อข้าวหลามหนองมน
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อข้าวหลามหนองมน'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%AB%E0%B8%A5%E0%B8%B2%E0%B8%A1%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%99'
 imageCredit:
   author: "The  Duluwa\U0001F1F3\U0001F1F5"
   source: Pexels

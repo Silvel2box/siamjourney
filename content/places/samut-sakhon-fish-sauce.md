@@ -11,8 +11,8 @@ hours: เปิดทุกวัน 08.00-17.00 น.
 priceRange: 45-180 บาท
 sponsored: 0
 affiliate:
-  label: สั่งซื้อน้ำปลาแท้มหาชัย
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อน้ำปลาแท้มหาชัย'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B9%81%E0%B8%97%E0%B9%89%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%8A%E0%B8%B1%E0%B8%A2'
 imageCredit:
   author: Dominik Gryzbon
   source: Pexels

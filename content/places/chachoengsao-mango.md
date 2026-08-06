@@ -11,8 +11,8 @@ hours: 08.00 - 17.00 น. ตามฤดูกาล
 priceRange: 80 - 300 บาทต่อกิโลกรัม
 sponsored: 0
 affiliate:
-  label: สั่งซื้อมะม่วงน้ำดอกไม้แปดริ้ว
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อมะม่วงน้ำดอกไม้แปดริ้ว'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%A1%E0%B8%B0%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%94%E0%B8%AD%E0%B8%81%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B9%81%E0%B8%9B%E0%B8%94%E0%B8%A3%E0%B8%B4%E0%B9%89%E0%B8%A7'
 imageCredit:
   author: cottonbro studio
   source: Pexels

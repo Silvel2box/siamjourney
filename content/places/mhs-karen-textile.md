@@ -11,8 +11,8 @@ hours: 'เปิดทุกวัน 08:00 - 17:00 น.'
 priceRange: '200 - 2,500 บาท'
 sponsored: 0
 affiliate:
-  label: สั่งซื้อผ้าทอกะเหรี่ยง
-  url: 'https://shopee.co.th/'
+  label: 'สั่งซื้อผ้าทอกะเหรี่ยง'
+  url: 'https://shopee.co.th/search?keyword=%E0%B8%9C%E0%B9%89%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%AB%E0%B8%A3%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%87'
 imageCredit:
   author: Moussa Idrissi
   source: Pexels
