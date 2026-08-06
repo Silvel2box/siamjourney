@@ -14,6 +14,10 @@
     "import:provinces": "prisma generate && node scripts/import-content.mjs --provinces",
     "seed:hotels": "node scripts/seed-hotels.mjs",
     "sync:affiliate": "node scripts/sync-affiliate.mjs",
+    "sync:affiliate:dry": "node scripts/sync-affiliate.mjs --dry",
+    "sync:tours": "node scripts/sync-tours.mjs",
+    "sync:tours:dry": "node scripts/sync-tours.mjs --dry",
+    "report:drift": "node scripts/report-drift.mjs",
     "postinstall": "prisma generate"
   },
   "prisma": {

@@ -20,6 +20,31 @@ build/migrate/seed จึงทำผ่าน npm scripts ที่เตรี
 
 ---
 
+## 📥 อัปเดตเนื้อหาจาก markdown ขึ้น prod
+
+🔴 **ห้ามรัน `import:provinces` บน prod** — มันเป็น upsert ที่ `update: row` = **เขียนทับทั้งแถว**
+(`image` `imageCredit` `highlights` `bestTime` `gettingThere` `localFood` `body` `tours` …)
+หน้าจังหวัดถูกแก้ผ่านแอดมินไปแล้ว → รันเมื่อไหร่ งานนั้นหายทันที ไม่มี backup
+เหตุผลเดียวกับที่ `import:content` ห้ามรันบน prod (prod มี places มากกว่า markdown)
+
+**ลำดับที่ปลอดภัย — ดูก่อน แล้วค่อยเขียนทีละคอลัมน์:**
+
+1. **Run script → `report:drift`** — *อ่านอย่างเดียว ไม่เขียนอะไรเลย* แสดงว่าแถวไหน/ช่องไหน DB ต่างจาก markdown
+   → ช่องที่ขึ้นในรายงาน = ของที่แก้ผ่านแอดมิน (หรือ markdown เก่า) **ถ้าไม่อยากให้หาย ต้องดึงกลับมาใส่ markdown ก่อน**
+2. **Run script → `sync:tours`** — เขียนเฉพาะคอลัมน์ `tours` ของ province แมตช์ด้วย slug
+3. **Run script → `sync:affiliate`** — เขียนเฉพาะคอลัมน์ `affiliate` ของ place แมตช์ด้วย slug
+   (สถานที่ที่แอดมินสร้างเอง ไม่มีใน markdown → ข้าม ไม่ถูกแตะ)
+4. `build` → `restart`
+
+> อยากดูก่อนว่า sync จะเปลี่ยนกี่แถว → ใช้ **`sync:tours:dry` / `sync:affiliate:dry`** (มี npm script แยกให้แล้ว)
+> 🐛 **ห้ามใช้ `npm run sync:tours -- --dry`** — บน PowerShell npm กลืน `--dry` ทิ้ง แล้ว**เขียนจริง**โดยไม่มีคำเตือน
+> (สังเกตได้จาก output ที่ไม่มี prefix `[dry]`) · Plesk "Run script" ก็ส่ง argument ไม่ได้อยู่แล้ว ต้องใช้ script `:dry`
+
+⚠️ **อะไรที่เขียนลง DB ต้องรันให้จบก่อน `build` เสมอ** — `generateStaticParams`/ISR อ่าน DB ตอน build
+ถ้ารันหลัง build จะได้หน้าเปล่าค้างในแคช (`s-maxage=3600`) แก้ด้วยการ `build → restart` ซ้ำ
+
+---
+
 ## 🆕 First-time setup (ทำครั้งเดียว)
 
 **Pre:** Node.js panel → Node **≥ 20**, Application Root = โฟลเดอร์ repo, Application Startup File = **`server.js`**, Application Mode = production
@@ -83,3 +108,7 @@ curl -o /dev/null -w '%{http_code}' https://siam-journey.com/north/chiang-mai   
 - `migrate:deploy` = `prisma migrate deploy` (prod, ไม่ต้อง shadow DB)
 - `migrate:reset` = `prisma migrate reset --force --skip-seed` (ล้าง+สร้างใหม่ — dev/pre-launch เท่านั้น)
 - `db:seed` = `prisma db seed` (promote `ADMIN_EMAIL` → admin)
+- `report:drift` = เทียบ DB กับ markdown แล้วรายงานว่าอะไรจะโดนทับ — **อ่านอย่างเดียว**
+- `sync:tours` / `sync:tours:dry` = push คอลัมน์ `tours` (province) จาก markdown
+- `sync:affiliate` / `sync:affiliate:dry` = push คอลัมน์ `affiliate` (place) จาก markdown
+- 🔴 `import:content` / `import:provinces` = **local เท่านั้น** เขียนทับทั้งแถว ห้ามรันบน prod

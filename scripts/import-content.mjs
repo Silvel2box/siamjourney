@@ -3,9 +3,14 @@
 // slug. Markdown files stay as a backup. Run once per environment after the
 // add_content_models migration:  node scripts/import-content.mjs
 //
-// `--provinces` (npm run import:provinces) imports provinces only. Use that on
-// prod: upsert overwrites DB rows with the markdown values, and places have been
-// edited/added through the admin since the first import.
+// `--provinces` (npm run import:provinces) imports provinces only — it still
+// overwrites the whole province row from markdown.
+//
+// 🔴 LOCAL ONLY, both modes. The upsert's `update: row` replaces every column,
+// and prod content is edited through the admin (places were first, province
+// pages since) — an import there throws that work away with no backup. To move
+// content to prod use the one-column syncs instead: `report:drift` to see what
+// would be lost, then `sync:tours` / `sync:affiliate`. See DEPLOY.md.
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
