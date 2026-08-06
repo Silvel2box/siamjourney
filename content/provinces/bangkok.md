@@ -5,7 +5,7 @@ nameEn: Bangkok
 region: central
 summary: มหานครที่ไม่เคยหลับใหล ผสานวัดวังทองอร่ามเข้ากับตึกระฟ้าและสตรีทฟู้ดระดับโลก
 image: /images/provinces/bangkok.jpg
-featured: false
+featured: true
 highlights:
   - วัดพระแก้วและพระบรมมหาราชวัง
   - วัดอรุณราชวรารามริมแม่น้ำเจ้าพระยา
