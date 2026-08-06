@@ -9,6 +9,10 @@ address: ตำบลอัมพวา อำเภออัมพวา จั
 hours: ศุกร์-อาทิตย์ 12.00-21.00 น.
 priceRange: ฟรีค่าเข้า (ล่องเรือ 60-100 บาท)
 sponsored: 1
+affiliate:
+  label: 'จองทัวร์อยุธยา + อัมพวา 1 วัน (ส่วนตัว)'
+  url: 'https://www.klook.com/th/activity/11542-ayutthaya-amphawa-one-day-private-tour-private-one-day-tour'
+  image: 'https://res.klook.com/image/upload/activities/bvbrm7gxsxqppzzhg0st.jpg'
 imageCredit:
   author: Hdamm
   source: Wikimedia Commons

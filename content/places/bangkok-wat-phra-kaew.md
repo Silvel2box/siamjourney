@@ -10,7 +10,7 @@ hours: 'เปิดทุกวัน 08:30 - 15:30 น.'
 priceRange: ชาวไทยฟรี / ชาวต่างชาติ 500 บาท
 sponsored: 1
 affiliate:
-  label: จองบัตรเข้าพระบรมมหาราชวัง (ไม่ต้องต่อคิว)
+  label: 'จองบัตรเข้าพระบรมมหาราชวัง (ไม่ต้องต่อคิว)'
   url: 'https://www.klook.com/th/activity/129462-skip-the-line-grand-palace-and-emerald-buddha-ticket-in-bangkok'
   image: 'https://res.klook.com/image/upload/activities/fm2hokjdojtimgu4rebd.jpg'
 imageCredit:

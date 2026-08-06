@@ -10,7 +10,7 @@ hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ไม่มีค่าเข้าชม
 sponsored: 1
 affiliate:
-  label: จองทัวร์เกาะพีพี + อ่าวมาหยา จากภูเก็ต
+  label: 'จองทัวร์เกาะพีพี + อ่าวมาหยา จากภูเก็ต'
   url: 'https://www.klook.com/th/activity/138073-phuket-phi-phi-island-day-tour-by-speedboat-catamaran'
   image: 'https://res.klook.com/image/upload/activities/bgzcwbtakhy5lm0lzzft.jpg'
 imageCredit:

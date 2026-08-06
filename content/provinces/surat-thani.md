@@ -22,6 +22,25 @@ imageCredit:
   sourceUrl: >-
     https://commons.wikimedia.org/wiki/File:Ang_Thong,_Ko_Samui_District,_Surat_Thani,_Thailand_-_panoramio.jpg
   license: CC BY 3.0
+tours:
+  - label: 'ทัวร์หมู่เกาะอ่างทอง โดยเรือไม้สักลำใหญ่'
+    url: 'https://www.klook.com/th/activity/78610-angthong-marine-park-tour-big-boat'
+    image: 'https://res.klook.com/image/upload/activities/n0wrxtxu5gsypmosacyh.jpg'
+  - label: 'ทัวร์หมู่เกาะอ่างทอง โดยเรือสปีดโบ๊ท'
+    url: 'https://www.klook.com/th/activity/73976-angthing-marine-national-park-by-speedboat-or-big-boat'
+    image: 'https://res.klook.com/image/upload/activities/b9tcqc4hqrh8g4pay7ef.jpg'
+  - label: 'ขับ ATV ออฟโรด X-Quad เกาะสมุย'
+    url: 'https://www.klook.com/th/activity/4586-x-quad-off-road-experience-koh-samui'
+    image: 'https://res.klook.com/image/upload/activities/kru4qtesx7mxywbzsmir.jpg'
+  - label: 'ซิปไลน์ Tree Bridge เกาะสมุย'
+    url: 'https://www.klook.com/th/activity/93173-join-tree-bridge-zipline-samui-koh-samui-samui'
+    image: 'https://res.klook.com/image/upload/activities/xiw5ephhailutedw7ecz.jpg'
+  - label: 'สปาและนวดไทย ศาลาราย เวลเนส เกาะสมุย'
+    url: 'https://www.klook.com/th/activity/127330-salaraj-thai-wellness-ans-spa-experience-in-koh-samui'
+    image: 'https://res.klook.com/image/upload/activities/yxmaicbjj5cct2qvrcxv.jpg'
+  - label: 'แพ็กเกจสุขภาพ Absolute Sanctuary เกาะสมุย'
+    url: 'https://www.klook.com/th/activity/31997-wellness-day-programs-absolute-sanctuary-koh-samui'
+    image: 'https://res.klook.com/image/upload/activities/yilfmrey4ck2gtkqck6h.jpg'
 ---
 สุราษฎร์ธานีเป็นจังหวัดที่ใหญ่ที่สุดของภาคใต้ ได้สมญาว่าเมืองคนดี เป็นประตูสู่หมู่เกาะชื่อดังระดับโลกอย่างเกาะสมุย เกาะพะงัน และเกาะเต่า ที่ขึ้นชื่อเรื่องหาดทรายขาว น้ำทะเลใส และกิจกรรมดำน้ำ
 

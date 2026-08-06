@@ -10,7 +10,7 @@ hours: เปิดตลอด 24 ชั่วโมง
 priceRange: เข้าชมฟรี
 sponsored: 1
 affiliate:
-  label: จองทัวร์เกาะล้านเต็มวันจากพัทยา
+  label: 'จองทัวร์เกาะล้านเต็มวันจากพัทยา'
   url: 'https://www.klook.com/th/activity/1168-coral-island-snorkeling-tour-pattaya'
   image: 'https://res.klook.com/image/upload/activities/net4xhzgfs66pnzagjro.jpg'
 imageCredit:

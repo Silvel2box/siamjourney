@@ -10,7 +10,7 @@ hours: เปิดทุกวัน 06.00-18.00 น.
 priceRange: ฟรี
 sponsored: 1
 affiliate:
-  label: จองทัวร์น้ำตกเอราวัณ + เขตรักษาพันธุ์ช้าง
+  label: 'จองทัวร์น้ำตกเอราวัณ + เขตรักษาพันธุ์ช้าง'
   url: 'https://www.klook.com/th/activity/66910-elephant-sanctuary-erawan-waterfall-from-bangkok-fullday-tour'
   image: 'https://res.klook.com/image/upload/activities/qistubfsahv6wigdieyq.jpg'
 imageCredit:

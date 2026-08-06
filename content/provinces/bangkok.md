@@ -22,22 +22,22 @@ imageCredit:
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:Temple_of_the_Emerald_Buddha.jpg'
   license: CC BY-SA 4.0
 tours:
-  - label: บัตรพระบรมมหาราชวัง + วัดพระแก้ว (ไม่ต้องต่อคิว)
+  - label: 'บัตรพระบรมมหาราชวัง + วัดพระแก้ว (ไม่ต้องต่อคิว)'
     url: 'https://www.klook.com/th/activity/129462-skip-the-line-grand-palace-and-emerald-buddha-ticket-in-bangkok'
     image: 'https://res.klook.com/image/upload/activities/fm2hokjdojtimgu4rebd.jpg'
-  - label: บัตรมวยไทยเวทีราชดำเนิน
+  - label: 'บัตรมวยไทยเวทีราชดำเนิน'
     url: 'https://www.klook.com/th/activity/92826-muay-thai-rajadamnern-stadium-bangkok'
     image: 'https://res.klook.com/image/upload/activities/grlpyy9aulohrcwhym1z.jpg'
-  - label: ล่องเรือชมแม่น้ำเจ้าพระยา
+  - label: 'ล่องเรือชมแม่น้ำเจ้าพระยา'
     url: 'https://www.klook.com/th/activity/10538-chao-phraya-white-orchid-river-cruise-bangkok'
     image: 'https://res.klook.com/image/upload/activities/zax7udiixb5zpdz6ipdk.jpg'
-  - label: คลาสทำอาหารไทยที่สีลม
+  - label: 'คลาสทำอาหารไทยที่สีลม'
     url: 'https://www.klook.com/th/activity/3965-silom-thai-cooking-school-bangkok'
     image: 'https://res.klook.com/image/upload/activities/zzc28jy9fcvsbowkohdk.jpg'
-  - label: บัตรเข้าชมมาดามทุสโซ กรุงเทพฯ
+  - label: 'บัตรเข้าชมมาดามทุสโซ กรุงเทพฯ'
     url: 'https://www.klook.com/th/activity/77176-madame-tussaudmadame-tussauds-bangkok-thailands-bangkok-thailand'
     image: 'https://res.klook.com/image/upload/activities/z0trfwzwm8jdvwunhloq.jpg'
-  - label: ทัวร์ปั่นจักรยานรอบกรุงเทพฯ
+  - label: 'ทัวร์ปั่นจักรยานรอบกรุงเทพฯ'
     url: 'https://www.klook.com/th/activity/8633-bangkok-cultural-tour-bangkok'
     image: 'https://res.klook.com/image/upload/activities/hi7wzrituzgsaktvuwqu.jpg'
 ---

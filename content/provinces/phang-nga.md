@@ -23,22 +23,22 @@ imageCredit:
     https://commons.wikimedia.org/wiki/File:Tropidolaemus_wagleri,_Wagler%27s_palm_pit_viper_-_Takua_Pa_District,_Phang-nga_Province_(48238132136).jpg
   license: CC BY-SA 2.0
 tours:
-  - label: ทัวร์ดำน้ำตื้นหมู่เกาะสิมิลัน
+  - label: 'ทัวร์ดำน้ำตื้นหมู่เกาะสิมิลัน'
     url: 'https://www.klook.com/th/activity/89618-join-similan-islands-snorkel-tour-fantastic-similan-phang-nga'
     image: 'https://res.klook.com/image/upload/activities/whs44hdfmx1k6x3vj0hc.jpg'
-  - label: ทัวร์อ่าวพังงา + เกาะเจมส์บอนด์ + พายเรือแคนู
+  - label: 'ทัวร์อ่าวพังงา + เกาะเจมส์บอนด์ + พายเรือแคนู'
     url: 'https://www.klook.com/th/activity/76625-join-in-james-bond-by-chic-chic'
     image: 'https://res.klook.com/image/upload/activities/cqkbil8wxn25xoefvi68.jpg'
-  - label: ล่องแก่ง + ขับ ATV เต็มวันในพังงา
+  - label: 'ล่องแก่ง + ขับ ATV เต็มวันในพังงา'
     url: 'https://www.klook.com/th/activity/75973-rafting-experience-phang-nga'
     image: 'https://res.klook.com/image/upload/activities/kdrdtxeo2getxbjvbdfz.jpg'
-  - label: บัตรมวยไทยสนามมวยเขาหลัก
+  - label: 'บัตรมวยไทยสนามมวยเขาหลัก'
     url: 'https://www.klook.com/th/activity/80778-join-khao-lak-boxing-stadium-muay-thai-phang-nga'
     image: 'https://res.klook.com/image/upload/activities/k8e2qdlx2qnv2p7uoioq.jpg'
-  - label: คลาสทำอาหารไทย Riverside เขาหลัก
+  - label: 'คลาสทำอาหารไทย Riverside เขาหลัก'
     url: 'https://www.klook.com/th/activity/82126-join-riverside-thai-cooking-class-khao-lak-phang-nga'
     image: 'https://res.klook.com/image/upload/activities/pqag1j0afhhyy0trzpas.jpg'
-  - label: อควา สปา ที่ The Haven เขาหลัก
+  - label: 'อควา สปา ที่ The Haven เขาหลัก'
     url: 'https://www.klook.com/th/activity/126218-aqua-spa-at-the-heaven-khao-lak-experience-in-phang-nga'
     image: 'https://res.klook.com/image/upload/activities/rzwdfhyoncombvuqksuc.jpg'
 ---

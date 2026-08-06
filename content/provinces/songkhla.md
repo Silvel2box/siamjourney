@@ -22,10 +22,10 @@ imageCredit:
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:Songkhla_Laem_Samila.jpg'
   license: CC BY-SA 3.0
 tours:
-  - label: บัตรเข้า Bouncetopia เซ็นทรัลหาดใหญ่
+  - label: 'บัตรเข้า Bouncetopia เซ็นทรัลหาดใหญ่'
     url: 'https://www.klook.com/th/activity/137530-bouncetopia-ticket-at-central-hatyai'
     image: 'https://res.klook.com/image/upload/activities/houa9itnnzf31efxahca.jpg'
-  - label: พิพิธภัณฑ์มายากล หาดใหญ่
+  - label: 'พิพิธภัณฑ์มายากล หาดใหญ่'
     url: 'https://www.klook.com/th/activity/41392-magic-museum-hatyai'
     image: 'https://res.klook.com/image/upload/activities/zhcqxhcs4gt3fwtmsj5s.jpg'
 ---

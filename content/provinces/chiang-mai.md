@@ -23,22 +23,22 @@ imageCredit:
     https://commons.wikimedia.org/wiki/File:Doi_Pui_mountains,_Chiang_Mai,_Thailand.jpg
   license: CC BY 4.0
 tours:
-  - label: ทัวร์ดอยอินทนนท์เต็มวัน
+  - label: 'ทัวร์ดอยอินทนนท์เต็มวัน'
     url: 'https://www.klook.com/th/activity/17443-doi-inthanon-park-tour-chiang-mai'
     image: 'https://res.klook.com/image/upload/activities/jmwmaoq4q0q8wbfovcxn.jpg'
-  - label: บัตรเข้าเชียงใหม่ไนท์ซาฟารี
+  - label: 'บัตรเข้าเชียงใหม่ไนท์ซาฟารี'
     url: 'https://www.klook.com/th/activity/1112-night-safari-park-chiang-mai'
     image: 'https://res.klook.com/image/upload/activities/fh1kpaqwx9w98xp30hwf.jpg'
-  - label: ขันโตกดินเนอร์ + การแสดงล้านนา
+  - label: 'ขันโตกดินเนอร์ + การแสดงล้านนา'
     url: 'https://www.klook.com/th/activity/1180-khantoke-dinner-cultural-show-chiang-mai'
     image: 'https://res.klook.com/image/upload/activities/c6llzjhyog4wsek350at.jpg'
-  - label: Elephant Jungle Sanctuary เชียงใหม่
+  - label: 'Elephant Jungle Sanctuary เชียงใหม่'
     url: 'https://www.klook.com/th/activity/3631-elephant-jungle-sanctuary-chiang-mai'
     image: 'https://res.klook.com/image/upload/activities/nksgoxtoqwu0glyj5g6f.jpg'
-  - label: คลาสทำอาหารไทย + ทัวร์ตลาดสด
+  - label: 'คลาสทำอาหารไทย + ทัวร์ตลาดสด'
     url: 'https://www.klook.com/th/activity/10239-thai-akha-kitchen-cooking-class-local-market-tour-chiang-mai'
     image: 'https://res.klook.com/image/upload/activities/jhnm0nwy4un06cti8n3e.jpg'
-  - label: ล่องแก่งแม่น้ำแม่แตง
+  - label: 'ล่องแก่งแม่น้ำแม่แตง'
     url: 'https://www.klook.com/th/activity/1962-rafting-8adventures-chiang-mai'
     image: 'https://res.klook.com/image/upload/activities/crsrl2gi2h3vvbljwme3.jpg'
 ---

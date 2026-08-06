@@ -12,7 +12,7 @@ lat: 18.8048
 lng: 98.9217
 sponsored: 1
 affiliate:
-  label: จองทัวร์ดอยสุเทพ + วัดอุโมงค์
+  label: 'จองทัวร์ดอยสุเทพ + วัดอุโมงค์'
   url: 'https://www.klook.com/th/activity/18014-doi-suthep-wat-umong-chiang-mai'
   image: 'https://res.klook.com/image/upload/activities/gdqthwbwzmhbbq7ck1cz.jpg'
 imageCredit:

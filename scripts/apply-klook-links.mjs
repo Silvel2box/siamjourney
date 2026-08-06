@@ -86,14 +86,33 @@ const PRODUCTS = {
     url: "https://www.klook.com/th/activity/57264-thai-gondola-cruise-koh-chang-salak-kok",
     image: "https://res.klook.com/image/upload/activities/cavzw44pkqfu7nopvw8z.jpg",
   },
+  "ayutthaya-wat-mahathat": {
+    label: "จองทัวร์อยุธยา วัดมหาธาตุ + ตลาดน้ำ",
+    url: "https://www.klook.com/th/activity/2508-ancient-ayutthaya-day-tour",
+    image: "https://res.klook.com/image/upload/activities/pweiehynwwydr2guv58y.jpg",
+  },
+  "surat-thani-samui": {
+    label: "จองทัวร์หมู่เกาะอ่างทองจากเกาะสมุย",
+    url: "https://www.klook.com/th/activity/319-angthong-national-park-koh-samui",
+    image: "https://res.klook.com/image/upload/activities/36c95163-angthong-snorkel-kayak-3.jpg",
+  },
+  "samut-songkhram-amphawa": {
+    label: "จองทัวร์อยุธยา + อัมพวา 1 วัน (ส่วนตัว)",
+    url: "https://www.klook.com/th/activity/11542-ayutthaya-amphawa-one-day-private-tour-private-one-day-tour",
+    image: "https://res.klook.com/image/upload/activities/bvbrm7gxsxqppzzhg0st.jpg",
+  },
 };
 
 // label + url, then the partner's product photo when their feed ships one.
 const BLOCK = /^affiliate:\n {2}label: .*\n {2}url: .*\n( {2}image: .*\n)?/m;
 
+// Quoted for the same reason as the tours block: an unquoted YAML scalar cannot
+// hold ": ", which some product names do.
+const q = (s) => `'${String(s).replace(/'/g, "''")}'`;
+
 const block = (p) =>
-  `affiliate:\n  label: ${p.label}\n  url: '${p.url}'\n` +
-  (p.image ? `  image: '${p.image}'\n` : "");
+  `affiliate:\n  label: ${q(p.label)}\n  url: ${q(p.url)}\n` +
+  (p.image ? `  image: ${q(p.image)}\n` : "");
 
 // Re-runnable in both directions: a later export can hand a product to a place
 // whose button this script already took away, so it has to be able to put the

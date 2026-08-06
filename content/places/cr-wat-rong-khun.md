@@ -10,7 +10,7 @@ hours: 'เปิดทุกวัน 08:00 - 17:00 น.'
 priceRange: ชาวไทยฟรี / ชาวต่างชาติ 100 บาท
 sponsored: 1
 affiliate:
-  label: จองทัวร์วัดร่องขุ่น + วัดร่องเสือเต้น + บ้านดำ
+  label: 'จองทัวร์วัดร่องขุ่น + วัดร่องเสือเต้น + บ้านดำ'
   url: 'https://www.klook.com/th/activity/66954-chiangrai-white-blue-temple-blackhouse-daytour'
   image: 'https://res.klook.com/image/upload/activities/i68munyq225hn0fz8v8v.jpg'
 imageCredit:

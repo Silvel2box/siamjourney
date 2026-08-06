@@ -9,6 +9,10 @@ address: อำเภอเกาะสมุย จังหวัดสุร�
 hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ค่าเรือเฟอร์รีประมาณ 300-600 บาท
 sponsored: 1
+affiliate:
+  label: 'จองทัวร์หมู่เกาะอ่างทองจากเกาะสมุย'
+  url: 'https://www.klook.com/th/activity/319-angthong-national-park-koh-samui'
+  image: 'https://res.klook.com/image/upload/activities/36c95163-angthong-snorkel-kayak-3.jpg'
 imageCredit:
   author: Manfred Werner
   source: Wikimedia Commons

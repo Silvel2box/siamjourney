@@ -10,7 +10,7 @@ hours: เปิดทุกวัน 24 ชั่วโมง
 priceRange: ค่าเรือหางยาวประมาณ 100-200 บาท
 sponsored: 1
 affiliate:
-  label: จองคอร์สปีนผาที่หาดไร่เลย์
+  label: 'จองคอร์สปีนผาที่หาดไร่เลย์'
   url: 'https://www.klook.com/th/activity/25995-rock-climbing-courses-railay-beach'
   image: 'https://res.klook.com/image/upload/activities/rbwje4keirzoxgnquq8a.jpg'
 imageCredit:

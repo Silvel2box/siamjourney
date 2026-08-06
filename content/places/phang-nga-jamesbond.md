@@ -11,7 +11,7 @@ hours: เปิดทุกวัน 08.00-17.00 น.
 priceRange: 'ค่าทัวร์เรือประมาณ 800-1,500 บาท'
 sponsored: 1
 affiliate:
-  label: จองทัวร์เกาะตะปูเต็มวัน (ออกจากภูเก็ต)
+  label: 'จองทัวร์เกาะตะปูเต็มวัน (ออกจากภูเก็ต)'
   url: 'https://www.klook.com/th/activity/3227-james-bond-day-tour-big-boat-longtail-speedboat'
   image: 'https://res.klook.com/image/upload/activities/py3fvxtvbxpubsmolb0t.jpg'
 imageCredit:

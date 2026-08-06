@@ -21,6 +21,10 @@ imageCredit:
   source: Wikimedia Commons
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:Mae_Hong_Son,_Stupas,_Thailand.jpg'
   license: CC BY 4.0
+tours:
+  - label: 'ทัวร์ภาคเหนือแบบกำหนดเอง: เชียงใหม่-เชียงราย-ปาย-แม่ฮ่องสอน (ออกจากเชียงใหม่)'
+    url: 'https://www.klook.com/th/activity/46028-northern-thailand-custom-tour'
+    image: 'https://res.klook.com/image/upload/activities/svpdsyyazuaty8slxcwe.jpg'
 ---
 แม่ฮ่องสอนได้ชื่อว่าเป็น "เมืองสามหมอก" ด้วยทะเลหมอกที่ปกคลุมเกือบทั้งปี เต็มไปด้วยวิถีวัฒนธรรมไทใหญ่ วัดสไตล์พม่าริมหนอง และเมืองปายที่เป็นจุดหมายของนักเดินทางสายชิลล์
 

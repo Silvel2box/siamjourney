@@ -22,22 +22,22 @@ imageCredit:
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Rong_Khun-001.jpg'
   license: CC BY-SA 3.0
 tours:
-  - label: ทัวร์วัดร่องขุ่น + วัดร่องเสือเต้น + บ้านดำ
+  - label: 'ทัวร์วัดร่องขุ่น + วัดร่องเสือเต้น + บ้านดำ'
     url: 'https://www.klook.com/th/activity/66954-chiangrai-white-blue-temple-blackhouse-daytour'
     image: 'https://res.klook.com/image/upload/activities/i68munyq225hn0fz8v8v.jpg'
-  - label: ทัวร์สามเหลี่ยมทองคำ + หมู่บ้านกะเหรี่ยงคอยาว
+  - label: 'ทัวร์สามเหลี่ยมทองคำ + หมู่บ้านกะเหรี่ยงคอยาว'
     url: 'https://www.klook.com/th/activity/118527-chiang-rai-day-trip-with-golden-triangle-and-long-neck-tribe'
     image: 'https://res.klook.com/image/upload/activities/amfelpglt54t6i8uh7gz.jpg'
-  - label: ทัวร์ดอยตุง + ดอยแม่สลอง
+  - label: 'ทัวร์ดอยตุง + ดอยแม่สลอง'
     url: 'https://www.klook.com/th/activity/36304-doi-tung-doi-mea-salong-day-tour'
     image: 'https://res.klook.com/image/upload/activities/ekgqxo5jsdxaydeaokrl.jpg'
-  - label: ทัวร์เดินป่าเชียงราย 1 วัน
+  - label: 'ทัวร์เดินป่าเชียงราย 1 วัน'
     url: 'https://www.klook.com/th/activity/35997-chiang-rai-trekking-day-tour'
     image: 'https://res.klook.com/image/upload/activities/mcanoddzwksjnwatkwre.jpg'
-  - label: ทัวร์จุดถ่ายรูปเด็ดเชียงราย
+  - label: 'ทัวร์จุดถ่ายรูปเด็ดเชียงราย'
     url: 'https://www.klook.com/th/activity/75512-chiang-rai-instagrammable-places-day-tour-by-ak-travel'
     image: 'https://res.klook.com/image/upload/activities/y2y5ruazknyzig0anrvw.jpg'
-  - label: ทัวร์เชียงรายเต็มวันแบบเลือกเส้นทางเอง
+  - label: 'ทัวร์เชียงรายเต็มวันแบบเลือกเส้นทางเอง'
     url: 'https://www.klook.com/th/activity/67411-diy-chiangrai-fullday-tour'
     image: 'https://res.klook.com/image/upload/activities/ia3rnqfu2xq8cpxg8aip.jpg'
 ---

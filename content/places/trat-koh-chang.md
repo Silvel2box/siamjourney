@@ -10,7 +10,7 @@ hours: เปิดตลอด 24 ชั่วโมง
 priceRange: ค่าเรือข้ามฟากเริ่มต้น 80 บาท
 sponsored: 1
 affiliate:
-  label: จองล่องเรือกอนโดลาที่เกาะช้าง
+  label: 'จองล่องเรือกอนโดลาที่เกาะช้าง'
   url: 'https://www.klook.com/th/activity/57264-thai-gondola-cruise-koh-chang-salak-kok'
   image: 'https://res.klook.com/image/upload/activities/cavzw44pkqfu7nopvw8z.jpg'
 imageCredit:

@@ -23,6 +23,10 @@ imageCredit:
   source: Wikimedia Commons
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:Phra_Nakhon_Khiri_(II).jpg'
   license: CC BY 4.0
+tours:
+  - label: 'สปาที่ Veranda ชะอำ'
+    url: 'https://www.klook.com/th/activity/94101-veranda-spa-experience-cha-am-petchaburi-thailand-cha-am-phetchaburi'
+    image: 'https://res.klook.com/image/upload/activities/aynnlkdmirsr2kkezjic.jpg'
 ---
 เพชรบุรีเป็นเมืองเก่าแก่ภาคตะวันตกที่เต็มไปด้วยมรดกทางวัฒนธรรม ทั้งพระนครคีรี (เขาวัง) วัดวาอารามงดงาม และชายหาดชะอำที่เป็นแหล่งพักผ่อนคลาสสิกของไทย
 

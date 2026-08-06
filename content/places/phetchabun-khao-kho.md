@@ -10,7 +10,7 @@ hours: เที่ยวได้ตลอดวัน
 priceRange: ฟรีค่าเข้า (บางจุดชมวิวมีค่าธรรมเนียม)
 sponsored: 1
 affiliate:
-  label: จองทัวร์เขาค้อ 3 วัน 2 คืน (ออกจากกรุงเทพฯ)
+  label: 'จองทัวร์เขาค้อ 3 วัน 2 คืน (ออกจากกรุงเทพฯ)'
   url: 'https://www.klook.com/th/activity/12729-3d2n-khao-kho-private-tour-bangkok'
   image: 'https://res.klook.com/image/upload/activities/bxmrgsexmwofwi3b2ikr.jpg'
 imageCredit:

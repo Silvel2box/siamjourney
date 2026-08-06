@@ -9,6 +9,10 @@ address: ถนนชีกุน ต.ท่าวาสุกรี อ.พร�
 hours: 'เปิดทุกวัน 08:00 - 18:00 น.'
 priceRange: ชาวไทย 10 บาท / ชาวต่างชาติ 50 บาท
 sponsored: 1
+affiliate:
+  label: 'จองทัวร์อยุธยา วัดมหาธาตุ + ตลาดน้ำ'
+  url: 'https://www.klook.com/th/activity/2508-ancient-ayutthaya-day-tour'
+  image: 'https://res.klook.com/image/upload/activities/pweiehynwwydr2guv58y.jpg'
 imageCredit:
   author: Diego Delso
   source: Wikimedia Commons

@@ -92,18 +92,53 @@ const TOURS = {
     { label: "ล่องเรือกอนโดลาที่เกาะช้าง", url: k(57264, "thai-gondola-cruise-koh-chang-salak-kok"), image: img("cavzw44pkqfu7nopvw8z") },
     { label: "พายเรือยืน SUP ป่าชายเลนเกาะช้าง", url: k(57426, "sup-paddle-board-experience-iyara-seafood-koh-chang"), image: img("jmfljz0aaim0z56lrpcy") },
   ],
+  "ayutthaya": [
+    { label: "ทัวร์พระราชวังบางปะอิน + ตลาดอยุธยา", url: k(391, "ayutthaya-historical-park-day-tour-bang-pa-in-summer-palace-ayutthaya-temples-night-market"), image: img("lokoyezpssref1gvazsf") },
+    { label: "ทัวร์อุทยานประวัติศาสตร์อยุธยาเต็มวัน", url: k(66903, "ayutthaya-historical-park-fullday-tour"), image: img("zflhgbltvuz4qqm2u2d1") },
+    { label: "ทัวร์อยุธยา UNESCO ครึ่งวัน + ล่องเรือ", url: k(112547, "ayutthaya-sunset-with-boat-private-tour"), image: img("mjczcsrhq0uxehf1aziv") },
+    { label: "ทัวร์เรือหางยาวส่วนตัวรอบอยุธยา", url: k(126342, "ayutthaya-private-longtail-tour-with-optional-temple-visits"), image: img("oojiwqux0mnent9y0ceo") },
+    { label: "ล่องเรือแกรนด์เพิร์ล กรุงเทพฯ-อยุธยา", url: k(1105, "ayutthaya-grand-pearl-river-cruise-bangkok"), image: img("99d6925a-%E6%B3%B0%E5%A4%A7%E5%9F%8E%E4%B8%80%E6%97%A5%E8%88%B9%E6%B8%B8-Klook%E5%AE%A2%E8%B7%AF") },
+    { label: "บัตรเข้าสวนสัตว์ศรีอยุธยา ไลอ้อน ปาร์ค", url: k(105309, "sriayuthaya-lion-park-ticket-ticket"), image: img("zpmshrotxrx5dviqamcp") },
+  ],
+  "surat-thani": [
+    { label: "ทัวร์หมู่เกาะอ่างทอง โดยเรือไม้สักลำใหญ่", url: k(78610, "angthong-marine-park-tour-big-boat"), image: img("n0wrxtxu5gsypmosacyh") },
+    { label: "ทัวร์หมู่เกาะอ่างทอง โดยเรือสปีดโบ๊ท", url: k(73976, "angthing-marine-national-park-by-speedboat-or-big-boat"), image: img("b9tcqc4hqrh8g4pay7ef") },
+    { label: "ขับ ATV ออฟโรด X-Quad เกาะสมุย", url: k(4586, "x-quad-off-road-experience-koh-samui"), image: img("kru4qtesx7mxywbzsmir") },
+    { label: "ซิปไลน์ Tree Bridge เกาะสมุย", url: k(93173, "join-tree-bridge-zipline-samui-koh-samui-samui"), image: img("xiw5ephhailutedw7ecz") },
+    { label: "สปาและนวดไทย ศาลาราย เวลเนส เกาะสมุย", url: k(127330, "salaraj-thai-wellness-ans-spa-experience-in-koh-samui"), image: img("yxmaicbjj5cct2qvrcxv") },
+    { label: "แพ็กเกจสุขภาพ Absolute Sanctuary เกาะสมุย", url: k(31997, "wellness-day-programs-absolute-sanctuary-koh-samui"), image: img("yilfmrey4ck2gtkqck6h") },
+  ],
+  "mae-hong-son": [
+    { label: "ทัวร์ภาคเหนือแบบกำหนดเอง: เชียงใหม่-เชียงราย-ปาย-แม่ฮ่องสอน (ออกจากเชียงใหม่)", url: k(46028, "northern-thailand-custom-tour"), image: img("svpdsyyazuaty8slxcwe") },
+  ],
+  // The export's product name says only "ทัวร์ตลาดน้ำและวัดปากน้ำ", which would
+  // read as a Bangkok/Ratchaburi tour on this page. It opens at the Maeklong
+  // railway market — verified against the operator's itinerary and against the
+  // product photo Klook ships with it, which is the train in that market — so
+  // the label says so.
+  "samut-songkhram": [
+    { label: "ทัวร์ตลาดร่มหุบแม่กลอง + ตลาดน้ำดำเนินสะดวก + วัดปากน้ำ (ออกจากกรุงเทพฯ)", url: k(88330, "floating-market-wat-pak-nam-big-buddha-join-day-tour-bangkok"), image: img("lnb6s91ccyqvh6ytb652") },
+  ],
+  "phetchaburi": [
+    { label: "สปาที่ Veranda ชะอำ", url: k(94101, "veranda-spa-experience-cha-am-petchaburi-thailand-cha-am-phetchaburi"), image: img("aynnlkdmirsr2kkezjic") },
+  ],
 };
 
 // tours is the last key in the frontmatter, so it runs to the closing fence.
 const BLOCK = /^tours:\n(?: {2}- .*\n(?: {4}.*\n)*)+/m;
+
+// Labels are quoted. An unquoted YAML scalar cannot hold ": ", and a product
+// name like "ทัวร์แบบกำหนดเอง: เชียงใหม่-ปาย" silently produced frontmatter that
+// would not parse — caught only because the importer refused it.
+const q = (s) => `'${String(s).replace(/'/g, "''")}'`;
 
 const toYaml = (list) =>
   "tours:\n" +
   list
     .map(
       (t) =>
-        `  - label: ${t.label}\n    url: '${t.url}'\n` +
-        (t.image ? `    image: '${t.image}'\n` : ""),
+        `  - label: ${q(t.label)}\n    url: ${q(t.url)}\n` +
+        (t.image ? `    image: ${q(t.image)}\n` : ""),
     )
     .join("");
 

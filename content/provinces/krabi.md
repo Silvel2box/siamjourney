@@ -22,22 +22,22 @@ imageCredit:
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:Railay,_Krabi,_Boat,_Thailand.jpg'
   license: CC BY 4.0
 tours:
-  - label: คอร์สปีนผาที่หาดไร่เลย์
+  - label: 'คอร์สปีนผาที่หาดไร่เลย์'
     url: 'https://www.klook.com/th/activity/25995-rock-climbing-courses-railay-beach'
     image: 'https://res.klook.com/image/upload/activities/rbwje4keirzoxgnquq8a.jpg'
-  - label: ทัวร์เกาะห้องเต็มวัน โดยเรือสปีดโบ๊ท
+  - label: 'ทัวร์เกาะห้องเต็มวัน โดยเรือสปีดโบ๊ท'
     url: 'https://www.klook.com/th/activity/1434-koh-hong-day-tour-krabi-speedboat-longtail-boat-krabi'
     image: 'https://res.klook.com/image/upload/activities/pir0km8v3iiy8yju3tij.jpg'
-  - label: ทัวร์ 4 เกาะกระบี่เต็มวัน
+  - label: 'ทัวร์ 4 เกาะกระบี่เต็มวัน'
     url: 'https://www.klook.com/th/activity/1433-4-islands-day-tour-krabi'
     image: 'https://res.klook.com/image/upload/activities/wgcw9te4eamfoanb9lm5.jpg'
-  - label: ทัวร์วัดถ้ำเสือ + สระมรกต
+  - label: 'ทัวร์วัดถ้ำเสือ + สระมรกต'
     url: 'https://www.klook.com/th/activity/1454-tiger-cave-emerald-pool-jungle-tour-krabi'
     image: 'https://res.klook.com/image/upload/activities/vvangr8rw3fhsliy8y1d.jpg'
-  - label: พายเรือคายัคป่าโกงกางอ่าวท่าเลน
+  - label: 'พายเรือคายัคป่าโกงกางอ่าวท่าเลน'
     url: 'https://www.klook.com/th/activity/29776-krabi-mangrove-kayak-tour'
     image: 'https://res.klook.com/image/upload/activities/ustoklsotoxscug4wnrz.jpg'
-  - label: ทัวร์ 7 เกาะยามพระอาทิตย์ตก + บุฟเฟต์
+  - label: 'ทัวร์ 7 เกาะยามพระอาทิตย์ตก + บุฟเฟต์'
     url: 'https://www.klook.com/th/activity/77264-join-7-islands-sunset-tour-bbq-dinner-krabi-bioluminescent-plankton'
     image: 'https://res.klook.com/image/upload/activities/yyisqciippyexdymd06k.jpg'
 ---

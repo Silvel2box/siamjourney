@@ -23,22 +23,22 @@ imageCredit:
     https://commons.wikimedia.org/wiki/File:Sam_Roi_Yot,_Sam_Roi_Yot_District,_Prachuap_Khiri_Khan,_Thailand_-_panoramio_(3).jpg
   license: CC BY-SA 3.0
 tours:
-  - label: บัตรเข้าสวนน้ำวานา นาวา หัวหิน
+  - label: 'บัตรเข้าสวนน้ำวานา นาวา หัวหิน'
     url: 'https://www.klook.com/th/activity/3871-vana-nava-waterpark-hua-hin'
     image: 'https://res.klook.com/image/upload/activities/gul8thajn1spks2beec7.jpg'
-  - label: บัตรเข้าสวนน้ำแบล็คเมาท์เทน
+  - label: 'บัตรเข้าสวนน้ำแบล็คเมาท์เทน'
     url: 'https://www.klook.com/th/activity/3970-black-mountain-water-park-day-pass-hua-hin'
     image: 'https://res.klook.com/image/upload/activities/hjfeasz2jeaibh8ox550.jpg'
-  - label: ทัวร์น้ำตกป่าละอู + ไร่องุ่นมอนซูนแวลลีย์
+  - label: 'ทัวร์น้ำตกป่าละอู + ไร่องุ่นมอนซูนแวลลีย์'
     url: 'https://www.klook.com/th/activity/4134-pa-la-u-waterfall-monsoon-valley-vineyards-tour-hua-hin'
     image: 'https://res.klook.com/image/upload/activities/mlkzifhqsox3c2ymcfie.jpg'
-  - label: บัตรมวยไทยเวที Antza หัวหิน
+  - label: 'บัตรมวยไทยเวที Antza หัวหิน'
     url: 'https://www.klook.com/th/activity/122428-antza-muay-thai-stadium-huahin'
     image: 'https://res.klook.com/image/upload/activities/z1oyitwome1rny1kmmto.jpg'
-  - label: ซิปไลน์ Tree Top Adventure หัวหิน
+  - label: 'ซิปไลน์ Tree Top Adventure หัวหิน'
     url: 'https://www.klook.com/th/activity/44174-zipline-experience-hua-hin'
     image: 'https://res.klook.com/image/upload/activities/eiuunucskvlwj5f3tvah.jpg'
-  - label: ทัวร์ธรรมชาติเขาสามร้อยยอด
+  - label: 'ทัวร์ธรรมชาติเขาสามร้อยยอด'
     url: 'https://www.klook.com/th/activity/77299-khao-sam-roi-yod-nature-tour-experience-start-from-hua-hin'
     image: 'https://res.klook.com/image/upload/activities/krizmulrprorggg18sgr.jpg'
 ---
