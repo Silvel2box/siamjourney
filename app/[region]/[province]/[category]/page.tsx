@@ -46,6 +46,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${category.name}ใน${province.name}`,
     description: `รวม${category.name}แนะนำใน${province.name} คัดสรรที่เที่ยวและของดีประจำถิ่นให้คุณ`,
+    // Filtered view of the province page — every card here already appears
+    // there, and the page adds no prose of its own. Useful to click through,
+    // not worth an index entry. `follow` keeps the crawl path to the places.
+    robots: { index: false, follow: true },
     alternates: {
       canonical: `/${province.region}/${province.slug}/${category.slug}`,
     },

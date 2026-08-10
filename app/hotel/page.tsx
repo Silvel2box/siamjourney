@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllHotels, getAllProvinces } from "@/lib/content";
@@ -38,14 +39,18 @@ export default async function HotelIndexPage() {
     .filter((g) => g.hotels.length > 0)
     .sort((a, b) => a.province.name.localeCompare(b.province.name, "th"));
 
+  // A banner over a "coming soon" line is a page with nothing on it. Until the
+  // team adds real listings through the admin, this route does not exist.
+  // (The nav link is gone too — put it back in Navbar.tsx alongside them.)
+  if (groups.length === 0) notFound();
+
   return (
     <>
       <PageBanner title={title} subtitle={description} crumbs={[{ label: "ที่พัก" }]} />
 
       <div className="py-20 bg-light">
         <div className="container mx-auto px-6 md:px-12 space-y-20">
-          {groups.length > 0 ? (
-            groups.map(({ province, hotels }, i) => (
+          {groups.map(({ province, hotels }, i) => (
               <section key={province.slug} id={province.slug}>
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
                   <div className="flex items-center gap-3">
@@ -70,12 +75,7 @@ export default async function HotelIndexPage() {
                 </div>
                 {i === 0 && <AdSlot className="mt-12" />}
               </section>
-            ))
-          ) : (
-            <p className="text-center text-gray-500 py-16">
-              กำลังรวบรวมข้อมูลที่พัก เร็วๆ นี้
-            </p>
-          )}
+          ))}
         </div>
       </div>
     </>

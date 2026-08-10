@@ -323,6 +323,29 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
 - [x] **รูป hero อำนาจเจริญ ✅ (2026-07-31, `b3e011c`)** — ของเดิมเป็น**ธงประจำจังหวัด**จาก Wikimedia ไม่ใช่รูปสถานที่ → เปลี่ยนเป็นภาพจาก อบจ.อำนาจเจริญ (user ส่งลิงก์มา) · **ต้อง self-host เสมอ** เพราะ `next.config.ts` remotePatterns มีแค่ pexels · บีบ sharp q82 (300KB→61KB) · credit = องค์การบริหารส่วนจังหวัดอำนาจเจริญ (ไม่ใส่ license เพราะไม่ใช่ CC) · ลบ .png เดิม + grep ยืนยันไม่มีที่ไหนอ้างถึง
   - 📌 ค้าง: รูปนี้ 1030×450 (2.29:1) — บน hero สวย แต่ `ProvinceCard` เป็นกรอบแนวตั้ง (`h-80 md:h-[400px]` + object-cover) จะครอปจนฐานพระธาตุด้านขวาโดนตัด ถ้าจะแก้ต้องครอปใหม่ (เหลือ ~675×450 = hero ความละเอียดลด) หรือหารูปใหญ่กว่ามาแทน
 
+## 🚨 AdSense ตีกลับ "เนื้อหาที่มีคุณค่าต่ำ" — รื้อคอนเทนต์ (2026-08-10)
+
+- [x] **วินิจฉัย: 628 จาก 716 URL (88%) เป็นหน้าบาง + คอนเทนต์ที่แต่งขึ้น**
+  - หน้าหมวดในจังหวัด **308 หน้า = ข้อความเฉพาะของหน้า 0 ตัวอักษร** (ทุกจังหวัดมีหมวดละ 1 แห่งพอดี → การ์ดใบเดียวทุกหน้า + การ์ดหมวดอื่นที่ซ้ำหน้าจังหวัด)
+  - หน้าสถานที่ 309 หน้า **body median 213–309 ตัวอักษร** (cafe 213 / restaurant 217 / otop 244 / attraction 309)
+  - 🔴 **หนักกว่านั้น: cafe/restaurant ส่วนใหญ่ไม่ใช่ร้านจริง** — ชื่อทั่วไป 88 รายการ (`คาเฟ่เมืองอำนาจเจริญ`), ที่อยู่ระดับตำบล 162/308, แต่ใส่เวลาเปิด-ปิด + ช่วงราคาเจาะจงที่ยืนยันไม่ได้, รูป Pexels stock 297/308 ใบถูกใส่เป็นรูปหลักของร้าน, แล้วยิงเข้า JSON-LD `Restaurant`/`CafeOrCoffeeShop` = **scaled content abuse ไม่ใช่แค่ thin content** (เขียนยาวขึ้นก็ยังผิด)
+  - ⭐ **ข้อเท็จจริงที่ทำให้ตัดสินใจง่าย: cafe + restaurant 154 รายการ มี affiliate link 0 อัน** — รายได้ทั้งหมดอยู่ที่ otop 77 (Shopee) + attraction 14 (Klook) + ทัวร์รายจังหวัด → ลบทิ้งไม่กระทบรายได้เลย
+- [x] **noindex หน้าหมวด + ถอดออกจาก sitemap**
+  - `[category]/page.tsx` → `robots: { index: false, follow: true }` (follow ไว้ให้ crawler เดินต่อไปหน้าสถานที่) · หน้ายังเข้าได้จากลิงก์ในเว็บ
+  - `app/sitemap.ts` ลบบล็อก `categoryUrls` → **ตัด query ตอน build ออก 308 ครั้งด้วย** (เดิมยิง 77×4 ทุกครั้งที่ regen sitemap)
+  - หน้าจังหวัดซ่อนลิงก์ "ดูทั้งหมด" เมื่อ `places.length <= 1` (ปลายทางคือการ์ดใบเดิม)
+- [x] **ลบ cafe/restaurant 154 ไฟล์ + ที่พัก seed 11 แห่ง** — `content/places/*.md` เหลือ 154 (attraction 77 + otop 77) · ลบ `scripts/seed-hotels.mjs` + npm script (กันคนรันใหม่แล้วของกลับมา) · `/hotel` `notFound()` เมื่อ Hotel table ว่าง + ถอดเมนู "ที่พัก" ออกจาก Navbar (ใส่คืนเมื่อมีที่พักจริง)
+- [x] **เขียนเนื้อหาใหม่ 154 หน้า 750–899 ตัวอักษร** — 2 ย่อหน้า + `##` 2 หัวข้อ · **หัวข้อ 308 อันไม่ซ้ำกันเลยสักคู่** · ใช้แค่ `p/h2/ul` (`.prose-body` มีแค่นี้) · ไม่มีตัวเลขราคา/เวลา/ระยะทางที่ยืนยันไม่ได้
+- [x] **ถอด `address`/`hours`/`priceRange` ออกจาก otop 77 ไฟล์** — OTOP คือสินค้า (ผ้าไหม โรตีสายไหม พลอย) ไม่ใช่หน้าร้าน ค่าที่มีอยู่แต่งขึ้นล้วน และ `address` ยิงเข้า JSON-LD · `place/[slug]/page.tsx` แก้ตาม: แผนที่เรนเดอร์เฉพาะเมื่อมี `lat/lng` หรือ `address` (เดิม fallback เป็น `place.name` → OTOP ได้แผนที่ค้นคำว่า "โรตีสายไหม") และถ้าไม่เหลือ field ไหนเลยก็ไม่เรนเดอร์กล่อง "ข้อมูลติดต่อ" (กันการ์ดขาวที่มีแต่โฆษณา)
+- [x] **`app/page.tsx` สถิติ "หมวดหมู่"** — เดิมเป็น `categories.length` (ค่าคงที่ = 4) ทั้งที่คอมเมนต์เขียนว่า "counts come straight from the data" → นับหมวดที่มีสถานที่จริงจาก `getAllPlaces()` ที่ React-cache อยู่แล้ว = 0 query เพิ่ม · **ไม่แตะ `lib/categories.ts`** (เก็บ 4 หมวดไว้ให้แอดมินเพิ่มร้านจริงทีหลังได้)
+- [x] **`scripts/adsense-cleanup.mjs` (`cleanup:adsense` + `:dry`)** — one-shot idempotent สำหรับ prod เพราะ `import:content` ห้ามรันบน prod · ก๊อปโครงจาก `sync-affiliate.mjs` · ทำ 4 อย่างและแตะเฉพาะที่ประกาศ: ลบ place **ตามลิสต์ slug ที่ฝังในไฟล์ ไม่ใช่ `where: { category }`** (prod มี place ที่แอดมินเพิ่มเอง คาเฟ่จริงต้องรอด) + ลบ hotel 11 slug + เคลียร์ 3 field ของ otop + เขียน `body` ให้ 154 slug
+- [x] **verify local:** `tsc` สะอาด · build ผ่าน (154 place, 154 category page) · รัน cleanup ซ้ำ = 0 แถวเปลี่ยน (idempotent จริง) · curl เซิร์ฟเวอร์ prod build: **sitemap 716 → 240 URL, 3-segment เหลือ 0** · หมวด = `<meta name="robots" content="noindex, follow">` · จังหวัดไม่มี robots meta · `/hotel` + `/place/{cafe ที่ลบ}` + `/{ภาค}/{จังหวัด}/cafe` = 404 · หน้า OTOP ไม่มีกล่องติดต่อ/แผนที่/address ใน JSON-LD ส่วน attraction ยังมีครบ · สถิติหน้าแรก 77/154/6/**2** · affiliate ใน markdown ยัง 91 อันเท่าเดิม
+- 🔴 **DEPLOY (ไม่มี migration):** `pull → report:drift → cleanup:adsense:dry → cleanup:adsense → build → restart` · **cleanup ต้องจบก่อน build เสมอ** ไม่งั้นได้ ISR snapshot ก่อนลบค้าง 1 ชม.
+- [ ] **หลัง deploy + curl ยืนยันครบ → กด "ฉันยืนยันว่าได้แก้ไขปัญหาแล้ว" → "ขอให้มีการตรวจสอบ" ใน AdSense**
+- ℹ️ GSC จะเห็น URL หายไป ~470 หน้า = **ตั้งใจ** ไม่ใช่บั๊ก · อยากได้ร้านอาหาร/คาเฟ่คืน = เพิ่มทีละร้านจากของจริงผ่าน `/admin/places` โค้ด/หมวด/route ยังอยู่ครบ
+
+---
+
 ## 🌐 เฟส 3 — ขยาย
 - [ ] i18n `/en/` เป็นหน้าจริง + hreflang (ไม่พึ่ง Google Translate)
 - [ ] ระบบค้นหา/ฟิลเตอร์ขั้นสูง (หมวด, ราคา, ภูมิภาค)

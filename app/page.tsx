@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
+  getAllPlaces,
   getAllProvinces,
   getFeaturedProvinces,
   getPlaceCount,
 } from "@/lib/content";
 import { regions } from "@/lib/regions";
-import { categories } from "@/lib/categories";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -29,11 +29,16 @@ export default async function Home() {
     region: p.region,
   }));
 
+  // Categories that actually have something in them — `categories.length` is a
+  // constant and would keep claiming 4 after a category is emptied out.
+  // getAllPlaces is React-cached per request, so this costs no extra query.
+  const filledCategories = new Set((await getAllPlaces()).map((p) => p.category)).size;
+
   const stats = [
     { value: provinces.length, label: "จังหวัด" },
     { value: await getPlaceCount(), label: "สถานที่แนะนำ" },
     { value: regions.length, label: "ภูมิภาค" },
-    { value: categories.length, label: "หมวดหมู่" },
+    { value: filledCategories, label: "หมวดหมู่" },
   ];
 
   return (

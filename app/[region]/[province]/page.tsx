@@ -183,12 +183,17 @@ export default async function ProvincePage({ params }: Props) {
                       {category.name}
                     </h2>
                   </div>
-                  <Link
-                    href={`/${province.region}/${province.slug}/${category.slug}`}
-                    className="text-primary font-medium hover:underline whitespace-nowrap flex items-center gap-2"
-                  >
-                    ดูทั้งหมด <i className="fas fa-arrow-right text-sm" />
-                  </Link>
+                  {/* Everything in this category is already on screen when
+                      there is only one of it — the link would lead to the
+                      same card again. */}
+                  {places.length > 1 && (
+                    <Link
+                      href={`/${province.region}/${province.slug}/${category.slug}`}
+                      className="text-primary font-medium hover:underline whitespace-nowrap flex items-center gap-2"
+                    >
+                      ดูทั้งหมด <i className="fas fa-arrow-right text-sm" />
+                    </Link>
+                  )}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {places.map((place) => (

@@ -45,6 +45,30 @@ build/migrate/seed จึงทำผ่าน npm scripts ที่เตรี
 
 ---
 
+## 🧹 รอบ AdSense cleanup (2026-08-10) — ทำครั้งเดียว
+
+รอบนี้ลบ cafe/restaurant 154 แห่ง + ที่พัก seed 11 แห่งออกจาก DB, เคลียร์ `address`/`hours`/`priceRange`
+ของ OTOP 77 แถว และเขียน `body` ใหม่ให้ 154 แถวที่เหลือ **ไม่มี migration → ไม่ต้อง NPM install / migrate:deploy**
+
+1. **Git pull** — Plesk Git → pull `master`
+2. **Run script → `report:drift`** — *อ่านอย่างเดียว* ดูว่ามีแถวไหนที่แอดมินแก้ไว้แล้วจะโดน `body` ทับ
+3. **Run script → `cleanup:adsense:dry`** — ดูตัวเลขก่อน คาดว่า `places deleted: 154 / hotels deleted: 11 / body rewritten: 154 / cleared: 77`
+   (ถ้า `places deleted` น้อยกว่า 154 แปลว่ามีบางแถวถูกลบผ่านแอดมินไปแล้ว = ปกติ)
+4. **Run script → `cleanup:adsense`** — ของจริง · รันซ้ำได้ ไม่มีผลข้างเคียง (idempotent)
+5. **Run script → `build`**
+6. **Restart App**
+
+> 🔴 ห้ามสลับลำดับข้อ 4 กับ 5 — กฎเดียวกับ `seed:hotels`/`import:provinces` ที่เคยพลาดมาแล้ว
+> ℹ️ สคริปต์ลบ place **ตามลิสต์ slug ที่ฝังในไฟล์ ไม่ใช่ `where: { category }`** เพราะ prod มี place ที่แอดมินสร้างเอง
+> ถ้าวันหลังแอดมินเพิ่มคาเฟ่ของจริง มันจะไม่โดนลบตาม
+
+**verify หลัง restart (curl ไม่ใช่เบราว์เซอร์):** sitemap เหลือ ~240 URL และไม่มี URL 3 segment ·
+หน้าหมวดมี `<meta name="robots" content="noindex, follow">` · `/hotel` และ `/place/{slug ที่ลบ}` = 404 ·
+หน้า OTOP ไม่มีกล่อง "ข้อมูลติดต่อ" และไม่มีแผนที่ · สถิติหน้าแรก "หมวดหมู่" = 2 ·
+**แล้วค่อยกด "ขอให้มีการตรวจสอบ" ใน AdSense**
+
+---
+
 ## 🆕 First-time setup (ทำครั้งเดียว)
 
 **Pre:** Node.js panel → Node **≥ 20**, Application Root = โฟลเดอร์ repo, Application Startup File = **`server.js`**, Application Mode = production

@@ -87,13 +87,16 @@ export default async function PlacePage({ params }: Props) {
     url: `${site.url}/place/${place.slug}`,
   };
 
-  // Map query: precise coords if provided, else the address, else the name.
+  // Map query: precise coords if provided, else the address. Never the name —
+  // OTOP entries are products (ผ้าไหม, โรตีสายไหม), and searching Maps for one
+  // returns whatever shop happens to match, which is worse than no map.
   const mapQuery =
     place.lat != null && place.lng != null
       ? `${place.lat},${place.lng}`
-      : place.address ?? place.name;
-  const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&z=14&output=embed`;
-  const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+      : place.address;
+  const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery ?? "")}&z=14&output=embed`;
+  const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery ?? "")}`;
+  const hasDetails = Boolean(place.address || place.hours || place.priceRange);
 
   return (
     <>
@@ -134,7 +137,10 @@ export default async function PlacePage({ params }: Props) {
             </div>
 
             {/* Info card */}
+            {/* Products have no address, hours or price to show. Rather than a
+                white card holding nothing but an ad, drop the card. */}
             <aside className="lg:col-span-1">
+              {hasDetails ? (
               <div className="bg-white rounded-3xl shadow-lg p-8 sticky top-28 space-y-4">
                 <h2 className="font-heading font-bold text-xl text-dark mb-2">
                   ข้อมูลติดต่อ
@@ -157,28 +163,33 @@ export default async function PlacePage({ params }: Props) {
                     <span>{place.priceRange}</span>
                   </p>
                 )}
-                <div className="pt-2">
-                  <div className="rounded-2xl overflow-hidden border border-gray-200">
-                    <iframe
-                      src={mapEmbed}
-                      title={`แผนที่ ${place.name}`}
-                      className="w-full h-56"
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
+                {mapQuery && (
+                  <div className="pt-2">
+                    <div className="rounded-2xl overflow-hidden border border-gray-200">
+                      <iframe
+                        src={mapEmbed}
+                        title={`แผนที่ ${place.name}`}
+                        className="w-full h-56"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      />
+                    </div>
+                    <a
+                      href={mapLink}
+                      target="_blank"
+                      rel="noopener"
+                      className="mt-3 inline-flex items-center gap-2 text-primary font-medium hover:underline"
+                    >
+                      <i className="fas fa-diamond-turn-right" /> เปิดใน Google Maps
+                    </a>
                   </div>
-                  <a
-                    href={mapLink}
-                    target="_blank"
-                    rel="noopener"
-                    className="mt-3 inline-flex items-center gap-2 text-primary font-medium hover:underline"
-                  >
-                    <i className="fas fa-diamond-turn-right" /> เปิดใน Google Maps
-                  </a>
-                </div>
+                )}
 
                 <AdSlot className="mt-6" label="โฆษณา" />
               </div>
+              ) : (
+                <AdSlot className="sticky top-28" label="โฆษณา" />
+              )}
             </aside>
           </div>
 
