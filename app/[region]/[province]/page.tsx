@@ -7,6 +7,7 @@ import {
   getProvince,
   getPlacesByProvinceCategory,
   getHotelsByProvince,
+  getGuidesByProvince,
 } from "@/lib/content";
 import { regionBySlug } from "@/lib/regions";
 import { categories } from "@/lib/categories";
@@ -14,6 +15,7 @@ import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import PlaceCard from "@/components/PlaceCard";
 import HotelCard from "@/components/HotelCard";
+import GuideCard from "@/components/GuideCard";
 import AdSlot from "@/components/AdSlot";
 import AffiliateButton from "@/components/AffiliateButton";
 
@@ -47,7 +49,7 @@ export default async function ProvincePage({ params }: Props) {
   if (!province || province.region !== region) notFound();
 
   const regionInfo = regionBySlug(province.region);
-  const [sectionsRaw, hotels] = await Promise.all([
+  const [sectionsRaw, hotels, guides] = await Promise.all([
     Promise.all(
       categories.map(async (c) => ({
         category: c,
@@ -55,6 +57,7 @@ export default async function ProvincePage({ params }: Props) {
       })),
     ),
     getHotelsByProvince(slug),
+    getGuidesByProvince(slug),
   ]);
   const sections = sectionsRaw.filter((s) => s.places.length > 0);
   const bodyHtml = province.body ? await marked.parse(province.body) : "";
@@ -144,6 +147,29 @@ export default async function ProvincePage({ params }: Props) {
                     </div>
                     <p className="text-gray-700 leading-relaxed">{t.text}</p>
                   </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Editorial before commercial: a reader who wants to plan a trip
+              gets the guides first, the partner tours after. */}
+          {guides.length > 0 && (
+            <section id="guides">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark">
+                  บทความเกี่ยวกับ{province.name}
+                </h2>
+                <Link
+                  href="/guide"
+                  className="text-primary font-medium hover:underline whitespace-nowrap flex items-center gap-2"
+                >
+                  บทความทั้งหมด <i className="fas fa-arrow-right text-sm" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {guides.map((g) => (
+                  <GuideCard key={g.slug} guide={g} />
                 ))}
               </div>
             </section>

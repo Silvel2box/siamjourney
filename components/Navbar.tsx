@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const links = [
   { href: "/#destinations", label: "จุดหมายยอดฮิต" },
   { href: "/#regions", label: "ภูมิภาค" },
+  { href: "/guide", label: "บทความ" },
   // "ที่พัก" → /hotel is out until there are real listings; the route 404s while
   // the Hotel table is empty. Add it back here when the team publishes some.
   { href: "/#about", label: "เกี่ยวกับเรา" },

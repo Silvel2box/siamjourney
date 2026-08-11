@@ -69,6 +69,26 @@ build/migrate/seed จึงทำผ่าน npm scripts ที่เตรี
 
 ---
 
+## 📰 บทความ (Guide) — deploy รอบที่มี migration `add_guide`
+
+บทความเขียนใน `content/guides/*.md` แล้ว import เข้า DB · ทีมเพิ่ม/แก้เองได้ที่ `/admin/guides`
+
+1. **Git pull**
+2. **NPM install** — จำเป็น (postinstall = `prisma generate` ให้ client รู้จักตาราง `guide`)
+3. **Run script → `migrate:deploy`**
+4. **Run script → `import:guides`**
+5. **Run script → `build`**
+6. **Restart App**
+
+> ✅ **`import:guides` รันบน prod ได้ ต่างจาก `import:content`** — บทความเขียนและรีวิวในรีโป markdown จึงเป็น
+> source of truth ของมัน · บทความที่ทีมเขียนเองผ่านแอดมินไม่มีไฟล์ markdown จึงไม่ถูกแตะ
+> 🔴 ต้อง import **ก่อน** `build` เหมือนทุกอย่างที่เขียน DB ไม่งั้น `/guide` ค้างเป็นหน้าเปล่าในแคช 1 ชม.
+
+**verify:** `/guide` = 200 และมีการ์ด 10 ใบ · `/guide/{slug}` มี `"@type":"Article"` ใน JSON-LD ·
+หน้าจังหวัดที่บทความพูดถึงมีเซคชัน "บทความเกี่ยวกับ…" · sitemap เพิ่มขึ้น 11 URL (`/guide` + 10 บท)
+
+---
+
 ## 🆕 First-time setup (ทำครั้งเดียว)
 
 **Pre:** Node.js panel → Node **≥ 20**, Application Root = โฟลเดอร์ repo, Application Startup File = **`server.js`**, Application Mode = production

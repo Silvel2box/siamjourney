@@ -451,3 +451,120 @@ export async function deleteHotel(fd: FormData): Promise<void> {
   await revalidateHotelPaths(hotel);
   revalidatePath("/admin/hotels");
 }
+
+// --- Guides (editorial articles) -------------------------------------------
+
+// A guide's province list is what links it into the directory, so a stale slug
+// here means a dead card. Validate against the provinces that actually exist.
+function provincesFrom(
+  fd: FormData,
+  valid: string[],
+): { provinces: Prisma.InputJsonValue | typeof Prisma.DbNull } | { error: string } {
+  const raw = str(fd, "provinces");
+  if (!raw) return { provinces: Prisma.DbNull };
+  let json: unknown;
+  try {
+    json = JSON.parse(raw);
+  } catch {
+    return { error: "รายการจังหวัดไม่ถูกต้อง" };
+  }
+  const parsed = z.array(z.string()).max(77).safeParse(json);
+  if (!parsed.success) return { error: "รายการจังหวัดไม่ถูกต้อง" };
+  const slugs = [...new Set(parsed.data)].filter((s) => valid.includes(s));
+  return { provinces: slugs.length ? slugs : Prisma.DbNull };
+}
+
+// A guide shows up on its own page, the index, and every province it covers —
+// so a change has to revalidate the province pages on both sides of an edit.
+async function revalidateGuidePaths(slug: string, provinceSlugs: string[]) {
+  revalidatePath(`/guide/${slug}`);
+  revalidatePath("/guide");
+  if (provinceSlugs.length > 0) {
+    const provs = await prisma.province.findMany({
+      where: { slug: { in: provinceSlugs } },
+      select: { slug: true, region: true },
+    });
+    for (const p of provs) revalidatePath(`/${p.region}/${p.slug}`);
+  }
+  revalidatePath("/sitemap.xml");
+}
+
+export async function saveGuide(_prev: State, fd: FormData): Promise<State> {
+  await requireAdmin();
+  const provinceSlugs = (await prisma.province.findMany({ select: { slug: true } })).map(
+    (p) => p.slug,
+  );
+
+  const schema = z.object({
+    slug: z.string().trim().regex(/^[a-z0-9-]+$/, "slug ใช้ได้เฉพาะ a-z 0-9 และ -"),
+    title: z.string().trim().min(1, "กรุณากรอกหัวข้อบทความ"),
+    summary: z.string().trim().min(1, "กรุณากรอกคำโปรย"),
+    image: z.string().trim().min(1, "กรุณากรอกรูป (URL หรือ /images/...)"),
+    body: z.string().trim().min(1, "กรุณากรอกเนื้อหา"),
+  });
+  const parsed = schema.safeParse({
+    slug: str(fd, "slug"),
+    title: str(fd, "title"),
+    summary: str(fd, "summary"),
+    image: str(fd, "image"),
+    body: str(fd, "body"),
+  });
+  if (!parsed.success) return { error: parsed.error.issues[0].message };
+
+  const prov = provincesFrom(fd, provinceSlugs);
+  if ("error" in prov) return prov;
+
+  const data = {
+    title: parsed.data.title,
+    summary: parsed.data.summary,
+    image: parsed.data.image,
+    body: parsed.data.body,
+    featured: fd.get("featured") === "on",
+    imageCredit: imageCreditFrom(fd),
+    provinces: prov.provinces,
+  };
+
+  // Covered provinces on both sides so a province dropped from the list loses
+  // its card too, not just the one that was added.
+  const touched = new Set(
+    Array.isArray(prov.provinces) ? (prov.provinces as string[]) : [],
+  );
+
+  const idRaw = str(fd, "id");
+  if (idRaw) {
+    const id = Number(idRaw);
+    const before = await prisma.guide.findUnique({
+      where: { id },
+      select: { provinces: true },
+    });
+    for (const s of (before?.provinces as string[] | null) ?? []) touched.add(s);
+    const updated = await prisma.guide.update({ where: { id }, data });
+    await revalidateGuidePaths(updated.slug, [...touched]);
+  } else {
+    try {
+      const created = await prisma.guide.create({ data: { slug: parsed.data.slug, ...data } });
+      await revalidateGuidePaths(created.slug, [...touched]);
+    } catch (e) {
+      if (e instanceof Prisma.PrismaClientKnownRequestError && e.code === "P2002") {
+        return { error: `slug "${parsed.data.slug}" มีอยู่แล้ว` };
+      }
+      throw e;
+    }
+  }
+  revalidatePath("/admin/guides");
+  redirect("/admin/guides");
+}
+
+export async function deleteGuide(fd: FormData): Promise<void> {
+  await requireAdmin();
+  const id = Number(str(fd, "id"));
+  if (!id) return;
+  const guide = await prisma.guide.findUnique({
+    where: { id },
+    select: { slug: true, provinces: true },
+  });
+  if (!guide) return;
+  await prisma.guide.delete({ where: { id } });
+  await revalidateGuidePaths(guide.slug, (guide.provinces as string[] | null) ?? []);
+  revalidatePath("/admin/guides");
+}

@@ -100,7 +100,22 @@ summary,
   color: #1a1a1a !important;
 }
 
-/* Rich text rendered from markdown body (place detail) */
+/* Rich text rendered from markdown body (place detail, guides) */
+.prose-body li {
+  margin-bottom: 0.35rem;
+  line-height: 1.8;
+}
+/* Guides are mostly links out to the province and place pages, and Tailwind's
+   preflight resets anchors to inherit colour and drop the underline — without
+   this they render as plain text and the whole point of the article is lost. */
+.prose-body a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-body a:hover {
+  color: var(--color-primary-dark);
+}
 .prose-body p {
   margin-bottom: 1rem;
   line-height: 1.8;

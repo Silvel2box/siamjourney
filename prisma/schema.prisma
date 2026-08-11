@@ -124,6 +124,26 @@ model Hotel {
   @@map("hotel")
 }
 
+// Editorial article. The province/place pages are a directory — a flat list of
+// entries with nothing tying them together. Guides are what link across them,
+// which is the point of the entity: `provinces` drives cards on the guide page
+// and a "บทความเกี่ยวกับ<จังหวัด>" block back on each province page.
+model Guide {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  title       String
+  summary     String   @db.Text
+  image       String   @db.Text
+  imageCredit Json? // { author, source, sourceUrl, license? }
+  provinces   Json? // ["chiang-mai", ...] province slugs this guide covers
+  featured    Boolean  @default(false)
+  body        String   @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("guide")
+}
+
 // Opaque server-side session; the id is the random token stored in the cookie.
 model Session {
   id         String   @id

@@ -346,6 +346,27 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
 
 ---
 
+## 📰 ระบบบทความ (Guide) + ไกด์ชุดแรก 10 บท (2026-08-11)
+
+**ที่มา:** หลังกดขอ AdSense ตรวจสอบรอบสอง เว็บยังเป็น**ไดเรกทอรีแบน ๆ** — 77 หน้าจังหวัด + 154 หน้าสถานที่ ไม่มีอะไรร้อยเข้าหากัน และ**ไม่มีเนื้อหาบทความเลยสักหน้า** ซึ่งเป็นสิ่งที่เว็บท่องเที่ยวปกติมีกัน · บทความคือตัวที่ทำให้เกิดกราฟลิงก์ภายใน ไม่ใช่แค่เพิ่มจำนวนตัวอักษร
+
+- [x] **entity `Guide` + migration `add_guide`** — `slug/title/summary/image/imageCredit/provinces Json/featured/body` · **`provinces` คือหัวใจ** เพราะขับการลิงก์สองทาง: การ์ดจังหวัดในหน้าบทความ + เซคชัน "บทความเกี่ยวกับ{จังหวัด}" ในหน้าจังหวัด
+  - `lib/content.ts` +`Guide` DTO +`toGuide` + cached `getAllGuides/getGuide/getGuidesByProvince` · เรียง `featured desc, createdAt desc, id desc` — **`id` เป็นตัวตัดสินเพราะ import ทีเดียว 10 แถวได้ createdAt เท่ากันหมด แล้ว MySQL จะเรียงมั่ว**
+- [x] **admin CRUD `/admin/guides`** (list+filter+new+edit) · `saveGuide/deleteGuide` + `revalidateGuidePaths` (**revalidate จังหวัดทั้งฝั่งก่อนและหลังแก้** ไม่งั้นจังหวัดที่ถูกถอดออกจะยังโชว์การ์ดค้าง) · `provincesFrom(fd)` กรอง slug ที่ไม่มีจริงทิ้ง · AdminNav +แท็บ "บทความ"
+  - **`ProvincePickerField` ใหม่** — 77 checkbox จะกลบฟอร์มทั้งหน้า จึงทำเป็น select-to-add + ชิปกดลบ · สัญญาเดียวกับ `GalleryField`/`HighlightsField` (hidden input เป็น JSON string)
+- [x] **หน้าสาธารณะ** `/guide` (index + ItemList JSON-LD) + `/guide/[slug]` (Article JSON-LD + breadcrumb + การ์ดจังหวัดที่พูดถึง + บทความอื่น) · `GuideCard` **จงใจไม่ใช้ทรง PlaceCard/ProvinceCard** (ตัวหนังสือทับรูป) เพราะบทความคือตัวหนังสือนำ หัวข้อจึงอยู่บนพื้นขาวที่อ่านได้ทุกความยาว
+  - เซคชันบทความในหน้าจังหวัดวางไว้**ก่อน**บล็อกทัวร์ affiliate (editorial ก่อน commercial) · sitemap +`/guide` +10 บท (พร้อม `lastModified`) · Navbar +เมนู "บทความ"
+- [x] 🐛 **บั๊กที่เกือบหลุด: `.prose-body` ไม่มีสไตล์ `a` เลย** — Tailwind preflight รีเซ็ต `a` เป็น `color:inherit` + ไม่มีเส้นใต้ → **ลิงก์ในบทความจะกลายเป็นข้อความธรรมดา มองไม่ออกว่าคลิกได้** ซึ่งทำลายทั้งจุดประสงค์ของบทความ · เพิ่ม `.prose-body a` (สีทอง + underline) และ `.prose-body li` ใน `globals.css` · verify จาก **CSS ที่คอมไพล์แล้ว** ไม่ใช่ source
+- [x] **บทความชุดแรก 10 บท** (`content/guides/*.md`) ผสมทั้งประเทศ + จังหวัดดัง · body 1,892–5,931 ตัวอักษร · **ลิงก์ภายใน 174 อัน**
+  - ทั้งประเทศ: `otop-77-provinces` (**ลิงก์ครบทั้ง 77 หน้า OTOP** — generate ลิสต์ด้วยสคริปต์ ไม่พิมพ์เอง) · `phra-that-year-of-birth` · `thai-sea-when-to-go` · `unesco-world-heritage-thailand` · `isan-mekong-route`
+  - เจาะจังหวัด: `chiang-mai-3-days` · `bangkok-old-town-1-day` · `kanchanaburi-weekend` · `nan-phrae-slow-travel` · `krabi-phang-nga-islands`
+- [x] **`scripts/import-guides.mjs` (`import:guides`)** — ✅ **รันบน prod ได้ ต่างจาก `import:content`** เพราะบทความเขียน+รีวิวในรีโป markdown จึงเป็น source of truth · บทความที่ทีมเขียนเองผ่านแอดมินไม่มีไฟล์ md จึงไม่ถูกแตะ · ข้าม province slug ที่ไม่มีใน DB พร้อมรายงาน
+- [x] ⭐ **บทเรียน verify: เช็ค "ลิงก์ไม่พัง" อย่างเดียวไม่พอ** — สคริปต์ตรวจรอบแรกบอกว่าลิงก์ 174 อันดีหมด ทั้งที่ `[ตราด](/south/trang)` เป็นลิงก์ที่**ใช้งานได้แต่ชี้ผิดจังหวัด** · ต้องเทียบ**ชื่อบนลิงก์กับชื่อปลายทาง**ด้วยถึงจะจับเจอ (เจอ 1 จุด แก้แล้ว)
+- [x] verify: tsc สะอาด · eslint ไม่มี error ใหม่ · build ผ่าน (`/guide` static, `/guide/[slug]` SSG 10 หน้า, `/admin/guides/*` dynamic) · curl: `/guide` การ์ด 10 ใบ · `/guide/{slug}` มี Article+BreadcrumbList JSON-LD · หน้าเชียงใหม่โชว์ 2 บทความ · หน้า OTOP hub เรนเดอร์ลิงก์ `<a>` ครบ 77 · sitemap 240→**251** · import ซ้ำ = idempotent
+- 🔴 **DEPLOY (มี migration):** `pull → NPM install → migrate:deploy → import:guides → build → restart` · รายละเอียดใน DEPLOY.md
+
+---
+
 ## 🌐 เฟส 3 — ขยาย
 - [ ] i18n `/en/` เป็นหน้าจริง + hreflang (ไม่พึ่ง Google Translate)
 - [ ] ระบบค้นหา/ฟิลเตอร์ขั้นสูง (หมวด, ราคา, ภูมิภาค)

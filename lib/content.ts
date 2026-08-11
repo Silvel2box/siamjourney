@@ -6,6 +6,7 @@ import type {
   Place as PlaceRow,
   Province as ProvinceRow,
   Hotel as HotelRow,
+  Guide as GuideRow,
 } from "@prisma/client";
 import { prisma } from "./prisma";
 
@@ -79,6 +80,20 @@ export type Hotel = {
   body: string;
 };
 
+// Editorial article. `provinces` is what links it to the directory in both
+// directions — cards on the guide page, a guides block on the province page.
+export type Guide = {
+  slug: string;
+  title: string;
+  summary: string;
+  image: string;
+  imageCredit?: ImageCredit;
+  provinces?: string[];
+  featured: boolean;
+  body: string;
+  updatedAt: Date;
+};
+
 // Prisma keeps nested objects as JSON and empty columns as null; normalise to
 // the DTO shape the rest of the app expects (optional fields, not null).
 function toPlace(r: PlaceRow): Place {
@@ -140,6 +155,20 @@ function toProvince(r: ProvinceRow): Province {
   };
 }
 
+function toGuide(r: GuideRow): Guide {
+  return {
+    slug: r.slug,
+    title: r.title,
+    summary: r.summary,
+    image: r.image,
+    imageCredit: (r.imageCredit as unknown as ImageCredit) ?? undefined,
+    provinces: (r.provinces as unknown as string[]) ?? undefined,
+    featured: r.featured,
+    body: r.body,
+    updatedAt: r.updatedAt,
+  };
+}
+
 // One query per collection per request (deduped across the getters below).
 const allPlaces = cache(async (): Promise<Place[]> => {
   return (await prisma.place.findMany()).map(toPlace);
@@ -149,6 +178,15 @@ const allProvinces = cache(async (): Promise<Province[]> => {
 });
 const allHotels = cache(async (): Promise<Hotel[]> => {
   return (await prisma.hotel.findMany()).map(toHotel);
+});
+// Featured first, then newest. `id` breaks the tie because a bulk import gives
+// every row the same createdAt, and MySQL's order is arbitrary without it.
+const allGuides = cache(async (): Promise<Guide[]> => {
+  return (
+    await prisma.guide.findMany({
+      orderBy: [{ featured: "desc" }, { createdAt: "desc" }, { id: "desc" }],
+    })
+  ).map(toGuide);
 });
 
 // Paid/featured float to the top, then alphabetical by Thai name.
@@ -214,4 +252,16 @@ export async function getHotelsByProvince(provinceSlug: string): Promise<Hotel[]
   return (await allHotels())
     .filter((h) => h.province === provinceSlug)
     .sort(bySponsorThenName);
+}
+
+export async function getAllGuides(): Promise<Guide[]> {
+  return allGuides();
+}
+
+export async function getGuide(slug: string): Promise<Guide | undefined> {
+  return (await allGuides()).find((g) => g.slug === slug);
+}
+
+export async function getGuidesByProvince(provinceSlug: string): Promise<Guide[]> {
+  return (await allGuides()).filter((g) => g.provinces?.includes(provinceSlug));
 }
