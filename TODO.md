@@ -365,6 +365,15 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
 - [x] verify: tsc สะอาด · eslint ไม่มี error ใหม่ · build ผ่าน (`/guide` static, `/guide/[slug]` SSG 10 หน้า, `/admin/guides/*` dynamic) · curl: `/guide` การ์ด 10 ใบ · `/guide/{slug}` มี Article+BreadcrumbList JSON-LD · หน้าเชียงใหม่โชว์ 2 บทความ · หน้า OTOP hub เรนเดอร์ลิงก์ `<a>` ครบ 77 · sitemap 240→**251** · import ซ้ำ = idempotent
 - 🔴 **DEPLOY (มี migration):** `pull → NPM install → migrate:deploy → import:guides → build → restart` · รายละเอียดใน DEPLOY.md
 
+### 🖼️ รูปในเนื้อบทความ (2026-08-11)
+- [x] **`lib/markdown.ts`** — Marked instance เฉพาะบทความ (ไม่ใช่ `marked.use()` global เพราะหน้า place/province/hotel/privacy ใช้ singleton ตัวเดิม) · `![alt](src "คำบรรยาย")` → `<figure>`+`<figcaption>` · src ที่ขึ้นต้น `/` ถูกส่งผ่าน `/_next/image?...&w=1200&q=75` = ได้ WebP เท่ากับ `next/image` · 🔴 **`w`/`q` ต้องเป็นค่าที่ Next อนุญาต ไม่งั้น 400** (`w=1201` = 400 · Next 16 default `qualities:[75]`)
+- [x] 🐛 **`marked` ห่อรูปที่อยู่บรรทัดเดียวด้วย `<p>`** → `<figure>` ใน `<p>` = HTML ผิด เบราว์เซอร์ปิด `<p>` เอง caption หลุดออกนอก figure → unwrap ด้วย replace หลัง parse
+- [x] `.prose-body figure img` = `aspect-ratio:16/9 + object-fit:cover` — **markdown ไม่มีที่ใส่ width/height รูปทุกใบจึงทำ CLS ถ้าไม่ล็อกกรอบ** · ผลข้างเคียง: **รูปแนวตั้งใช้ไม่ได้** (โดนครอปเหลือแถบกลางภาพ) → `--verify` เช็ค ratio ≥ 1.2 ให้
+- [x] **`BodyImageUploader`** ในแอดมิน — อัปโหลดแล้วแทรก markdown ตรงตำแหน่งเคอร์เซอร์ (`setRangeText`) + select ข้อความ alt ไว้ให้พิมพ์ทับ · ใช้ `/api/admin/upload` เดิม
+- [x] **`scripts/apply-guide-images.mjs`** (idempotent) + **`scripts/guide-image-candidates.mjs`** (ลิสต์รูป+เครดิตของสถานที่ที่บทนั้นลิงก์ถึง · `--verify` เช็คไฟล์มีจริง/แนวนอน/ไม่ซ้ำรูปปก/มี alt/**เครดิตตรงกับ frontmatter**) — **caption เขียนแค่ข้อความ ส่วนเครดิตสคริปต์ดึงจาก frontmatter เอง** ไม่พิมพ์ชื่อช่างภาพเอง (verify rule #4)
+- [x] เติมรูปแล้ว **14 ใบใน 8 บท** · 🔴 **`bangkok-old-town-1-day` กับ `otop-77-provinces` ยังไม่มีรูป** — กรุงเทพฯ มีแต่รูปแนวตั้ง (วัดพระแก้ว/เกาะเกร็ด) กับรูปปก · OTOP มีแต่ Pexels stock
+- [ ] 🔴 **รูปผิดที่ยัง LIVE: `cm-doi-suthep` = รูปผีเสื้อกลางคืน (specimen) · `provinces/phang-nga` = รูปงูเขียวหางไหม้** — Wikimedia search หยิบสายพันธุ์ที่ตั้งชื่อตามสถานที่มา · **บทเรียน: ต้องเปิดดูรูปทุกใบ ชื่อไฟล์เชื่อไม่ได้**
+
 ---
 
 ## 🌐 เฟส 3 — ขยาย

@@ -6,12 +6,13 @@
 //     photographer name is ever typed by hand (project verify rule #4).
 //
 //   node scripts/guide-image-candidates.mjs --verify
-//     check every image used in a guide body: the file exists, it is not the
-//     guide's own cover, and the credit in the caption matches the frontmatter
-//     of the place/province that image belongs to.
+//     check every image used in a guide body: the file exists, it is landscape,
+//     it is not the guide's own cover, and the credit in the caption matches the
+//     frontmatter of the place/province that image belongs to.
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import sharp from "sharp";
 
 const ROOT = "E:/Doc-IT/claude-workspace/siamjourney";
 const read = (dir) =>
@@ -55,6 +56,12 @@ if (process.argv[2] === "--verify") {
       used++;
       const owner = byImage.get(src);
       if (!onDisk(src)) fail(`${src} ไม่มีไฟล์ใน public/`);
+      else {
+        // .prose-body puts body photos in a 16:9 box, so a portrait shot is cut
+        // down to a strip through its middle.
+        const { width, height } = await sharp(path.join(ROOT, "public", src)).metadata();
+        if (width / height < 1.2) fail(`${src} เป็นรูปแนวตั้ง ${width}x${height} — กรอบ 16:9 จะครอปจนเสียภาพ`);
+      }
       if (src === data.image) fail(`${src} ซ้ำกับรูปปกของบทนี้`);
       if (!alt.trim()) fail(`${src} ไม่มี alt`);
       if (!owner) fail(`${src} ไม่รู้ว่าเป็นของสถานที่/จังหวัดไหน — เช็คเครดิตเองไม่ได้`);
