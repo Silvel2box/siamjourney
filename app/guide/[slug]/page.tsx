@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { marked } from "marked";
 import { getAllGuides, getGuide, getAllProvinces } from "@/lib/content";
+import { renderGuideBody } from "@/lib/markdown";
 import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import ProvinceCard from "@/components/ProvinceCard";
@@ -39,7 +39,7 @@ export default async function GuidePage({ params }: Props) {
   const guide = await getGuide(slug);
   if (!guide) notFound();
 
-  const bodyHtml = await marked.parse(guide.body);
+  const bodyHtml = renderGuideBody(guide.body);
 
   // Keep the admin's ordering rather than the alphabetical one getAllProvinces
   // returns — the list is written as a route, not as an index.

@@ -1,7 +1,8 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useRef } from "react";
 import { saveGuide } from "@/app/actions/content";
+import BodyImageUploader from "@/components/admin/BodyImageUploader";
 import ImageUploadField from "@/components/admin/ImageUploadField";
 import ProvincePickerField from "@/components/admin/ProvincePickerField";
 
@@ -48,6 +49,7 @@ export default function GuideForm({
   mode: "create" | "edit";
 }) {
   const [state, formAction, pending] = useActionState<State, FormData>(saveGuide, null);
+  const bodyRef = useRef<HTMLTextAreaElement>(null);
 
   return (
     <form action={formAction} className="flex flex-col gap-5">
@@ -86,9 +88,19 @@ export default function GuideForm({
         <input id="summary" name="summary" required defaultValue={values.summary} className={input} />
       </Field>
 
-      <Field id="body" label="เนื้อหา (markdown — ใช้ได้เฉพาะย่อหน้า, ## หัวข้อ, - รายการ และลิงก์) *">
-        <textarea id="body" name="body" required rows={18} defaultValue={values.body} className={input} />
+      <Field id="body" label={'เนื้อหา (markdown — ย่อหน้า, ## หัวข้อ, - รายการ, ลิงก์ และรูป ![คำอธิบาย](URL "คำบรรยาย")) *'}>
+        <textarea
+          id="body"
+          name="body"
+          required
+          rows={18}
+          ref={bodyRef}
+          defaultValue={values.body}
+          className={input}
+        />
       </Field>
+
+      <BodyImageUploader textareaRef={bodyRef} />
 
       <ImageUploadField name="image" label="รูปปกบทความ *" defaultValue={values.image} />
 
