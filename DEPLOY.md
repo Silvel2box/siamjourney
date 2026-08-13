@@ -34,7 +34,9 @@ build/migrate/seed จึงทำผ่าน npm scripts ที่เตรี
 2. **Run script → `sync:tours`** — เขียนเฉพาะคอลัมน์ `tours` ของ province แมตช์ด้วย slug
 3. **Run script → `sync:affiliate`** — เขียนเฉพาะคอลัมน์ `affiliate` ของ place แมตช์ด้วย slug
    (สถานที่ที่แอดมินสร้างเอง ไม่มีใน markdown → ข้าม ไม่ถูกแตะ)
-4. `build` → `restart`
+4. **Run script → `sync:images`** *(รอบที่เปลี่ยนรูปในรีโปเท่านั้น)* — เขียน `image` + `imageCredit` **เฉพาะ slug ที่ลิสต์ไว้ในหัวไฟล์ `scripts/sync-images.mjs`**
+   ไฟล์รูปเดินทางมากับ git pull อยู่แล้ว สคริปต์นี้แค่ชี้ให้ DB มองไปที่ไฟล์ใหม่ · ไม่ไล่ทุกไฟล์เพราะรูปที่แอดมินอัปโหลดเองมักใหม่กว่า markdown
+5. `build` → `restart`
 
 > อยากดูก่อนว่า sync จะเปลี่ยนกี่แถว → ใช้ **`sync:tours:dry` / `sync:affiliate:dry`** (มี npm script แยกให้แล้ว)
 > 🐛 **ห้ามใช้ `npm run sync:tours -- --dry`** — บน PowerShell npm กลืน `--dry` ทิ้ง แล้ว**เขียนจริง**โดยไม่มีคำเตือน
@@ -89,6 +91,25 @@ build/migrate/seed จึงทำผ่าน npm scripts ที่เตรี
 
 **verify:** `/guide` = 200 และมีการ์ด 10 ใบ · `/guide/{slug}` มี `"@type":"Article"` ใน JSON-LD ·
 หน้าจังหวัดที่บทความพูดถึงมีเซคชัน "บทความเกี่ยวกับ…" · sitemap เพิ่มขึ้น 11 URL (`/guide` + 10 บท)
+
+---
+
+## 🖼️ รอบเปลี่ยนรูป (2026-08-13) — ไม่มี migration
+
+รอบนี้เปลี่ยนรูป place/province 6 แถว (ถอนรูปผิดออก 2 + อัปเกรดรูปแนวตั้ง/สต็อก 4) แล้วใส่รูปในเนื้อบทความอีก 4 ใบ
+
+1. **Git pull** — ไฟล์รูปใหม่ใน `public/images/` มาพร้อม pull (ไม่ต้อง NPM install / migrate)
+2. **Run script → `report:drift`** — *อ่านอย่างเดียว* ดูว่าแถวไหนที่แอดมินแก้ไว้จะโดนทับ
+3. **Run script → `sync:images:dry`** — ต้องขึ้นว่าจะเปลี่ยน **6 แถว** (ถ้าน้อยกว่านั้น = บางแถวมีรูปตรงกับ markdown อยู่แล้ว)
+4. **Run script → `sync:images`** — ของจริง · รันซ้ำได้ (idempotent)
+5. **Run script → `import:guides`** — 🔴 รอบนี้ต้องรัน เพราะเนื้อบทความเปลี่ยน (ทับ `body` ของ 10 บทที่มีไฟล์ md)
+6. **Run script → `build`** → **Restart App**
+
+**verify:** `/place/cm-doi-suthep` และหน้าจังหวัด `/south/phang-nga` ไม่ใช่รูปสัตว์แล้ว (เครดิตเปลี่ยนเป็น Philip Nalangan / Vyacheslav Argenberg) ·
+`/guide/bangkok-old-town-1-day` + `/guide/otop-77-provinces` มี `<figure>` 2 ใบต่อบท · รูปใหม่ตอบ `200 image/webp` ผ่าน `/_next/image`
+
+> ชื่อไฟล์รูปใหม่ลงท้าย `-2` **โดยเจตนา** — เขียนทับ path เดิมจะโดน `.next/cache/images` + `Cache-Control: max-age=31536000`
+> เสิร์ฟรูปเก่าต่ออีกนาน path ใหม่จึงเป็นทางเดียวที่ผู้ใช้เห็นรูปใหม่ทันที
 
 ---
 
@@ -158,4 +179,5 @@ curl -o /dev/null -w '%{http_code}' https://siam-journey.com/north/chiang-mai   
 - `report:drift` = เทียบ DB กับ markdown แล้วรายงานว่าอะไรจะโดนทับ — **อ่านอย่างเดียว**
 - `sync:tours` / `sync:tours:dry` = push คอลัมน์ `tours` (province) จาก markdown
 - `sync:affiliate` / `sync:affiliate:dry` = push คอลัมน์ `affiliate` (place) จาก markdown
+- `sync:images` / `sync:images:dry` = push `image` + `imageCredit` (place + province) **เฉพาะ slug ที่อยู่ในลิสต์ในไฟล์** — รูปที่แอดมินอัปโหลดเองใหม่กว่า markdown จึงไม่ไล่ทุกไฟล์แบบ sync ตัวอื่น
 - 🔴 `import:content` / `import:provinces` = **local เท่านั้น** เขียนทับทั้งแถว ห้ามรันบน prod

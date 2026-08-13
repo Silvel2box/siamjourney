@@ -17,6 +17,8 @@
     "cleanup:adsense:dry": "node scripts/adsense-cleanup.mjs --dry",
     "sync:affiliate": "node scripts/sync-affiliate.mjs",
     "sync:affiliate:dry": "node scripts/sync-affiliate.mjs --dry",
+    "sync:images": "node scripts/sync-images.mjs",
+    "sync:images:dry": "node scripts/sync-images.mjs --dry",
     "sync:tours": "node scripts/sync-tours.mjs",
     "sync:tours:dry": "node scripts/sync-tours.mjs --dry",
     "report:drift": "node scripts/report-drift.mjs",

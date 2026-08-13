@@ -4,17 +4,17 @@ name: โรตีสายไหม
 category: otop
 province: ayutthaya
 summary: ของฝากขึ้นชื่อเมืองกรุงเก่า แผ่นแป้งนุ่มห่อน้ำตาลปั่นเป็นเส้นสายไหม
-image: >-
-  https://images.pexels.com/photos/37800802/pexels-photo-37800802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
+image: /images/places/ayutthaya-roti-sai-mai-2.jpg
 sponsored: 0
 affiliate:
-  label: 'สั่งซื้อโรตีสายไหม'
-  url: 'https://shopee.co.th/search?keyword=%E0%B9%82%E0%B8%A3%E0%B8%95%E0%B8%B5%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%AB%E0%B8%A1'
+  label: สั่งซื้อโรตีสายไหม
+  url: >-
+    https://shopee.co.th/search?keyword=%E0%B9%82%E0%B8%A3%E0%B8%95%E0%B8%B5%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%AB%E0%B8%A1
 imageCredit:
-  author: Nguyễn Viết Minh Lâm
-  source: Pexels
-  sourceUrl: >-
-    https://www.pexels.com/photo/colorful-ceramic-animal-figurines-on-display-37800802/
+  author: Takeaway
+  source: Wikimedia Commons
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Roti_sai_mai_2.jpg'
+  license: CC BY-SA 3.0
 ---
 
 โรตีสายไหมเป็นของฝากที่ผูกกับอยุธยาจนแทบเป็นคำเดียวกัน ประกอบด้วยสองส่วนที่ต้องกินคู่กัน คือแผ่นแป้งบางที่ละเลงบนกระทะร้อน กับน้ำตาลที่เคี่ยวแล้วดึงจนเป็นเส้นฝอยละเอียดคล้ายไหม

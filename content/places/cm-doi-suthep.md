@@ -4,7 +4,7 @@ name: วัดพระธาตุดอยสุเทพ
 category: attraction
 province: chiang-mai
 summary: วัดคู่บ้านคู่เมืองเชียงใหม่บนยอดดอย พร้อมวิวเมืองแบบพาโนรามา
-image: /images/places/cm-doi-suthep.jpg
+image: /images/places/cm-doi-suthep-2.jpg
 address: ถนนศรีวิชัย ต.สุเทพ อ.เมือง จ.เชียงใหม่
 hours: 'เปิดทุกวัน 06:00 - 18:00 น.'
 priceRange: ค่าเข้าชาวไทยฟรี / ชาวต่างชาติ 30 บาท
@@ -12,15 +12,15 @@ lat: 18.8048
 lng: 98.9217
 sponsored: 1
 affiliate:
-  label: 'จองทัวร์ดอยสุเทพ + วัดอุโมงค์'
+  label: จองทัวร์ดอยสุเทพ + วัดอุโมงค์
   url: 'https://www.klook.com/th/activity/18014-doi-suthep-wat-umong-chiang-mai'
   image: 'https://res.klook.com/image/upload/activities/gdqthwbwzmhbbq7ck1cz.jpg'
 imageCredit:
-  author: Didier Descouens
+  author: Philip Nalangan
   source: Wikimedia Commons
   sourceUrl: >-
-    https://commons.wikimedia.org/wiki/File:Ambulyx_liturata_MHNT_CUT_2010_0_157_Doi_Suthep_Chiang_Mai_Thailand_female_dorsal.jpg
-  license: CC BY-SA 4.0
+    https://commons.wikimedia.org/wiki/File:Doi_Suthep_Temple_Chiang_Mai_Thailand.jpg
+  license: CC BY 4.0
 ---
 
 วัดพระธาตุดอยสุเทพราชวรวิหารตั้งอยู่บนดอยสุเทพทางทิศตะวันตกของเมืองเชียงใหม่ เป็นพระธาตุคู่บ้านคู่เมืองที่คนเชียงใหม่ถือว่าถ้ามาไม่ถึงที่นี่ก็เท่ากับยังมาไม่ถึงเชียงใหม่

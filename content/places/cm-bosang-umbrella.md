@@ -4,17 +4,18 @@ name: ร่มบ่อสร้าง
 category: otop
 province: chiang-mai
 summary: ร่มกระดาษสาทำมือลวดลายวิจิตร งานหัตถกรรมขึ้นชื่อของอำเภอสันกำแพง
-image: >-
-  https://images.pexels.com/photos/37027478/pexels-photo-37027478.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
+image: /images/places/cm-bosang-umbrella-2.jpg
 sponsored: 2
 affiliate:
-  label: 'สั่งซื้อร่มบ่อสร้างออนไลน์'
-  url: 'https://shopee.co.th/search?keyword=%E0%B8%A3%E0%B9%88%E0%B8%A1%E0%B8%9A%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B8%AD%E0%B8%99%E0%B9%84%E0%B8%A5%E0%B8%99%E0%B9%8C'
+  label: สั่งซื้อร่มบ่อสร้างออนไลน์
+  url: >-
+    https://shopee.co.th/search?keyword=%E0%B8%A3%E0%B9%88%E0%B8%A1%E0%B8%9A%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B8%AD%E0%B8%99%E0%B9%84%E0%B8%A5%E0%B8%99%E0%B9%8C
 imageCredit:
-  author: Sóc Năng Động
-  source: Pexels
+  author: Grossbildjaeger
+  source: Wikimedia Commons
   sourceUrl: >-
-    https://www.pexels.com/photo/street-vendor-displaying-colorful-handmade-figures-37027478/
+    https://commons.wikimedia.org/wiki/File:Schirm_rot_mit_Aufschrift_Bo_Sang_Ching_Mai_Thailand.jpg
+  license: CC BY-SA 3.0
 ---
 
 ร่มบ่อสร้างเป็นงานหัตถกรรมของบ้านบ่อสร้าง อำเภอสันกำแพง จังหวัดเชียงใหม่ ที่ทำสืบต่อกันมาหลายชั่วอายุคน โครงร่มทำจากไม้ไผ่เหลาด้วยมือ ส่วนที่คลุมทำจากกระดาษสา ผ้าฝ้าย หรือผ้าแพร แล้วเคลือบด้วยน้ำมันให้กันน้ำ

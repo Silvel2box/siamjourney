@@ -31,6 +31,8 @@ featured: true
 - ลำพูน — [ผ้าฝ้ายทอมือบ้านดอนหลวง](/place/lpn-donluang-cotton)
 - อุตรดิตถ์ — [ผ้าตีนจกไท-ยวนลับแล](/place/ut-teen-jok-cloth)
 
+![ร่มกระดาษสาเขียนลายดอกไม้ด้วยมือจากบ่อสร้าง จังหวัดเชียงใหม่](/images/places/cm-bosang-umbrella-2.jpg "ร่มบ่อสร้างขึงกระดาษสาแล้วเขียนลายด้วยมือทีละคัน คันในภาพเขียนขึ้นสำหรับงานเทศกาลร่มของหมู่บ้าน · ภาพ: Grossbildjaeger · Wikimedia Commons")
+
 ## ของฝากภาคอีสาน
 - กาฬสินธุ์ — [ผ้าไหมแพรวา](/place/kalasin-praewa-silk)
 - ขอนแก่น — [ผ้าไหมมัดหมี่ชนบท](/place/khon-kaen-mudmee-silk)
@@ -76,6 +78,8 @@ featured: true
 - สุพรรณบุรี — [ขนมสาลี่สุพรรณ](/place/suphan-buri-salee)
 - อ่างทอง — [ตุ๊กตาชาววังบางเสด็จ](/place/ang-thong-court-doll)
 - อุทัยธานี — [ผ้าทอลาวครั่ง](/place/uthai-thani-lao-khrang-textile)
+
+![โรตีสายไหม แผ่นแป้งสีชมพูกับเส้นน้ำตาลปั่น ของฝากอยุธยา](/images/places/ayutthaya-roti-sai-mai-2.jpg "แผ่นแป้งสีชมพูและขาวใช้ห่อเส้นน้ำตาลปั่นเป็นคำ ๆ อร่อยที่สุดตอนแผ่นยังนุ่ม · ภาพ: Takeaway · Wikimedia Commons")
 
 ## ของฝากภาคตะวันออก
 - จันทบุรี — [พลอยจันทบุรี](/place/chanthaburi-gems)

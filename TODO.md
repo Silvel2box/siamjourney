@@ -371,8 +371,32 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
 - [x] `.prose-body figure img` = `aspect-ratio:16/9 + object-fit:cover` — **markdown ไม่มีที่ใส่ width/height รูปทุกใบจึงทำ CLS ถ้าไม่ล็อกกรอบ** · ผลข้างเคียง: **รูปแนวตั้งใช้ไม่ได้** (โดนครอปเหลือแถบกลางภาพ) → `--verify` เช็ค ratio ≥ 1.2 ให้
 - [x] **`BodyImageUploader`** ในแอดมิน — อัปโหลดแล้วแทรก markdown ตรงตำแหน่งเคอร์เซอร์ (`setRangeText`) + select ข้อความ alt ไว้ให้พิมพ์ทับ · ใช้ `/api/admin/upload` เดิม
 - [x] **`scripts/apply-guide-images.mjs`** (idempotent) + **`scripts/guide-image-candidates.mjs`** (ลิสต์รูป+เครดิตของสถานที่ที่บทนั้นลิงก์ถึง · `--verify` เช็คไฟล์มีจริง/แนวนอน/ไม่ซ้ำรูปปก/มี alt/**เครดิตตรงกับ frontmatter**) — **caption เขียนแค่ข้อความ ส่วนเครดิตสคริปต์ดึงจาก frontmatter เอง** ไม่พิมพ์ชื่อช่างภาพเอง (verify rule #4)
-- [x] เติมรูปแล้ว **14 ใบใน 8 บท** · 🔴 **`bangkok-old-town-1-day` กับ `otop-77-provinces` ยังไม่มีรูป** — กรุงเทพฯ มีแต่รูปแนวตั้ง (วัดพระแก้ว/เกาะเกร็ด) กับรูปปก · OTOP มีแต่ Pexels stock
-- [ ] 🔴 **รูปผิดที่ยัง LIVE: `cm-doi-suthep` = รูปผีเสื้อกลางคืน (specimen) · `provinces/phang-nga` = รูปงูเขียวหางไหม้** — Wikimedia search หยิบสายพันธุ์ที่ตั้งชื่อตามสถานที่มา · **บทเรียน: ต้องเปิดดูรูปทุกใบ ชื่อไฟล์เชื่อไม่ได้**
+- [x] เติมรูปแล้ว **14 ใบใน 8 บท** · `bangkok-old-town-1-day` กับ `otop-77-provinces` ตามมาในรอบ 2026-08-13 (ดูหัวข้อล่าง) — เดิมกรุงเทพฯ มีแต่รูปแนวตั้ง (วัดพระแก้ว/เกาะเกร็ด) กับรูปปก · OTOP มีแต่ Pexels stock
+- [x] 🔴 **รูปผิดที่ LIVE: `cm-doi-suthep` = รูปผีเสื้อกลางคืน (specimen) · `provinces/phang-nga` = รูปงูเขียวหางไหม้** — Wikimedia search หยิบสายพันธุ์ที่ตั้งชื่อตามสถานที่มา · **บทเรียน: ต้องเปิดดูรูปทุกใบ ชื่อไฟล์เชื่อไม่ได้** → แก้ในรอบ 2026-08-13
+
+---
+
+## 🖼️ ถอนรูปผิดออกจากไลฟ์ + ปิดรูปบทความ 2 บทสุดท้าย (2026-08-13)
+
+**ที่มา:** สองงานที่ค้างจากรอบบทความ ทำรวบเดียวเพราะเป็นงานเดียวกันหมด = หารูป Wikimedia ที่ถูกต้องและเป็นแนวนอน
+
+- [x] **เปลี่ยนรูป 6 แถว** — ทุกใบ **เปิดดูด้วยตาก่อนเลือก** ไม่ได้เชื่อชื่อไฟล์
+  | slug | เดิม | ใหม่ |
+  |---|---|---|
+  | `cm-doi-suthep` | ผีเสื้อกลางคืนในตู้โชว์ (Didier Descouens) | องค์พระธาตุ + ฉัตรล้านนา (Philip Nalangan, CC BY 4.0) |
+  | `provinces/phang-nga` | งูเขียวหางไหม้ (Rushen) | อ่าวพังงา เขาหินปูน + เรือหางยาว (Vyacheslav Argenberg, CC BY 4.0) |
+  | `bangkok-wat-phra-kaew` | แนวตั้ง 0.76 | พาโนรามาหมู่พระอุโบสถ 1.82 (Ninara/TSP, CC BY 4.0) |
+  | `nonthaburi-koh-kret` | แนวตั้ง 0.67 | พระเจดีย์เอียงริมน้ำ วัดปรมัยยิกาวาส (Preecha.MJ, CC BY-SA 4.0) |
+  | `cm-bosang-umbrella` | Pexels stock | ร่มกระดาษสาเขียนลายจากบ่อสร้าง (Grossbildjaeger, CC BY-SA 3.0) |
+  | `ayutthaya-roti-sai-mai` | Pexels stock | โรตีสายไหมของจริง (Takeaway, CC BY-SA 3.0) |
+  - 🔴 **ชื่อไฟล์ใหม่ลงท้าย `-2` โดยเจตนา** — path เดิมโดน `.next/cache/images` + `max-age=31536000` ค้าง ถ้าเขียนทับชื่อเดิมคนที่เคยเข้าจะเห็นรูปเก่าต่อไปอีกนาน
+  - **แผนเดิมจะใช้ `lp-chicken-bowl-ceramic` (ชามตราไก่) + `bangkok-benjarong` (เบญจรงค์)** แต่ Commons ไม่มีชามตราไก่เลย และเบญจรงค์มีแต่ของพิพิธภัณฑ์ที่**เกือบจตุรัสทุกใบ** (0.84–1.15 < 1.2) → สลับไปสินค้าอื่นในภาคเดียวกันตามกฎ "อย่าฝืนใส่รูปที่ไม่ใช่ของจริง"
+- [x] **`scripts/replace-image.mjs`** (ใหม่) — `--find "<query>"` ยิง Commons API แล้ว**โหลดรูปผู้สมัครลงดิสก์ให้เปิดดูจริง** พร้อม `WxH`/ratio/ผู้สร้าง/สัญญาอนุญาต + ธง `แนวตั้ง` / `ชื่อไฟล์น่าสงสัย` · `--apply <col>/<slug> --pick <n> --as <ชื่อใหม่>` ย่อ ≤1500px q82, เขียน `image`+`imageCredit` จาก**ค่าที่ API คืนมา ไม่พิมพ์เครดิตเอง**, เช็ค content-hash ซ้ำทั้ง `public/images/`, ลบไฟล์เก่าให้ (ถ้าไม่มี md ไหนอ้างถึงอีก)
+  - 🐛 **เจอบั๊กเงียบใน `fetch-province-images.mjs` ด้วย: Commons ต่อ `?utm_source=…&utm_content=original` ท้าย URL แล้ว** ตัวเช็ค `/\.(jpe?g|png)$/` จึงตกทุกใบ = สคริปต์เดิมจะคืน "ไม่พบรูป" ทั้งหมด (ตัวใหม่ตัด query ก่อนเทียบ)
+- [x] **รูปในเนื้อบทความอีก 4 ใบ** → `bangkok-old-town-1-day` (วัดพระแก้ว + เกาะเกร็ด) · `otop-77-provinces` (ร่มบ่อสร้าง §ภาคเหนือ + โรตีสายไหม §ภาคกลาง) · เพิ่ม entry ใน `IMAGES` ของ `apply-guide-images.mjs` เท่านั้น caption เขียนแค่ข้อความ เครดิตสคริปต์ดึงจาก frontmatter
+- [x] **`scripts/sync-images.mjs` + `sync:images` / `sync:images:dry`** — ทางส่งรูปขึ้น prod ที่เมื่อก่อน**ไม่มีเลย** (มีแค่ `sync:tours`/`sync:affiliate`) · เขียน `image`+`imageCredit` ของ place+province **เฉพาะ slug ที่ลิสต์ไว้ในไฟล์** ไม่ไล่ทุก md เพราะรูปที่แอดมินอัปโหลดเองใหม่กว่า markdown (กฎเดียวกับ `adsense-cleanup.mjs`)
+- [x] **verify:** เปิดดูรูปใหม่ทุกใบ · `guide-image-candidates.mjs --verify` = **18 รูป ผิด 0** · รูปใหม่ ratio 1.27–1.82 ทุกใบ ≤1500px · hash ทั้ง `public/images` 148 ไฟล์ **unique 148 ซ้ำ 0** · tsc สะอาด · lint ไม่มี error ใหม่ (8 อันเดิม) · build ผ่าน · `npm start` บน **PORT 3100** (เช็คว่าว่างก่อน + ยืนยัน `<title>` ว่าเป็นแอปเรา ตามบทเรียน 10 ส.ค.) → `<figure>` 2 ใบต่อบทใหม่, `<p><figure>` = 0, รูปใหม่ 4 ใบผ่าน optimizer `200 image/webp`, หน้า place/จังหวัดโชว์รูป+เครดิตใหม่ครบ, JSON-LD `image` ชี้ path ใหม่ · `sync:images` รันซ้ำ = 0 แถวเปลี่ยน
+- 🔴 **DEPLOY (ไม่มี migration):** `pull → report:drift → sync:images:dry → sync:images → import:guides → build → restart` (รายละเอียดใน DEPLOY.md)
 
 ---
 

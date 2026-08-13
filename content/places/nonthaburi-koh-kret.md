@@ -4,16 +4,16 @@ name: เกาะเกร็ด
 category: attraction
 province: nonthaburi
 summary: เกาะกลางเจ้าพระยา ชุมชนมอญ เครื่องปั้นดินเผาและขนมหวานเลื่องชื่อ
-image: /images/places/nonthaburi-koh-kret.jpg
+image: /images/places/nonthaburi-koh-kret-2.jpg
 address: ตำบลเกาะเกร็ด อำเภอปากเกร็ด จังหวัดนนทบุรี
 hours: 09.00 - 18.00 น. (คึกคักช่วงเสาร์-อาทิตย์)
 priceRange: ฟรีค่าเข้า (ค่าเรือข้ามฟากประมาณ 5-20 บาท)
 sponsored: 1
 imageCredit:
-  author: Supanut Arunoprayote
+  author: Preecha.MJ
   source: Wikimedia Commons
-  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Saothongthong_(II).jpg'
-  license: CC BY 4.0
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Wat_Poramaiyikawas_Worawihan.jpg'
+  license: CC BY-SA 4.0
 ---
 
 เกาะเกร็ดเป็นเกาะกลางแม่น้ำเจ้าพระยาในอำเภอปากเกร็ด จังหวัดนนทบุรี เกิดขึ้นจากการขุดคลองลัดแม่น้ำในสมัยอยุธยาจนแผ่นดินส่วนหนึ่งถูกตัดขาดกลายเป็นเกาะ ปัจจุบันเป็นชุมชนมอญที่ยังรักษาวัฒนธรรมของตัวเองไว้ได้ชัดเจน
