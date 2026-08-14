@@ -13,6 +13,7 @@ import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import PlaceCard from "@/components/PlaceCard";
 import AdSlot from "@/components/AdSlot";
+import { jsonLdHtml } from "@/lib/jsonld";
 
 export const dynamicParams = true;
 export const revalidate = 3600;
@@ -95,7 +96,7 @@ export default async function CategoryPage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
 
       <PageBanner

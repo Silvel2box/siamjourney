@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import AdminNav from "@/components/admin/AdminNav";
 import AdminSearchBar from "@/components/admin/AdminSearchBar";
+import ClickSummary from "@/components/admin/ClickSummary";
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { updateStatus } from "@/app/actions/admin";
@@ -82,6 +83,8 @@ export default async function AdminPage({ searchParams }: Props) {
       <section className="py-16 bg-light">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
           <AdminNav />
+
+          <ClickSummary />
 
           <AdminSearchBar
             placeholder="ค้นหาชื่อร้าน หรือ อีเมล…"

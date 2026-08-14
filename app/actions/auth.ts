@@ -9,6 +9,15 @@ import {
   createSession,
   deleteSession,
 } from "@/lib/auth";
+import { rateLimit, tooManyMessage } from "@/lib/rate-limit";
+
+// Compared against when the email is unknown, so a wrong address and a wrong
+// password take the same time to answer. Without it the miss returns before
+// scrypt runs at all, which tells anyone timing the form which emails exist.
+// Any well-formed hash works — this one is a throwaway.
+const DUMMY_HASH =
+  "0000000000000000000000000000000000000000000000000000000000000000:" +
+  "0".repeat(128);
 
 // State returned to the form (null before first submit).
 type State = { error: string } | null;
@@ -33,6 +42,10 @@ export async function register(_prev: State, formData: FormData): Promise<State>
   if (!parsed.success) {
     return { error: parsed.error.issues[0].message };
   }
+
+  // 5 new accounts an hour from one address is well past any real shop owner.
+  const limit = await rateLimit("register", 5, 60);
+  if (!limit.ok) return { error: tooManyMessage(limit.retryAfterMinutes) };
 
   const { shopName, email, password } = parsed.data;
 
@@ -62,11 +75,17 @@ export async function login(_prev: State, formData: FormData): Promise<State> {
     return { error: parsed.error.issues[0].message };
   }
 
+  // 10 tries per 15 minutes. Enough for someone who forgot which password they
+  // used, far too few to work through a list.
+  const limit = await rateLimit("login", 10, 15);
+  if (!limit.ok) return { error: tooManyMessage(limit.retryAfterMinutes) };
+
   const { email, password } = parsed.data;
 
   try {
     const merchant = await prisma.merchant.findUnique({ where: { email } });
-    if (!merchant || !(await verifyPassword(password, merchant.passwordHash))) {
+    const ok = await verifyPassword(password, merchant?.passwordHash ?? DUMMY_HASH);
+    if (!merchant || !ok) {
       return { error: "อีเมลหรือรหัสผ่านไม่ถูกต้อง" };
     }
     await createSession(merchant.id);

@@ -6,6 +6,7 @@ import { categoryBySlug } from "@/lib/categories";
 import { regionBySlug } from "@/lib/regions";
 import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
+import { jsonLdHtml } from "@/lib/jsonld";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -80,7 +81,7 @@ export default async function ShopPage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
 
       <PageBanner title={shop.shopName} subtitle={category?.name} crumbs={crumbs} />

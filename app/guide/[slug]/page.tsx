@@ -8,6 +8,7 @@ import PageBanner from "@/components/PageBanner";
 import ProvinceCard from "@/components/ProvinceCard";
 import GuideCard from "@/components/GuideCard";
 import AdSlot from "@/components/AdSlot";
+import { jsonLdHtml } from "@/lib/jsonld";
 
 // New guides added via the admin render on-demand (ISR); no rebuild needed.
 export const dynamicParams = true;
@@ -66,7 +67,7 @@ export default async function GuidePage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
 
       <PageBanner

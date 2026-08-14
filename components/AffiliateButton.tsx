@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { buildAffiliateUrl } from "@/lib/affiliate";
+import { buildAffiliateUrl, trackedHref } from "@/lib/affiliate";
 
 // Outbound partner link ("ติดแท๊กขาย"). The raw URL comes from the place's
 // markdown; buildAffiliateUrl centrally adds your affiliate id + per-place
@@ -20,7 +20,10 @@ export default function AffiliateButton({
   image?: string;
   placeSlug: string;
 }) {
-  const href = buildAffiliateUrl(url, placeSlug);
+  // The finished partner URL, then wrapped in our own /go so the click is
+  // counted in a table we keep — GA4 sees these too, but not when a visitor
+  // blocks it.
+  const href = trackedHref(buildAffiliateUrl(url, placeSlug), placeSlug);
   const common = { href, target: "_blank", rel: "sponsored nofollow noopener" } as const;
 
   // Named from the destination rather than hardcoded — this same card is what

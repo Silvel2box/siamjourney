@@ -89,7 +89,7 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
 - [x] verify: build 710 pages; guard (/dashboard→/login), valid cookie→dashboard 200, invalid→redirect, login-แล้ว→dashboard; hash round-trip/reject, P2002, session expiry+cascade ผ่านหมด
 - [x] admin approval UI ✅ (2026-07-16) — Merchant.role + requireAdmin() + /admin (อนุมัติ/ระงับ) + seed.mjs ตั้ง admin ตาม ADMIN_EMAIL
 - [x] แดชบอร์ดแก้ข้อมูลร้านจริง ✅ (2026-07-17) — profile fields ใน Merchant (description/province/category/address/phone/website/image) + ShopForm + updateShop action (zod, own-record) + หน้าสาธารณะ `/shop/[id]` (dynamic, approved-only → 404); verify: /shop approved 200 + pending/missing/non-numeric 404, dashboard prefill, build ผ่าน. **write path (ปุ่ม save) ยัง type-guaranteed แต่ยังไม่ browser-click test — Next action protocol ยิงตรงไม่ได้**
-- [ ] (ต่อยอด #4) email verify, rate limit
+- [ ] (ต่อยอด #4) email verify (ยังไม่ทำ — รอเมลบ็อกซ์/SMTP) · rate limit ✅ ทำแล้ว 2026-08-14 (ดูหัวข้อความปลอดภัยด้านล่าง)
 
 ### ต่อไป
 - [x] **AdSense: ยืนยันความเป็นเจ้าของเว็บผ่านแล้ว ✅ (2026-07-21)** — pub ID `ca-pub-1938381370106852` ใน `lib/adsense.ts` + `public/ads.txt` LIVE
@@ -100,7 +100,7 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
 - [x] โครง Google AdSense พร้อมเสียบ ✅ (2026-07-18) — `lib/adsense.ts` (client/slot เว้นว่าง = ปิดสนิท), loader `<Script>` ใน layout โหลดเฉพาะเมื่อมี ID, `AdSlot` render `<ins class="adsbygoogle">` ในกล่องสะอาด (label + reserve height กัน CLS); ปิด = live ไม่แสดงอะไร (dev เห็น placeholder). verify build ทั้ง 2 สถานะ. **เหลืองานบัญชี:** สมัคร AdSense → กรอก `ca-pub-...` + slot id ใน `lib/adsense.ts` → เพิ่ม `public/ads.txt` → redeploy (checklist อยู่หัวไฟล์ `lib/adsense.ts`)
 - [ ] แพ็กเกจ featured/sponsored + จัดการสถานะจ่ายเงิน (sponsored 1/2)
 - [x] แดชบอร์ดร้านค้า — แก้ข้อมูล ✅ (2026-07-17); ดูสถิติ ยังไม่ทำ
-- [ ] ระบบคอมมิชชั่น / บันทึกคลิก affiliate (ตาราง click log)
+- [x] บันทึกคลิก affiliate (ตาราง click log) ✅ 2026-08-14 (ดูหัวข้อด้านล่าง) · ระบบคอมมิชชั่นยังไม่ทำ
 - [ ] (พิจารณา) migrate content จาก markdown → DB ถ้าต้องให้ non-dev แก้ผ่าน admin
 
 ## 🗂️ เฟส 2.5 — Admin CMS (ให้ทีม non-dev จัดการเอง) — วางแผน 2026-07-23
@@ -397,6 +397,33 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
 - [x] **`scripts/sync-images.mjs` + `sync:images` / `sync:images:dry`** — ทางส่งรูปขึ้น prod ที่เมื่อก่อน**ไม่มีเลย** (มีแค่ `sync:tours`/`sync:affiliate`) · เขียน `image`+`imageCredit` ของ place+province **เฉพาะ slug ที่ลิสต์ไว้ในไฟล์** ไม่ไล่ทุก md เพราะรูปที่แอดมินอัปโหลดเองใหม่กว่า markdown (กฎเดียวกับ `adsense-cleanup.mjs`)
 - [x] **verify:** เปิดดูรูปใหม่ทุกใบ · `guide-image-candidates.mjs --verify` = **18 รูป ผิด 0** · รูปใหม่ ratio 1.27–1.82 ทุกใบ ≤1500px · hash ทั้ง `public/images` 148 ไฟล์ **unique 148 ซ้ำ 0** · tsc สะอาด · lint ไม่มี error ใหม่ (8 อันเดิม) · build ผ่าน · `npm start` บน **PORT 3100** (เช็คว่าว่างก่อน + ยืนยัน `<title>` ว่าเป็นแอปเรา ตามบทเรียน 10 ส.ค.) → `<figure>` 2 ใบต่อบทใหม่, `<p><figure>` = 0, รูปใหม่ 4 ใบผ่าน optimizer `200 image/webp`, หน้า place/จังหวัดโชว์รูป+เครดิตใหม่ครบ, JSON-LD `image` ชี้ path ใหม่ · `sync:images` รันซ้ำ = 0 แถวเปลี่ยน
 - 🔴 **DEPLOY (ไม่มี migration):** `pull → report:drift → sync:images:dry → sync:images → import:guides → build → restart` (รายละเอียดใน DEPLOY.md)
+
+---
+
+## 🔒 ตรวจความปลอดภัย + rate limit + click log (2026-08-14)
+
+**ที่มา:** ผู้ใช้เลือกเก็บงานหนี้ทางเทคนิค และขอให้ตรวจความปลอดภัยของเว็บด้วย
+
+- [x] 🔴 **stored XSS ผ่าน JSON-LD — ช่องโหว่จริง แก้แล้ว** · ทุกหน้าเขียน `dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}` ซึ่ง **React ไม่ escape อะไรเลย และ JSON ไม่แปลง `<`** → ข้อความจาก DB ที่มี `</script>` ปิด `<script>` ได้กลางคัน · ตัวที่อันตรายจริงคือ `/shop/[id]` เพราะ `shopName`/`description` **ร้านค้าเป็นคนกรอกเอง** และ `parseShopForm` ไม่ได้กรอง HTML (zod เช็คแค่ความยาว)
+  - **พิสูจน์ก่อนแก้:** ใส่ `<b>probe</b>` (ข้อความไม่อันตราย กลไกเดียวกัน) ลง summary ใน DB local → curl เห็น `<b>` ดิบในบล็อก `ld+json` จริง
+  - แก้ด้วย `lib/jsonld.ts` → `jsonLdHtml()` escape `<` `>` `&` ` ` ` ` เป็น `\uXXXX` (ยังเป็น JSON ที่ valid — Google อ่านได้ค่าเดิม) ใช้แทน `JSON.stringify` **ครบทั้ง 8 จุด** (place/province/category/guide×2/hotel/shop/PageBanner)
+  - verify หลังแก้: `<b>` ในหน้า · `JSON.parse` บล็อกทั้ง 2 อันผ่าน และ `<` กลับมาเป็นตัวอักษรจริงฝั่งผู้บริโภค · ไม่มี `<`/`>` ดิบเหลือในบล็อก
+- [x] **security headers ที่ไลฟ์ไม่มีเลยสักตัว** → `next.config.ts` `headers()`: HSTS 1 ปี (**ไม่ใส่ includeSubDomains** เพราะ Plesk มี webmail/panel เป็นซับโดเมน ถ้าใส่แล้วล็อกทั้งหมดเป็น HTTPS ถอนไม่ได้จนหมดอายุ), `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin` (เดิม URL เต็มหลุดไปกับทุกคลิก affiliate), `X-Frame-Options: SAMEORIGIN` + CSP `frame-ancestors 'self'`, `Permissions-Policy` ปิด camera/mic/geo/payment/usb · `poweredByHeader: false`
+  - 📌 **เหลืองานฝั่ง Plesk:** header ยังมี `X-Powered-By: Phusion Passenger(R) 6.1.8` (บอกเวอร์ชันให้คนหา CVE) — ส่วนนี้ Passenger ใส่เอง แอปปิดไม่ได้ ต้องปิดที่ panel (nginx directive `passenger_show_version_in_header off;`)
+  - ไม่ทำ CSP เต็ม (script-src ฯลฯ) รอบนี้ — AdSense/GA4/Maps ต้องใช้ inline+external หลายโดเมน ทำผิดคือจอขาวทั้งเว็บ ควรทำแยกรอบพร้อมทดสอบ report-only ก่อน
+- [x] **rate limit** — `lib/rate-limit.ts` (fixed window, เก็บใน DB ไม่ใช่หน่วยความจำ เพราะ Passenger มีหลาย process และ restart แล้วลืมหมด) + ตาราง `RateLimit` · login 10 ครั้ง/15 นาที · register 5/ชม. · newsletter 5/ชม.
+  - 🔴 **IP เอาจาก `x-real-ip` ก่อน แล้วค่อย `x-forwarded-for` ตัว "สุดท้าย"** — XFF เป็นเชนที่ client เริ่มเองได้ ถ้าอ่านตัวแรกใครก็รีเซ็ตโควตาตัวเองได้ด้วย header เดียว
+  - [x] **อุด user enumeration จาก timing ตอน login** — เดิมอีเมลที่ไม่มีในระบบตอบกลับก่อนเรียก scrypt = จับเวลาแล้วรู้ว่าอีเมลไหนมีจริง → เทียบกับ dummy hash ให้ใช้เวลาพอกัน
+  - verify: server action ยิง curl ตรงไม่ได้ (บทเรียนเดิม) → ทำ route ทดสอบชั่วคราวที่เรียก `rateLimit()` ตัวจริง ยิง 5 ครั้ง (limit=3) → **ผ่าน 3 บล็อก 2 พร้อมบอกเวลาที่ต้องรอ** แล้วลบ route ทิ้งก่อน commit
+- [x] **click log** — ตาราง `AffiliateClick` (network/source/createdAt) + route `/go` ที่บันทึกแล้ว 302 ต่อ · `trackedHref()` ห่อทุกปุ่มใน `AffiliateButton` (ครอบ place/hotel/บล็อกทัวร์จังหวัด)
+  - 🔴 **กัน open redirect:** `/go` ยอมเฉพาะ host ที่อยู่ใน `affiliateConfig.networks` เท่านั้น (ใช้ลิสต์เดิม ไม่ทำลิสต์ซ้ำ) — ไม่งั้นโดเมนเราจะกลายเป็นทางผ่านให้ลิงก์ฟิชชิ่ง · ปลายทางแปลก → เด้งหน้าแรก
+  - เขียน log ห่อ try/catch **เสมอ**: เสียแถวนับได้ แต่เสียคลิก = เสียรายได้ · `robots.ts` disallow `/go` กันบอทกดนับ
+  - `components/admin/ClickSummary.tsx` บนหน้า `/admin` — 30 วันล่าสุด แยกตามเครือข่าย + หน้าที่ถูกกดมากสุด (ไม่งั้นได้ตารางที่ไม่มีใครอ่าน)
+  - ⚠️ ซ้อนกับ GA4 บางส่วน (GA4 มี outbound click + หน้าต้นทางอยู่แล้ว) — ที่ได้เพิ่มคือข้อมูลของเราเองที่ ad blocker ปิดไม่ได้ และ join กับตารางอื่นได้
+  - verify: href บนหน้าเป็น `/go?u=…&s=<slug>` · ยิง `/go` ครบ 4 เครือข่าย (klook wrapper / shopee search / **s.shopee shortlink / agoda**) → 302 ปลายทาง **ตรงเป๊ะทุกตัวอักษร** (สำคัญมากกับ shortlink ที่ห้ามต่อท้าย) · host แปลกปลอม → 302 กลับหน้าแรก **และไม่เขียนแถว** · กด 4 ครั้ง → หน้า /admin ขึ้น shopee 3 / klook 1 และ source ถูกต้อง · ลบข้อมูลทดสอบออกหมดแล้ว
+- [x] a11y base (focus-visible/touch-action/prefers-reduced-motion) — **ตรวจแล้วว่าทำไปตั้งแต่ 2026-07-29 (`32d119d`)** ไม่ต้องทำซ้ำ · โน้ตใน PROJECT_MEMORY ที่ยังเขียนว่า "ค้าง" แก้ให้ตรงแล้ว
+- [ ] **email verify ตอนสมัคร — ยังไม่ทำ** ติดที่ยังไม่มีเมลบ็อกซ์/SMTP (`hello@siam-journey.com` ค้างมาตั้งแต่ 2026-07-21) และ Node ส่ง SMTP เองไม่ได้ถ้าไม่เพิ่ม dependency
+- 🔴 **DEPLOY (มี migration 2 ตัว):** `pull → NPM install → migrate:deploy → build → restart`
 
 ---
 

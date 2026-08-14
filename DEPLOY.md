@@ -113,6 +113,25 @@ build/migrate/seed จึงทำผ่าน npm scripts ที่เตรี
 
 ---
 
+## 🔒 รอบความปลอดภัย + rate limit + click log (2026-08-14) — **มี migration 2 ตัว**
+
+1. **Git pull**
+2. **NPM install** — จำเป็น (postinstall = `prisma generate` ให้ client รู้จัก `ratelimit` + `affiliateclick`)
+3. **Run script → `migrate:deploy`** (`add_rate_limit`, `add_affiliate_click`)
+4. **Run script → `build`** → **Restart App**
+
+**verify หลัง restart:**
+- `curl -I https://siam-journey.com/` มีครบ: `Strict-Transport-Security`, `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, `Content-Security-Policy: frame-ancestors 'self'`, `Permissions-Policy` · และ **ไม่มี `X-Powered-By: Next.js` แล้ว**
+- ปุ่มพาร์ทเนอร์บนหน้า place/จังหวัด/โรงแรม ต้องเป็น `href="/go?u=…&s=<slug>"` · กดแล้วต้องไปถึงปลายทางเดิมทุกเครือข่าย (**ทดสอบ Shopee shortlink ด้วย ห้ามมีอะไรต่อท้าย**)
+- `/admin` มีการ์ด "คลิกลิงก์พาร์ทเนอร์" และตัวเลขขึ้นหลังกดจริง
+- ลอง login ผิด 11 ครั้งรวด → ครั้งที่ 11 ต้องขึ้น "พยายามหลายครั้งเกินไป…" (นับรวมทั้ง IP นั้น)
+
+> 📌 **งานที่ต้องทำในแผงควบคุม Plesk ไม่ใช่ในโค้ด:** header ยังบอก `X-Powered-By: Phusion Passenger(R) 6.1.8`
+> = ประกาศเวอร์ชันให้คนเอาไปค้น CVE · ปิดที่ nginx directives ของโดเมน: `passenger_show_version_in_header off;`
+> (Domains → siam-journey.com → Apache & nginx Settings → Additional nginx directives)
+
+---
+
 ## 🆕 First-time setup (ทำครั้งเดียว)
 
 **Pre:** Node.js panel → Node **≥ 20**, Application Root = โฟลเดอร์ repo, Application Startup File = **`server.js`**, Application Mode = production

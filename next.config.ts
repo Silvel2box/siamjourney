@@ -6,6 +6,38 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: import.meta.dirname,
   },
+  // "X-Powered-By: Next.js" says which framework and, with Passenger's own
+  // addition, which version to look up. Passenger's half has to come off in the
+  // Plesk panel — see DEPLOY.md.
+  poweredByHeader: false,
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          // A year of HTTPS-only. Deliberately without includeSubDomains: Plesk
+          // serves webmail and the panel on subdomains of this domain, and the
+          // directive would lock every one of them out of HTTP with no way back
+          // until the max-age runs out.
+          { key: "Strict-Transport-Security", value: "max-age=31536000" },
+          // Stops a browser from guessing that an uploaded .jpg is really HTML.
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          // Full URLs leak to affiliate networks on every outbound click; the
+          // origin alone is all they need for attribution.
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          // Clickjacking: nothing here is meant to be framed elsewhere. The
+          // Google Maps embeds are us framing them, which is unaffected.
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Content-Security-Policy", value: "frame-ancestors 'self'" },
+          // Features the site never uses. Ads and embeds inherit the refusal.
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+          },
+        ],
+      },
+    ];
+  },
   images: {
     // Pexels stock is hotlinked (their CDN allows it; next/image caches the
     // optimized result). Wikimedia photos are self-hosted under public/images

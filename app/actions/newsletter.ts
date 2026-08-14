@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
+import { rateLimit, tooManyMessage } from "@/lib/rate-limit";
 
 // State returned to the form (null before first submit).
 type State = { ok: boolean; message: string } | null;
@@ -18,6 +19,11 @@ export async function subscribe(
   if (!parsed.success) {
     return { ok: false, message: "กรุณากรอกอีเมลให้ถูกต้อง" };
   }
+
+  // The form takes an address and writes a row with no confirmation step, so
+  // without a ceiling one script can fill the subscriber table.
+  const limit = await rateLimit("newsletter", 5, 60);
+  if (!limit.ok) return { ok: false, message: tooManyMessage(limit.retryAfterMinutes) };
 
   try {
     await prisma.subscriber.create({ data: { email: parsed.data } });

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
+import { jsonLdHtml } from "@/lib/jsonld";
 
 type Crumb = { href?: string; label: string };
 
@@ -44,7 +45,7 @@ export default function PageBanner({
       {crumbs.length > 0 && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdHtml(breadcrumbLd) }}
         />
       )}
       {image && (

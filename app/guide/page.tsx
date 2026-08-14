@@ -4,6 +4,7 @@ import { site, pageOpenGraph } from "@/lib/site";
 import PageBanner from "@/components/PageBanner";
 import GuideCard from "@/components/GuideCard";
 import AdSlot from "@/components/AdSlot";
+import { jsonLdHtml } from "@/lib/jsonld";
 
 // New guides added via the admin render on-demand (ISR); no rebuild needed.
 export const revalidate = 3600;
@@ -38,7 +39,7 @@ export default async function GuideIndexPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
 
       <PageBanner title={title} subtitle={description} crumbs={[{ label: "บทความ" }]} />

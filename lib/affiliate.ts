@@ -51,6 +51,26 @@ export const affiliateConfig = {
   ] as NetworkCfg[],
 };
 
+// Is this a host we pay out through? app/go refuses anything else, so the
+// redirect cannot be pointed at an arbitrary site — an open redirect on our own
+// domain is exactly what a phishing link wants to borrow.
+export function isAffiliateHost(rawUrl: string): boolean {
+  try {
+    const { hostname } = new URL(rawUrl);
+    return affiliateConfig.networks.some((n) => hostname.includes(n.match));
+  } catch {
+    return false;
+  }
+}
+
+// The href that actually goes in the page: our own /go, carrying the finished
+// affiliate URL and the slug of the page the click came from. The hop exists to
+// write the click down — see app/go/route.ts.
+export function trackedHref(finalUrl: string, source: string): string {
+  if (!isAffiliateHost(finalUrl)) return finalUrl; // nothing to attribute, no hop
+  return `/go?u=${encodeURIComponent(finalUrl)}&s=${encodeURIComponent(source)}`;
+}
+
 // Returns the outbound URL with affiliate id (if configured), a per-place sub id
 // for click attribution, and UTM params for our own analytics.
 export function buildAffiliateUrl(rawUrl: string, placeSlug: string): string {

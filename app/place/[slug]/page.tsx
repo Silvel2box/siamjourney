@@ -16,6 +16,7 @@ import PlaceCard from "@/components/PlaceCard";
 import AffiliateButton from "@/components/AffiliateButton";
 import PhotoGallery from "@/components/PhotoGallery";
 import AdSlot from "@/components/AdSlot";
+import { jsonLdHtml } from "@/lib/jsonld";
 
 // New places added via the admin render on-demand (ISR); no rebuild needed.
 export const dynamicParams = true;
@@ -102,7 +103,7 @@ export default async function PlacePage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
 
       <PageBanner

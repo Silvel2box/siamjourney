@@ -18,6 +18,32 @@ model Subscriber {
   @@map("subscriber")
 }
 
+// One row per click on a partner link, written by app/go (see lib/affiliate.ts).
+// GA4 already counts outbound clicks; this is the copy we own — it survives ad
+// blockers and can be joined to places and provinces in a query.
+model AffiliateClick {
+  id        Int      @id @default(autoincrement())
+  network   String   @db.VarChar(64) // destination hostname, e.g. klook.com
+  source    String   @db.VarChar(191) // slug of the place/hotel/province clicked from
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([source])
+  @@map("affiliateclick")
+}
+
+// Fixed-window counter per action+address (see lib/rate-limit.ts). Rows are
+// reused for the same key and swept when a window starts, so the table stays
+// roughly as large as the number of addresses currently active.
+model RateLimit {
+  key       String   @id @db.VarChar(191) // "<action>:<ip>"
+  count     Int      @default(0)
+  expiresAt DateTime
+
+  @@index([expiresAt])
+  @@map("ratelimit")
+}
+
 // Shop owner account (login identity + basic business info in one).
 model Merchant {
   id           Int       @id @default(autoincrement())
