@@ -113,12 +113,18 @@ build/migrate/seed จึงทำผ่าน npm scripts ที่เตรี
 
 ---
 
-## 🔒 รอบความปลอดภัย + rate limit + click log (2026-08-14) — **มี migration 2 ตัว**
+## 🔒 รอบความปลอดภัย + rate limit + click log + email verify (2026-08-14) — **มี migration 3 ตัว**
 
 1. **Git pull**
-2. **NPM install** — จำเป็น (postinstall = `prisma generate` ให้ client รู้จัก `ratelimit` + `affiliateclick`)
-3. **Run script → `migrate:deploy`** (`add_rate_limit`, `add_affiliate_click`)
+2. **NPM install** — จำเป็น (postinstall = `prisma generate` ให้ client รู้จัก `ratelimit` + `affiliateclick` + คอลัมน์ยืนยันอีเมล)
+3. **Run script → `migrate:deploy`** (`add_rate_limit`, `add_affiliate_click`, `add_email_verification`)
 4. **Run script → `build`** → **Restart App**
+
+**อีเมลยืนยัน (ทำได้ทีหลัง ไม่บล็อก deploy):** ตั้ง 2 ตัวใน **Plesk → Custom environment variables** แล้ว restart
+`RESEND_API_KEY` (จาก resend.com หลังยืนยันโดเมน siam-journey.com ด้วย DNS ที่เขาให้) และ
+`EMAIL_FROM` = `SiamJourney <noreply@siam-journey.com>`
+> ยังไม่ตั้ง = เว็บทำงานปกติทุกอย่าง คนสมัครได้ตามเดิม เพียงแต่ลิงก์ยืนยัน **ถูกเขียนลง log แทนการส่ง**
+> (ดูใน Plesk → Logs) และแดชบอร์ดร้านจะขึ้นแบนเนอร์ว่ายังไม่ยืนยัน
 
 **verify หลัง restart:**
 - `curl -I https://siam-journey.com/` มีครบ: `Strict-Transport-Security`, `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, `Content-Security-Policy: frame-ancestors 'self'`, `Permissions-Policy` · และ **ไม่มี `X-Powered-By: Next.js` แล้ว**

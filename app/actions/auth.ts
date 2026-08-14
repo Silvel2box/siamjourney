@@ -8,7 +8,10 @@ import {
   verifyPassword,
   createSession,
   deleteSession,
+  issueVerifyToken,
+  requireMerchant,
 } from "@/lib/auth";
+import { sendVerifyEmail } from "@/lib/email";
 import { rateLimit, tooManyMessage } from "@/lib/rate-limit";
 
 // Compared against when the email is unknown, so a wrong address and a wrong
@@ -54,6 +57,10 @@ export async function register(_prev: State, formData: FormData): Promise<State>
     const merchant = await prisma.merchant.create({
       data: { shopName, email, passwordHash },
     });
+    // Sending is best-effort on purpose: an account that exists with an
+    // unconfirmed address is recoverable ("ส่งอีกครั้ง" on the dashboard), an
+    // account that failed to be created because a mail API was down is not.
+    await sendVerifyEmail(email, await issueVerifyToken(merchant.id));
     await createSession(merchant.id);
   } catch (e: unknown) {
     // P2002 = unique constraint → email already registered
@@ -94,6 +101,20 @@ export async function login(_prev: State, formData: FormData): Promise<State> {
   }
 
   redirect("/dashboard");
+}
+
+// Sends the verification link again — from the dashboard banner, for the address
+// on the account. Not a form the visitor can aim anywhere: the address comes from
+// the session, never from the request.
+export async function resendVerification(): Promise<void> {
+  const merchant = await requireMerchant();
+  if (merchant.emailVerifiedAt) redirect("/dashboard?verify=ok");
+
+  const limit = await rateLimit("verify-email", 3, 60);
+  if (!limit.ok) redirect("/dashboard?verify=throttled");
+
+  const sent = await sendVerifyEmail(merchant.email, await issueVerifyToken(merchant.id));
+  redirect(`/dashboard?verify=${sent ? "sent" : "failed"}`);
 }
 
 export async function logout(): Promise<void> {

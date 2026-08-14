@@ -60,6 +60,11 @@ model Merchant {
   phone        String?
   website      String?
   image        String?   @db.Text
+  // Email verification. The token lives here rather than in its own table —
+  // a merchant can only have one outstanding link at a time.
+  emailVerifiedAt DateTime?
+  verifyToken     String?   @unique @db.VarChar(191)
+  verifyExpiresAt DateTime?
   createdAt    DateTime  @default(now())
   sessions     Session[]
 

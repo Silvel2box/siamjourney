@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import ShopForm from "@/components/ShopForm";
 import { requireMerchant } from "@/lib/auth";
-import { logout } from "@/app/actions/auth";
+import { logout, resendVerification } from "@/app/actions/auth";
 import { prisma } from "@/lib/prisma";
 import { getAllProvinces } from "@/lib/content";
 import { categories } from "@/lib/categories";
@@ -31,9 +31,23 @@ const STATUS: Record<string, { label: string; className: string; note: string }>
   },
 };
 
-export default async function DashboardPage() {
+// What came back from /verify or from pressing "ส่งอีกครั้ง".
+const VERIFY_NOTE: Record<string, string> = {
+  ok: "ยืนยันอีเมลเรียบร้อยแล้ว ขอบคุณครับ",
+  sent: "ส่งอีเมลยืนยันใหม่แล้ว กรุณาตรวจกล่องจดหมาย (และโฟลเดอร์สแปม)",
+  failed: "ส่งอีเมลไม่สำเร็จ กรุณาลองใหม่ภายหลัง หรือติดต่อทีมงาน",
+  expired: "ลิงก์ยืนยันหมดอายุหรือถูกใช้ไปแล้ว กดส่งอีกครั้งเพื่อรับลิงก์ใหม่",
+  invalid: "ลิงก์ยืนยันไม่ถูกต้อง กดส่งอีกครั้งเพื่อรับลิงก์ใหม่",
+  throttled: "ขอลิงก์ใหม่บ่อยเกินไป กรุณารอสักครู่แล้วลองใหม่",
+};
+
+type Props = { searchParams: Promise<{ verify?: string }> };
+
+export default async function DashboardPage({ searchParams }: Props) {
   const merchant = await requireMerchant();
   const status = STATUS[merchant.status] ?? STATUS.pending;
+  const { verify } = await searchParams;
+  const verifyNote = verify ? VERIFY_NOTE[verify] : undefined;
 
   const shop = await prisma.merchant.findUnique({
     where: { id: merchant.id },
@@ -83,6 +97,29 @@ export default async function DashboardPage() {
               </span>
             </div>
             <p className="text-sm text-gray-500 mb-2">{merchant.email}</p>
+
+            {verifyNote && (
+              <p className="mb-3 rounded-xl bg-gray-100 border border-gray-200 p-4 text-sm text-gray-700">
+                {verifyNote}
+              </p>
+            )}
+
+            {!merchant.emailVerifiedAt && (
+              <div className="mb-3 rounded-xl bg-amber-50 border border-amber-200 p-4 text-sm text-amber-900">
+                <p className="mb-3">
+                  ยังไม่ได้ยืนยันอีเมลนี้ — เราส่งลิงก์ยืนยันไปให้ตอนสมัครแล้ว
+                  ถ้าไม่เจอในกล่องจดหมาย ลองดูโฟลเดอร์สแปม หรือกดส่งใหม่
+                </p>
+                <form action={resendVerification}>
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-amber-600 text-white rounded-full font-medium hover:bg-amber-700 transition"
+                  >
+                    ส่งอีเมลยืนยันอีกครั้ง
+                  </button>
+                </form>
+              </div>
+            )}
             <p className="rounded-xl bg-primary/10 border border-primary/20 p-4 text-sm text-gray-700">
               {status.note}
               {merchant.status === "approved" && (

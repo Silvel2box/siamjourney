@@ -67,6 +67,7 @@ export default async function AdminPage({ searchParams }: Props) {
         status: true,
         role: true,
         createdAt: true,
+        emailVerifiedAt: true,
       },
     }),
     prisma.merchant.count(),
@@ -129,7 +130,14 @@ export default async function AdminPage({ searchParams }: Props) {
                                 <span className="ml-2 text-xs text-primary">(admin)</span>
                               )}
                             </div>
-                            <div className="text-gray-500">{m.email}</div>
+                            <div className="text-gray-500">
+                              {m.email}
+                              {/* Worth seeing before approving: an address
+                                  nobody has confirmed may not reach anyone. */}
+                              {!m.emailVerifiedAt && (
+                                <span className="ml-2 text-xs text-amber-700">อีเมลยังไม่ยืนยัน</span>
+                              )}
+                            </div>
                           </td>
                           <td className="px-5 py-4 text-gray-600 whitespace-nowrap">
                             {m.createdAt.toLocaleDateString("th-TH", {

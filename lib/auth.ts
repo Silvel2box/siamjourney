@@ -65,6 +65,22 @@ export async function deleteSession(): Promise<void> {
   cookieStore.delete(COOKIE);
 }
 
+// --- Email verification ---
+
+// Issues (or replaces) the one-time link a merchant confirms their address with.
+// Replacing means an older link stops working, which is what "ส่งอีกครั้ง" should do.
+export async function issueVerifyToken(merchantId: number): Promise<string> {
+  const token = randomBytes(32).toString("hex");
+  await prisma.merchant.update({
+    where: { id: merchantId },
+    data: {
+      verifyToken: token,
+      verifyExpiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
+    },
+  });
+  return token;
+}
+
 // Merchant DTO for the current session, or null. Cached per request render pass.
 // Only exposes non-sensitive fields (never passwordHash).
 export const getMerchant = cache(async () => {
@@ -82,6 +98,7 @@ export const getMerchant = cache(async () => {
           shopName: true,
           status: true,
           role: true,
+          emailVerifiedAt: true,
         },
       },
     },

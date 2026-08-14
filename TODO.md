@@ -422,8 +422,14 @@ build 707 static pages ผ่าน. เหลือ **งาน content/บั�
   - ⚠️ ซ้อนกับ GA4 บางส่วน (GA4 มี outbound click + หน้าต้นทางอยู่แล้ว) — ที่ได้เพิ่มคือข้อมูลของเราเองที่ ad blocker ปิดไม่ได้ และ join กับตารางอื่นได้
   - verify: href บนหน้าเป็น `/go?u=…&s=<slug>` · ยิง `/go` ครบ 4 เครือข่าย (klook wrapper / shopee search / **s.shopee shortlink / agoda**) → 302 ปลายทาง **ตรงเป๊ะทุกตัวอักษร** (สำคัญมากกับ shortlink ที่ห้ามต่อท้าย) · host แปลกปลอม → 302 กลับหน้าแรก **และไม่เขียนแถว** · กด 4 ครั้ง → หน้า /admin ขึ้น shopee 3 / klook 1 และ source ถูกต้อง · ลบข้อมูลทดสอบออกหมดแล้ว
 - [x] a11y base (focus-visible/touch-action/prefers-reduced-motion) — **ตรวจแล้วว่าทำไปตั้งแต่ 2026-07-29 (`32d119d`)** ไม่ต้องทำซ้ำ · โน้ตใน PROJECT_MEMORY ที่ยังเขียนว่า "ค้าง" แก้ให้ตรงแล้ว
-- [ ] **email verify ตอนสมัคร — ยังไม่ทำ** ติดที่ยังไม่มีเมลบ็อกซ์/SMTP (`hello@siam-journey.com` ค้างมาตั้งแต่ 2026-07-21) และ Node ส่ง SMTP เองไม่ได้ถ้าไม่เพิ่ม dependency
-- 🔴 **DEPLOY (มี migration 2 ตัว):** `pull → NPM install → migrate:deploy → build → restart`
+- [x] **email verify ตอนสมัคร ✅** — ผู้ใช้เลือกส่งผ่าน **Resend HTTP API** (ยิงด้วย `fetch` = **ไม่เพิ่ม dependency เลย** ตามกฎโปรเจกต์ และเข้า inbox ดีกว่า SMTP จาก IP โฮสต์รวม)
+  - **ออกแบบให้ล้มแล้วไม่พังทั้งระบบ:** ยังไม่ตั้ง `RESEND_API_KEY`/`EMAIL_FROM` → เว็บทำงานปกติ สมัครได้ ระบบแค่**เขียนลิงก์ยืนยันลง log แทนการส่ง** · การสมัครไม่ผูกกับผลการส่งเมล (บัญชีที่อีเมลยังไม่ยืนยัน กู้ได้ด้วยปุ่ม "ส่งอีกครั้ง" แต่บัญชีที่สร้างไม่สำเร็จเพราะ mail API ล่ม กู้ไม่ได้)
+  - เก็บ token **เป็นคอลัมน์บน `Merchant`** (`emailVerifiedAt`/`verifyToken` unique/`verifyExpiresAt`) ไม่สร้างตารางใหม่ — ร้านหนึ่งมีลิงก์ค้างได้ทีละอันเท่านั้น · ลิงก์อายุ 24 ชม. · **ใช้ได้ครั้งเดียว** (เคลียร์ token ตอนใช้)
+  - `/verify?token=` เป็น **GET ที่ไม่ต้องล็อกอิน** เพราะคนมักเปิดเมลคนละเครื่องกับที่สมัคร · ปุ่ม "ส่งอีเมลยืนยันอีกครั้ง" บนแดชบอร์ด (อีเมลมาจาก session ไม่ใช่ฟอร์ม) จำกัด 3 ครั้ง/ชม.
+  - `/admin` ขึ้นป้าย "อีเมลยังไม่ยืนยัน" ต่อแถว เพื่อให้ตัดสินใจอนุมัติได้จากข้อมูลจริง (ไม่บล็อกการอนุมัติ — บางร้านอาจยืนยันตัวตนทางอื่น)
+  - verify: token ถูก → `verify=ok` + DB ตั้ง `emailVerifiedAt` และ token = null · **ใช้ token ซ้ำ → `expired`** · token มั่ว → `expired` · ไม่มี token → `invalid` · แบนเนอร์บนแดชบอร์ดหายหลังยืนยัน · ป้ายใน `/admin` เหลือเฉพาะบัญชีที่ยังไม่ยืนยันจริง (ตอนนี้คือบัญชี admin เอง) · เรียก `sendVerifyEmail` ตอนไม่มีคีย์ → `{configured:false, sent:false}` + log ลิงก์ ไม่มี error
+  - 📌 **งานคุณก่อนใช้จริง:** สมัคร resend.com → ยืนยันโดเมน `siam-journey.com` (ใส่ DNS ที่เขาให้) → เอา API key ใส่ **Plesk custom environment variables** `RESEND_API_KEY` + `EMAIL_FROM="SiamJourney <noreply@siam-journey.com>"` → restart (ไม่ต้องแก้โค้ด)
+- 🔴 **DEPLOY (มี migration 3 ตัว):** `pull → NPM install → migrate:deploy → build → restart`
 
 ---
 
